@@ -1,0 +1,7 @@
+%% Cambia p/k a m/ng (inmediatamente) después de nasal "real" (con sustantivos)
+
+P -> m
+K -> ng
+
+
+* @M (.) | *

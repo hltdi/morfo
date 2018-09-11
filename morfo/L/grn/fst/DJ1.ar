@@ -1,0 +1,8 @@
+%% Cambiar D a n, J a ñ antes de letras nasales (@n)
+
+%mult LC C
+
+D -> n
+J -> ñ
+
+* | * @n * % *

@@ -1,0 +1,136 @@
+###
+### Morfotaxis del verbo guaraní: areal, aireal
+###
+
+### PREFIJO NEGATIVO, YSAJA MBOTOVÉVA 
+
+$ neg1
+
+  [+neg,mod=ind,+neg1]
+    Da                    [cat=a,sj=[+2,+p]]
+    De                    [cat=a,sj=[-1,+2,-p]]
+    Do                    [cat=a,sj=[+1,-2,+p]]
+    D                     [cat=a,sj=[+1,-2,-p]];[cat=a,sj=[-1,-2]]
+  --                      [-neg]
+
+### PRONOMBRES: NÚMERO Y PERSONA, PAPAPY HA AVAITE
+
+$ pro
+
+  -> neg2     +v_irr+     # saltar voz para verbos irregulares
+  # 1 sing.
+  [sj=[+1,-2,-p],oj=[-1,-2]]
+    a                     [mod=ind,cat=a]
+    ta                    [mod=opt,cat=a]
+  [oj=[+1,-2,-p],sj=[-1],+trans,cat=a]
+    che$                  [mod=ind]
+  # 2 sing.
+  [sj=[-1,+2,-p],oj=[-1,-2]]
+    re                    [mod=ind,cat=a]
+    e                     [mod=imp,cat=a]
+    tere                  [mod=opt,cat=a]
+  [oj=[-1,+2,-p],+trans,cat=a]
+    De$                   [sj=[-1,-2],mod=ind]
+    ro                    [sj=[+1,-2],mod=ind]
+    toro                  [sj=[+1,-2],mod=opt]
+  # 3 sing./plur.
+  [sj=[-1,-2],oj=[-1,-2]]
+    o                     [mod=ind,cat=a]
+    to                    [mod=opt,cat=a]
+  # 1 plur. incl.
+  [sj=[+1,+2,+p],oj=[-1,-2]]
+    Ja                    [mod=ind,cat=a]
+    taJa                  [mod=opt,cat=a]
+  ñaDe$                   [oj=[+1,+2,+p],sj=[-1,-2],cat=a,+trans]
+  # 1 plur. excl
+  [sj=[+1,-2,+p],oj=[-1,-2]]
+    ro                    [mod=ind,cat=a]
+    toro                  [mod=opt,cat=a]
+  ore$                    [oj=[+1,-2,+p],sj=[-1],cat=a,+trans]
+  # 2 plur.
+  [sj=[-1,+2,+p],oj=[-1,-2]]
+    pe                    [mod=ind|imp,cat=a]
+    tape                  [mod=opt,cat=a]
+  [oj=[-1,+2,+p],+trans,cat=a]
+    peDe$                 [sj=[-1,-2],mod=ind]
+    po                    [sj=[+1,-2],mod=ind]
+    # estoy adivinando ...; no he leído nada sobre esta forma
+    tapo                  [sj=[+1,-2],mod=opt]
+
+### VOZ, ÑE'ẼAPOHO
+
+$ voz
+  --                    [voz=smp,-rztrans,-trans,oj=[-r]];[voz=smp,+rztrans,+trans,oj=[-r]]
+  [voz=intrans,+rztrans,-trans,oj=[-r]]
+    poro
+    mba'e
+  [voz=caus,-rztrans,+trans,oj=[-r]]
+  # actually Bo and guero can co-occur: -porombogueroguata-
+    Bo                  
+    guero
+  Je                   [voz=reflx,+rztrans,-trans,oj=[+r]]
+  Jo                   [voz=recip,+rztrans,-trans,oj=[+r]]
+  [voz=intrans_caus,-rztrans,-trans,oj=[-r]]
+    poroBo              
+    poroguero
+    mba'eBo
+    mba'eguero
+  [voz=reflx_caus,-rztrans,-trans,oj=[+r]]
+    JeBo
+    Jeguero
+  [voz=recip_caus,-rztrans,-trans,oj=[-r]]
+    JoBo 
+    Joguero
+  [voz=intrans_caus_reflx,+rztrans,-trans,oj=[+r]]
+    poroBoJe           
+    porogueroJe
+    mba'eBoJe
+    mba'egueroJe
+  [voz=intrans_caus_recip,+rztrans,-trans,oj=[-r]]
+    poroBoJo  
+    porogueroJo 
+    mba'eBoJo 
+    mba'egueroJo 
+
+### PREFIJO DE RAIZ
+
+$ preraiz
+  i                     [cat=a,subcat=i,oj=[-1,-2]];[cat=a,subcat=i,-trans,oj=[-r]]
+  gue                   [cat=a,subcat=gue,sj=[-1,-2],oj=[-1,-2]];
+                        [cat=a,subcat=gue,sj=[+1,-2,+p],oj=[-1,-2]]
+  re                    [cat=a,subcat=gue,oj=[+1]];[cat=a,subcat=gue,oj=[+2],sj=[-1]]
+  --                    [cat=a,subcat=0];
+                        [subcat=i,oj=[+1]];[subcat=i,oj=[+2]];[subcat=i,oj=[-r]];
+                        [subcat=gue,sj=[+1,-p]];[subcat=gue,sj=[+2]]
+
+### RAIZ
+
+$ raiz
+  +ai_trans+            [+rztrans,cat=a,subcat=i]
+  +ai_intrans+          [-rztrans,cat=a,subcat=i]
+  +ague_trans+          [+rztrans,cat=a,subcat=gue]
+  +a_trans+             [+rztrans,cat=a,subcat=0]
+  +a_intrans+           [-rztrans,cat=a,subcat=0]
+  # solo posible con prefijo de modo: (...)mbo, (...)guero
+  +che+                 [-rztrans,cat=a,subcat=0,voz=caus|intrans_caus|reflx_caus|recip_caus]
+
+$ fin_raiz
+  # marks the end of the stem
+  %
+
+### SUFIJO NEGATIVO 3, YSAJA MBOTOVÉVA, exige prefijo negativo
+
+$ neg3
+  !Ri                   [+neg,mod=ind]
+  --                    [-neg];[mod=imp|opt]
+
+### TIEMPO 1, ÁRA
+
+$ tmp2
+  --                    [-tmp2,+tmp1];[-tmp2,-tmp1,tmp=presperf,mod=ind];
+                        [-tmp2,-tmp1,tmp=None,mod=imp|opt]
+  !va'ekue              [tmp=pretplus,-tmp1,+tmp2]
+  !va'erã               [tmp=futobl,-tmp1,+tmp2,-neg]
+  'akue                 [tmp=pretperf,-tmp1,+tmp2]
+  !mi                   [tmp=pretimpf,-tmp1,+tmp2]
+  !ta                   [tmp=futperf,-tmp1,+tmp2,-neg]

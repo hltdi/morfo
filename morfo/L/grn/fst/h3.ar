@@ -1,0 +1,5 @@
+%% realize <h as h after 3
+
+<h -> h
+
+* 3 | *

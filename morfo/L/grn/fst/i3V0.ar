@@ -1,0 +1,5 @@
+%% Change I to hi' before vowel only.
+
+I00 -> hi'
+
+* | @v

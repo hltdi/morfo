@@ -1,0 +1,10 @@
+%% Accent the unaccented vowel before !
+
+a -> á
+e -> é
+i -> í
+o -> ó
+u -> ú
+y -> ý
+
+* | ! *

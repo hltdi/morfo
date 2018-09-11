@@ -1,0 +1,29 @@
+name: qhichwa
+
+trans:
+  Loading morphological data for {0}{1} ... = Cargando datos morfológicos para {0}{1} ...
+  Make change to grammatical features? = ¿Cambiar propiedades gramaticales?
+  Please enter a digit between {0} and {1} = Por favor introduce un dígito entre {0} y {1}
+  Current grammatical features = Últimas propiedades gramaticales
+  You selected value {0} for {1} = Seleccionaste {0} para {1}
+  You selected feature {0} = Seleccionaste propiedad {0}
+  yes = sí
+  [{0}] Keep value at {1} = [{0}] Mantener valor {1}
+  Selection = Selección
+  Make another change to grammatical features? = ¿Cambiar otra propiedad gramatical?
+  Options = Opciones
+  True = +
+  False = -
+  word = palabra
+  root = raíz
+  affix = afijo
+  verb = verbo
+  v = verbo
+  noun = sustantivo
+  n = sustantivo
+  adjective = adjetivo
+  pronoun = pronombre
+  adverb = adverbio
+  POS = CG
+  Analyzing words in = Analizando palabras en
+  Writing analysis in = Escribiendo análisis en

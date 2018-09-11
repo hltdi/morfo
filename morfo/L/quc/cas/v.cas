@@ -1,0 +1,51 @@
+# -*- coding: utf-8 -*-
+weighting = UNIFICATION
+
+### Special characters
+
+### Stringsets
+## Vowels
+V = {a, e, i, o, u, ä, ë, ï, ö, ü}
+## Consonants
+# All consonants
+# CC = {b, b', c, ch, ch', d, f, g, h, j, k, k', l, m, n, p, p', q, q', r, s, t, t', tz, tz', v, w, x, y, z, '}
+# Native consonants
+C = {b', ch, ch', h, j, k, k', l, m, n, p, p', q, q', r, s, t, t', tz, tz', w, x, y, '}
+# Prefix special characters: ergative prefixes + 3p absolutive prefix + neg imperative + k(+epen a)
+P = {M, N, W, R, Q, K, E, A}
+# Suffix special characters: derivational suffixes, infixed vowels, reduplication, and categorizers
+S = {B, ^, $, L, O, @, *, v, T}
+
+##### FSTs
+##### Prefixes
+####  Negative imperative
+>neg_imp<
+####  Epenthetic a following k-
+>epen<
+####  Absolutive e(')
+>3p_abs<
+####  Ergative
+>1s_erg<
+>2_erg<
+>13p_erg<
+>3s_erg<
+##### Suffixes
+####  VTI categorizer
+>ik<
+####  VTR imperative and movement categorizer suffix
+>vtr_imp<
+####  VTR categorizer suffix
+>vtr_cat<
+####  vowel before -n(ik) following VTD
+>Vn<
+####  transitivizer B
+>ba<
+##  reduplication of consonants and vowels
+>CR<
+>VR<
+##  vowel before -taj(ik) following VTD
+>Vtaj<
+##  L form of positional verbs
+>posL<
+## morphotactics
+>v_mtax<
