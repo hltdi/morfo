@@ -1,23 +1,23 @@
 """
-This file is part of HornMorpho, which is part of the PLoGS project.
+This file is part of morfo, which is part of the PLoGS project.
 
     <http://homes.soic.indiana.edu/gasser/plogs.html>
 
     Copyleft 2011, 2012, 2013, 2016, 2018.
     PLoGS and Michael Gasser <gasser@indiana.edu>.
 
-    HornMorpho is free software: you can redistribute it and/or modify
+    morfo is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    HornMorpho is distributed in the hope that it will be useful,
+    morfo is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with HornMorpho.  If not, see <http://www.gnu.org/licenses/>.
+    along with morfo.  If not, see <http://www.gnu.org/licenses/>.
 --------------------------------------------------------------------
 Author: Michael Gasser <gasser@indiana.edu>
 
@@ -92,7 +92,11 @@ def orthographize(word):
     word = word.replace('_', '').replace('I', '')
     return word
 
-def cop_anal2string(anal):
+def webfv(webdict, feature, value):
+    if webdict != None:
+        webdict[feature] = value
+
+def cop_anal2string(anal, webdict=None):
     '''Convert a copula analysis to a string.
 
     anal is ("cop", "new", "new", gramFS)
@@ -106,14 +110,17 @@ def cop_anal2string(anal):
         sb = fs['sb']
         s += ' subj:'
         s += arg2string(sb)
+        webfv(webdict, 'subj', arg2string(sb, web=True))
         if fs.get('neg'):
             s += ' negative\n'
+            webfv(webdict, 'neg', True)
         cj = fs.get('cj2')
         if cj:
+            webfv(webdict, 'conjunctive suffix', cj)
             s += ' conjunctive suffix: ' + cj + '\n'
     return s
 
-def n_anal2string(anal):
+def n_anal2string(anal, webdict=None):
     '''Convert a noun analysis to a string.
 
     anal is ("(*)n", root, citation, gramFS)
@@ -127,28 +134,38 @@ def n_anal2string(anal):
     if deverbal:
         if deverbal == 'agt':
             s += 'agentive noun'
+            webfv(webdict, 'POS', 'agentive noun')
         elif deverbal == 'man':
             s += 'manner noun'
+            webfv(webdict, 'POS', 'manner noun')
         elif deverbal == 'inf':
+            webfv(webdict, 'POS', 'infinitive')
             s += 'infinitive'
         else:
+            webfv(webdict, 'POS', 'instrumental noun')
             s += 'instrumental noun'
         if root:
             s += ', root: <' + root + '>'
+            webfv(webdict, 'root', root)
         if citation:
             s += ', citation: ' + citation
+            webfv(webdict, 'citation', citation)
     else:
         s += 'noun'
+        webfv(webdict, 'POS', 'noun')
         if citation:
             s += ', stem: ' + citation
+            webfv(webdict, 'stem', citation)
         elif root:
             s += ', stem: ' + root
+            webfv(webdict, 'stem', root)
     s += '\n'
     if fs:
         poss = fs.get('poss')
         if poss and poss.get('expl'):
             s += ' possessor:'
             s += arg2string(poss, True)
+            webfv(webdict, 'possessor', arg2string(poss, True, True))
         gram = ''
         # For agent, infinitive, instrumental, give aspect and voice unless both are simple
         asp = fs.get('as')
@@ -158,47 +175,58 @@ def n_anal2string(anal):
         if deverbal and asp == 'it':
             gram += ' iterative'
             any_gram = True
+            webfv(webdict, 'aspect', 'iterative')
         elif deverbal and asp == 'rc':
             if any_gram: gram += ','
             gram += ' reciprocal'
             any_gram = True
+            webfv(webdict, 'aspect', 'reciprocal')
         if deverbal and vc == 'ps':
             if any_gram: gram += ','
             gram += ' passive'
             any_gram = True
+            webfv(webdict, 'voice', 'passive')
         elif vc == 'tr':
             if any_gram: gram += ','
             gram += ' transitive'
             any_gram = True
+            webfv(webdict, 'voice', 'transitive')
         elif vc == 'cs':
             if any_gram: gram += ','
             gram += ' causative'
             any_gram = True
+            webfv(webdict, 'voice', 'causative')
         if fs.get('neg'):
             # Only possible for infinitive
             if any_gram: gram += ','
             gram += ' negative'
             any_gram = True
+            webfv(webdict, 'negative', True)
         if fs.get('plr'):
             if any_gram: gram += ','
             gram += ' plural'
             any_gram = True
+            webfv(webdict, 'number', 'plural')
         if fs.get('def'):
             if any_gram: gram += ','
             any_gram = True
             gram += ' definite'
+            webfv(webdict, 'definite', True)
         if fs.get('dis'):
             if any_gram: gram += ','
             any_gram = True
             gram += ' distrib(Iyye-)'
+            webfv(webdict, 'distributive', True)
         if rl and rl.get('acc'):
             if any_gram: gram += ','
             any_gram = True
             gram += ' accusative'
+            webfv(webdict, 'accusative', True)
         if rl and rl.get('gen'):
             if any_gram: gram += ','
             any_gram = True
             gram += ' genitive'
+            webfv(webdict, 'genitive', True)
 #        der = fs.get('der')
 #        if der and der.get('ass'):
 #            if any_gram: gram += ','
@@ -211,13 +239,15 @@ def n_anal2string(anal):
         if pp or cnj:
             if pp:
                 s += ' preposition: ' + pp
+                webfv(webdict, 'preposition', pp)
             if cnj:
                 if pp: s += ','
                 s += ' conjunctive suffix: ' + cnj
+                webfv(webdict, 'conjunctive suffix', cnj)
             s += '\n'        
     return s    
 
-def vb_anal2string(anal):
+def vb_anal2string(anal, webdict=None):
     '''Convert a verb analysis to a string.
 
     anal is ("(*)v", root, citation, gramFS)
@@ -228,59 +258,79 @@ def vb_anal2string(anal):
     fs = anal[3]
     POS = '?POS: ' if '?' in anal[0] else 'POS: '
     s = POS + pos
+    webfv(webdict, 'POS', pos)
     if root:
         if '{' in root:
-            # Segmented form; not root
+            # Segmented form; not rootwe
             s += ', segmentation: ' + root
         else:
             s += ', root: <' + root + '>'
+        webfv(webdict, 'root', '<' + root + '>')
     if citation:
         s += ', citation: ' + citation
+        webfv(webdict, 'citation', citation)
     s += '\n'
     if fs:
         sb = fs['sb']
         s += ' subject:'
         s += arg2string(sb)
+        webfv(webdict, 'subject', arg2string(sb, web=True))
         ob = fs.get('ob')
         if ob and ob.get('expl'):
             s += ' object:'
             s += arg2string(ob, True)
+            webfv(webdict, 'object', arg2string(ob, True, web=True))
         s += ' grammar:'
         rl = fs.get('rl')
         tm = fs.get('tm')
         if tm == 'prf':
             s += ' perfective'
+            webfv(webdict, 'TAM', 'perfective')
         elif tm == 'imf':
             s += ' imperfective'
+            webfv(webdict, 'TAM', 'imperfective')
         elif tm == 'j_i':
             s += ' jussive/imperative'
+            webfv(webdict, 'TAM', 'jussive/imperative')
         elif tm == 'ger':
             s += ' gerundive'
+            webfv(webdict, 'TAM', 'gerundive')
         else:
             s += ' present'
+            webfv(webdict, 'TAM', 'present')
         if fs.get('ax'):
             s += ', aux:alle'
+            webfv(webdict, 'auxiliary', 'alle')
         asp = fs.get('as')
         if asp == 'it':
             s += ', iterative'
+            webfv(webdict, 'aspect', 'iterative')
         elif asp == 'rc':
             s += ', reciprocal'
+            webfv(webdict, 'aspect', 'reciprocal')
         vc = fs.get('vc')
         if vc == 'ps':
             s += ', passive'
+            webfv(webdict, 'voice', 'passive')
         elif vc == 'tr':
             s += ', transitive'
+            webfv(webdict, 'voice', 'transitive')
         elif vc == 'cs':
             s += ', causative'
+            webfv(webdict, 'voice', 'causitive')
         if fs.get('rel') or fs.get('neg'):
             if fs.get('rel'):
                 s += ', relative'
+                webfv(webdict, 'relative', True)
                 if rl and rl.get('acc'):
                     s += ', accusative'
+                    webfv(webdict, 'accusative', True)
                 if fs.get('def'):
                     s += ', definite'
+                    webfv(webdict, 'definite', True)
             if fs.get('neg'):
                 s += ', negative'
+                webfv(webdict, 'negative', True)
         s += '\n'
         cj1 = fs.get('cj1')
         cj2 = fs.get('cj2')
@@ -290,33 +340,36 @@ def vb_anal2string(anal):
             if prep:
                 any_affix = True
                 s += ' preposition: ' + prep
+                webfv(webdict, 'preposition', prep)
             if cj1:
                 if any_affix: s += ','
                 s += ' conjunctive prefix: ' + cj1
+                webfv(webdict, 'conjunctive prefix', cj1)
             if cj2:
                 if any_affix: s += ','
                 s += ' conjunctive suffix: ' + cj2
+                webfv(webdict, 'conjunctive suffix', cj2)
             s += '\n'
     return s
 
-def arg2string(fs, obj=False):
+def arg2string(fs, obj=False, web=False):
     '''Convert an argument Feature Structure to a string.'''
-    s = ''
+    s = '' if web else ' '
     if fs.get('p1'):
-        s += ' 1'
+        s += '1'
     elif fs.get('p2'):
-        s += ' 2'
+        s += '2'
     else:
-        s += ' 3'
+        s += '3'
     if fs.get('plr'):
-        s += ', plur'
+        s += ', plural'
     else:
-        s += ', sing'
+        s += ', singular'
     if not fs.get('plr') and (fs.get('p2') or not fs.get('p1')):
         if fs.get('fem'):
-            s += ', fem'
+            s += ', feminine'
         elif not fs.get('frm'):
-            s += ', masc'
+            s += ', masculine'
     if obj:
         if fs.get('p2'):
             if fs.get('frm'):
@@ -326,7 +379,8 @@ def arg2string(fs, obj=False):
                 s += ', prep: -l-'
             else:
                 s += ', prep: -b-'
-    s += '\n'
+    if not web:
+        s += '\n'
     return s
 
 def vb_anal_to_dict(root, fs):
@@ -522,7 +576,7 @@ def list_to_arg(dct, prefix):
         arg['p1'] = False
         arg['p2'] = False
     # Number
-    if number == 'plur':
+    if number == 'plural':
         arg['plr'] = True
     else:
         # Singular the default
@@ -570,7 +624,7 @@ def n_postproc(analysis):
 
 ## Create Language object for Amharic, including preprocessing, postprocessing,
 ## and segmentation units (phones).
-AM = language.Language("Amharic", 'am',
+AM = language.Language("አማርኛ", 'am',
               postproc=lambda form: sera2geez(GEEZ_SERA['am'][1], form, lang='am'),
               preproc=lambda form: geez2sera(GEEZ_SERA['am'][0], form, lang='am', simp=True),
               postpostproc=lambda form: postproc_root(form),
@@ -639,9 +693,9 @@ AM.morphology['v'].citation = lambda root, fss, guess, vc_as: vb_get_citation(ro
 AM.morphology['n'].citation = lambda root, fss, guess, vc_as: n_get_citation(root, fss, guess, vc_as)
 
 ## Functions that convert analyses to strings
-AM.morphology['v'].anal2string = lambda fss: vb_anal2string(fss)
-AM.morphology['n'].anal2string = lambda fss: n_anal2string(fss)
-AM.morphology['cop'].anal2string = lambda fss: cop_anal2string(fss)
+AM.morphology['v'].anal2string = lambda fss, webdict: vb_anal2string(fss, webdict=webdict)
+AM.morphology['n'].anal2string = lambda fss, webdict: n_anal2string(fss, webdict=webdict)
+AM.morphology['cop'].anal2string = lambda fss, webdict: cop_anal2string(fss, webdict=webdict)
 
 ## Postprocessing function for nouns (treats roots differently)
 # AM.morphology['v'].postproc = lambda analysis: vb_postproc(analysis)

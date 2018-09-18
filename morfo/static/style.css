@@ -1,0 +1,558 @@
+/*
+Colors:
+banner background: #ffffff
+letters:
+#c86400
+#009696
+#ff1919
+#0000ff
+c800c8
+*/
+
+body
+{
+	margin-left: 0pt;
+	margin-right: 0pt;
+	margin-top: 12pt;
+	margin-bottom: 12pt;
+	padding-left: 12pt;
+	padding-right: 12pt;
+	padding-top: 0;
+	padding-bottom: 0;
+        font-size: 16px;
+	font-family: verdana, geneva, arial, sans-serif;
+	background-color: #FFF;
+}
+h1,h2,h3 { clear: left; }
+h1
+{
+	font-size: 145%;
+	margin-top: .25em;
+	margin-bottom: 0;
+	border-width: 0px 0px 1px 0px;
+        border-style: solid;
+	border-color: #000000;
+	text-align: left;
+	font-weight: bold;
+	color: #000000;
+	background-color: #ffffff;
+}
+h2
+{
+	font-size: 120%;
+	font-weight: bold;
+	margin-top: .75em;
+	margin-bottom: .35em;
+	background-color: #ffffff;
+	color: #000000;
+	border-width: 0px;
+        border-style: solid;
+	border-color: #009696;
+}
+h3
+{
+	background-color: #ffffff;
+ 	font-size: 110%;
+	font-weight: bold;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	border-width: 0px;
+        border-style: solid;
+	border-color: #ff1919;
+}
+h4
+{
+ 	font-size: 110%;
+	font-weight: bold;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+hr
+{
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000000;
+}
+p
+{
+	margin-top: .5em;
+	margin-bottom: .5em;
+        clear: left;
+}
+p.center
+{
+        margin-top: .5em;
+        margin-bottom: .5em;
+        text-align: center;
+}
+p.left
+{
+        margin-top: .5em;
+        margin-bottom: .5em;
+        text-align: left;
+}
+p.error
+{
+    color: #f00;
+    font-style: italic;
+}
+p.instructions
+{
+    color: #00f;
+    font-style: italic;
+}
+div.user
+{
+    font-size: 110%;
+    margin-top: .75em;
+    margin-bottom: .35em;
+}
+/* New 2018.7.27 */
+table.left
+{
+	table-layout: fixed;
+	margin-left: 0;
+	margin-right: auto;
+	border: 0;
+	padding: 0;
+	border-collapse: collapse;
+}
+table.left tr td
+{
+	vertical-align: top;
+	padding: 0pt;
+}
+
+table.left td p,h1,h2,h3,h4,ul
+{
+	margin-top: 10pt;
+	margin-bottom: 10pt;
+	margin-left: 0pt;
+	margin-right: 0pt;
+	width: auto;
+}
+
+table.left tr td img.banner
+{
+    vertical-align: bottom;
+}
+table.left tr td.menu
+{
+    background-color: #FFFFFF;
+    text-align: center;
+    vertical-align: bottom;
+    padding-bottom: 5px;
+    border-right: 0;
+    margin: 0;
+}
+table.left tr td.menufuzzy
+{
+    background-color: #FFFFFF;
+    color: #999999;
+    text-align: center;
+    vertical-align: bottom;
+    padding-bottom: 5px;
+    border-right: 0;
+    margin: 0;
+}
+table.left tr td.menuuser
+{
+    background-color: #FFFFFF;
+    color: #F5E754;
+    font-size: 110%;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: bottom;
+    padding-bottom: 5px;
+    border-right: 0;
+    margin: 0;
+}
+//table.left tr td.menu a
+//{
+//    background-color: #FFFFFF;
+//    border: 1;
+//    color: #8DEDCD;
+//    font-size: 100%;
+//    text-decoration: none;
+//}
+//table.left tr td.menu a:hover
+//{
+//    color: #F5E754;
+//    background-color: #4B2B17;
+//}
+table.left tr.white
+{
+    background-color: #FFFFFF;
+}
+a.menu
+{
+    border: 1;
+    margin: 1;
+    background-color: #ffffff;
+}
+td.text
+{
+        vertical-align: top;
+        text-align: left;
+        width: 100%;
+/*        border: 1px solid black; */
+}
+#help
+{
+        background-color: #c00;
+        color: #fff;
+        font-family: "Verdana";
+        font-size: 100%;
+        width: 20%
+}
+#help:hover
+{
+        background-color: #f00;
+}
+span.morfo
+{
+    font-weight: bold;
+    background-color: #ffffff;
+}
+span.language
+{
+    font-size: 110%;
+    font-weight: bold;
+    font-family: "arial";
+    background-color: #000000;
+    color: #ff1919;
+}
+span.label
+{
+        font-weight: bold;
+}
+span.cargando
+{
+    font-size: 125%;
+    font-weight: bold;
+    font-style: italic;
+}
+span.username
+{
+    background-color: #4B2B17;
+    color: #F5E754;
+/*    font-style: italic; */
+}
+span.root
+{
+   font-weight: bold;
+   color: #900;
+   border: thin solid;
+}
+#parenthetical
+{
+    font-weight: normal;
+    color: LightGray;
+}
+span.choice
+{
+   font-size: 80%;
+}
+span.instruction
+{
+   font-size: 100%;
+   font-style: italic;
+}
+span.alternar
+{
+    font-size: 90%;
+    cursor: default;
+}
+span.alternar:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+input.text
+{
+        font-family: "Verdana";
+        font-size: 100%;
+        height: 20px;
+	width: 500px;
+}
+#medtext
+{
+        font-family: "Verdana";
+        font-size: 100%;
+        width: 40%
+}
+#button
+{
+        background-color: #009696;
+        color: #ffffff;
+        font-family: "Verdana";
+        font-size: 110%;
+/*        align: center; */
+        width: 200px
+}
+#mainbutton
+{
+        background-color: #009696;
+        color: #ffffff;
+        font-family: "Verdana";
+	font-weight: bold;
+        font-size: 110%;
+/*        align: center; */
+        width: 200px
+}
+#button:hover, #button:active, #mainbutton:hover, #mainbutton:active, #widebutton:hover, #narrowbutton:hover
+{
+/*        background-color: #8DFFEE; */
+        background-color: #000000;
+        color: #ffffff;
+}
+#medbutton
+{
+        background-color: #00a;
+        color: #fff;
+        font-family: "Verdana";
+        font-size: 100%;
+        width: 30%
+}
+#medbutton:hover
+{
+        background-color: #00f;
+}
+#widebutton
+{
+        background-color: #009696;
+        color: #ffffff;
+        font-family: "Verdana";
+        font-size: 100%;
+        align: center;
+        width: 250px;
+}
+#narrowbutton
+{
+        background-color: #8DEDCD;
+        color: #4B2B17;
+        font-family: "Verdana";
+        font-size: 100%;
+        align: center;
+        width: 100px;
+}
+
+#altbutton
+{
+        color: #ffffff;
+        background-color: #c800c8;
+        font-family: "Verdana";
+        font-size: 100%;
+        width: 250px;
+        align: center;
+}
+#altbutton:hover
+{
+        color: #ffffff;
+        background-color: #000000;
+/*        background-color: #FFFF33; */
+}
+#narrowlbbutton
+{
+        color: #00f;
+        font-family: "Verdana";
+        font-size: 100%;
+        width: 20%;
+        align: center;
+}
+#narrowlbbutton:hover
+{
+        background-color: #ccf;
+}
+table.title
+{
+    margin-top: .75em;
+    margin-bottom: .25em;
+    margin-right: 0px;
+    margin-left: 0px;
+    border: 0px;
+    padding: 0px;
+    width: 100%;
+    border-spacing: 0;
+}
+table.title tr
+{
+    border: 0px;
+}
+td.titleleft
+{
+    text-align: left;
+    padding: 0px;
+    border: 0px;
+    width: 70%;
+    color: #000;
+    background-color: #8DEDCD;
+    font-size: 130%;
+    font-weight: bold;
+}
+td.titleright
+{
+    text-align: center;
+    font-size: 110%;
+    padding: 0px;
+    border: 0px;
+    width: 30%;
+    background-color: #000;
+    color: #8DEDCD;
+}
+input.menu
+{
+    background-color: #FFFFFF;
+    color: #0000ff;
+    font-family: "Verdana";
+    font-size: 100%;
+    text-align: center;
+    padding-right: 10pt;
+    padding-bottom: 0;
+    padding-top: 0;
+    border: 0;
+    cursor: pointer;
+}
+input.menu:hover, input.menu:active, input.menu:focus
+{
+    color: #F5E754;
+    border: none;
+    outline: none;
+}
+button.menu
+{
+    background-color: #FFFFFF;
+    color: #0000ff;
+    font-family: "Verdana";
+    font-size: 100%;
+    text-align: center;
+    padding: 0;
+    border: 1;
+    margin: 0;
+    cursor: pointer;
+}
+button.menu:hover, button.menu:active, button.menu:focus
+{
+    color: #ff1919;
+//    border: 0;
+    outline: none;
+}
+button.menufixed
+{
+    background-color: #FFFFFF;
+    color: #c86400;
+    font-family: "Verdana";
+    font-size: 100%;
+    text-align: center;
+    padding: 0;
+    border: 1;
+    margin: 0;
+}
+/* Help windows */
+h4.help
+{
+    font-size: 110%;
+    font-weight: bold;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+h5.help
+{
+    font-size: 100%;
+    font-weight: normal;
+    font-style: italic;
+    margin-top: .25em;
+    margin-bottom: .1em;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+p.help
+{
+    margin-top: .5em;
+    margin-bottom: .25em;
+    margin-left: 8px;
+    margin-right: 8px;
+    clear: left;
+}
+ol.help
+{
+    margin-top: .1em;
+    margin-bottom: .1em;
+}
+/* Dropdown menus */
+.despleg-wrap {
+    float: left;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #c86400;
+    color: #8DEDCD;
+    padding: none;
+    margin: 0;
+}
+.despleg {
+    position: relative;
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0000ff;
+    font-family: "Verdana";
+    font-size: 100%;
+    text-align: right;
+    padding-right: 4pt;
+    padding-bottom: 0;
+    cursor: pointer;
+    border: 1;
+}
+.despleg:hover, .despleg:active, .despleg:focus
+{
+    color: #ff1919;
+//    border: 0;
+    outline: none;
+}
+.contenido-despleg {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    text-align: left;
+    overflow: auto;
+    padding: 5px 0px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.opinic {
+    color: black;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+}
+.contenido-despleg span {
+    color: black;
+    padding: 3px 7px;
+    text-decoration: none;
+    display: block;
+}
+span.brown
+{
+    color: #c86400;
+}
+span.green
+{
+    color: #009696;
+}
+span.red
+{
+    color: #ff1919;
+}
+span.blue
+{
+    color: #0000ff;
+}
+span.magenta
+{
+    color: #c800c8;
+}
+.show {display: block;}

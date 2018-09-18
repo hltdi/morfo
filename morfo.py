@@ -89,7 +89,7 @@ def recompile(abbrev, pos, gen=False, phon=False, segment=False, guess=False,
 
 def make_casc(name):
     import os
-    filename = os.path.join("l3/languages/test/cas/", name + '.cas')
+    filename = os.path.join("morfo/L/test/cas/", name + '.cas')
     with open(filename, encoding='utf8') as infile:
         castext = infile.read()
         casc = morfo.fst.FSTCascade.parse("simple", castext,
@@ -146,38 +146,6 @@ def casc_gen(casc, string, fs, start_i, end_i=0, trace=0):
             print(s)
     else:
         return casc[start_i].inverted().transduce(s, f, seg_units=seg_units, timeout=10)
-
-def es_simp_dict():
-    return morfo.morpho.FeatStruct.make_simp_dict(
-        {"[+1,-2,-p]": "1s",
-         # this should go away
-         "[+1,-p]": "1s",
-         "[-1,+2,-p]": "2s",
-         "[-1,-2,-p]": "3s",
-         "[-2,-p]": "13s",
-         "[+1,-2,+p]": "1p",
-         "[+1,+p]": "1p",
-         "[-1,+2,+p]": "2p",
-         "[-1,-2,+p]": "3p",
-         # this should go away
-         "[-1,+p]": "23p"}
-        )
-
-def ep_short():
-    morfo.anal_file('es', "../LingData/es/Europarl/es-en/es-v7-100.tok",
-                 "../LingData/es/Europarl/es-en/es-v7-100.anl",
-                 sep_punc=False, minim=True,
-                 feats=['n', 'sj', 'tm'],
-                 simpfeats=es_simp_dict())
-    
-def anal_europarl(suffix = ''):
-#                  , start=0, nlines=500000, out='0-500'):
-    morfo.anal_file('es', "../LingData/es/Europarl/es-en/es-v7-" + suffix + '.tok',
-                 "../LingData/es/Europarl/es-en/es-v7-" + suffix + '.anl',
-#                 nlines=nlines, start=start,
-                 sep_punc=False, minim=True, lower_all=True,
-                 feats=['n', 'g', 'sj', 'tm'],
-                 simpfeats=es_simp_dict())
 
 def main():
     pass

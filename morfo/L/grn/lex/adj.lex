@@ -556,7 +556,6 @@ moĩmby
 myasãimbyre
 myatyrõmbyre
 mácho
-oguatáva
 oguevíva
 ohechakuaáva
 oikereíva

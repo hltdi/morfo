@@ -28,6 +28,11 @@ from .geez import *
 ### Various functions that will be values of attributes of Tigrinya Morphology
 ### and POSMorphology objects.
 
+def webfv(webdict, feature, value):
+    """Add value to feature in webdict if there is one."""
+    if webdict != None:
+        webdict[feature] = value
+
 def vb_get_citation(root, fs, simplified=False, guess=False, vc_as=False):
     '''Return the canonical (prf, 3sm) form for the root and language.FeatStructs
     in language.FeatStruct set fss.
@@ -55,7 +60,7 @@ def vb_get_citation(root, fs, simplified=False, guess=False, vc_as=False):
         fs.update({'vc': 'ps'})
         fs.freeze()
         citation = TI.morphology['v'].gen(root, fs, from_dict=False,
-                                           simplified=simplified, guess=guess)
+                                          simplified=simplified, guess=guess)
         if citation:
             result = citation[0][0]
     return result
@@ -70,7 +75,7 @@ def orthographize(word):
     word = word.replace('_', '').replace('I', '')
     return word
 
-def cop_anal2string(anal):
+def cop_anal2string(anal, webdict=None):
     '''Convert a copula analysis to a string.
 
     anal is ("cop", "Iyyu", "Iyyu", gramFS)
@@ -83,7 +88,7 @@ def cop_anal2string(anal):
     if fs:
         sb = fs['sb']
         s += ' subject:'
-        s += arg2string(sb)
+        s += arg2string(sb, web=webdict)
         anygram = False
         if fs.get('neg'):
             s += ' grammar: negative'
@@ -102,7 +107,7 @@ def cop_anal2string(anal):
             s += ' conjunctive suffix: ' + cj + '\n'
     return s
 
-def vb_anal2string(anal):
+def vb_anal2string(anal, webdict=None):
     '''Convert a verb analysis to a string.
 
     anal is ("(*)v", root, citation, gramFS)
@@ -121,11 +126,11 @@ def vb_anal2string(anal):
     if fs:
         sb = fs['sb']
         s += ' subject:'
-        s += arg2string(sb)
+        s += arg2string(sb, web=webdict)
         ob = fs.get('ob')
         if ob and ob.get('xpl'):
             s += ' object:'
-            s += arg2string(ob, True)
+            s += arg2string(ob, True, web=webdict)
         s += ' grammar:'
         tm = fs.get('tm')
         if tm == 'prf':
@@ -173,15 +178,15 @@ def vb_anal2string(anal):
             s += '\n'
     return s
 
-def arg2string(fs, obj=False):
+def arg2string(fs, obj=False, web=False):
     '''Convert an argument Feature Structure to a string.'''
-    s = ''
+    s = '' if web else ' '
     if fs.get('p1'):
-        s += ' 1'
+        s += '1'
     elif fs.get('p2'):
-        s += ' 2'
+        s += '2'
     else:
-        s += ' 3'
+        s += '3'
     if fs.get('plr'):
         s += ', plur'
     else:
@@ -194,7 +199,8 @@ def arg2string(fs, obj=False):
     if obj:
         if fs.get('prp'):
             s += ', prep'
-    s += '\n'
+    if not web:
+        s += '\n'
     return s
 
 def ti_preproc(form):
@@ -500,7 +506,7 @@ def dict_to_anal_old(root, dct, freeze=True):
 
 ## Create Language object for Tigrinya, including preprocessing, postprocessing,
 ## and segmentation units (phones).
-TI = language.Language("Tigrinya", 'Ti',
+TI = language.Language("ትግርኛ", 'Ti',
                        postproc=lambda form: sera2geez(GEEZ_SERA['ti'][1], form, lang='ti'),
                        preproc=lambda form: geez2sera(GEEZ_SERA['ti'][0], form, lang='ti'),
                        seg_units=[["a", "e", "E", "i", "I", "o", "u", "@", "A", "w", "y", "'", "`", "|", "_"],
@@ -548,11 +554,11 @@ TI.morphology['cop'].defaultFS = \
     language.FeatStruct("[cj2=None,-neg,ob=[-xpl],-rel,sb=[-fem,-p1,-p2,-plr,-frm],-sub,-yn,tm=prs]")
 
 ## Functions that return the citation forms for words
-TI.morphology['v'].citation = lambda root, fss, guess, vc_as: vb_get_citation(root, fss, guess, vc_as)
+TI.morphology['v'].citation = lambda root, fss, guess: vb_get_citation(root, fss, guess)
 
 ## Functions that convert analyses to strings
-TI.morphology['v'].anal2string = lambda fss: vb_anal2string(fss)
-TI.morphology['cop'].anal2string = lambda fss: cop_anal2string(fss)
+TI.morphology['v'].anal2string = lambda fss, webdict: vb_anal2string(fss, webdict=webdict)
+TI.morphology['cop'].anal2string = lambda fss, webdict: cop_anal2string(fss, webdict=webdict)
 
 ## "Interesting" features
 # Stem

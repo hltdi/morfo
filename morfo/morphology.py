@@ -1333,9 +1333,9 @@ class POSMorphology:
         fs = FeatStruct(dct)
         return fs
 
-    ## Pretty printing analysis
+    ## Pretty printing and web dictionary analysis
 
-    def pretty_anal(self, anal):
+    def pretty_anal(self, anal, webdict=None):
         root = anal[1]
         fs = anal[3]
         # Leave out the part of speech for now
@@ -1343,7 +1343,12 @@ class POSMorphology:
                                     ['POS', self.pos, 'root', root],
 #                                    ['root', root],
                                     self.language.tlanguages)
-        s += self.pretty_fs(fs)
+        if webdict != None:
+            webdict['POS'] = self.pos
+            webdict['root'] = root
+        s += self.pretty_fs(fs, webdict=webdict)
+#        if webdict:
+#            return webdict
         return s
 
     def print_anal(self, anal, file=sys.stdout):
@@ -1351,10 +1356,10 @@ class POSMorphology:
         s = self.pretty_anal(anal)
         print(s, file=file)
 
-    def pretty_fs(self, fs, printit=False, file=sys.stdout):
+    def pretty_fs(self, fs, printit=False, file=sys.stdout, webdict=None):
         '''Print out an FS.'''
         s = ''
-        expansions, feats_used = self.expfv(fs)
+        expansions, feats_used = self.expfv(fs, webdict=webdict)
         for exp in expansions:
             s += '  {}\n'.format(exp)
         if feats_used is not True:
@@ -1364,23 +1369,25 @@ class POSMorphology:
                 if self.excl(feat, val, feats_used):
                     continue
                 if isinstance(val, FeatStruct):
-                    abbrevs2, feats_used2 = self.expfv(val)
+                    abbrevs2, feats_used2 = self.expfv(val, top=feat, webdict=webdict)
                     fvstring = abbrevs2
                     if feats_used2 is not True:
                         for feat2, val2 in val.items():
                             if self.excl(feat2, val2, feats_used2):
                                 continue
-                            fvstring.append(self.fval_string(feat2, val2))
+                            fvstring.append(self.fval_string(feat2, val2, webdict=webdict))
                     if fvstring:
                         fvstring = ', '.join(fvstring)
                         s += '  {} = {}\n'.format(self.exab(feat), fvstring)
                 else:
-                    s += '  {}\n'.format(self.fval_string(feat, val))
+                    if webdict != None:
+                        webdict[self.exab(feat)] = val
+                    s += '  {}\n'.format(self.fval_string(feat, val, webdict=webdict))
         if printit:
             print(s, file=file)
         return s
 
-    def expfv(self, fs):
+    def expfv(self, fs, top=None, webdict=None):
         '''Find feature value sets that have special names (expansions).'''
         expansions = []
         feats_used = []
@@ -1394,6 +1401,8 @@ class POSMorphology:
                 # Found a fv combination with priority; look up its expansion
                 # in fv_abbrevs
                 expansion = some(lambda x: x[1] if x[0] == fvs else False, self.fv_abbrevs)
+                if webdict != None:
+                    webdict[self.exab(fvs[0][0])] = expansion
                 return [expansion], True
         for fvs, exp in self.fv_abbrevs:
             match = True
@@ -1406,8 +1415,20 @@ class POSMorphology:
             if match:
                 if exp:
                     # The expansion may be empty
+                    # Use the top feature if there is one, otherwise first of features in fvs
+                    if not top:
+                        if webdict != None:
+                            webdict[self.exab(fvs[0][0])] = exp
+                        exp = "{} = {}".format(fvs[0][0], exp)
+                    elif webdict != None:
+                        if top in webdict:
+                            webdict[self.exab(top)] += ", " + exp
+                        else:
+                            webdict[self.exab(top)] = exp
                     expansions.append(exp)
                 feats_used.extend([fv[0] for fv in fvs])
+#        if expansions:
+#            print("top {}, fs {}, expansions {}, feats_used {}".format(top, fs.__repr__(), expansions, feats_used))
         return expansions, feats_used
 
     def excl(self, feat, val, feats_used):
@@ -1426,7 +1447,9 @@ class POSMorphology:
         """Just a short form for expand_abbrev."""
         return self.feat_abbrevs.get(string, string)
 
-    def fval_string(self, feat, val):
+    def fval_string(self, feat, val, webdict=None):
+        if webdict != None:
+            webdict[self.exab(feat)] = self.exab(val)
         if isinstance(val, bool):
             return '{}{}'.format('+' if val else '-', self.exab(feat))
         else:

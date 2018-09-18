@@ -464,7 +464,7 @@ class Language:
                                     f = self.proc_feat_string(feat2, current_abbrev, current_excl, current_lex_feats,
                                                               current_fv_dependencies)
                                     v = self.proc_value_string(val2, f, current_abbrev, current_excl,
-                                                               current_fv_dependencies)
+                                                               current_fv_dependencies, current_fv_abbrev)
                                     complex_fvs.append((f, v))
                         if len(vals) == 1:
                             current_feats.append((complex_feat, complex_fvs))
@@ -486,14 +486,14 @@ class Language:
                                         f = self.proc_feat_string(feat2, current_abbrev, current_excl, current_lex_feats,
                                                                   current_fv_dependencies)
                                         v = self.proc_value_string(val2, f, current_abbrev, current_excl,
-                                                                   current_fv_dependencies)
+                                                                   current_fv_dependencies, current_fv_abbrev)
                                         complex_fvs.append((f, v))
                         elif complex_feat:
                             # A single feature-value pair
                             f = self.proc_feat_string(feat, current_abbrev, current_excl, current_lex_feats,
                                                       current_fv_dependencies)
                             v = self.proc_value_string(val, f, current_abbrev, current_excl,
-                                                       current_fv_dependencies)
+                                                       current_fv_dependencies, current_fv_abbrev)
                             complex_fvs.append((f, v))
                             current_feats.append((complex_feat, complex_fvs))
                             complex_feat = None
@@ -514,7 +514,7 @@ class Language:
                                     current_value_string = val
                                 else:
                                     v = self.proc_value_string(val, current_feat, current_abbrev, current_excl,
-                                                               current_fv_dependencies)
+                                                               current_fv_dependencies, current_fv_abbrev)
                                     current_feats.append((current_feat, v))
 
                 else:
@@ -525,7 +525,7 @@ class Language:
                     vals = val.split('|')
                     if vals[-1].strip():
                         v = self.proc_value_string(current_value_string, current_feat, current_abbrev, current_excl,
-                                                   current_fv_dependencies)
+                                                   current_fv_dependencies, current_fv_abbrev)
                         current_feats.append((current_feat, v))
                         current_value_string = ''
 
@@ -612,11 +612,14 @@ class Language:
 
         return feat
 
-    def proc_value_string(self, value_string, feat, abbrev_dict, excl_values, fv_dependencies):
+    def proc_value_string(self, value_string, feat, abbrev_dict, excl_values, fv_dependencies,
+                          fv_abbrev):
         '''value_string is a string containing values separated by |.'''
+#        print("Processing feat {}; value string {}, fv abbrev {}".format(feat, value_string, fv_abbrev))
         values = [v.strip() for v in value_string.split('|')]
         res = []
         prefix = ''
+        name = ''
         for value in values:
             if not value:
                 continue
@@ -626,7 +629,6 @@ class Language:
                 m = ABBREV_NAME_RE.match(value)
                 if m:
                     prefix, value, name, depend = m.groups()
-                    abbrev_dict[value] = name
                 else:
                     m = NAME_RE.match(value)
                     prefix, value, depend = m.groups()
@@ -644,6 +646,11 @@ class Language:
                     value = FeatStruct('[]')
                 elif value.isdigit():
                     value = int(value)
+
+                # Value abbrev
+                if name:
+                    fv_abbrev.append(([[feat, value]], name))
+#                    abbrev_dict[value] = name
 
                 if '*' in prefix:
                     excl_values.append((feat, value))
@@ -1035,7 +1042,8 @@ class Language:
                     s += '  {} {} {}\n'.format(anal[0], anal[1].__repr__(), anal[2])
         return s
 
-    def analyses2string(self, word, analyses, form_only=False, word_sep='\n'):
+    def analyses2string(self, word, analyses, form_only=False, word_sep='\n',
+                        webdicts=None):
         '''Convert a list of analyses to a string.'''
         if form_only:
             if analyses:
@@ -1047,19 +1055,21 @@ class Language:
         if not analyses:
             s += '?'
         s += Language.T.tformat('{}: {}\n', ['word', word], self.tlanguages)
-#        s += self.get_trans('word') + ': ' + word + '\n'
-# self.msgs.get('Word', 'Word') + ': ' + word + '\n'
         for analysis in analyses:
             pos = analysis[0]
             if pos:
+                webdict = None
                 pos = pos.replace('?', '')
+                if webdicts != None:
+                    webdict = {}
+                    webdicts.append(webdict)
                 if pos in self.morphology:
                     if self.morphology[pos].anal2string:
-                        s += self.morphology[pos].anal2string(analysis)
+                        s += self.morphology[pos].anal2string(analysis, webdict=webdict)
                     else:
-                        s += self.morphology[pos].pretty_anal(analysis)
+                        s += self.morphology[pos].pretty_anal(analysis, webdict=webdict)
                 elif self.morphology.anal2string:
-                    s += self.morphology.anal2string(analysis)
+                    s += self.morphology.anal2string(analysis, webdict=webdict)
         return s
 
     def analysis2dict(self, analysis, record_none=False, ignore=[]):
@@ -1086,13 +1096,11 @@ class Language:
         else:
             dct[form] = [(root, fs)]
 
-    def anal_word(self, word, fsts=None,
-                  guess=True, only_guess=False,
-                  phon=False, segment=False,
+    def anal_word(self, word, fsts=None, guess=True, only_guess=False,
+                  phon=False, segment=False, webdicts=None,
                   root=True, stem=True, citation=True, gram=True,
                   get_all=True, to_dict=False, preproc=False, postproc=False,
-                  cache=True,
-                  no_anal=None, string=False, print_out=False,
+                  cache=True, no_anal=None, string=False, print_out=False,
                   rank=True, report_freq=True, nbest=100,
                   only_anal=False):
         '''Analyze a single word, trying all existing POSs, both lexical and guesser FSTs.
@@ -1118,8 +1126,7 @@ class Language:
 #            print("Found cached anal for {}".format(word))
             analyses = self.proc_anal(word, cached, None,
                                       show_root=root, citation=citation, stem=stem,
-                                      segment=segment,
-                                      guess=False,
+                                      segment=segment, guess=False,
                                       postproc=postproc, gram=gram,
                                       freq=rank or report_freq)
         else:
@@ -1170,8 +1177,7 @@ class Language:
                                 to_cache.extend(preanal)
                             analyses.extend(self.proc_anal(form, preanal, pos,
                                                            show_root=root, citation=citation, stem=stem,
-                                                           segment=segment,
-                                                           guess=False,
+                                                           segment=segment, guess=False,
                                                            postproc=postproc, gram=gram,
                                                            freq=rank or report_freq))
                 if not analyses or get_all:
@@ -1221,9 +1227,9 @@ class Language:
             analyses.sort(key=lambda x: -x[-1])
         # Select the n best analyses
         analyses = analyses[:nbest]
-        if print_out:
+        if print_out or webdicts != None:
             # Print out stringified version
-            print(self.analyses2string(word, analyses, form_only=segment or not gram))
+            print(self.analyses2string(word, analyses, form_only=segment or not gram, webdicts=webdicts))
         elif not string:
             analyses =  [(anal[1], anal[-2], anal[-1]) if len(anal) > 2 else (anal[1],) for anal in analyses]
 
@@ -1331,7 +1337,7 @@ class Language:
 #                        anal = count_anal[1:]
                         if gram:
                             if not raw:
-                                anal = [(a[0], posmorph.anal2string(a[1:])) for a in anal]
+                                anal = [(a[0], posmorph.anal2string(a[1:], None)) for a in anal]
                             else:
                                 anal = [(a[0], a[2], a[4]) for a in anal]
                         else:

@@ -46,7 +46,7 @@ feats:
   xf~: neg = neg
   xf: mod = mod
   xf~: inter = inter
-  xf~: tm = tmp
+  xf~: tm = suf_tmp
   xf~: asp = asp
   xf~: rel = rel
 #  xf~: relv = rel
@@ -55,8 +55,6 @@ feats:
   xf~: grd = grd
   xf~: pp = posp
   xf~: misc = misc
-
-#  pregrd = *False | True
 
   ab: ind = indic
   ab: imp = imper
@@ -73,7 +71,6 @@ feats:
   ab: clu = clus
   ab: None = X
 
-  -t = None
 #  +1,-2,-p = 1 persona singular
 #  -1,+2,-p = 2 persona singular
 #  -1,-2 = 3 persona
@@ -81,7 +78,8 @@ feats:
 #  +1,-2,+p = 1 persona exclusiva
 #  -1,+2,+p = 2 persona plural
 
-  ojxpl = *False | True
+# +- chupe(kuéra); leave out of defaults so that both are possible when not specified
+#  ojxpl = *False | True
 
   med = *False | True
   # False = exlusive (ore); True = inclusive (ñande)
@@ -101,6 +99,9 @@ feats:
 
   *%cat (categoría) = a | che | adj
   *%subcat (subcategoría) = 0 | i | gue
+  *%trans = False | True
+  *%pregrd = False | True
+  *%prepregrd = *False | True
 
   %t (traducción de raíz) = es = 
   
@@ -112,10 +113,10 @@ feats:
   # only relevant for future tense
   prob (probabilidad) = None | hi | lo
 
-  ps (pers suj) = *3 | 2 | 1
+  ps (pers suj) = 3 | 2 | 1
   po (pers obj) = *3 | 2 | 1
-  ns (num suj) = *0 | 1
-  no (num obj) = *0 | 1
+  ns (num suj) = 0 (sing) | 1 (plur)
+  no (num obj) = *0 (sing) | 1 (plur)
 
 #  sj (suj) = 1 = False | True;
 #             2 = False | True;
@@ -150,26 +151,29 @@ feats:
 #  tm (tmp) = None | vaekue | vaerã | va | akue | mi | ne | arã | moã | kuri | rakae | ta | chéne
 #  tm (tmp) = None | vaekue | vaerã | akue | mi | ne | arã | moã | kuri | rakae | ta
 
-  impopt = mi = False | True;
-           ke = False | True;
-           na = False | True
+  impopt = mi = *False | True;
+           ke = *False | True;
+           na = *False | True;
+	   mbae = *False | True;
+	   mo = *False | True
 
   rel (relativo) = *None | sjoj | obl
 
   pp (pospos) = *None | peve | jave | ramo | rire | haguã | vo | gui | guive | pe | re | icha | vove | rangue | vove | kuevo
 
-  asp = va = False | True;
-        ñepyrũ = False | True;
-	jevy = False | True;
-	gueteri = False | True;
-	ramo = False | True;
-	prf = False | True;
-        mante = False | True;
-        katu = False | True;
-        prg = False | True;
-        hikóni = False | True;
-	ramo = False | True;
-	vol = False | True
+  asp = va = *False | True;
+        ñepyrũ = *False | True;
+	jevy = *False | True;
+	gueteri = *False | True;
+	ramo = *False | True;
+	prf = *False | True;
+        mante = *False | True;
+        katu = *False | True;
+        prg = *False | True;
+        hikóni = *False | True;
+	ramo = *False | True;
+	vol = *False | True;
+	rae = *False | True
  
   misc = se    = False | True;
          rei   = False | True;
@@ -197,7 +201,7 @@ feats:
   pos: n tero
 
   xf~: der = der
-  xf~: n = num
+#  xf~: n = num
   xf~: poses = poses
   xf~: caso = caso
   xf~: dim = dim
@@ -220,11 +224,13 @@ feats:
   ab: cp = cluposes
   ab: None = mba'eve
 
+  pl (num) = *False (sing) | True (plur)
+
 #  pp (pers poses) = *3 | 2 | 1
 #  np (num poses) = *0 | 1
 
   inter = *False | True
-  neg = *False | True
+#  neg = *False | True
   n (num) = *0 | 1
   conjet = *False | True
   adj = *False | True
@@ -236,35 +242,39 @@ feats:
 
   tm = None | kue | re | rã | rangue | akue
 
-  der = ha = False | True;
-        hára = False | True;
-        py = False | True;
-        kue = False | True;
-        re = False | True;
-        rã = False | True;
-        je = False | True
+  der = ha = *False | True;
+        hára = *False | True;
+        py = *False | True;
+        kue = *False | True;
+        re = *False | True;
+        rã = *False | True;
+        je = *False | True
 
-  asp = ma = False | True;
-        nte = False | True;
-        mante = False | True;
-        manterei = False | True;
-        katu = False | True;
-        voi = False | True;
-        ndaje = False | True;
-        niko = False | True;
-        ngau = False | True;
-        nipo = False | True
+  asp = ma = *False | True;
+        nte = *False | True;
+        mante = *False | True;
+        manterei = *False | True;
+        katu = *False | True;
+        voi = *False | True;
+        ndaje = *False | True;
+        niko = *False | True;
+        ngau = *False | True;
+        nipo = *False | True
 
   caso = *None|pe|peve|gui|guive|re|vo|icha|ichagua|guy|guype|gua|pegua|ygua|ndi|pype|ypype|ari|vove
 
   grd = *None | ve | ive | ete | eterei | rasa | etereirasa
  
-#  poses (poses) = *None | ext | int
-  poses (poses) = pp = 0 | 3 | 2 | 1;
-                  np = 0 | 1;
-		  ext = True | False
+  poses (poses) = pp = *0 | 3 (3 pers) | 2 (2 pers) | 1 (1 pers);
+		  ext = *True | False (internal)
 # no default for clusivity?		  
 #		  cp = True | False
+
+  *%pregrd = False | True
+  *%prepregrd = *False | True
+  *%c = *False | True
+  *%anim = *False | True
+  *%subcat (subcategoría) = pre = *False | True; suf = *False | True
 
   %t (traducción de raíz) = es = 
 

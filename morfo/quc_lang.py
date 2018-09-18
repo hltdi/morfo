@@ -1,21 +1,23 @@
 """
-This file is part of Morpho.
+This file is part of morfo.
 
-    Morpho is free software: you can redistribute it and/or modify
+    Copyleft 2018. PLoGS and Michael Gasser.
+
+    morfo is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    Morpho is distributed in the hope that it will be useful,
+    morfo is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Morpho.  If not, see <http://www.gnu.org/licensQU/>.
+    along with morfo.  If not, see <http://www.gnu.org/licensQU/>.
 
 ------------------------------------------------------
-Author: Michael Gasser <gasser@cs.indiana.edu>
+Author: Michael Gasser <gasser@indiana.edu>
 
 Create Language, Morphology, and POSMorphology objects for K'iche'.
 """
@@ -38,7 +40,7 @@ def v_get_citation(root, fs, guess=False):
     if citation:
         return citation[0][0]
 
-def v_anal2string(anal):
+def v_anal2string(anal, webdict=None):
     '''Convert a verb analysis to a string.
 
     anal is ("(*)v", root, citation, gramFS)
@@ -61,11 +63,11 @@ def v_anal2string(anal):
     if fs:
         abs = fs['ab']
         s += '  absolutivo:'
-        s += arg2string(abs)
+        s += arg2string(abs, web=webdict != None)
         erg = fs.get('er')
         if erg and erg.get('xpl'):
             s += '  ergativo:'
-            s += arg2string(erg, True)
+            s += arg2string(erg, True, web=webdict != None)
         s += '  otras propiedades:'
         tm = fs.get('tam')
         if tm.get('cmp'):
@@ -108,26 +110,27 @@ def v_anal2string(anal):
         s += '\n'
     return s
 
-def arg2string(fs, erg=False):
+def arg2string(fs, erg=False, web=False):
     '''Convert an argument Feature Structure to a string.'''
-    s = ''
+    s = '' if web else ' '
     plr = fs.get('plr')
     p1 = fs.get('p1')
     p2 = fs.get('p2')
     fml = fs.get('fml')
     if p1:
-        s += ' 1'
+        s += '1'
     elif p2:
-        s += ' 2'
+        s += '2'
         if fml:
-            s += ', frml'
+            s += ', formal'
     else:
-        s += ' 3'
+        s += '3'
     if plr:
-        s += ', plur'
+        s += ', plural'
     else:
-        s += ', sing'
-    s += '\n'
+        s += ', singular'
+    if not web:
+        s += '\n'
     return s
 
 def agr_to_list(agr, cat):
@@ -544,10 +547,10 @@ KI.morphology['v'].citationFS = \
                             + "ab=[-p1,-p2,-plr,-frm],er=[-p1,-p2,-plr,-frm]]")
 
 ## Functions that return the citation forms for words
-KI.morphology['v'].citation = lambda stem, fss, simplified, guess, ignore: v_get_citation(stem, fss, guess)
+KI.morphology['v'].citation = lambda stem, fss, simplified, guess: v_get_citation(stem, fss, guess)
 
 ## Functions that convert analysQU to strings
-KI.morphology['v'].anal2string = lambda fss: v_anal2string(fss)
+KI.morphology['v'].anal2string = lambda fss, webdict: v_anal2string(fss, webdict=webdict)
 
 ## Test sets
 

@@ -1,0 +1,365 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type=text/css href="{{url_for('static', filename='style.css')}}" />
+
+<style type="text/css">
+div#palabra
+{
+    font-family: "Verdana";
+    font-size: {% if tpalabra %} {{tpalabra}} {% else %} 130% {% endif %};
+    font-weight: normal;
+    resize: none;
+    padding: 8px 8px;
+    margin: 0px 0px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 32pt;
+    white-space: normal;
+    border: thin solid;
+}
+span.lengua
+{
+    font-size: 120%;
+    font-weight: bold;
+}
+textarea.raiz
+{
+    font-family: "Verdana";
+    resize: none;
+    width: 100%;
+    height: 25px;
+    font-size: 100%;
+    padding: 4px 4px;
+    margin: 10px 0px 6px 0px;
+}
+span.featlabel
+{
+    font-weight: bold;
+    font-size: 100%;
+}
+.btndesplegable {
+    font-family: "Verdana";
+    background-color: #666666;
+    color: white;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    margin: none;
+    border: none;
+}
+
+.opcion {
+    font-size: 100%;
+    cursor: pointer;
+}
+
+.desplegable {
+    position: relative;
+    display: inline-block;
+}
+
+.contenido-desplegable {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    padding: 4px 4px;
+    box-shadow: 0px 8px 16px 8px rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+.show {display: block;}
+
+td.instruc
+{
+   vertical-align: top;
+}
+div.instruc
+{
+   vertical-align: top;
+   line-height: 1.1;
+   width: 100%;
+   font-family: "Verdana";
+   font-size: 100%;
+   border: none;
+   margin: none;
+}
+
+textarea#comment
+{
+   font-family: "Verdana";
+   font-size: 100%;
+   width: 380px;
+   height: 50px;
+}
+</style>
+
+<title>Mainumby: un Ayudante para la Traducción Castellano-Guaraní</title>
+
+</head>
+
+<body>
+
+<table class='left'>
+<form id='form' name="Form1" method=POST>
+
+<tr class="brown">
+    <td class="title">
+    <a href="base">
+    <img class='banner' src="{{url_for('static',
+      filename='banner_logo.png')}}" alt="" width="315px"
+      height="56px" />
+    </a>
+    </td>
+
+    <td class="title" style="width: 490px"></td>
+
+    <td class="menu" style="width: 250px">
+      <div class='despleg-wrap'>
+      <button type="button" class="despleg" onclick="mostrarDespleg()">SELECCIONAR IDIOMA ▾</button>
+      <div id="menudespleg" class="contenido-despleg">
+        <span class='opinic' onclick="idioma('spa')">ESPAÑOL</span>
+	<span class='opinic' onclick="idioma('grn')">GUARANÍ</span>
+	<span class='opinic' onclick="idioma('qu')">QHICHWA</span>
+	<span class='opinic' onclick="idioma('quc')">K'ICHE'</span>
+	<span class='opinic' onclick="idioma('om')">AFAAN OROMOO</span>
+	<span class='opinic' onclick="idioma('am')">አማርኛ</span>
+	<span class='opinic' onclick="idioma('ti')">ትግርኛ</span>
+      </div>
+      </div>
+    </td>
+    {% if user %}
+    <td class="menuuser" style="width: 180px">{{ user }}</td>
+    {% else %}
+    <td class="menu" style="width: 180px">
+       <button class="menu" onclick="ingresar()">INICIAR SESIÓN</button>
+    </td>
+    {% endif %}
+    <td class="menu" style="width: 135px"><button class="menu"
+      onclick="mostrarAyuda();">AYUDA</button></td>
+    <td class="menu" style="width: 130px">
+      <button class="menu" onclick="contacto()">CONTACTO</button>
+    </td>
+
+    <input type="hidden" name="ayuda" value="">
+    <input type="hidden" name="modo" value="ora">
+</tr>
+</form>
+
+</table>
+<hr>
+
+<p id="error" class="error">
+</p>
+
+<h1>Análisis morfológico</h1>
+
+<table class='left'>
+
+<!--  
+  <tr>
+    <td style="width: 600px">
+      <span class="lengua">Castellano</span>
+    </td>
+    <td style="width: 25px"></td>
+    <td style="width: 600px">
+      <span class="lengua">Guaraní</span>
+  </tr>
+  -->
+
+<tr>
+<td style="width: 400px">
+<div id='palabra' contenteditable="true">{% if word %}{{word|safe}}{% endif %}</div>
+</td>
+<td style="width: 25px"></td>
+<td style="width: 400px"></td>
+</tr>
+
+<tr>
+<td class='instruc'>
+<div class="instruc" id="instruc_palabra">Escriba la palabra que
+  quiere analizar.
+</td>
+<td></td>
+<td></td>
+</div>
+</tr>
+
+<tr><td><td><td>
+</tr>
+
+<tr>
+  <td style="padding: 2em 0 0"><span class="featlabel">Raíz</span><br/>
+  <textarea class="raiz"></textarea>
+  </td>
+  <td style="padding: 2em 0 0"></td>
+  <td style="padding: 2em 0 0"><span class="featlabel">Citación</span><br/>
+  <textarea class="raiz"></textarea>
+  </td>
+  </tr>
+
+</table>
+
+<form name="Form2" method=POST action='anal'>
+<input type="hidden" name="palabra" value="">
+<input type="hidden" name="borrar" value=false>
+<input type="hidden" name="registrar" value=false>
+<input type="hidden" name="tpalabra" value="140%">
+<input type="hidden" name="ometa" value="">
+<input type="hidden" name="nocorr" value="">
+</form>
+
+<script>
+document.getElementById("palabra").focus();
+
+// Detectar nueva línea (Intro) en el espacio 'palabra' para iniciar traducción.
+document.getElementById("palabra").addEventListener("keypress", function(event) {
+   key = event.which || event.keyCode;
+   longPalabra();
+   if (key == 13) {
+       event.preventDefault();
+       palabraNuevaLinea();
+   }
+});
+
+function longPalabra()
+{
+    f = document.getElementById("palabra");
+    t = f.innerHTML;
+    t = t.replace(/<br>/g, "");
+    l = t.length;
+    if (l > 40) {
+        f.style.fontSize = "115%";
+        document.Form2.tpalabra.value = "115%";
+    }
+}
+
+function alSalir()
+{
+    document.Form2.tpalabra.value = "140%";
+    document.Form1.action = "fin";
+    document.Form1.target = "_self";     // Misma ventana
+    document.Form1.submit();             // Enviar la página
+    return true;
+}
+
+function borrar()
+{
+    document.Form2.borrar.value = 'true';
+    document.Form2.palabra.value = '';
+    document.Form2.tpalabra.value = "140%";
+    document.Form2.submit();
+    return true;
+}
+
+function copiar()
+{
+    analisis = document.getElementById("analisis");
+    analisis.select();
+    document.execCommand("copy");
+}
+
+function registrar()
+{
+    meta = document.getElementById("analisis").value;
+    document.Form2.ometa.value = meta;
+//    document.Form2.palabra.value = fuente;
+    document.Form2.borrar.value = 'true';
+    document.Form2.registrar.value = 'true';
+    document.Form2.tpalabra.value = "140%";
+    document.Form2.action = "anal";
+    document.Form2.submit();
+}
+
+function mayuscula(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function agregarTri(string) {
+    return string + " \u25BE";
+}
+
+function eliminarTri(string) {
+    return string.replace(/ \u25BE/g, '');
+}
+
+function palabra() {
+    f = document.getElementById("palabra").innerHTML;
+    return f;
+}
+
+function palabraNuevaLinea() {
+//    f = palabra();
+    // May contain <br>
+    f = f.replace(/<br>/g, "");
+    document.getElementById("palabra").innerHTML = f;
+    document.Form2.palabra.value = f;
+    document.Form2.action = "anal";
+    document.Form2.submit();
+}
+
+function borrarPalabra() {
+    document.getElementById("palabra").innerHTML = "";
+}
+
+function cambiarMeta(button, choiceid) {
+    newitem = document.getElementById(choiceid).innerHTML;
+    olditem = document.getElementById(button).innerHTML;
+    // Add and remove the menu dropdown triangle.
+    newitem = agregarTri(newitem);
+    olditem = eliminarTri(olditem);
+    document.getElementById(button).innerHTML = newitem;
+    document.getElementById(choiceid).innerHTML = olditem;
+    actualTra();
+}
+
+/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+function desplegar(button) {
+    document.getElementById(button).classList.toggle("show");
+}
+
+/* Alternar corrección automática */
+function alternarCorreccion() {
+//    alert("Alternando " + document.Form2.nocorr.value);
+    if (document.Form2.nocorr.value) {
+//	alert("Activando...");
+	document.Form2.nocorr.value = "";
+        document.getElementById('correccion').innerHTML = "Desactivar corrección ortográfica automática.";
+    } else {
+//	alert("Desactivando...");
+	document.Form2.nocorr.value = "true";
+        document.getElementById('correccion').innerHTML = "Activar corrección ortográfica automática.";
+    }
+}
+
+function mostrarAyuda() {
+    var helpWin = window.open("", "Mainumby: Ayuda", "titlebar=yes,scrollbars=yes,status=no,top=200,left=200,width=700,height=400");
+    helpWin.document.write(
+'<html><head>\
+<link rel="stylesheet" type=text/css href={{url_for("static", filename="style.css")}}/>\
+<title>Mainumby: Ayuda</title></head><body>\
+<h4 class="help">Ayuda para usar el traductor</h4>\
+<p class="help">En esta página se puede traducir palabras, frases, y oraciones simples. \
+Si quer&eacute;s traducir un documento entero, ve en cambio a \
+<a href="doc">esta página</a>. \
+</p>\
+<h5 class="help">Instrucciones</h5>\
+<ol class="help">\
+  <li>Introducí una palabra en el espacio a la izquierda.\
+  </li>\
+  <li>Presioná la tecla Intro/Entrar.\
+  </li>\
+</ol>\
+</body></html>'
+);
+    document.Form1.ayuda.value = true;
+}
+</script>
+<script async="" src="{{url_for('static', filename='Misc.js')}}"></script>
+</body>
+
+</html>

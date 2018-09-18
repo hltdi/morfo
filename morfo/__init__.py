@@ -1,7 +1,7 @@
 """
 This file is part of morfo, which is a project of PLoGS.
 
-Copyleft 2018
+Copyleft 2018, PLoGS and Michael Gasser.
 
     morfo is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,14 +19,24 @@ Copyleft 2018
 Author: Michael Gasser <gasser@indiana.edu>
 """
 
+# __all__ = ['languages', 'language', 'morphology', 'strip']
+
+from flask import Flask, url_for, render_template
 _version = '1.0'
 
 from .languages import *
-# from . import morpho
+
+app = Flask(__name__)
+app.config.from_object(__name__)
 
 print('\n@@@@ This is morfo, version {} @@@@\n'.format(_version))
 
-def exit(save=True, cache=''):
+def init_session(lg_abbrev, user=None, segment=False):
+    """Create a session with the given language and user."""
+    language = get_language(lg_abbrev, segment=segment)
+    return Session(language, user=user)
+
+def exit(session=None, save=True, cache=''):
     """Exit the program, caching any new analyses for each loaded language
     if save is True."""
     print("Quitting...")
@@ -48,7 +58,7 @@ def load(language, phon=False, segment=False, load_morph=True, cache='',
     load_lang(language, phon=phon, segment=segment, load_morph=load_morph, cache=cache,
               guess=guess, verbose=verbose)
 
-def seg_word(language, word):
+def seg(language, word):
     '''Segment a single word and print out the results.
     
     @param language: abbreviation for a language
@@ -69,8 +79,6 @@ def seg_word(language, word):
 #                return [(anal[1], anal[-1]) for anal in analysis]
 #            else:
 #                return analysis
-
-seg = seg_word
 
 def seg_file(language, infile, outfile=None,
              preproc=True, postproc=True, start=0, nlines=0):
@@ -96,11 +104,10 @@ def seg_file(language, infile, outfile=None,
                            segment=True, only_guess=False, guess=False,
                            start=start, nlines=nlines)
 
-def anal_word(language, word, root=True, citation=True, gram=True,
-              non_roman=True, roman=False, segment=False, guess=False,
-              dont_guess=False, cache='',
-              rank=True, freq=True, nbest=100,
-              raw=False):
+def anal(language, word, root=True, citation=True, gram=True,
+         non_roman=True, roman=False, segment=False, guess=False, dont_guess=False,
+         web=None,
+         cache='', rank=True, freq=True, nbest=100, raw=False):
     '''Analyze a single word, trying all available analyzers, and print out
     the analyses.
     
@@ -124,8 +131,10 @@ def anal_word(language, word, root=True, citation=True, gram=True,
     @type  segment:  boolean
     @param guess:    try only guesser analyzer
     @type guess:     boolean
-    @param dont_guess:    try only lexical analyzer
-    @type dont_guess:     boolean
+    @param dont_guess: try only lexical analyzer
+    @type dont_guess:  boolean
+    @param web:      whether to create dicts to use in the web app
+    @type web:       None or True (?)
     @param rank:     whether to rank the analyses by the frequency of their roots
     @type  rank:     boolean
     @param freq:     whether to report frequencies of roots
@@ -139,19 +148,21 @@ def anal_word(language, word, root=True, citation=True, gram=True,
     '''
     language = get_language(language, cache=cache, phon=False, segment=segment)
     if language:
+        if web:
+            web = []
         analysis = language.anal_word(word, preproc=non_roman and not roman,
                                       postproc=(non_roman and not roman) and not raw,
                                       root=root, citation=citation, gram=gram,
                                       segment=segment, only_guess=guess,
-                                      guess=not dont_guess,
+                                      guess=not dont_guess, webdicts=web,
                                       nbest=nbest,
                                       string=not raw, print_out=not raw)
         if raw:
             return analysis
+        elif web:
+            return web
 #        if raw:
 #            return [(anal[1], anal[-2], anal[-1]) if len(anal) > 2 else (anal[1],) for anal in analysis]
-
-anal = anal_word
 
 def anal_files(language, infiles, outsuff='.out',
                root=True, citation=True, gram=True,
@@ -486,4 +497,8 @@ def get_pos(abbrev, pos, phon=False, segment=False, load_morph=False,
                                verbose=verbose)
     if lang:
         return lang.morphology[pos]
+
+# Import views. This has to appear after the app is created.
+import morfo.views
+
 

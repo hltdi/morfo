@@ -24,6 +24,7 @@ Author: Michael Gasser <gasser@indiana.edu>
 """
 
 from .language import *
+from .session import *
 # import anal_gui
 
 ###

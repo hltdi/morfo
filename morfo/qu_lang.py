@@ -1,21 +1,21 @@
 """
-This file is part of L3Morpho.
+This file is part of morfo.
 
-    L3Morpho is free software: you can redistribute it and/or modify
+    morfo is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    L3Morpho is distributed in the hope that it will be useful,
+    morfo is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with L3Morpho.  If not, see <http://www.gnu.org/licenses/>.
+    along with morfo.  If not, see <http://www.gnu.org/licenses/>.
 
 ------------------------------------------------------
-Author: Michael Gasser <gasser@cs.indiana.edu>
+Author: Michael Gasser <gasser@indiana.edu>
 
 Create Language, Morphology, and POSMorphology objects for Quechua.
 """
@@ -39,7 +39,7 @@ def v_get_citation(root, fs, guess=False):
     if citation:
         return citation[0][0]
 
-def anal2string(anal):
+def anal2string(anal, webdict=None):
     '''Convert a word analysis to a string.
 
     anal is ("all", root, citation (currently None), gramFS) except for pre-analyzed cases,
@@ -162,7 +162,7 @@ def anal2string(anal):
 
     return s
 
-def case_string(case):
+def case_string(case, web=False):
     s = ''
     # Case 1
     if case.get('gen'):
@@ -196,7 +196,7 @@ def case_string(case):
 
     return s
 
-def tam_string(tam, asp):
+def tam_string(tam, asp, web=False):
     s = ''
     if tam.get('ps'):
         s += ' pretérito'
@@ -407,7 +407,7 @@ QU.morphology['all'].citationFS = \
 # QU.morphology['v'].citation = lambda stem, fss, simplified, guess, ignore: v_get_citation(stem, fss, guess)
 
 ## Functions that convert analyses to strings
-QU.morphology['all'].anal2string = lambda fss: anal2string(fss)
+QU.morphology['all'].anal2string = lambda fss, webdict: anal2string(fss, webdict=webdict)
 
 ## All TAM forms of the root hayu- 'contradict'
 
