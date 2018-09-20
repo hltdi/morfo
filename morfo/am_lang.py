@@ -678,6 +678,7 @@ AM.morphology['v'].FS_implic = {'rel': ['def', 'sub'],
                                 'ob': [['expl']]}
 # defaultFS with voice and aspect unspecified
 AM.morphology['v'].citationFS = language.FeatStruct("[pos=v,tm=prf,sb=[-p1,-p2,-plr,-fem],ob=[-expl],cj1=None,cj2=None,pp=None,ax=None,-neg,-rel,-sub,-def,-ye,-acc,rl=[-p,-acc]]")
+
 AM.morphology['n'].defaultFS = \
     language.FeatStruct("[pos=n,-acc,-def,-neg,-fem,-itu,as=smp,cnj=None,-dis,-gen,-plr,poss=[-expl,-p1,-p2,-plr,-fem,-frm],pp=None,v=None,vc=smp,rl=[-p,-gen,-acc]]")
 AM.morphology['n'].FS_implic = {'poss': [['expl'], 'def'],

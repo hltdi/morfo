@@ -104,10 +104,9 @@ def seg_file(language, infile, outfile=None,
                            segment=True, only_guess=False, guess=False,
                            start=start, nlines=nlines)
 
-def anal(language, word, root=True, citation=True, gram=True,
-         non_roman=True, roman=False, segment=False, guess=False, dont_guess=False,
-         web=None,
-         cache='', rank=True, freq=True, nbest=100, raw=False):
+def anal_word(language, word, root=True, citation=True, gram=True,
+              roman=False, segment=False, guess=False, dont_guess=False,
+              web=None, cache='', rank=True, freq=True, nbest=100, raw=False):
     '''Analyze a single word, trying all available analyzers, and print out
     the analyses.
     
@@ -121,9 +120,6 @@ def anal(language, word, root=True, citation=True, gram=True,
     @type  citation: boolean
     @param gram:     whether a grammatical analysis is to be included
     @type  gram:     boolean
-    @param non_roman: whether the language is written in non-roman script
-                      (included for backwards compatibility)
-    @type  non_roman: boolean
     @param roman:    whether the language is written in roman script
     @type  roman:    boolean
     @param segment:  whether to return the segmented input string rather than
@@ -134,7 +130,7 @@ def anal(language, word, root=True, citation=True, gram=True,
     @param dont_guess: try only lexical analyzer
     @type dont_guess:  boolean
     @param web:      whether to create dicts to use in the web app
-    @type web:       None or True (?)
+    @type web:       boolean
     @param rank:     whether to rank the analyses by the frequency of their roots
     @type  rank:     boolean
     @param freq:     whether to report frequencies of roots
@@ -143,8 +139,8 @@ def anal(language, word, root=True, citation=True, gram=True,
     @type  nbest:    int
     @param raw:      whether the analyses should be returned in "raw" form
     @type  raw:      boolean
-    @return:         a list of analyses (only if raw is True)
-    @rtype:          list of (root, feature structure) pairs
+    @return:         a list of analyses (if raw is True); dict of features (if web is True)
+    @rtype:          list of (root, feature structure) pairs or string->string dict
     '''
     language = get_language(language, cache=cache, phon=False, segment=segment)
     if language:

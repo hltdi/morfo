@@ -518,9 +518,9 @@ class POSMorphology:
     guessphon_i = 4
     seg_i = 5
 
-    def __init__(self, pos, feat_list=None, lex_feats=None,
-                 excl_feats=None, feat_abbrevs=None,
-                 fv_abbrevs=None, fv_dependencies=None, fv_priority=None):
+    def __init__(self, pos, feat_list=None, lex_feats=None, excl_feats=None, feat_abbrevs=None,
+                 fv_abbrevs=None, fv_dependencies=None, fv_priority=None,
+                 explicit=None, true_explicit=None):
         # A string representing part of speech
         self.pos = pos
         # Weight constraint on FST arcs
@@ -572,10 +572,10 @@ class POSMorphology:
         self.lex_feats = lex_feats or []
         # List of features to exclude from printed analysis output
         self.excl_feats = excl_feats or []
-        # Features to include in pretty analysis output
-        self.explicit_feats = []
+        # Features to include in pretty analysis output and web app
+        self.explicit_feats = explicit or []
         # Features to include in pretty analysis output only if they're not False or None
-        self.true_explicit_feats = []
+        self.true_explicit_feats = true_explicit or []
         # List of abbreviations for features
         self.feat_abbrevs = feat_abbrevs or {}
         # List of abbreviations for feat-value combinations

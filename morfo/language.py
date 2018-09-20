@@ -100,7 +100,7 @@ class Language:
                  # list)
                  stat_root_feats=None,
                  # list of lists of grammatical features for statistics, e.g.,
-                 # [poss, expl] for Amharic (whether is explicitly possessive)
+                 # [poss, expl] for Amharic (whether it's explicitly possessive)
                  stat_feats=None,
                  citation_separate=True):
 #                 msgs=None, trans=None):
@@ -401,6 +401,8 @@ class Language:
                     current_fv_abbrev = []
                     current_fv_dependencies = {}
                     current_fv_priority = []
+                    current_explicit = []
+                    current_true_explicit = []
                     lex_feats[pos] = current_lex_feats
                     feats[pos] = current_feats
                     excl[pos] = current_excl
@@ -429,9 +431,9 @@ class Language:
                     fshort = fshort.strip()
                     opt = opt.strip()
                     current_abbrev[fshort] = flong.strip()
-                    current_explicit.append(fshort)
-                    if opt and opt == '~':
-                        current_true_explicit.append(fshort)
+#                    current_explicit.append(fshort)
+#                    if opt and opt == '~':
+#                        current_true_explicit.append(fshort)
                     continue
 
                 m = FV_RE.match(line)
@@ -453,7 +455,8 @@ class Language:
                     elif '=' in val:
                         # Complex feature (with nesting)
                         complex_feat = self.proc_feat_string(feat, current_abbrev, current_excl, current_lex_feats,
-                                                             current_fv_dependencies)
+                                                             current_fv_dependencies,
+                                                             current_explicit, current_true_explicit, top=True)
                         vals = val.split(';')
                         for fv2 in vals:
                             fv2 = fv2.strip()
@@ -462,7 +465,8 @@ class Language:
                                 if m2:
                                     feat2, val2 = m2.groups()
                                     f = self.proc_feat_string(feat2, current_abbrev, current_excl, current_lex_feats,
-                                                              current_fv_dependencies)
+                                                              current_fv_dependencies,
+                                                              current_explicit, current_true_explicit, top=False)
                                     v = self.proc_value_string(val2, f, current_abbrev, current_excl,
                                                                current_fv_dependencies, current_fv_abbrev)
                                     complex_fvs.append((f, v))
@@ -484,14 +488,16 @@ class Language:
                                         # A single feature-value pair
                                         feat2, val2 = m2.groups()
                                         f = self.proc_feat_string(feat2, current_abbrev, current_excl, current_lex_feats,
-                                                                  current_fv_dependencies)
+                                                                  current_fv_dependencies,
+                                                                  current_explicit, current_true_explicit, top=False)
                                         v = self.proc_value_string(val2, f, current_abbrev, current_excl,
                                                                    current_fv_dependencies, current_fv_abbrev)
                                         complex_fvs.append((f, v))
                         elif complex_feat:
                             # A single feature-value pair
                             f = self.proc_feat_string(feat, current_abbrev, current_excl, current_lex_feats,
-                                                      current_fv_dependencies)
+                                                      current_fv_dependencies,
+                                                      current_explicit, current_true_explicit, top=False)
                             v = self.proc_value_string(val, f, current_abbrev, current_excl,
                                                        current_fv_dependencies, current_fv_abbrev)
                             complex_fvs.append((f, v))
@@ -501,7 +507,8 @@ class Language:
                         else:
                             # Not a complex feature
                             current_feat = self.proc_feat_string(feat, current_abbrev, current_excl, current_lex_feats,
-                                                                 current_fv_dependencies)
+                                                                 current_fv_dependencies,
+                                                                 current_explicit, current_true_explicit, top=True)
                             current_value_string = ''
                             val = val.strip()
                             if val:
@@ -565,14 +572,15 @@ class Language:
 #            print("feats {}".format(feats))
             for pos in feats:
                 if not poss or pos in poss:
-                    pos_args.append((pos, feats[pos], lex_feats[pos], excl[pos],
-                                     abbrev[pos], fv_abbrev[pos], fv_dependencies[pos],
-                                     fv_priorities[pos]))
+                    pos_args.append((pos, feats[pos], lex_feats[pos], excl[pos], abbrev[pos],
+                                     fv_abbrev[pos], fv_dependencies[pos], fv_priorities[pos],
+                                     explicit[pos], true_explicit[pos]))
             morph = Morphology(pos_morphs=pos_args,
                                punctuation=punc, characters=chars)
             self.set_morphology(morph)
 
-    def proc_feat_string(self, feat, abbrev_dict, excl_values, lex_feats, fv_dependencies):
+    def proc_feat_string(self, feat, abbrev_dict, excl_values, lex_feats, fv_dependencies,
+                         explicit, true_explicit, top=True):
         prefix = ''
         depend = None
         m = ABBREV_NAME_RE.match(feat)
@@ -586,12 +594,16 @@ class Language:
 
 #        print('Prefix {}, feat {}, depend {}'.format(prefix, feat, depend))
 
-        # * means that the feature's values are not reported in analysis output
-        if '*' in prefix:
-            excl_values.append(feat)
-        # % means that the feature is lexical
-        if '%' in prefix:
-            lex_feats.append(feat)
+        if not '*' in prefix and not '%' in prefix:
+            if top:
+                explicit.append(feat)
+        else:
+            # * means that the feature's values are not reported in analysis output
+            if '*' in prefix:
+                excl_values.append(feat)
+            # % means that the feature is lexical
+            if '%' in prefix:
+                lex_feats.append(feat)
 
         if depend:
             # Feature and value that this feature value depends on

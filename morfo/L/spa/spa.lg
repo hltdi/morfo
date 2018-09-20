@@ -20,10 +20,13 @@ feats:
 ## SUSTANTIVOS
   pos: n sust
 
-  ab: p = plur
-  ab: s = sing
-  ab: m = mas
-  ab: f = fem
+#  xf: n = número
+#  xf: g = género
+
+#  ab: p = plur
+#  ab: s = sing
+#  ab: m = mas
+#  ab: f = fem
 
   n (número) = 0 (singular) | 1 (plural)
   g (género) = m (masculino) | f (femenino)
@@ -33,48 +36,60 @@ feats:
 
   n (número) = 0 (singular) | 1 (plural)
   g (género) = m (masculino) | f (feminino)
-  ab: m = mas
-  ab: f = fem
-  ab: p = plur
-  ab: s = sing
+
+#  xf: n = número
+#  xf: g = género
+
+#  ab: m = mas
+#  ab: f = fem
+#  ab: p = plur
+#  ab: s = sing
 
 ## VERBOS
   pos: v vrb
 
   # Si un complemento no es explícito, no se muestran otras propiedades
   !-xpl = ninguno
-  ab: prs = pres
-  ab: prt = pret
-  ab: cnd = cond
-  ab: fut = fut
-  ab: ipf = imprf
-  ab: ipv = imper
-  ab: sbp = subj pres
-  ab: sbi = subj imprf
-  ab: inf = inf
-  ab: ger = ger
-  ab: prc = part
+#  ab: prs = pres
+#  ab: prt = pret
+#  ab: cnd = cond
+#  ab: fut = fut
+#  ab: ipf = imprf
+#  ab: ipv = imper
+#  ab: sbp = subj pres
+#  ab: sbi = subj imprf
+#  ab: inf = inf
+#  ab: ger = ger
+#  ab: prc = part
 
-  xf: p = persona
-  xf: tm = tmp/asp/mod
-  xf: n = número
-  xf: po = persona de objeto
-  xf: no = número de objeto
-#  xf~: VOS = voseo
+#  xf: p = persona
+#  xf: tm = tmp/asp/mod
+#  xf: n = número
+#  xf: po = persona de objeto
+#  xf: no = número de objeto
 
   p (persona) = 3 | 2 | 1
 
   n (número) = 0 (singular) | 1 (plural)
 
-  tm (tmp/asp/mod) = prs | fut | prt | sbp | sbi | ipf | cnd | ipv | ger | inf | prc
+  tm (tmp/asp/mod) = prs (presente) |
+     		     fut (futuro) |
+		     prt (pretérito) |
+		     sbp (subjuntivo presente) |
+		     sbi (subjuntivo imperfecto) |
+		     ipf (imperfecto) |
+		     cnd (condicional) |
+		     ipv (imperativo) |
+		     ger (gerundio) |
+		     inf (infinitivo) |
+		     prc (participio)
 
   %*fin (finito) = *True | False
   %*ipv (imper) = *False | True
   %*VOS (voseo) = *True | False
   %*r (pronominal) = *False | True
 
-#  VOS = *True | False
-  AL = *True | *False
+  %*AL = *True | False
 
 trans:
   Loading morphological data for {0}{1} ... = Cargando datos morfológicos para {0}{1} ...

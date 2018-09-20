@@ -36,87 +36,72 @@ feats:
 
   pos: v ñe'ẽtéva
 
-#  xf: sj = suj
-  xf: ns = num suj
-  xf: ps = pers suj
-  xf~: no = num obj
-  xf~: po = pers obj
-#  xf~: oj = obj
-  xf~: voz = voz
-  xf~: neg = neg
-  xf: mod = mod
-  xf~: inter = inter
-  xf~: tm = suf_tmp
-  xf~: asp = asp
-  xf~: rel = rel
-#  xf~: relv = rel
-#  xf~: cnj = conj
-#  xf~: caso = caso
-  xf~: grd = grd
-  xf~: pp = posp
-  xf~: misc = misc
+#  xf: ns = número de sujeto
+#  xf: ps = persona de sujeto
+#  xf~: no = número de objeto
+#  xf~: po = persona de objeto
+#  xf~: voz = voz
+#  xf~: neg = negativo
+#  xf~: negipv = negativo imperativo
+#  xf: mod = modo
+#  xf~: inter = interrogativo
+#  xf~: tm = sufijo de TAM
+#  xf~: tmp = tiempo
+#  xf~: asp = aspecto
+#  xf~: rel = relativo
+#  xf~: grd = grado
+#  xf~: pp = posposición
+#  xf~: misc = miscelanéa
 
-  ab: ind = indic
-  ab: imp = imper
-  ab: opt = opt
-  ab: smp = simp
-  ab: intrans = intr
-  ab: caus = caus
-  ab: reflx = refl
-  ab: recip = recp
-  ab: intrans_caus = intr_caus
-  ab: reflx_caus = refl_caus
-  ab: recip_caus = recp_caus
-
-  ab: clu = clus
-  ab: None = X
-
-#  +1,-2,-p = 1 persona singular
-#  -1,+2,-p = 2 persona singular
-#  -1,-2 = 3 persona
-#  +1,+2,+p = 1 persona inclusiva
-#  +1,-2,+p = 1 persona exclusiva
-#  -1,+2,+p = 2 persona plural
+#  ab: ind = indicativo
+#  ab: imp = imperativo
+#  ab: opt = optativo
+#  ab: smp = simple
+#  ab: intrans = intransitivo
+#  ab: caus = causativo
+#  ab: reflx = reflexivo
+#  ab: recip = reciprocal
+#  ab: intrans_caus = intransitivo causativo
+#  ab: reflx_caus = reflexivo causativo
+#  ab: recip_caus = reciprocal causativo
+#  ab: clu = clusividad
+#  ab: None = X
 
 # +- chupe(kuéra); leave out of defaults so that both are possible when not specified
 #  ojxpl = *False | True
 
-  med = *False | True
-  # False = exlusive (ore); True = inclusive (ñande)
-# Leave out of defaults
-#  clu = *False | True
-#  oclu = *False | True
-
-#  neg (neg) = *None | i | ỹ | tei
-  neg = *False | True
-  negipv = *False | True
-  inter (inter) = *False | True
   # uka
-#  caus (caus) = *False | True
-  *%rztrans (raíz transitiva) = False | True
-#  *%trans (transitivo) = False | True
-  *%rflx (reflexivo) = False | True
+  med (mediativo) = *False | True
 
+  # clusivity: False = exlusive (ore); True = inclusive (ñande)
+  clu = *False (exclusivo) | True (inclusivo)
+  oclu = *False (objeto exclusivo) | True (objecto inclusivo)
+
+  neg (negativo) = *False | True
+  negipv (negativo imperativo) = *False | True
+  inter (interrogativo) = *False | True
+  *%rztrans (raíz transitiva) = False | True
+  *%rflx (reflexivo) = False | True
   *%cat (categoría) = a | che | adj
   *%subcat (subcategoría) = 0 | i | gue
   *%trans = False | True
   *%pregrd = False | True
   *%prepregrd = *False | True
-
-  %t (traducción de raíz) = es = 
+  *%nom = *False | True
+  *%t (traducción de raíz) = es = 
   
-#  mod (modo) = ind (indic) |
-#               imp (imper) |
-#               opt (opt) |
-#               None
+  mod (modo) = ind (indicativo) |
+               imp (imperativo) |
+               opt (optativo) |
+               None
 
   # only relevant for future tense
   prob (probabilidad) = None | hi | lo
 
-  ps (pers suj) = 3 | 2 | 1
-  po (pers obj) = *3 | 2 | 1
-  ns (num suj) = 0 (sing) | 1 (plur)
-  no (num obj) = *0 (sing) | 1 (plur)
+  ps (persona de sujeto) = 3 | 2 | 1
+  po (persona de objeto) = *3 | 2 | 1
+  ns (número de sujeto) = 0 (sing) | 1 (plur)
+  no (número de objeto) = *0 (sing) | 1 (plur)
 
 #  sj (suj) = 1 = False | True;
 #             2 = False | True;
@@ -126,157 +111,143 @@ feats:
 #             p (plur) = False | True;
 #             *%r (refl) = False | True
 
-  voz = *smp (simp) |
-        intrans (intran) |
-        caus (caus) |
-        reflx (refl) |
-        recip (recip) |
-        intrans_caus (intran_caus) |
-        reflx_caus (refl_caus) |
-        recip_caus (recip_caus)
+  voz = *smp (simple) |
+        intrans (intransitivo) |
+        caus (causativo) |
+        reflx (reflexivo) |
+        recip (reciprocal) |
+        intrans_caus (intransitivo causativo) |
+        reflx_caus (reflexivo causativo) |
+        recip_caus (reciprocal causativo)
 #        intrans_caus_reflx (intransitivo causativo reflexivo) |
 #        intrans_caus_recip (intransitivo causativo recíproco)
 
   grd (grado) = *None | ve | ete | eterei
 
-  tmp (tmp_abs) = prs (pres) |
-                  prt (pret) |
-                  fut (fut) |
-		  sbp (subj_pres) |
-		  ipv (imperv) |
-		  ipf (imperf) |
-		  pcp (pluscmprf) |
+  tmp (TAM)   =   prs (presente) |
+                  prt (pretérito) |
+                  fut (futuro) |
+		  sbp (subjuntivo presente) |
+		  ipv (imperativo) |
+		  ipf (imperfecto) |
+		  pcp (pluscuamperfecto) |
 		  inf (infinitivo)
 
 #  tm (tmp) = None | vaekue | vaerã | va | akue | mi | ne | arã | moã | kuri | rakae | ta | chéne
 #  tm (tmp) = None | vaekue | vaerã | akue | mi | ne | arã | moã | kuri | rakae | ta
 
-  impopt = mi = *False | True;
-           ke = *False | True;
-           na = *False | True;
-	   mbae = *False | True;
-	   mo = *False | True
+  impopt (imperativo modificado) = mi = *False | True;
+                                   ke = *False | True;
+                                   na = *False | True;
+                          	   mbae = *False | True;
+                           	   mo = *False | True
 
   rel (relativo) = *None | sjoj | obl
 
-  pp (pospos) = *None | peve | jave | ramo | rire | haguã | vo | gui | guive | pe | re | icha | vove | rangue | vove | kuevo
+  pp (posposición) = *None | peve | jave | ramo | rire | haguã | vo | gui | guive | pe | re | icha | vove | rangue | vove | kuevo
 
-  asp = va = *False | True;
-        ñepyrũ = *False | True;
-	jevy = *False | True;
-	gueteri = *False | True;
-	ramo = *False | True;
-	prf = *False | True;
-        mante = *False | True;
-        katu = *False | True;
-        prg = *False | True;
-        hikóni = *False | True;
-	ramo = *False | True;
-	vol = *False | True;
-	rae = *False | True
+  asp (aspecto) = va = *False | True;
+                  ñepyrũ = *False | True;
+              	  jevy = *False | True;
+                  gueteri = *False | True;
+	          ramo = *False | True;
+	          prf = *False | True;
+                  mante = *False | True;
+                  katu = *False | True;
+                  prg = *False | True;
+                  hikóni = *False | True;
+	          ramo = *False | True;
+	          vol = *False | True;
+	          rae = *False | True
  
-  misc = se    = False | True;
-         rei   = False | True;
-         joa   = False | True;
-         mante = False | True;
-         nte = False | True;
-         voi = False | True;
-         pa    = False | True;
-         jepe  = False | True;
-         katu  = False | True;
-         porã  = False | True;
-         vai   = False | True;
-         kuaa  = False | True;
-         guasu = False | True;
-         mi    = False | True;
-         manterei = False | True;
-         rangue = False | True;
-         ndaje = False | True;
-         niko = False | True;
-	 pyre = False | True;
-	 ko = False | True
+  misc (miscelanéa) = se    = False | True;
+                      rei   = False | True;
+                      joa   = False | True;
+                      mante = False | True;
+                      nte = False | True;
+                      voi = False | True;
+                      pa    = False | True;
+                      jepe  = False | True;
+                      katu  = False | True;
+                      porã  = False | True;
+         	      vai   = False | True;
+         	      kuaa  = False | True;
+         	      guasu = False | True;
+         	      mi    = False | True;
+         	      manterei = False | True;
+         	      rangue = False | True;
+         	      ndaje = False | True;
+         	      niko = False | True;
+	 	      pyre = False | True;
+	 	      ko = False | True
 
 #### SUSTANTIVOS; TEROKUÉRA
   
   pos: n tero
 
-  xf~: der = der
-#  xf~: n = num
-  xf~: poses = poses
-  xf~: caso = caso
-  xf~: dim = dim
-  xf~: tm = tmp
-  xf~: neg = neg
-  xf~: adj = adj
-  xf~: grd = grd
-  xf~: conjet = conjet
-  xf~: inter = inter
-#  xf~: pas = pasado
-#  xf~: fut = futuro
-  xf~: asp = asp
-#  xf~: m = morfemas
+#  xf~: der = der
+#  xf~: poses = poses
+#  xf~: caso = caso
+#  xf~: dim = dim
+#  xf~: tm = tmp
+#  xf~: neg = neg
+#  xf~: adj = adj
+#  xf~: grd = grd
+#  xf~: conjet = conjet
+#  xf~: inter = inter
+#  xf~: asp = asp
 
-  ab: ext = exter
-  ab: int = inter
-  ab: je = j/ñe
-  ab: pp = pers poses
-  ab: np = numposes
-  ab: cp = cluposes
-  ab: None = mba'eve
+#  ab: ext = exter
+#  ab: int = inter
+#  ab: je = j/ñe
+#  ab: pp = pers poses
+#  ab: np = numposes
+#  ab: cp = cluposes
+#  ab: None = mba'eve
 
-  pl (num) = *False (sing) | True (plur)
-
-#  pp (pers poses) = *3 | 2 | 1
-#  np (num poses) = *0 | 1
-
-  inter = *False | True
-#  neg = *False | True
-  n (num) = *0 | 1
-  conjet = *False | True
-  adj = *False | True
-#  pas = *False | True
-#  fut = *False | True
-#  anim = *False | True
-
-  dim = None | mi | i | imi | ray
-
-  tm = None | kue | re | rã | rangue | akue
-
-  der = ha = *False | True;
-        hára = *False | True;
-        py = *False | True;
-        kue = *False | True;
-        re = *False | True;
-        rã = *False | True;
-        je = *False | True
-
-  asp = ma = *False | True;
-        nte = *False | True;
-        mante = *False | True;
-        manterei = *False | True;
-        katu = *False | True;
-        voi = *False | True;
-        ndaje = *False | True;
-        niko = *False | True;
-        ngau = *False | True;
-        nipo = *False | True
+  pl (número) = *False (singular) | True (plural)
 
   caso = *None|pe|peve|gui|guive|re|vo|icha|ichagua|guy|guype|gua|pegua|ygua|ndi|pype|ypype|ari|vove
 
-  grd = *None | ve | ive | ete | eterei | rasa | etereirasa
- 
-  poses (poses) = pp = *0 | 3 (3 pers) | 2 (2 pers) | 1 (1 pers);
-		  ext = *True | False (internal)
-# no default for clusivity?		  
-#		  cp = True | False
+  poses (posesivo) = pp = *0 | 3 (3 pers) | 2 (2 pers) | 1 (1 pers);
+                     ext = *True | False (internal)
 
+  der (derivación) = ha = *False | True;
+      		     hára = *False | True;
+		     py = *False | True;
+		     kue = *False | True;
+		     re = *False | True;
+		     rã = *False | True;
+		     je = *False | True
+
+  asp (aspecto) = ma = *False | True;
+                  nte = *False | True;
+		  mante = *False | True;
+		  manterei = *False | True;
+		  katu = *False | True;
+		  voi = *False | True;
+		  ndaje = *False | True;
+		  niko = *False | True;
+		  ngau = *False | True;
+		  nipo = *False | True
+
+  interrogativo = *False | True
+  conjet (conjetural) = *False | True
+  adj (adjetivizado) = *False | True
+
+  dim (diminutivo) = None | mi | i | imi | ray
+
+  tm (tiempo) = None | kue | re | rã | rangue | akue
+
+  grd (grado) = *None | ve | ive | ete | eterei | rasa | etereirasa
+ 
   *%pregrd = False | True
   *%prepregrd = *False | True
   *%c = *False | True
   *%anim = *False | True
   *%subcat (subcategoría) = pre = *False | True; suf = *False | True
 
-  %t (traducción de raíz) = es = 
+  *%t (traducción de raíz) = es = 
 
 trans:
   Loading morphological data for {0}{1} ... = Cargando datos morfológicos para {0}{1} ...

@@ -121,7 +121,7 @@ $ pro
 
 $ voz
   # only a(i)real verbs without mood prefixes can be transitive
-  --                    [voz=smp,-rztrans,-rflx,-trans,mod=ind|opt];[cat=a,voz=smp,+rztrans,+trans,-rflx,mod=ind|opt];[pos=v,tmp=inf,mod=None]
+  --                    [voz=smp,-rztrans,-rflx,-trans];[cat=a,voz=smp,+rztrans,+trans,-rflx];[pos=v,tmp=inf]
   [voz=intrans,+rztrans,-rflx,-trans]
     # v. subsuntiva (FdG)
     poro  # objeto subsumido = persona (FdG)

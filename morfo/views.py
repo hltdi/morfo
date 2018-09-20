@@ -24,12 +24,12 @@
 # Created 2018.9.11
 
 from flask import request, session, g, redirect, url_for, abort, render_template, flash
-from morfo import app, exit, load, anal, seg, gen, init_session
+from morfo import app, exit, load, anal_word, seg, gen, init_session
 
 # Global variables for views; probably a better way to do this...
-LANGUAGE = HTML = USER = WORD = SESSION = None
+LANGUAGE = ANALYSES = HTML = USER = WORD = SESSION = None
 USERS_INITIALIZED = False
-AINDEX = 0
+ANAL_INDEX = 0
 
 def initialize():
     pass
@@ -41,7 +41,9 @@ def load_language(abbrev):
     load(abbrev)
 
 def analyze():
-    return anal(LANGUAGE, WORD)
+    """Returns a list of dicts of features and values."""
+    global ANALYSES
+    ANALYSES = anal_word(LANGUAGE.abbrev, WORD, web=True)
 
 @app.route('/')
 def index():
@@ -127,6 +129,7 @@ def anal():
     global HTML
     global SESSION
     global LANGUAGE
+    global ANAL_INDEX
     form = request.form
     of = None
     print("Form for anal: {}".format(form))
@@ -159,19 +162,23 @@ def anal():
                 analysis = form.get('anal')
             else:
                 print("NO SESSION SO NOTHING TO RECORD")
-        return render_template('anal.html', palabra=None, user=username, language=LANGUAGE)
+        return render_template('anal.html', palabra=None, user=username, language=LANGUAGE, labrev=lg_abbrev)
     if not 'palabra' in form:
         return render_template('anal.html')
     if not WORD:
-        # Get the next word
-        WORD = form['word']
-        analyses = analyze()
-        if not analyses:
+        # Get the word
+        WORD = form['palabra']
+        print("WORD: {}".format(WORD))
+        analyze()
+        if not ANALYSES:
             print("No analyses.")
-            return render_template('anal.html', error=True, user=username)
-    # Translate and segment the sentence, assigning SEGS
-    analyze()
-    return render_template('anal.html', palabra=WORD, html=HTML, user=username, language=LANGUAGE)
+            return render_template('anal.html', error=True, user=username, labrev=lg_abbrev)
+    print("Analyses {}".format(ANALYSES))
+    analysis = ANALYSES[ANAL_INDEX]
+    print("Analysis {}".format(analysis))
+    return render_template('anal.html', palabra=WORD, user=username,
+                           language=LANGUAGE, labrev=lg_abbrev, html=HTML,
+                           analysis=analysis)
 
 @app.route('/fin', methods=['GET', 'POST'])
 def fin():
@@ -183,10 +190,10 @@ def fin():
     global WORD
     global HTML
     global USER
-    global AINDEX
+    global ANAL_INDEX
     exit(SESSION)
     LANGUAGE = SESSION = HTML = USER = None
-    AINDEX = 0
+    ANAL_INDEX = 0
     return render_template('fin.html', modo=modo, language=LANGUAGE)
 
 @app.route('/proyecto')

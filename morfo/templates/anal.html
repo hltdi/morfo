@@ -15,7 +15,7 @@ div#palabra
     margin: 0px 0px;
     box-sizing: border-box;
     width: 100%;
-    height: 32pt;
+    height: 34pt;
     white-space: normal;
     border: thin solid;
 }
@@ -28,11 +28,11 @@ textarea.raiz
 {
     font-family: "Verdana";
     resize: none;
-    width: 100%;
+    width: 90%;
     height: 25px;
     font-size: 100%;
     padding: 4px 4px;
-    margin: 10px 0px 6px 0px;
+    margin: 10px 6px 6px 0px;
 }
 span.featlabel
 {
@@ -98,7 +98,7 @@ textarea#comment
 }
 </style>
 
-<title>Mainumby: un Ayudante para la Traducción Castellano-Guaraní</title>
+<title>morfo: análisis y generación morfológica</title>
 
 </head>
 
@@ -173,10 +173,8 @@ textarea#comment
 
 <tr>
 <td style="width: 400px">
-<div id='palabra' contenteditable="true">{% if word %}{{word|safe}}{% endif %}</div>
+<div id='palabra' contenteditable="true">{% if palabra %}{{palabra|safe}}{% endif %}</div>
 </td>
-<td style="width: 25px"></td>
-<td style="width: 400px"></td>
 </tr>
 
 <tr>
@@ -184,23 +182,22 @@ textarea#comment
 <div class="instruc" id="instruc_palabra">Escriba la palabra que
   quiere analizar.
 </td>
-<td></td>
-<td></td>
 </div>
 </tr>
+</table>
 
-<tr><td><td><td>
-</tr>
-
+<table style="left">
 <tr>
-  <td style="padding: 2em 0 0"><span class="featlabel">Raíz</span><br/>
+  <td style="width: 250px; padding: 2em 0 0"><span class="featlabel">Categoría gramatical</span><br/>
   <textarea class="raiz"></textarea>
   </td>
-  <td style="padding: 2em 0 0"></td>
-  <td style="padding: 2em 0 0"><span class="featlabel">Citación</span><br/>
+  <td style="width: 250px; padding: 2em 0 0"><span class="featlabel">Raíz</span><br/>
   <textarea class="raiz"></textarea>
   </td>
-  </tr>
+  <td style="width: 250px; padding: 2em 0 0"><span class="featlabel">Citación</span><br/>
+  <textarea class="raiz"></textarea>
+  </td>
+</tr>
 
 </table>
 
@@ -209,8 +206,6 @@ textarea#comment
 <input type="hidden" name="borrar" value=false>
 <input type="hidden" name="registrar" value=false>
 <input type="hidden" name="tpalabra" value="140%">
-<input type="hidden" name="ometa" value="">
-<input type="hidden" name="nocorr" value="">
 </form>
 
 <script>
@@ -266,7 +261,7 @@ function copiar()
 function registrar()
 {
     meta = document.getElementById("analisis").value;
-    document.Form2.ometa.value = meta;
+//    document.Form2.ometa.value = meta;
 //    document.Form2.palabra.value = fuente;
     document.Form2.borrar.value = 'true';
     document.Form2.registrar.value = 'true';
@@ -293,10 +288,9 @@ function palabra() {
 }
 
 function palabraNuevaLinea() {
-//    f = palabra();
+    f = palabra();
     // May contain <br>
     f = f.replace(/<br>/g, "");
-    document.getElementById("palabra").innerHTML = f;
     document.Form2.palabra.value = f;
     document.Form2.action = "anal";
     document.Form2.submit();
@@ -323,18 +317,17 @@ function desplegar(button) {
 }
 
 /* Alternar corrección automática */
+/*
 function alternarCorreccion() {
-//    alert("Alternando " + document.Form2.nocorr.value);
     if (document.Form2.nocorr.value) {
-//	alert("Activando...");
 	document.Form2.nocorr.value = "";
         document.getElementById('correccion').innerHTML = "Desactivar corrección ortográfica automática.";
     } else {
-//	alert("Desactivando...");
 	document.Form2.nocorr.value = "true";
         document.getElementById('correccion').innerHTML = "Activar corrección ortográfica automática.";
     }
 }
+*/
 
 function mostrarAyuda() {
     var helpWin = window.open("", "Mainumby: Ayuda", "titlebar=yes,scrollbars=yes,status=no,top=200,left=200,width=700,height=400");
