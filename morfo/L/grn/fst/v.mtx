@@ -41,18 +41,12 @@ $ neg1
                           [pos=v,cat=adj,subcat=0,voz=smp,-rztrans,-rflx,-trans,-neg];
 			  [pos=a,cat=adj,subcat=0,voz=smp]
 
-### Handle words with no person prefixes vs. those with
-#$prepro
-#  -> fin_raiz     +v_irr+     # saltar voz para verbos irregulares
-#  -> voz                  [pos=a,cat=adj,subcat=0];[pos=v,tmp=inf,-rflx,-trans,mod=None]
-#  -> pro                  [pos=v,mod=ind|opt,tmp=prs|prt|fut|ipv|ipf|pcp]
-
 ### PRONOMBRES: NÚMERO Y PERSONA, PAPAPY HA AVAITE
 
 $ pro
   -> fin_raiz     +v_irr+     # saltar voz para verbos irregulares
   # Adjectives don't need any prefix (and <h -> h, but what about reta?)
-  --                      [pos=a,cat=adj,subcat=0];[pos=v,tmp=inf,-rflx,-trans,mod=None]
+  --                      [pos=a,cat=adj,subcat=0];[pos=v,-rflx,-trans,mod=None]
   ## 1 sing
   # 1 sing sj; 3 or null oj
   [ps=1,ns=0,po=3]
@@ -76,7 +70,7 @@ $ pro
   [po=2,no=0,+trans]
     De$                   [cat=a,ps=3,mod=ind]
     ro                    [cat=a,ps=1,-clu,mod=ind]
-    toro                  [cat=a,ps=1,-clu,mod=opt,tmp=sbp]
+    toro                  [cat=a,ps=1,-clu,mod=opt]
   ## 3 sing./plur.
   # 3 sj; 3 or null oj
   [ps=3,po=3]
@@ -115,13 +109,13 @@ $ pro
     peDe$                 [cat=a,ps=3,mod=ind]
     po                    [cat=a,ps=1,-clu,mod=ind]
     # estoy adivinando ...; no he leído nada sobre esta forma
-    tapo                  [cat=a,ps=1,-clu,mod=opt,tmp=sbp]
+    tapo                  [cat=a,ps=1,-clu,mod=opt]
 
 ### VOZ, ÑE'ẼAPOHO
 
 $ voz
   # only a(i)real verbs without mood prefixes can be transitive
-  --                    [voz=smp,-rztrans,-rflx,-trans];[cat=a,voz=smp,+rztrans,+trans,-rflx];[pos=v,tmp=inf]
+  --                    [voz=smp,-rztrans,-rflx,-trans];[cat=a,voz=smp,+rztrans,+trans,-rflx];[pos=v,mod=None]
   [voz=intrans,+rztrans,-rflx,-trans]
     # v. subsuntiva (FdG)
     poro  # objeto subsumido = persona (FdG)
@@ -178,7 +172,7 @@ $ preraiz
   # 1p or 2p (3s) objects or passive/reflexive
   re                    [subcat=gue,po=1];[subcat=gue,po=2,ps=2|3];
                         [subcat=gue,voz=reflx,+rflx]
-  --                    [subcat=0];[pos=v,tmp=inf,mod=None];
+  --                    [subcat=0];[pos=v,mod=None];
                         [subcat=i,po=1];[subcat=i,po=2];[subcat=i,+rflx];
                         [subcat=gue,ps=1,ns=0];[subcat=gue,ps=2];[subcat=gue,ps=1,ns=1,+clu]
 
@@ -196,7 +190,7 @@ $ raiz
 
 $ fin_raiz
   # marks the end of the root; needed to control spread of nasality
-  %
+  % 	      	     	[mod=ind];[mod=opt];[mod=imp];[pos=v,mod=None]
 
 ### MEDIATIVO
 
@@ -275,8 +269,8 @@ $ adj
 
 ### TIEMPO 1 -- antes del negativo; incluye conjuncion(es): Meve
 $ tmp1
-  mo'ã                  [tm=moã,tmp=fut,+neg,-negipv,pp=None]
-  va'erã                [tm=vaerã,tmp=fut,+neg,-negipv,pp=None]      # asp=[+obl]
+  mo'ã                  [tm=moã,+neg,-negipv,pp=None]
+  va'erã                [tm=vaerã,+neg,-negipv,pp=None]      # asp=[+obl]
   (!)Meve               [pp=peve]    # until; = Peve in n.mtx; sometimes no !?
   rire                  [pp=rire]    # after
   !jave                 [pp=jave]    # while
@@ -319,8 +313,8 @@ $ grd
 ### TIEMPO 2 (ta, chéne)
 $ tmp2
   # asp=[-obl]
-  !ta                   [tm=ta,tmp=fut,mod=ind]
-  !chéne                [tm=chéne,tmp=fut,+neg,-negipv,mod=ind]
+  !ta                   [tm=ta,mod=ind]
+  !chéne                [tm=chéne,+neg,-negipv,mod=ind]
   --
 
 ### MA/VOI/NTE 1 (antes de tiempo2)
@@ -341,59 +335,59 @@ $ mavointe1
 $ tmp3
   ## va'ekue, va'erã, va can be relative/nominal or not; the asp feature is only relevant when they're not
   # asp=[+plus]
-  va'ekue(*)            [tm=vaekue,tmp=pcp,mod=ind,rel=None];[rel=sjoj,tm=None,tmp=prt|ipf,mod=ind]
-  va'ékue               [tm=vaekue,tmp=prt,mod=ind,rel=None];[rel=sjoj,tmp=prt,mod=ind]
+  va'ekue(*)            [tm=vaekue,mod=ind,rel=None];[rel=sjoj,tm=None,mod=ind]
+  va'ékue               [tm=vaekue,mod=ind,rel=None];[rel=sjoj,tm=None,mod=ind]
   # asp=[+obl]
-  va'erã(*)             [tm=vaerã,tmp=fut,prob=hi,-neg,-negipv,mod=ind,rel=None];[rel=sjoj,tm=None,tmp=fut,-neg,-negipv,mod=ind]
+  va'erã(*)             [tm=vaerã,prob=hi,-neg,-negipv,mod=ind,rel=None];[rel=sjoj,tm=None,-neg,-negipv,mod=ind]
   # asp=[+hab]
-  !va                   [asp=[+va],mod=ind,tmp=prs,rel=None];[rel=sjoj,tm=None,mod=ind,tmp=prs]
+  !va                   [asp=[+va],mod=ind,rel=None];[rel=sjoj,tm=None,mod=ind]
   # features not clear
   va'e                  [rel=sjoj,+nom,mod=ind]
   # asp=[+perf]
-  'akue                 [tm=akue,tmp=prt,rel=None,-nom,mod=ind]
+  'akue                 [tm=akue,rel=None,-nom,mod=ind]
   # asp=[+impf]
-  !mi                   [tm=mi,tmp=prt,rel=None,-nom,mod=ind]
+  !mi                   [tm=mi,rel=None,-nom,mod=ind]
   # asp=[+dud]
-  !ne                   [tm=ne,tmp=fut,rel=None,-neg,-negipv,-nom,mod=ind]
+  !ne                   [tm=ne,rel=None,-neg,-negipv,-nom,mod=ind]
   # asp=[+nec]
-  'arã                  [tm=arã,tmp=fut,-neg,-negipv,rel=None,-nom,mod=ind]
+  'arã                  [tm=arã,-neg,-negipv,rel=None,-nom,mod=ind]
   ## "modos apodícticos" (FdG)
   # impopt is a feature that "modifies" imperative or optative, softening or "hardening"
   # imperativo terminante (FdG)
-  !ke                   [tmp=None,impopt=[+ke],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  !ke                   [impopt=[+ke],mod=imp|opt,rel=None,-nom,-neg,-negipv]
   # imperativo reiterativo (FdG)
-  !py                   [tmp=None,impopt=[+py],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  !py                   [impopt=[+py],mod=imp|opt,rel=None,-nom,-neg,-negipv]
   # rogativo cariñoso (FdG)
-  mi                    [tmp=None,impopt=[+mi],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  mi                    [impopt=[+mi],mod=imp|opt,rel=None,-nom,-neg,-negipv]
   # rogativo común (FdG)
-  !na                   [tmp=None,impopt=[+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  !na                   [impopt=[+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
   # permisivo común (FdG)
-  !katu                 [tmp=None,impopt=[+katu],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  !katu                 [impopt=[+katu],mod=imp|opt,rel=None,-nom,-neg,-negipv]
   # permisivo de decisión (FdG)
-  !mba'e                [tmp=None,impopt=[+mbae],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  !mba'e                [impopt=[+mbae],mod=imp|opt,rel=None,-nom,-neg,-negipv]
   # ruego o duda (A&R)
-  !mo                   [tmp=None,impopt=[+mo],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  !mo                   [impopt=[+mo],mod=imp|opt,rel=None,-nom,-neg,-negipv]
   # combinaciones
-  !kena                 [tmp=None,impopt=[+ke,+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
-  mína                  [tmp=None,impopt=[+mi,+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
-  míke                  [tmp=None,impopt=[+mi,+ke],mod=imp|opt,rel=None,-nom,-neg,-negipv]
-  míkena                [tmp=None,impopt=[+mi,+ke,+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
-  !katuna               [tmp=None,impopt=[+na,+katu],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  !kena                 [impopt=[+ke,+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  mína                  [impopt=[+mi,+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  míke                  [impopt=[+mi,+ke],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  míkena                [impopt=[+mi,+ke,+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  !katuna               [impopt=[+na,+katu],mod=imp|opt,rel=None,-nom,-neg,-negipv]
   # Really optative but morphologically indicative
-  !tei                  [tmp=None,rel=None,-nom,mod=ind,-neg,+negipv]
+  !tei                  [rel=None,-nom,mod=ind,-neg,+negipv]
   # asp=[-plus,-hab,-dud,-perf,-nec,-impf]
   # oblique relativizers; where/to which, etc. X
-  ha(*)                 [rel=obl,tm=None,tmp=prs,mod=ind]
-  hague(*)              [rel=obl,tm=None,tmp=prt,mod=ind,-negipv]
-  harã(*)               [rel=obl,tm=None,tmp=fut,mod=ind,-negipv]
-  harangue(*)           [rel=obl,tmp=fut,+nom,mod=ind]
+  ha(*)                 [rel=obl,tm=None,mod=ind]
+  hague(*)              [rel=obl,tm=None,mod=ind,-negipv]
+  harã(*)               [rel=obl,tm=None,mod=ind,-negipv]
+  harangue(*)           [rel=obl,+nom,mod=ind]
   --                    [-negipv,impopt=[-mi,-mo,-ke,-na,-katu,-mbae]]
 
 ### POSTPOSITIONS, CONJUNCTIONS (including haguã)
 $ pospnom
   # future conjunction/postposition (~para)
-  haĝua(*)              [pp=haguã,tmp=fut,rel=None,+nom,mod=ind,-negipv]
-  haguã(*)              [pp=haguã,tmp=fut,rel=None,+nom,mod=ind,-negipv]
+  haĝua(*)              [pp=haguã,rel=None,+nom,mod=ind,-negipv]
+  haguã(*)              [pp=haguã,rel=None,+nom,mod=ind,-negipv]
   !Me                   [pp=pe,+nom,mod=ind]
   !re                   [pp=re,+nom,mod=ind]
   !icha                 [pp=icha,+nom,mod=ind]
@@ -475,7 +469,7 @@ $ ndajeko
   !ko                   [misc=[+ko]]
   !nga'u                [misc=[+ngau]]             # anhelativo (FdG)
   # must follow va'erã?
-  !mo'ã                 [tmp=fut,misc=[+moã]]
+  !mo'ã                 [misc=[+moã]]
   --
 
 ### AÍNA, ... KURI
@@ -488,18 +482,18 @@ $ hina
   roína                 [asp=[+prg,-hikóni],ps=1,ns=1,-clu]
   peína                 [asp=[+prg,-hikóni],ps=2,ns=1]
   # asp=[+rec]
-  kurihína              [tm=kuri,tmp=prt,asp=[+hína,-hikóni],mod=ind]
+  kurihína              [tm=kuri,asp=[+hína,-hikóni],mod=ind]
   --
 
 ### RAKA'E, RA'E, KURI (which can also precede hína)
 $ rakaekuri
   # asp=[+rec]
-  !kuri                 [tm=kuri,tmp=prt,mod=ind]
+  !kuri                 [tm=kuri,mod=ind]
   # asp=[+rem]
-  raka'e                [tm=rakae,tmp=prt,mod=ind]
+  raka'e                [tm=rakae,mod=ind]
   #? is this a past tense?
-  ra'e                  [tmp=prt,asp=[+rae],mod=ind]
-  !kurira'e             [tm=kuri,tmp=prt,asp=[+rae],mod=ind]
+  ra'e                  [asp=[+rae],mod=ind]
+  !kurira'e             [tm=kuri,asp=[+rae],mod=ind]
   --                    [asp=[-rae]]
 
 ### AIKÓNI...

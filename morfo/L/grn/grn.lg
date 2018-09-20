@@ -72,13 +72,13 @@ feats:
 
   ps (persona de sujeto) = 3 | 2 | 1
   # clusivity: False = exlusive (ore); True = inclusive (ñande)
-  clu = *False (exclusivo) | True (inclusivo)
+  clu (inclusivo) = *False | True
 
   po (persona de objeto) = *3 | 2 | 1
   oclu = *False (objeto exclusivo) | True (objecto inclusivo)
 
-  ns (número de sujeto) = 0 (sing) | 1 (plur)
-  no (número de objeto) = *0 (sing) | 1 (plur)
+  ns (número de sujeto) = 0 (singular) | 1 (plural)
+  no (número de objeto) = *0 (singular) | 1 (plural)
 
   mod (modo) = ind (indicativo) |
                imp (imperativo) |
