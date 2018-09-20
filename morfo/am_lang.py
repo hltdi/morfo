@@ -678,6 +678,7 @@ AM.morphology['v'].FS_implic = {'rel': ['def', 'sub'],
                                 'ob': [['expl']]}
 # defaultFS with voice and aspect unspecified
 AM.morphology['v'].citationFS = language.FeatStruct("[pos=v,tm=prf,sb=[-p1,-p2,-plr,-fem],ob=[-expl],cj1=None,cj2=None,pp=None,ax=None,-neg,-rel,-sub,-def,-ye,-acc,rl=[-p,-acc]]")
+AM.morphology['v'].explicit_feats = ["sb", "ob", "tm", "neg", "rel", "def", "cj1", "cj2", "pp"]
 
 AM.morphology['n'].defaultFS = \
     language.FeatStruct("[pos=n,-acc,-def,-neg,-fem,-itu,as=smp,cnj=None,-dis,-gen,-plr,poss=[-expl,-p1,-p2,-plr,-fem,-frm],pp=None,v=None,vc=smp,rl=[-p,-gen,-acc]]")
@@ -687,7 +688,10 @@ AM.morphology['n'].FS_implic = {'poss': [['expl'], 'def'],
                                 ('acc', True): [['rl', ['acc']]]}
 # defaultFS with voice and aspect unspecified
 AM.morphology['n'].citationFS = language.FeatStruct("[-acc,-def,-neg,cnj=None,-dis,-gen,-plr,poss=[-expl],pp=None,v=inf]")
+AM.morpholofy['n'].explicit_feats = ["plr", "poss", "def", "acc", "gen", "dis"]
+
 AM.morphology['cop'].defaultFS = language.FeatStruct("[cj2=None,-neg,ob=[-expl],-rel,sb=[-fem,-p1,-p2,-plr,-frm],-sub,tm=prs]")
+AM.morpholofy['cop'].explicit_feats = ["sb", "tm", "neg", "rel", "cj2"]
 
 ## Functions that return the citation forms for words
 AM.morphology['v'].citation = lambda root, fss, guess, vc_as: vb_get_citation(root, fss, guess, vc_as)

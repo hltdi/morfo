@@ -584,6 +584,8 @@ class POSMorphology:
         self.fv_dependencies = fv_dependencies or {}
         # List of feature-value pairs that have priority over others in displaying
         self.fv_priority = fv_priority or []
+        # List of feature labels and value count for web app
+        self.web_features = []
 
     def __str__(self):
         '''Print name.'''
@@ -744,6 +746,20 @@ class POSMorphology:
         path = os.path.join(self.morphology.get_cas_dir(), name + '.cas')
         print("Looking for cas at {}".format(path))
         return os.path.exists(path)
+
+    ## Web app stuff
+
+    def set_web_feats(self):
+        """Set the list of feature labels and number of possible values."""
+        if self.explicit_feats:
+            # Only do this if explicit features have been set
+            for f, v in self.feat_list:
+                if f in self.explicit_feats:
+                    flabel = self.feat_abbrevs.get(f, f)
+                    # By convention nested features are represented as a list of tuples;
+                    # simple feature list is a tuple
+                    nvalues = len(v) if isinstance(v, list) else 1
+                    self.web_features.append((flabel, nvalues))
 
     # This is a mess. Fix it at some point.
 

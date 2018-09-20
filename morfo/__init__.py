@@ -146,8 +146,8 @@ def anal_word(language, word, root=True, citation=True, gram=True,
     if language:
         if web:
             web = []
-        analysis = language.anal_word(word, preproc=non_roman and not roman,
-                                      postproc=(non_roman and not roman) and not raw,
+        analysis = language.anal_word(word, preproc= not roman,
+                                      postproc=not roman and not raw,
                                       root=root, citation=citation, gram=gram,
                                       segment=segment, only_guess=guess,
                                       guess=not dont_guess, webdicts=web,
