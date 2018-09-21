@@ -71,6 +71,8 @@ FEATS_RE = re.compile(r'\s*feat.*?:\s*(.*)')
 FV_RE = re.compile(r'\s*(.*?)\s*=\s*(.*)')
 # FV combinations, could be preceded by ! (= priority)
 FVS_RE = re.compile(r'([!]*)\s*([^!]*)')
+# Feature group: {f1, f2,...} (v1, v2, ...): groupname = groupvalue
+FEAT_GROUP_RE = re.compile(r"\{(.+)\}\s*\((.+)\):\s*(.+)\s*=\s*(.+)")
 # Abbrev, with prefixes, and full name
 ABBREV_NAME_RE = re.compile(r'([*%]*?)([^*%()]*?)\s*\((.*)\)\s*(\[.*\])?')
 NAME_RE = re.compile(r'([*%]*)([^*%\[\]]*)\s*(\[.*\])?')
@@ -292,6 +294,8 @@ class Language:
         true_explicit = {}
         explicit = {}
 
+        feature_groups = {}
+
         chars = ''
 
         current = None
@@ -311,6 +315,8 @@ class Language:
 
         current_explicit = []
         current_true_explicit = []
+
+        current_feature_groups = {}
 
         while lines:
 
@@ -403,6 +409,7 @@ class Language:
                     current_fv_priority = []
                     current_explicit = []
                     current_true_explicit = []
+                    current_feature_groups = {}
                     lex_feats[pos] = current_lex_feats
                     feats[pos] = current_feats
                     excl[pos] = current_excl
@@ -413,6 +420,7 @@ class Language:
                     explicit[pos] = current_explicit
                     true_explicit[pos] = current_true_explicit
                     fullpos[pos] = fullp
+                    feature_groups[pos] = current_feature_groups
                     continue
 
                 m = ABBREV_RE.match(line)
@@ -434,6 +442,29 @@ class Language:
 #                    current_explicit.append(fshort)
 #                    if opt and opt == '~':
 #                        current_true_explicit.append(fshort)
+                    continue
+
+                m = FEAT_GROUP_RE.match(line)
+                if m:
+                    groupfeats, groupvalues, groupname, groupvalue = m.groups()
+                    groupfeats = tuple([f.strip() for f in groupfeats.split(',')])
+                    groupvalues = [v.strip() for v in groupvalues.split(',')]
+                    for i, v in enumerate(groupvalues):
+                        if v.isdigit():
+                            groupvalues[i] = int(v)
+                        elif v == "False":
+                            groupvalues[i] = False
+                        elif v == "True":
+                            groupvalues[i] = True
+                    groupvalues = tuple(groupvalues)
+                    groupname = groupname.strip()
+                    if groupfeats in current_feature_groups:
+                        current_feature_groups[groupfeats].append((groupvalues, groupname, groupvalue))
+                    else:
+                        current_feature_groups[groupfeats] = [(groupvalues, groupname, groupvalue)]
+                    if groupname not in current_explicit:
+                        current_explicit.append(groupname)
+#                    print("feature groups {}".format(current_feature_groups))
                     continue
 
                 m = FV_RE.match(line)
@@ -574,6 +605,7 @@ class Language:
                 if not poss or pos in poss:
                     pos_args.append((pos, feats[pos], lex_feats[pos], excl[pos], abbrev[pos],
                                      fv_abbrev[pos], fv_dependencies[pos], fv_priorities[pos],
+                                     feature_groups[pos],
                                      explicit[pos], true_explicit[pos]))
             morph = Morphology(pos_morphs=pos_args,
                                punctuation=punc, characters=chars)
@@ -631,8 +663,8 @@ class Language:
         values = [v.strip() for v in value_string.split('|')]
         res = []
         prefix = ''
-        name = ''
         for value in values:
+            name = ''
             if not value:
                 continue
             if value == '+-':

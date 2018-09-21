@@ -520,6 +520,7 @@ class POSMorphology:
 
     def __init__(self, pos, feat_list=None, lex_feats=None, excl_feats=None, feat_abbrevs=None,
                  fv_abbrevs=None, fv_dependencies=None, fv_priority=None,
+                 feature_groups=None,
                  explicit=None, true_explicit=None):
         # A string representing part of speech
         self.pos = pos
@@ -586,6 +587,8 @@ class POSMorphology:
         self.fv_priority = fv_priority or []
         # List of feature labels and value count for web app
         self.web_features = []
+        # List of feature groups [([features], group_name),...]
+        self.feature_groups = feature_groups or []
 
     def __str__(self):
         '''Print name.'''
@@ -751,15 +754,19 @@ class POSMorphology:
 
     def set_web_feats(self):
         """Set the list of feature labels and number of possible values."""
-        if self.explicit_feats:
-            # Only do this if explicit features have been set
-            for f, v in self.feat_list:
-                if f in self.explicit_feats:
-                    flabel = self.feat_abbrevs.get(f, f)
-                    # By convention nested features are represented as a list of tuples;
-                    # simple feature list is a tuple
-                    nvalues = len(v) if isinstance(v, list) else 1
-                    self.web_features.append((flabel, nvalues))
+        if not self.web_features and self.explicit_feats:
+            # Only do this if explicit features have been set and
+            # web features have not been set (as happens in am_lang, etc.)
+            feat_dict = dict(self.feat_list)
+            for f in self.explicit_feats:
+                flabel = self.feat_abbrevs.get(f, f)
+                nvalues = 1
+                if f in feat_dict:
+                    # Feature groups won't be in feat_dict
+                    v = feat_dict[f]
+                    if isinstance(v, list):
+                        nvalues = len(v)
+                self.web_features.append((flabel, nvalues))
 
     # This is a mess. Fix it at some point.
 
@@ -1420,6 +1427,23 @@ class POSMorphology:
                 if webdict != None:
                     webdict[self.exab(fvs[0][0])] = expansion
                 return [expansion], True
+        # Check feature groups
+        if not top:
+            for feats, properties in self.feature_groups.items():
+                if any([(feat in feats_used) for feat in feats]):
+                    continue
+                for groupvalues, groupname, groupvalue in properties:
+                    found = True
+                    for feat, value in zip(feats, groupvalues):
+                        if feat not in fs or fs[feat] != value:
+                            found = False
+                            break
+                    if found:
+                        feats_used.extend(feats)
+                        expansions.append("{} = {}".format(groupname, groupvalue))
+                        if webdict != None:
+                            webdict[groupname] = groupvalue
+                    
         for fvs, exp in self.fv_abbrevs:
             match = True
             if all([(fv[0] in feats_used) for fv in fvs]):

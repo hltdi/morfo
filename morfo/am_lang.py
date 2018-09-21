@@ -704,11 +704,12 @@ AM.morphology['v'].feat_abbrevs = \
    "sb": "subject", "ob": "object", "tm": "TAM", "neg": "negative", "rel": "relative", "def": "definite",
    "pp": "preposition"}
 AM.morphology['v'].fv_abbrevs = \
-  (([['p1', True]], "1 person"),
-   ([['p2', True]], "2 person"),
-   ([['plr', True]], "plural"),
-   ([['plr', False]], "singular")
+  (([['p1', True], ['p2', False], ['plr', False]], "1 person singular"),
+   ([['p1', False], ['p2', False], ['plr', True]], "3 person plural")
    )
+# Set this here rather than automatically with POSMorphology.set_web_feats() since all web features have a single value
+AM.morphology['v'].web_feats = \
+  [('sb', 1), ('ob', 1), ('tm', 1), ('neg', 1), ('rel', 1), ('pp', 1), ('cj1', 1), ('cj2', 1), ('def', 1)]
 
 AM.morphology['n'].defaultFS = \
     language.FeatStruct("[pos=n,-acc,-def,-neg,-fem,-itu,as=smp,cnj=None,-dis,-gen,-plr,poss=[-expl,-p1,-p2,-plr,-fem,-frm],pp=None,v=None,vc=smp,rl=[-p,-gen,-acc]]")

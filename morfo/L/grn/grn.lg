@@ -70,32 +70,67 @@ feats:
 # +- chupe(kuéra); leave out of defaults so that both are possible when not specified
 #  ojxpl = *False | True
 
-  ps (persona de sujeto) = 3 | 2 | 1
+  *ps = 3 | 2 | 1
   # clusivity: False = exlusive (ore); True = inclusive (ñande)
-  clu (inclusivo) = *False | True
+  *clu = *False | True
 
-  po (persona de objeto) = *3 | 2 | 1
-  oclu = *False (objeto exclusivo) | True (objecto inclusivo)
+  *po = *3 | 2 | 1
+  *oclu = *False | True
 
-  ns (número de sujeto) = 0 (singular) | 1 (plural)
-  no (número de objeto) = *0 (singular) | 1 (plural)
+  *ns = 0 | 1
+  *no = *0 | 1
+
+  {ps, ns} (1, 0): sujeto = 1 persona singular
+  # Needed for second person objects
+  {ps} (1): sujeto = 1 persona
+  {ps, ns} (2, 0): sujeto = 2 persona singular
+  {ps} (3): sujeto = 3 persona
+  {ps, ns, clu} (1, 1, False): sujeto = 1 persona plural exclusivo
+  {ps, ns, clu} (1, 1, True): sujeto = 1 persona plural inclusivo
+  {ps, ns} (2, 1): sujeto = 2 persona plural
+
+  {po, no} (1, 0): objeto = 1 persona singular
+  {po, no} (2, 0): objeto = 2 persona singular
+  {po, no, clu} (1, 1, False): objeto = 1 persona plural exclusivo
+  {po, no, clu} (1, 1, True): objeto = 1 persona plural inclusivo
+  {po, no} (2, 1): objeto = 2 persona plural
 
   mod (modo) = ind (indicativo) |
                imp (imperativo) |
                opt (optativo) |
-               None
+               None (-)
 
-  tmp (TAM)   =   prs (presente) |
+  tm (tiempo) = None |
+                vaekue (va'ekue) |
+		vaerã (va'erã) |
+		va |
+		akue ('akue) |
+		mi |
+		ne |
+		arã |
+		moã (mo'ã) |
+		kuri |
+		rakae (raka'e) |
+		ta |
+		chéne
+
+  # only for generation
+  *tmp (TAM)   =  prs (presente) |
                   prt (pretérito) |
                   fut (futuro) |
-		  sbp (subjuntivo presente) |
+   		  sbp (subjuntivo presente) |
 		  ipv (imperativo) |
 		  ipf (imperfecto) |
 		  pcp (pluscuamperfecto) |
 		  inf (infinitivo)
 
-  neg (negativo) = *False | True
-  negipv (negativo imperativo) = *False | True
+  # Combine different realizations of negative
+  {neg, negipv} (False, True): negativo = + (imperativo)
+  {neg, negipv} (True, False): negativo = +
+  {neg, negipv} (False, False): negativo = -
+
+  *neg (negativo) = *False | True
+  *negipv (negativo imperativo) = *False | True
   inter (interrogativo) = *False | True
 
   voz = *smp (simple) |
@@ -110,7 +145,7 @@ feats:
 #        intrans_caus_recip (intransitivo causativo recíproco)
 
   # only relevant for future tense
-  prob (probabilidad) = None | hi | lo
+  *prob (probabilidad) = None | hi | lo
 
   impopt (imperativo modificado) = mi = *False | True;
                                    ke = *False | True;
@@ -135,7 +170,6 @@ feats:
 
   grd (grado) = *None | ve | ete | eterei
 
-#  tm (tmp) = None | vaekue | vaerã | va | akue | mi | ne | arã | moã | kuri | rakae | ta | chéne
 #  tm (tmp) = None | vaekue | vaerã | akue | mi | ne | arã | moã | kuri | rakae | ta
 
   asp (aspecto) = va = *False | True;
