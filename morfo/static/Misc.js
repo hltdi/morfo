@@ -7,12 +7,14 @@ function idioma(abbrev) {
     cargando();
     form = document.getElementById("form");
     form.labrev.value = abbrev;
+/*    form.action = "anal"; */
+    form.submit();
+}
+function analizar() {
+    cargando();
+    form = document.getElementById("form");
     form.action = "anal";
     form.submit();
-//    cargando();
-//    form = document.getElementById("form");
-//    form.action = "anal";
-//    form.submit();
 }
 function acerca() {
     form = document.getElementById("form");

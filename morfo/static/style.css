@@ -219,8 +219,8 @@ span.language
     font-size: 110%;
     font-weight: bold;
     font-family: "arial";
-    background-color: #000000;
-    color: #ff1919;
+    background-color: #0000ff;
+    color: #ffffff;
 }
 span.label
 {
@@ -329,8 +329,8 @@ input.text
 }
 #narrowbutton
 {
-        background-color: #8DEDCD;
-        color: #4B2B17;
+        background-color: #009696;
+        color: #ffffff;
         font-family: "Verdana";
         font-size: 100%;
         align: center;

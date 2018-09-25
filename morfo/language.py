@@ -79,6 +79,7 @@ NAME_RE = re.compile(r'([*%]*)([^*%\[\]]*)\s*(\[.*\])?')
 # Feature to be recorded in anal output; new 2015.03.10
 # xf: g gender
 # xf~: VOS voseo
+# As of 2018.9.21, this may be no longer necessary
 EXPL_FEAT_RE = re.compile(r'\s*xf(.*):\s*(.*)\s*=\s*(.*)')
 # Preprocessing: replace characters in first list with last char
 # clean: â, ä = ã
@@ -149,6 +150,9 @@ class Language:
         # New analyses since language loaded
         # each entry a wordform and list of (root, FS) analyses
         self.new_anals = {}
+        # Data for web app
+        self.webdata = []
+        self.webdict = {}
 
     def __str__(self):
         return self.label or self.abbrev
@@ -605,7 +609,7 @@ class Language:
                 if not poss or pos in poss:
                     pos_args.append((pos, feats[pos], lex_feats[pos], excl[pos], abbrev[pos],
                                      fv_abbrev[pos], fv_dependencies[pos], fv_priorities[pos],
-                                     feature_groups[pos],
+                                     feature_groups[pos], fullpos[pos],
                                      explicit[pos], true_explicit[pos]))
             morph = Morphology(pos_morphs=pos_args,
                                punctuation=punc, characters=chars)
@@ -1532,6 +1536,29 @@ class Language:
                 out.close()
         except IOError:
             print('No such file or path; try another one.')
+
+    def set_web(self):
+        """Set the features and number of values and index for each POS."""
+        for index, posmorph in enumerate(self.morphology.values()):
+            # Set web features if this hasn't already happened
+            posmorph.set_web_feats()
+            webfeats = posmorph.web_features
+            html1 = "<tr><td colspan='2' style='pos'><span class='featlabeloff'>"
+            html1 += "Categoría gramatical: "
+            html1 += posmorph.name
+            html1 += "</span></td><td style='width: 30px'></td>"
+            html1 += "<td class='raiz'><span class='featlabeloff'>Raíz</span><textarea class='raiz'></textarea>"
+            html1 += "</td>"
+            if posmorph.citation:
+                html1 += "<td class='raiz'><span class='featlabeloff'>Citación</span><textarea class='raiz'></textarea></td>"
+            html1 += "</tr>"
+            self.webdata.append((posmorph.name, posmorph.citation, posmorph.web_features, html1))
+            self.webdict[posmorph.name] = index
+
+    def anal_get_webindex(self, anal):
+        """Get the index among the POS features displayed in the web app for the analysis."""
+        pos = anal.get('POS', 'verb')
+        return self.webdict.get(pos, 0)
 
 class Multiling(dict):
 

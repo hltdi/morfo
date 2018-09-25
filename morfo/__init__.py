@@ -31,9 +31,12 @@ app.config.from_object(__name__)
 
 print('\n@@@@ This is morfo, version {} @@@@\n'.format(_version))
 
-def init_session(lg_abbrev, user=None, segment=False):
+def init_session(lg_abbrev, user=None, segment=False, web=True):
     """Create a session with the given language and user."""
     language = get_language(lg_abbrev, segment=segment)
+    if web:
+        # Set web data for language
+        language.set_web()
     return Session(language, user=user)
 
 def exit(session=None, save=True, cache=''):

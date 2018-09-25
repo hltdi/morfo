@@ -116,8 +116,8 @@ def cop_anal2string(anal, webdict=None):
             webfv(webdict, 'neg', True)
         cj = fs.get('cj2')
         if cj:
-            webfv(webdict, 'conjunctive suffix', cj)
-            s += ' conjunctive suffix: ' + cj + '\n'
+            webfv(webdict, 'conj suffix', cj)
+            s += ' conj suffix: ' + cj + '\n'
     return s
 
 def n_anal2string(anal, webdict=None):
@@ -242,8 +242,8 @@ def n_anal2string(anal, webdict=None):
                 webfv(webdict, 'preposition', pp)
             if cnj:
                 if pp: s += ','
-                s += ' conjunctive suffix: ' + cnj
-                webfv(webdict, 'conjunctive suffix', cnj)
+                s += ' conj suffix: ' + cnj
+                webfv(webdict, 'conj suffix', cnj)
             s += '\n'        
     return s    
 
@@ -343,12 +343,12 @@ def vb_anal2string(anal, webdict=None):
                 webfv(webdict, 'preposition', prep)
             if cj1:
                 if any_affix: s += ','
-                s += ' conjunctive prefix: ' + cj1
-                webfv(webdict, 'conjunctive prefix', cj1)
+                s += ' conj prefix: ' + cj1
+                webfv(webdict, 'conj prefix', cj1)
             if cj2:
                 if any_affix: s += ','
-                s += ' conjunctive suffix: ' + cj2
-                webfv(webdict, 'conjunctive suffix', cj2)
+                s += ' conj suffix: ' + cj2
+                webfv(webdict, 'conj suffix', cj2)
             s += '\n'
     return s
 
@@ -455,9 +455,9 @@ def vb_anal_to_dict(root, fs):
         bools.append('accusative')
     # CONJUNCTIONS AND PREPOSITIONS
     if cj1:
-        strings['prefix conjunction'] = cj1
+        strings['prefix conj'] = cj1
     if cj2:
-        strings['suffix conjunction'] = cj2
+        strings['suffix conj'] = cj2
     if prp:
         strings['preposition'] = prp
 
@@ -663,6 +663,7 @@ AM.morphology.triv_anal = lambda form: no_convert(form)
 ## Functions converting between feature structures and simple dicts
 AM.morphology['v'].anal_to_dict = lambda root, anal: vb_anal_to_dict(root, anal)
 AM.morphology['v'].dict_to_anal = lambda root, anal: vb_dict_to_anal(root, anal)
+AM.morphology['v'].name = 'verb'
 
 ## Default feature structures for POSMorphology objects
 ## Used in generation and production of citation form
@@ -700,17 +701,25 @@ AM.morphology['v'].feat_list = \
   ('neg', (False, True)),
   ('sb', [('p1', (False, True)), ('frm', (False, True)), ('plr', (False, True)), ('fem', (False, True)), ('p2', (False, True))])]
 AM.morphology['v'].feat_abbrevs = \
-  {'cj1': "conjunctive prefix", 'cj2': "conjunctive suffix", "vc": "voice",
+  {'cj1': "conj prefix", 'cj2': "conj suffix", "vc": "voice",
    "sb": "subject", "ob": "object", "tm": "TAM", "neg": "negative", "rel": "relative", "def": "definite",
    "pp": "preposition"}
 AM.morphology['v'].fv_abbrevs = \
-  (([['p1', True], ['p2', False], ['plr', False]], "1 person singular"),
-   ([['p1', False], ['p2', False], ['plr', True]], "3 person plural")
+  (([['p1', True], ['p2', False], ['plr', False]], "1 prs sng"),
+   ([['p1', True], ['p2', False], ['plr', True]], "1 prs plr"),
+   ([['p1', False], ['p2', True], ['plr', False], ['fem', False]], "2 prs sng mas"),
+   ([['p1', False], ['p2', True], ['plr', False], ['fem', True]], "2 prs sng fem"),
+   ([['p1', False], ['p2', True], ['plr', False], ['frm', True]], "2 prs frml"),
+   ([['p1', False], ['p2', True], ['plr', True]], "2 prs plr"),
+   ([['p1', False], ['p2', False], ['plr', False]], "3 prs sng"),
+   ([['p1', False], ['p2', False], ['plr', False], ['frm', True]], "3 prs frml"),
+   ([['p1', False], ['p2', False], ['plr', True]], "3 prs plr")
    )
 # Set this here rather than automatically with POSMorphology.set_web_feats() since all web features have a single value
 AM.morphology['v'].web_feats = \
   [('sb', 1), ('ob', 1), ('tm', 1), ('neg', 1), ('rel', 1), ('pp', 1), ('cj1', 1), ('cj2', 1), ('def', 1)]
 
+AM.morphology['n'].name = 'noun'
 AM.morphology['n'].defaultFS = \
     language.FeatStruct("[pos=n,-acc,-def,-neg,-fem,-itu,as=smp,cnj=None,-dis,-gen,-plr,poss=[-expl,-p1,-p2,-plr,-fem,-frm],pp=None,v=None,vc=smp,rl=[-p,-gen,-acc]]")
 AM.morphology['n'].FS_implic = {'poss': [['expl'], 'def'],
@@ -720,9 +729,37 @@ AM.morphology['n'].FS_implic = {'poss': [['expl'], 'def'],
 # defaultFS with voice and aspect unspecified
 AM.morphology['n'].citationFS = language.FeatStruct("[-acc,-def,-neg,cnj=None,-dis,-gen,-plr,poss=[-expl],pp=None,v=inf]")
 AM.morphology['n'].explicit_feats = ["plr", "poss", "def", "acc", "gen", "dis"]
+AM.morphology['n'].feat_abbrevs = \
+  {'plr': "plural", 'poss': "possessive", "def": "definite", "acc": "accusative", "dis": "distributive"}
+AM.morphology['cop'].fv_abbrevs = \
+  (([['p1', True], ['p2', False], ['plr', False]], "1 prs sng"),
+   ([['p1', True], ['p2', False], ['plr', True]], "1 prs plr"),
+   ([['p1', False], ['p2', True], ['plr', False], ['fem', False]], "2 prs sng mas"),
+   ([['p1', False], ['p2', True], ['plr', False], ['fem', True]], "2 prs sng fem"),
+   ([['p1', False], ['p2', True], ['plr', False], ['frm', True]], "2 prs frml"),
+   ([['p1', False], ['p2', True], ['plr', True]], "2 prs plr"),
+   ([['p1', False], ['p2', False], ['plr', False]], "3 prs sng"),
+   ([['p1', False], ['p2', False], ['plr', False], ['frm', True]], "3 prs frml"),
+   ([['p1', False], ['p2', False], ['plr', True]], "3 prs plr")
+   )
 
+AM.morphology['cop'].name = 'copula'
 AM.morphology['cop'].defaultFS = language.FeatStruct("[cj2=None,-neg,ob=[-expl],-rel,sb=[-fem,-p1,-p2,-plr,-frm],-sub,tm=prs]")
+AM.morphology['cop'].citationFS = language.FeatStruct("[cj2=None,-neg,ob=[-expl],-rel,sb=[-fem,-p1,-p2,-plr,-frm],-sub,tm=prs]")
 AM.morphology['cop'].explicit_feats = ["sb", "tm", "neg", "rel", "cj2"]
+AM.morphology['cop'].feat_abbrevs = \
+  {'sb': "subject", 'cj2': "conj suffix", "tm": "TAM", "neg": "negative", "rel": "relative"}
+AM.morphology['cop'].fv_abbrevs = \
+  (([['p1', True], ['p2', False], ['plr', False]], "1 prs sng"),
+   ([['p1', True], ['p2', False], ['plr', True]], "1 prs plr"),
+   ([['p1', False], ['p2', True], ['plr', False], ['fem', False]], "2 prs sng mas"),
+   ([['p1', False], ['p2', True], ['plr', False], ['fem', True]], "2 prs sng fem"),
+   ([['p1', False], ['p2', True], ['plr', False], ['frm', True]], "2 prs frml"),
+   ([['p1', False], ['p2', True], ['plr', True]], "2 prs plr"),
+   ([['p1', False], ['p2', False], ['plr', False]], "3 prs sng"),
+   ([['p1', False], ['p2', False], ['plr', False], ['frm', True]], "3 prs frml"),
+   ([['p1', False], ['p2', False], ['plr', True]], "3 prs plr")
+   )
 
 ## Functions that return the citation forms for words
 AM.morphology['v'].citation = lambda root, fss, guess, vc_as: vb_get_citation(root, fss, guess, vc_as)

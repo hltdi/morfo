@@ -520,10 +520,12 @@ class POSMorphology:
 
     def __init__(self, pos, feat_list=None, lex_feats=None, excl_feats=None, feat_abbrevs=None,
                  fv_abbrevs=None, fv_dependencies=None, fv_priority=None,
-                 feature_groups=None,
+                 feature_groups=None, name=None,
                  explicit=None, true_explicit=None):
         # A string representing part of speech
         self.pos = pos
+        # A string representing the full name of the POS
+        self.name = name or pos
         # Weight constraint on FST arcs
         self.wc = None if pos == 'all' else FSSet('[pos=' + pos + ']')
         # The string used as type in FSs
@@ -588,7 +590,7 @@ class POSMorphology:
         # List of feature labels and value count for web app
         self.web_features = []
         # List of feature groups [([features], group_name),...]
-        self.feature_groups = feature_groups or []
+        self.feature_groups = feature_groups or None
 
     def __str__(self):
         '''Print name.'''
@@ -1363,12 +1365,13 @@ class POSMorphology:
         fs = anal[3]
         # Leave out the part of speech for now
         s = self.language.T.tformat('{} = {}\n{} = <{}>\n',
-                                    ['POS', self.pos, 'root', root],
+                                    ['POS', self.name, 'root', root],
 #                                    ['root', root],
                                     self.language.tlanguages)
         if webdict != None:
-            webdict['POS'] = self.pos
+            webdict['POS'] = self.name
             webdict['root'] = root
+            # Citation form...
         s += self.pretty_fs(fs, webdict=webdict)
 #        if webdict:
 #            return webdict
@@ -1428,7 +1431,7 @@ class POSMorphology:
                     webdict[self.exab(fvs[0][0])] = expansion
                 return [expansion], True
         # Check feature groups
-        if not top:
+        if not top and self.feature_groups:
             for feats, properties in self.feature_groups.items():
                 if any([(feat in feats_used) for feat in feats]):
                     continue

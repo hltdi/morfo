@@ -19,10 +19,48 @@ div#palabra
     white-space: normal;
     border: thin solid;
 }
+table.pos
+{
+	table-layout: fixed;
+	margin-left: 0;
+	margin-right: auto;
+	border: 0;
+	padding: 0;
+	border-collapse: collapse;
+}
+td.pos
+{
+  padding: 1em 0 0;
+  vertical-align: top;
+  width: 250px
+}
+hr.possep
+{
+  border-top: 1px dashed #000000;
+  border-bottom: 0;
+}
+td.raiz
+{
+  padding: 1em 0 0;
+  width: 150px;
+}
 span.lengua
 {
     font-size: 120%;
     font-weight: bold;
+}
+span.vallabel
+{
+   font-weight: normal;
+   font-style: italic;
+   font-size: 100%;
+}
+span.vallabeloff
+{
+   font-weight: normal;
+   font-style: italic;
+   font-size: 100%;
+   color: #cccccc;
 }
 textarea.raiz
 {
@@ -31,13 +69,38 @@ textarea.raiz
     width: 90%;
     height: 25px;
     font-size: 100%;
+    font-weight: normal;
+    font-style: italic;
     padding: 4px 4px;
     margin: 10px 6px 6px 0px;
+}
+textarea.analnum
+{
+    font-family: "Verdana";
+    vertical-align: text-bottom;
+    text-align: center;
+    resize: none;
+    width: 20px;
+    height: 20px;
+    font-size: 90%;
+    padding: 0;
+    margin: 20px 6px 0px 0px;
 }
 span.featlabel
 {
     font-weight: bold;
     font-size: 100%;
+}
+span.featlabeloff
+{
+    font-weight: bold;
+    font-size: 100%;
+    color: #cccccc;
+}
+span.analnum
+{
+    font-weight: bold;
+    font-size: 110%;
 }
 .btndesplegable {
     font-family: "Verdana";
@@ -107,6 +170,8 @@ textarea#comment
 <table class='left'>
 <form id='form' name="Form1" method=POST>
 
+<input type="hidden" name="labrev" value="">
+
 <tr class="brown">
     <td class="title">
     <a href="base">
@@ -120,15 +185,34 @@ textarea#comment
 
     <td class="menu" style="width: 250px">
       <div class='despleg-wrap'>
-      <button type="button" class="despleg" onclick="mostrarDespleg()">SELECCIONAR IDIOMA ▾</button>
+      <button type="button" class="despleg"
+	onclick="mostrarDespleg()">
+	{% if language %}IDIOMA ▾ | <span class="language">{{language}}</span>
+	{% else %}SELECCIONAR IDIOMA ▾
+	{% endif %}
+	</button>
       <div id="menudespleg" class="contenido-despleg">
-        <span class='opinic' onclick="idioma('spa')">ESPAÑOL</span>
+	{% if (not language) or (language.abbrev != 'spa') %}
+	<span class='opinic' onclick="idioma('spa')">ESPAÑOL</span>
+	{% endif %}
+	{% if  (not language) or (language.abbrev != 'grn') %}
 	<span class='opinic' onclick="idioma('grn')">GUARANÍ</span>
+	{% endif %}
+	{% if  (not language) or (language.abbrev != 'qu') %}
 	<span class='opinic' onclick="idioma('qu')">QHICHWA</span>
+	{% endif %}
+	{% if  (not language) or (language.abbrev != 'quc') %}
 	<span class='opinic' onclick="idioma('quc')">K'ICHE'</span>
+	{% endif %}
+	{% if  (not language) or (language.abbrev != 'om') %}
 	<span class='opinic' onclick="idioma('om')">AFAAN OROMOO</span>
+	{% endif %}
+	{% if  (not language) or (language.abbrev != 'am') %}
 	<span class='opinic' onclick="idioma('am')">አማርኛ</span>
+	{% endif %}
+	{% if  (not language) or (language.abbrev != 'ti') %}
 	<span class='opinic' onclick="idioma('ti')">ትግርኛ</span>
+	{% endif %}
       </div>
       </div>
     </td>
@@ -156,57 +240,166 @@ textarea#comment
 <p id="error" class="error">
 </p>
 
+<div id="cargando">
 <h1>Análisis morfológico</h1>
 
 <table class='left'>
-
-<!--  
-  <tr>
-    <td style="width: 600px">
-      <span class="lengua">Castellano</span>
-    </td>
-    <td style="width: 25px"></td>
-    <td style="width: 600px">
-      <span class="lengua">Guaraní</span>
-  </tr>
-  -->
 
 <tr>
 <td style="width: 400px">
 <div id='palabra' contenteditable="true">{% if palabra %}{{palabra|safe}}{% endif %}</div>
 </td>
+<td style="width: 30px"></td>
+<td style="vertical-align: middle">
+<input type="submit" name="borrar" id="narrowbutton" onclick="borrar()" value="Borrar">
+</td>
 </tr>
 
 <tr>
 <td class='instruc'>
-<div class="instruc" id="instruc_palabra">Escriba la palabra que
-  quiere analizar.
+<div class="instruc" id="instruc_palabra">Escriba una palabra y presione "Intro/Entrar".
 </td>
 </div>
+<td></td><td></td>
 </tr>
 </table>
+
+{% if analysis %}
+<p>
+Analysis: {{ analysis }}; analindex {{analindex}}; webindex {{webindex}}.
+</p>
+{% endif %}
 
 <table style="left">
+{% if palabra %}
 <tr>
-  <td style="width: 250px; padding: 2em 0 0"><span class="featlabel">Categoría gramatical</span><br/>
-  <textarea class="raiz"></textarea>
+  <td><span class="analnum">Análisis</span>
+    <textarea class="analnum">{{ analindex }}</textarea>
   </td>
-  <td style="width: 250px; padding: 2em 0 0"><span class="featlabel">Raíz</span><br/>
-  <textarea class="raiz"></textarea>
+  <td style="width: 30px"></td>
+  {% if not ultanal %}
+  <td style="vertical-align: bottom">
+    <input type="submit" name="proxanal" id="narrowbutton" onclick="proxanal()" value="Próximo">
   </td>
-  <td style="width: 250px; padding: 2em 0 0"><span class="featlabel">Citación</span><br/>
-  <textarea class="raiz"></textarea>
+  {% endif %}
+</tr>
+{% endif %}
+</table>
+
+{% if webdata %}
+<table style='pos'>
+
+{% for data in webdata %}
+
+{% set thisanal = (webindex == loop.index0) %}
+
+{% if thisanal %}
+
+<tr>
+  <td class="pos"><span
+    class="featlabel">categoría gramatical</span><br/><span class="vallabel">{{data[0]}}</span>
+  </td>
+  <td class="raiz"><span class="featlabel">raíz</span><br/>
+  <textarea class="raiz">{{analysis.root}}</textarea>
+  </td>
+  {% if data[1] %}
+  <td class="raiz"><span class="featlabeloff">citación</span><br/>
+  <textarea class="raiz">{{analysis.citation}}</textarea>
+  </td>
+  {% else %}
+  <td></td>
+  {% endif %}
+  <td style="width: 500px"></td>
+</tr>
+<tr>
+  <td></td>
+  <td colspan="3">
+  <table class="left">
+    <tr>
+      {% for feature in data[2] %}
+       {% set value = feature[0] %}
+      <td class="raiz"><span
+	class="featlabel">{{value}}</span><br />
+	<textarea class="raiz">{{analysis[value]}}</textarea>
+      </td>
+      {% if loop.index0 == 6 %}
+    </tr>
+  </table>
+  </td>
+  <tr>
+    <td></td>
+    <td colspan="3">
+      <table class="left">
+	<tr>
+      {% endif %}
+      {% endfor %}
+    </tr>
+  </table>
   </td>
 </tr>
 
+{% else %}
+<tr>
+  <td class="pos"><span
+    class="featlabeloff">categoría gramatical</span><br/><span class="vallabeloff">{{data[0]}}</span>
+  </td>
+  <td class="raiz"><span class="featlabeloff">raíz</span><br/>
+  <textarea class="raiz"></textarea>
+  </td>
+  {% if data[1] %}
+  <td class="raiz"><span class="featlabeloff">citación</span><br/>
+  <textarea class="raiz"></textarea>
+  </td>
+  {% else %}
+  <td></td>
+  {% endif %}
+  <td style="width: 800px"></td>
+</tr>
+<tr>
+  <td></td>
+  <td colspan="3">
+  <table class="left">
+    <tr>
+      {% for feature in data[2] %}
+      <td class="raiz"><span
+	class="featlabeloff">{{feature[0]}}</span><br />
+	<textarea class="raiz"></textarea>
+      </td>
+      {% if loop.index0 == 6 %}
+    </tr>
+  </table>
+  </td>
+  <tr>
+    <td></td>
+    <td colspan="3">
+      <table class="left">
+	<tr>
+      {% endif %}
+      {% endfor %}
+    </tr>
+  </table>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+    <hr class='possep'>
+  <td>
+</tr>
+
+{% endif %}
+
+{% endfor %}
+
 </table>
+{% endif %}
 
 <form name="Form2" method=POST action='anal'>
 <input type="hidden" name="palabra" value="">
 <input type="hidden" name="borrar" value=false>
-<input type="hidden" name="registrar" value=false>
-<input type="hidden" name="tpalabra" value="140%">
+<input type="hidden" name="tpalabra" value="130%">
 </form>
+
+</div>
 
 <script>
 document.getElementById("palabra").focus();
@@ -235,7 +428,7 @@ function longPalabra()
 
 function alSalir()
 {
-    document.Form2.tpalabra.value = "140%";
+    document.Form2.tpalabra.value = "130%";
     document.Form1.action = "fin";
     document.Form1.target = "_self";     // Misma ventana
     document.Form1.submit();             // Enviar la página
@@ -246,7 +439,13 @@ function borrar()
 {
     document.Form2.borrar.value = 'true';
     document.Form2.palabra.value = '';
-    document.Form2.tpalabra.value = "140%";
+    document.Form2.tpalabra.value = "130%";
+    document.Form2.submit();
+    return true;
+}
+
+function proxanal()
+{
     document.Form2.submit();
     return true;
 }
@@ -258,17 +457,17 @@ function copiar()
     document.execCommand("copy");
 }
 
+/*
 function registrar()
 {
     meta = document.getElementById("analisis").value;
-//    document.Form2.ometa.value = meta;
-//    document.Form2.palabra.value = fuente;
     document.Form2.borrar.value = 'true';
     document.Form2.registrar.value = 'true';
     document.Form2.tpalabra.value = "140%";
     document.Form2.action = "anal";
     document.Form2.submit();
 }
+*/
 
 function mayuscula(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -296,9 +495,11 @@ function palabraNuevaLinea() {
     document.Form2.submit();
 }
 
+/*
 function borrarPalabra() {
     document.getElementById("palabra").innerHTML = "";
 }
+*/
 
 function cambiarMeta(button, choiceid) {
     newitem = document.getElementById(choiceid).innerHTML;

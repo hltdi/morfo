@@ -34,7 +34,8 @@ feats:
 
 ##### VERBOS; ÑE'ẼTEVAKUÉRA
 
-  pos: v ñe'ẽtéva
+  pos: v verbo/adjetivo
+# ñe'ẽtéva
 
 #  xf: ns = número de sujeto
 #  xf: ps = persona de sujeto
@@ -83,17 +84,17 @@ feats:
   {ps, ns} (1, 0): sujeto = 1 persona singular
   # Needed for second person objects
   {ps} (1): sujeto = 1 persona
-  {ps, ns} (2, 0): sujeto = 2 persona singular
+  {ps, ns} (2, 0): sujeto = 2 pers sng
   {ps} (3): sujeto = 3 persona
-  {ps, ns, clu} (1, 1, False): sujeto = 1 persona plural exclusivo
-  {ps, ns, clu} (1, 1, True): sujeto = 1 persona plural inclusivo
-  {ps, ns} (2, 1): sujeto = 2 persona plural
+  {ps, ns, clu} (1, 1, False): sujeto = 1 prs pl excl
+  {ps, ns, clu} (1, 1, True): sujeto = 1 prs pl incl
+  {ps, ns} (2, 1): sujeto = 2 pers plr
 
-  {po, no} (1, 0): objeto = 1 persona singular
-  {po, no} (2, 0): objeto = 2 persona singular
-  {po, no, clu} (1, 1, False): objeto = 1 persona plural exclusivo
-  {po, no, clu} (1, 1, True): objeto = 1 persona plural inclusivo
-  {po, no} (2, 1): objeto = 2 persona plural
+  {po, no} (1, 0): objeto = 1 pers sng
+  {po, no} (2, 0): objeto = 2 pers sng
+  {po, no, clu} (1, 1, False): objeto = 1 prs pl excl
+  {po, no, clu} (1, 1, True): objeto = 1 prs pl incl
+  {po, no} (2, 1): objeto = 2 pers plr
 
   mod (modo) = ind (indicativo) |
                imp (imperativo) |
@@ -118,16 +119,16 @@ feats:
   *tmp (TAM)   =  prs (presente) |
                   prt (pretérito) |
                   fut (futuro) |
-   		  sbp (subjuntivo presente) |
+   		  sbp (subj pres) |
 		  ipv (imperativo) |
 		  ipf (imperfecto) |
-		  pcp (pluscuamperfecto) |
+		  pcp (pluscuamprf) |
 		  inf (infinitivo)
 
   # Combine different realizations of negative
-  {neg, negipv} (False, True): negativo = + (imperativo)
-  {neg, negipv} (True, False): negativo = +
-  {neg, negipv} (False, False): negativo = -
+  {neg, negipv} (False, True): polaridad = neg imperv
+  {neg, negipv} (True, False): polaridad = negativo
+  {neg, negipv} (False, False): polaridad = afirmativo
 
   *neg (negativo) = *False | True
   *negipv (negativo imperativo) = *False | True
@@ -138,27 +139,35 @@ feats:
         caus (causativo) |
         reflx (reflexivo) |
         recip (reciprocal) |
-        intrans_caus (intransitivo causativo) |
-        reflx_caus (reflexivo causativo) |
-        recip_caus (reciprocal causativo)
+        intrans_caus (intrans caus) |
+        reflx_caus (reflex caus) |
+        recip_caus (recip caus)
 #        intrans_caus_reflx (intransitivo causativo reflexivo) |
 #        intrans_caus_recip (intransitivo causativo recíproco)
 
   # only relevant for future tense
   *prob (probabilidad) = None | hi | lo
 
-  impopt (imperativo modificado) = mi = *False | True;
-                                   ke = *False | True;
-                                   na = *False | True;
-                          	   mbae = *False | True;
-                           	   mo = *False | True
+  impopt (imprv mod) = mi = *False | True;
+                             ke = *False | True;
+                             na = *False | True;
+                             mbae = *False | True;
+                             mo = *False | True
 
   rel (relativo) = *None | sjoj | obl
+
+  # relativo
+  {rel} (sjoj): relativo = suj/obj
+  {rel} (obl): relativo = oblicuo
 
   pp (posposición) = *None | peve | jave | ramo | rire | haguã | vo | gui | guive | pe | re | icha | vove | rangue | vove | kuevo
 
   # uka
-  med (mediativo) = *False | True
+  {voz, med} (smp, True): voz = mediativo
+  {voz, med} (reflx, True): voz = med reflx
+  {voz, med} (recip, True): voz = med recip
+  {voz, med} (caus, True): voz = med caus
+#  med (mediativo) = *False | True
 
 #  sj (suj) = 1 = False | True;
 #             2 = False | True;
@@ -220,7 +229,8 @@ feats:
   
 #### SUSTANTIVOS; TEROKUÉRA
   
-  pos: n tero
+  pos: n sustantivo
+#  tero
 
 #  xf~: der = der
 #  xf~: poses = poses

@@ -27,15 +27,13 @@ from flask import request, session, g, redirect, url_for, abort, render_template
 from morfo import app, exit, load, anal_word, seg, gen, init_session
 
 # Global variables for views; probably a better way to do this...
-LANGUAGE = ANALYSES = HTML = USER = WORD = SESSION = None
+LANGUAGE = ANALYSES = USER = WORD = SESSION = None
 USERS_INITIALIZED = False
 ANAL_INDEX = 0
 
-def initialize():
-    pass
-
-#def init_session(abbrev):
-#    pass
+def init_word():
+    ANALYSES = WORD = None
+    ANAL_INDEX = 0
 
 def load_language(abbrev):
     load(abbrev)
@@ -52,8 +50,16 @@ def index():
 
 @app.route('/base', methods=['GET', 'POST'])
 def base():
-    print("In base...")
-    return render_template('base.html', language=LANGUAGE)
+    global SESSION
+    global LANGUAGE
+    form = request.form
+    print("base form: {}".format(form))
+    if 'labrev' in form:
+        lg_abbrev = form.get('labrev')
+        SESSION = init_session(lg_abbrev, user=USER)
+        LANGUAGE = SESSION.language
+        return render_template('anal.html', language=LANGUAGE, webdata=LANGUAGE.webdata)
+    return render_template('base.html')
 
 @app.route('/acerca', methods=['GET', 'POST'])
 def acerca():
@@ -64,6 +70,7 @@ def acerca():
 def contacto():
     return render_template('contacto.html', language=LANGUAGE)
 
+# Work on this later.
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     global USER
@@ -126,22 +133,23 @@ def acct():
 @app.route('/anal', methods=['GET', 'POST'])
 def anal():
     global WORD
-    global HTML
     global SESSION
     global LANGUAGE
     global ANAL_INDEX
+    global ANALYSES
     form = request.form
-    of = None
+    ultanal = False
     print("Form for anal: {}".format(form))
     lg_abbrev = form.get('labrev')
     current_lg_abbrev = None
+    webdata = []
     if LANGUAGE:
         current_lg_abbrev = LANGUAGE.abbrev
-    if current_lg_abbrev and lg_abbrev != current_lg_abbrev:
-        print("Changing language!")
+        webdata = LANGUAGE.webdata
+#    print("Current language abbreviation {}".format(current_lg_abbrev))
     if not SESSION:
         lg_abbrev = form.get('labrev')
-        print("Creating session for {}".format(lg_abbrev))
+#        print("Creating session for {}".format(lg_abbrev))
         SESSION = init_session(lg_abbrev, user=USER)
         LANGUAGE = SESSION.language
     username = USER.username if USER else ''
@@ -153,18 +161,22 @@ def anal():
 #        return render_template('sent.html', sentence=SEG_HTML, raw=raw, punc=punc,
 #                               document=document, user=USER)
     if form.get('borrar') == 'true':
-        sentrec = None
-        if SENTENCE:
-            sentrec = SENTENCE.record
-        WORD = HTML = None
-        if form.get('registrar') == 'true':
-            if SESSION:
-                analysis = form.get('anal')
-            else:
-                print("NO SESSION SO NOTHING TO RECORD")
-        return render_template('anal.html', palabra=None, user=username, language=LANGUAGE, labrev=lg_abbrev)
+        print("BORRAR")
+        ANALYSES = WORD = None
+        ANAL_INDEX = 0
+#        init_word()
+        return render_template('anal.html', palabra=None, user=username, analindex=0,
+                               language=LANGUAGE, labrev=lg_abbrev, analysis=None,
+                               ultanal=ultanal, webdata=webdata)
+#    if form.get('proxanal') == 'true':
+#        print("PROXANAL")
+#        ANAL_INDEX = 
+#        return render_template('anal.html', palabra=None, user=username, analindex=0,
+#                               language=LANGUAGE, labrev=lg_abbrev, analysis=None,
+#                               webdata=webdata)
     if not 'palabra' in form:
-        return render_template('anal.html')
+        return render_template('anal.html', palabra=None, language=LANGUAGE, analysis=None,
+                               labrev=lg_abbrev, webdata=webdata, ultanal=ultanal)
     if not WORD:
         # Get the word
         WORD = form['palabra']
@@ -172,13 +184,25 @@ def anal():
         analyze()
         if not ANALYSES:
             print("No analyses.")
-            return render_template('anal.html', error=True, user=username, labrev=lg_abbrev)
+            ultanal = True
+            return render_template('anal.html', error=True, user=username, labrev=lg_abbrev, webdata=webdata,
+                                   ultanal=True)
     print("Analyses {}".format(ANALYSES))
+    # This shouldn't be needed...
+    if ANAL_INDEX >= len(ANALYSES):
+        print("No more analyses")
+        return render_template('anal.html', palabra=WORD, user=username, language=LANGUAGE, labrev=lg_abbrev,
+                               analysis=None, ultanal=True, webdata=webdata)
     analysis = ANALYSES[ANAL_INDEX]
-    print("Analysis {}".format(analysis))
-    return render_template('anal.html', palabra=WORD, user=username,
-                           language=LANGUAGE, labrev=lg_abbrev, html=HTML,
-                           analysis=analysis)
+    webindex = LANGUAGE.anal_get_webindex(analysis)
+    ANAL_INDEX += 1
+    print("Analysis {}: {}".format(ANAL_INDEX, analysis))
+    if ANAL_INDEX == len(ANALYSES):
+        ultanal = True
+        print("Final analysis")
+    return render_template('anal.html', palabra=WORD, user=username, analindex=ANAL_INDEX,
+                           language=LANGUAGE, labrev=lg_abbrev, borrar=False, ultanal=ultanal,
+                           analysis=analysis, webdata=webdata, webindex=webindex)
 
 @app.route('/fin', methods=['GET', 'POST'])
 def fin():
@@ -188,11 +212,10 @@ def fin():
     global LANGUAGE
     global SESSION
     global WORD
-    global HTML
     global USER
     global ANAL_INDEX
     exit(SESSION)
-    LANGUAGE = SESSION = HTML = USER = None
+    LANGUAGE = SESSION = USER = None
     ANAL_INDEX = 0
     return render_template('fin.html', modo=modo, language=LANGUAGE)
 

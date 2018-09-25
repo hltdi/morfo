@@ -32,7 +32,7 @@ morfo: análisis y generación morfológica
 	</button>
       <div id="menudespleg" class="contenido-despleg">
 	{% if (not language) or (language.abbrev != 'spa') %}
-	<span class='opinic' onclick="idioma('spa')">ESPAÑOL</span>
+	<span class='opinic' onclick="idioma('spa')">CASTELLANO</span>
 	{% endif %}
 	{% if  (not language) or (language.abbrev != 'grn') %}
 	<span class='opinic' onclick="idioma('grn')">GUARANÍ</span>
@@ -56,7 +56,7 @@ morfo: análisis y generación morfológica
       </div>
     </td>
     <td class="menu" style="width: 180px">
-       <button class="menu" onclick="ingresar()">INICIAR SESIÓN</button>
+      <button class="menu" onclick="analizar()">INICIAR SESIÓN</button>
     </td>
     <td class="menu" style="width: 135px">
       <button class="menu" onclick="acerca()">ACERCA DE</button>
@@ -68,6 +68,8 @@ morfo: análisis y generación morfológica
   </tr>
 </table>
 <input type="hidden" name="labrev" value="">
+<input type="hidden" name="language" value={{ language }}>
+<input type="hidden" name="webdata" value={{ webdata|e }}>
 <hr>
 
 <h1>¡Bienvenida/o a
@@ -80,12 +82,10 @@ morfo: análisis y generación morfológica
 <p>
 <span class='morfo'>
 <span class='brown'>m</span><span class='green'>o</span><span class='red'>r</span><span class='blue'>f</span><span class='magenta'>o</span></span>
-es una aplicación que analiza y genera palabras
-  en algunas lenguas.
+es una aplicación que analiza y genera palabras en algunas lenguas.
 </p>
 <p>
-Para usar <strong>morfo</strong>, primero seleccione un
-  idioma. Despues que se cargue la ventana, siga las instrucciones allí.
+Para usar <strong>morfo</strong>, primero seleccione un idioma. Entonces presione "INICIAR SESIÓN".
 </p>
   
 </form>
