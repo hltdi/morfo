@@ -30,6 +30,10 @@ from geez.py).
 from . import language
 from .geez import *
 
+ROM2GEEZ = {'sI': "ስ", 'lI': "ል", 'bI': "ብ", 'IskI': "እስክ", 'IndI': "እንድ",
+            'm': "ም", 'Inji': "እንጂ", 'na': "ና", 'sa': "ሳ", 's': "ስ", 'ma': "ማ",
+            'sIle': "ስለ", 'le': "ለ", 'Iyye': "እየ", 'Iske': "እስከ", 'Inde': "እንደ", 'ke': "ከ", 'be': "በ", 'wede': "ወደ"}
+
 ### Various functions that will be values of attributes of Amharic Morphology
 ### and POSMorphology objects.
 
@@ -102,6 +106,8 @@ def cop_anal2string(anal, webdict=None):
     anal is ("cop", "new", "new", gramFS)
     '''
     s = 'POS: copula'
+    webfv(webdict, 'POS', 'copula')
+    webfv(webdict, 'root', 'ne-')
     if anal[1]:
         s += ', root: <' + anal[1] + '>'
     s += '\n'
@@ -110,13 +116,13 @@ def cop_anal2string(anal, webdict=None):
         sb = fs['sb']
         s += ' subj:'
         s += arg2string(sb)
-        webfv(webdict, 'subj', arg2string(sb, web=True))
+        webfv(webdict, 'subject', arg2string(sb, web=True))
         if fs.get('neg'):
             s += ' negative\n'
-            webfv(webdict, 'neg', True)
+            webfv(webdict, 'negative', True)
         cj = fs.get('cj2')
         if cj:
-            webfv(webdict, 'conj suffix', cj)
+            webfv(webdict, 'conj suffix', roman2geez(cj))
             s += ' conj suffix: ' + cj + '\n'
     return s
 
@@ -131,34 +137,40 @@ def n_anal2string(anal, webdict=None):
     deverbal = fs and fs.get('v')
     POS = '?POS: ' if '?' in anal[0] else 'POS: '
     s = POS
+    webfv(webdict, 'POS', 'noun')
     if deverbal:
         if deverbal == 'agt':
             s += 'agentive noun'
-            webfv(webdict, 'POS', 'agentive noun')
+            webfv(webdict, 'deverbal', 'agentive')
         elif deverbal == 'man':
             s += 'manner noun'
-            webfv(webdict, 'POS', 'manner noun')
+            webfv(webdict, 'deverbal', 'manner')
         elif deverbal == 'inf':
-            webfv(webdict, 'POS', 'infinitive')
+            webfv(webdict, 'deverbal', 'infinitive')
             s += 'infinitive'
         else:
-            webfv(webdict, 'POS', 'instrumental noun')
+            webfv(webdict, 'deverbal', 'instrumental')
             s += 'instrumental noun'
         if root:
             s += ', root: <' + root + '>'
+            if citation:
+                root = "{}({})".format(root, citation)
             webfv(webdict, 'root', root)
         if citation:
             s += ', citation: ' + citation
-            webfv(webdict, 'citation', citation)
+#            webfv(webdict, 'citation', citation)
     else:
         s += 'noun'
-        webfv(webdict, 'POS', 'noun')
+        rc = root
+        if citation:
+            rc = "{}({})".format(root, citation)
+        webfv(webdict, 'root', rc)
         if citation:
             s += ', stem: ' + citation
-            webfv(webdict, 'stem', citation)
+#            webfv(webdict, 'stem', citation)
         elif root:
             s += ', stem: ' + root
-            webfv(webdict, 'stem', root)
+#            webfv(webdict, 'stem', root)
     s += '\n'
     if fs:
         poss = fs.get('poss')
@@ -239,11 +251,11 @@ def n_anal2string(anal, webdict=None):
         if pp or cnj:
             if pp:
                 s += ' preposition: ' + pp
-                webfv(webdict, 'preposition', pp)
+                webfv(webdict, 'preposition', roman2geez(pp))
             if cnj:
                 if pp: s += ','
                 s += ' conj suffix: ' + cnj
-                webfv(webdict, 'conj suffix', cnj)
+                webfv(webdict, 'conj suffix', roman2geez(cnj))
             s += '\n'        
     return s    
 
@@ -258,17 +270,20 @@ def vb_anal2string(anal, webdict=None):
     fs = anal[3]
     POS = '?POS: ' if '?' in anal[0] else 'POS: '
     s = POS + pos
-    webfv(webdict, 'POS', pos)
+    webfv(webdict, 'POS', 'verb')
     if root:
         if '{' in root:
             # Segmented form; not rootwe
             s += ', segmentation: ' + root
         else:
             s += ', root: <' + root + '>'
-        webfv(webdict, 'root', '<' + root + '>')
+        rc = '<' + root + '>'
+        if citation:
+            rc = "{}({})".format(rc, citation)
+        webfv(webdict, 'root', rc)
     if citation:
         s += ', citation: ' + citation
-        webfv(webdict, 'citation', citation)
+#        webfv(webdict, 'citation', citation)
     s += '\n'
     if fs:
         sb = fs['sb']
@@ -340,15 +355,15 @@ def vb_anal2string(anal, webdict=None):
             if prep:
                 any_affix = True
                 s += ' preposition: ' + prep
-                webfv(webdict, 'preposition', prep)
+                webfv(webdict, 'preposition', roman2geez(prep))
             if cj1:
                 if any_affix: s += ','
                 s += ' conj prefix: ' + cj1
-                webfv(webdict, 'conj prefix', cj1)
+                webfv(webdict, 'conj prefix', roman2geez(cj1))
             if cj2:
                 if any_affix: s += ','
                 s += ' conj suffix: ' + cj2
-                webfv(webdict, 'conj suffix', cj2)
+                webfv(webdict, 'conj suffix', roman2geez(cj2))
             s += '\n'
     return s
 
@@ -362,23 +377,23 @@ def arg2string(fs, obj=False, web=False):
     else:
         s += '3'
     if fs.get('plr'):
-        s += ', plural'
+        s += ' plur'
     else:
-        s += ', singular'
+        s += ' sing'
     if not fs.get('plr') and (fs.get('p2') or not fs.get('p1')):
         if fs.get('fem'):
-            s += ', feminine'
+            s += ' fem'
         elif not fs.get('frm'):
-            s += ', masculine'
+            s += ' mas'
     if obj:
         if fs.get('p2'):
             if fs.get('frm'):
-                s += ', formal'
+                s += ' frml'
         if fs.get('prp'):
             if fs.get('l'):
-                s += ', prep: -l-'
+                s += ' prep: ል'
             else:
-                s += ', prep: -b-'
+                s += ' prep: ብ'
     if not web:
         s += '\n'
     return s
@@ -526,25 +541,25 @@ def agr_to_list(agr, cat, formal=False):
         gram.append('3')
 
     if agr.get('plr'):
-        gram.append('plural')
+        gram.append('plur')
     else:
-        gram.append('singular')
+        gram.append('sing')
 
     if not agr.get('p1') and not agr.get('plr'):
         # Gender only for 2nd and 3rd person singular
         if agr.get('fem'):
-            gram.append('feminine')
+            gram.append('fem')
         else:
-            gram.append('masculine')
+            gram.append('mas')
     else:
         gram.append('')
 
     if formal:
         if cat == 'object' and agr.get('p2'):
             if agr.get('frm'):
-                gram.append('formal')
+                gram.append('frml')
             else:
-                gram.append('informal')
+                gram.append('infrml')
 
     if agr.get('prp'):
         if agr.get('b'):
@@ -728,9 +743,10 @@ AM.morphology['n'].FS_implic = {'poss': [['expl'], 'def'],
                                 ('acc', True): [['rl', ['acc']]]}
 # defaultFS with voice and aspect unspecified
 AM.morphology['n'].citationFS = language.FeatStruct("[-acc,-def,-neg,cnj=None,-dis,-gen,-plr,poss=[-expl],pp=None,v=inf]")
-AM.morphology['n'].explicit_feats = ["plr", "poss", "def", "acc", "gen", "dis"]
+AM.morphology['n'].explicit_feats = ["plr", "poss", "def", "acc", "gen", "pp", "dis", "devrb"]
 AM.morphology['n'].feat_abbrevs = \
-  {'plr': "plural", 'poss': "possessive", "def": "definite", "acc": "accusative", "dis": "distributive"}
+  {'plr': "plural", 'poss': "possessor", "def": "definite", "acc": "accusative", "dis": "distributive", "gen": "genitive", "devrb": "deverbal",
+   'pp': 'preposition'}
 AM.morphology['cop'].fv_abbrevs = \
   (([['p1', True], ['p2', False], ['plr', False]], "1 prs sng"),
    ([['p1', True], ['p2', False], ['plr', True]], "1 prs plr"),
@@ -744,11 +760,11 @@ AM.morphology['cop'].fv_abbrevs = \
    )
 
 AM.morphology['cop'].name = 'copula'
-AM.morphology['cop'].defaultFS = language.FeatStruct("[cj2=None,-neg,ob=[-expl],-rel,sb=[-fem,-p1,-p2,-plr,-frm],-sub,tm=prs]")
-AM.morphology['cop'].citationFS = language.FeatStruct("[cj2=None,-neg,ob=[-expl],-rel,sb=[-fem,-p1,-p2,-plr,-frm],-sub,tm=prs]")
-AM.morphology['cop'].explicit_feats = ["sb", "tm", "neg", "rel", "cj2"]
+AM.morphology['cop'].defaultFS = language.FeatStruct("[cj2=None,-neg,sb=[-fem,-p1,-p2,-plr,-frm],tm=prs]")
+AM.morphology['cop'].citationFS = language.FeatStruct("[cj2=None,-neg,sb=[-fem,-p1,-p2,-plr,-frm],tm=prs]")
+AM.morphology['cop'].explicit_feats = ["sb", "neg", "cj2"]
 AM.morphology['cop'].feat_abbrevs = \
-  {'sb': "subject", 'cj2': "conj suffix", "tm": "TAM", "neg": "negative", "rel": "relative"}
+  {'sb': "subject", 'cj2': "conj suffix", "neg": "negative"}
 AM.morphology['cop'].fv_abbrevs = \
   (([['p1', True], ['p2', False], ['plr', False]], "1 prs sng"),
    ([['p1', True], ['p2', False], ['plr', True]], "1 prs plr"),
@@ -793,3 +809,7 @@ def postproc_root(root):
     if '//' in root:
         root = root.replace('//', ' ')
     return root
+
+def roman2geez(value):
+    """Convert a value (prep or conj) to geez."""
+    return ROM2GEEZ.get(value, value)

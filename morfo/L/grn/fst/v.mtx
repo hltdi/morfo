@@ -204,7 +204,7 @@ $ caus
 $ der
 # Since the order is mostly unconstrained, record all known combinations
 # (not sure of most of these)
-  se                    [misc=[+se]]
+  se                    [asp=[+vol]]
   vy                    [misc=[+vy]]
   # frus: also rãngue
   rei                   [misc=[+rei]]
@@ -223,15 +223,15 @@ $ der
   'asypa                [misc=[+pa,+asy]]
   katupa                [misc=[+pa,+katu]]
 #  panunga               [misc=[+pa,+nunga]] ?
-  serei                 [misc=[+se,+rei]]
+  serei                 [asp=[+vol],misc=[+rei]]
   # ¿cómo distinguir órdenes diferentes?
-  sePa                  [misc=[+se,+pa]]
-  segua'u               [misc=[+se,+guau]]
-  gua'use               [misc=[+se,+guau]]
-  Pase                  [misc=[+se,+pa]]
+  sePa                  [asp=[+vol],misc=[+pa]]
+  segua'u               [asp=[+vol],misc=[+guau]]
+  gua'use               [asp=[+vol],misc=[+guau]]
+  Pase                  [asp=[+vol],misc=[+pa]]
   reiPa                 [misc=[+rei,+pa]]
   Parei                 [misc=[+rei,+pa]]
-  seParei               [misc=[+se,+pa,+rei]]
+  seParei               [asp=[+vol],misc=[+pa,+rei]]
   Pajoa                 [misc=[+pa,+joa]]
   # Reciprocal/collective, plural subjects
   sejoa                 [misc=[+se,+joa],ns=1]
@@ -256,7 +256,7 @@ $ der
   ñepyrũ                [asp=[+ñepyrũ]]
   meme                  [asp=[+meme]]
   je(v)y                [asp=[+jevy]]
-  --                    # [misc=[-se,-vy,-rei,-joa,-pa,-jepe,-incep,-katu,-reit,-porã,-vai,-kuaa,-reit,-prim,-imi,-mi,-mimi,-nunga,-guau,-asy,-aja,-guasu]]
+  --                    [asp=[-meme,-ypy,-vol,-ñepyrũ],misc=[-rei,-joa,-pa,-porã,-vai,-kuaa,-guasu,-mi,-rangue,-aja,-mimi,-imi,-katu,-guau]]
 
 ### ADJECTIVIZATION
 ### accommodates things like juhupyre but not yet ijuhupyre or ojuhupyre
@@ -274,12 +274,13 @@ $ tmp1
   (!)Meve               [pp=peve]    # until; = Peve in n.mtx; sometimes no !?
   rire                  [pp=rire]    # after
   !jave                 [pp=jave]    # while
+  !vove                 [pp=vove]    # while
   # This is tonic ramo: recently; not sure it belongs here
   ramo                  [asp=[+ramo]]
   rõ                    [asp=[+ramo]]
   ramoje(v)y            [asp=[+ramo,+jevy]]
   ramomba               [asp=[+ramo],misc=[+pa]]
-  --                    [asp=[-ramo],pp=None];[asp=[-ramo],pp=jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|vove|kuevo]
+  --                    [asp=[-ramo],pp=None];[asp=[-ramo],pp=jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
 
 ### NEGATIVO (YSAJA MBOTOVÉVA) con o sin GRADO, KOKATU -- antes del negativo
 $ neg2
@@ -412,31 +413,27 @@ $ inter
   !tepa                 [+inter]
   --                    [-inter]
 
-### JEPI/VOVE/KUEVO/ANGA (together for convenience only)
+### JEPI/KUEVO/ANGA (together for convenience only)
 ### MA/VOI/NTE 2 (después de tiempo2)
 $ jepimavointe
   !jepi                 [asp=[+jepi]]
-  !vove                 [pp=vove]
   # kuévo / nguévo
   Xuévo                 [pp=kuevo]
   # possibly somewhere else (after -va)
   anga                  [misc=[+anga]]      # piedad
   # here only because it can follow kuévo
-  !ma                   [asp=[+ma]]
+  !ma                   [asp=[+ma],pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
   !vo                   [pp=vo]
   !vonte                [misc=[+nte],pp=vo,-nte1]
-  !voi                  [misc=[+voi]]
-  !nte                  [misc=[+nte],-nte1]
+  !voi                  [misc=[+voi],pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !nte                  [misc=[+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
   # tonic mante: 'frequently' (I think)
-  mante                 [asp=[+mante],-mante]
-  !ntema                [misc=[+nte],asp=[+ma],-nte1]
-  voínte                [misc=[+voi,+nte],-nte1]
-  # covered with earlier ma
-#  !mavoi                [asp=[+ma],misc=[+voi]]
-#  mavoínte              [asp=[+ma],misc=[+voi,+nte],-nte1]
-  !ntevoi               [misc=[+voi,+nte],-nte1]
-  !ntemavoi             [asp=[+ma],misc=[+voi,+nte],-nte1]
-  --                    [pp=None];[pp=jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  mante                 [asp=[+mante],-mante,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !ntema                [misc=[+nte],asp=[+ma],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  voínte                [misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !ntevoi               [misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !ntemavoi             [asp=[+ma],misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  --                    [pp=None];[pp=jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vove]
 
 ### RAMO 2 + JEPE 2
 $ ramo2

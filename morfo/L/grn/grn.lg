@@ -37,37 +37,6 @@ feats:
   pos: v verbo/adjetivo
 # ñe'ẽtéva
 
-#  xf: ns = número de sujeto
-#  xf: ps = persona de sujeto
-#  xf~: no = número de objeto
-#  xf~: po = persona de objeto
-#  xf~: voz = voz
-#  xf~: neg = negativo
-#  xf~: negipv = negativo imperativo
-#  xf: mod = modo
-#  xf~: inter = interrogativo
-#  xf~: tm = sufijo de TAM
-#  xf~: tmp = tiempo
-#  xf~: asp = aspecto
-#  xf~: rel = relativo
-#  xf~: grd = grado
-#  xf~: pp = posposición
-#  xf~: misc = miscelanéa
-
-#  ab: ind = indicativo
-#  ab: imp = imperativo
-#  ab: opt = optativo
-#  ab: smp = simple
-#  ab: intrans = intransitivo
-#  ab: caus = causativo
-#  ab: reflx = reflexivo
-#  ab: recip = reciprocal
-#  ab: intrans_caus = intransitivo causativo
-#  ab: reflx_caus = reflexivo causativo
-#  ab: recip_caus = reciprocal causativo
-#  ab: clu = clusividad
-#  ab: None = X
-
 # +- chupe(kuéra); leave out of defaults so that both are possible when not specified
 #  ojxpl = *False | True
 
@@ -151,16 +120,16 @@ feats:
   impopt (imprv mod) = mi = *False | True;
                              ke = *False | True;
                              na = *False | True;
-                             mbae = *False | True;
+                             mbae (mba'e) = *False | True;
                              mo = *False | True
 
-  rel (relativo) = *None | sjoj | obl
+#  rel (relativo) = *None | sjoj | obl
 
   # relativo
   {rel} (sjoj): relativo = suj/obj
   {rel} (obl): relativo = oblicuo
 
-  pp (posposición) = *None | peve | jave | ramo | rire | haguã | vo | gui | guive | pe | re | icha | vove | rangue | vove | kuevo
+  pp (posposición) = *None | peve | jave | ramo | rire | haguã | vo | gui | guive | pe | re | icha | vove | rangue | kuevo
 
   # uka
   {voz, med} (smp, True): voz = mediativo
@@ -169,15 +138,7 @@ feats:
   {voz, med} (caus, True): voz = med caus
 #  med (mediativo) = *False | True
 
-#  sj (suj) = 1 = False | True;
-#             2 = False | True;
-#             p (plur) = False | True
-#  oj (obj) = 1 = False | True;
-#             2 = False | True;
-#             p (plur) = False | True;
-#             *%r (refl) = False | True
-
-  grd (grado) = *None | ve | ete | eterei
+  grd (grado) = *None | ve | ete | eterei	
 
 #  tm (tmp) = None | vaekue | vaerã | akue | mi | ne | arã | moã | kuri | rakae | ta
 
@@ -186,35 +147,40 @@ feats:
               	  jevy = *False | True;
                   gueteri = *False | True;
 	          ramo = *False | True;
-	          prf = *False | True;
+	          prf (ma) = *False | True;
                   mante = *False | True;
                   katu = *False | True;
-                  prg = *False | True;
+                  prg (hina) = *False | True;
                   hikóni = *False | True;
 	          ramo = *False | True;
-	          vol = *False | True;
-	          rae = *False | True
+	          vol (se) = *False | True;
+	          rae (ra'e) = *False | True
  
-  misc (miscelanéa) = se    = False | True;
-                      rei   = False | True;
-                      joa   = False | True;
-                      mante = False | True;
-                      nte = False | True;
-                      voi = False | True;
-                      pa    = False | True;
-                      jepe  = False | True;
-                      katu  = False | True;
-                      porã  = False | True;
-         	      vai   = False | True;
-         	      kuaa  = False | True;
-         	      guasu = False | True;
-         	      mi    = False | True;
-         	      manterei = False | True;
-         	      rangue = False | True;
-         	      ndaje = False | True;
-         	      niko = False | True;
-	 	      pyre = False | True;
-	 	      ko = False | True
+  misc (miscelanéa) = rei   = *False | True;
+                      joa   = *False | True;
+                      mante = *False | True;
+                      nte = *False | True;
+                      voi = *False | True;
+                      pa    = *False | True;
+                      jepe  = *False | True;
+                      katu  = *False | True;
+                      porã  = *False | True;
+         	      vai   = *False | True;
+         	      kuaa  = *False | True;
+         	      guasu = *False | True;
+         	      mi    = *False | True;
+         	      manterei = *False | True;
+         	      rangue = *False | True;
+         	      ndaje = *False | True;
+         	      niko = *False | True;
+	 	      pyre = *False | True;
+		      ypy = *False | True;
+		      guau (gua'u) = *False | True;
+		      meme = *False | True;
+		      mimi = *False | True;
+		      aja = *False | True;
+		      imi = *False | True;
+	 	      ko = *False | True
 
   ## Features that are never included pretty or web output
   *%rztrans (raíz transitiva) = False | True
@@ -275,10 +241,10 @@ feats:
 		  voi = *False | True;
 		  ndaje = *False | True;
 		  niko = *False | True;
-		  ngau = *False | True;
+		  ngau (nga'u) = *False | True;
 		  nipo = *False | True
 
-  interrogativo = *False | True
+  inter (interrogativo) = *False | True
   conjet (conjetural) = *False | True
   adj (adjetivizado) = *False | True
 

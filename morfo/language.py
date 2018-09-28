@@ -1539,21 +1539,26 @@ class Language:
 
     def set_web(self):
         """Set the features and number of values and index for each POS."""
-        for index, posmorph in enumerate(self.morphology.values()):
+        for index1, posmorph in enumerate(self.morphology.values()):
             # Set web features if this hasn't already happened
             posmorph.set_web_feats()
             webfeats = posmorph.web_features
-            html1 = "<tr><td colspan='2' style='pos'><span class='featlabeloff'>"
-            html1 += "Categoría gramatical: "
+            html1 = "<tr><td class='pos'><span class='poslabeloff'>"
+            html1 += "categoría gramatical"
+            html1 += "</span><br/><span class='vallabeloff'>"
             html1 += posmorph.name
-            html1 += "</span></td><td style='width: 30px'></td>"
-            html1 += "<td class='raiz'><span class='featlabeloff'>Raíz</span><textarea class='raiz'></textarea>"
-            html1 += "</td>"
-            if posmorph.citation:
-                html1 += "<td class='raiz'><span class='featlabeloff'>Citación</span><textarea class='raiz'></textarea></td>"
-            html1 += "</tr>"
-            self.webdata.append((posmorph.name, posmorph.citation, posmorph.web_features, html1))
-            self.webdict[posmorph.name] = index
+            html1 += "</span></td><td class='raiz'><span class='poslabeloff'>raíz</span><br/>"
+            html1 += "<textarea class='raiz'></textarea></td>"
+            for index2, feature in enumerate(webfeats):
+                value = feature[0]
+                html1 += "<td class='raiz'><span class='featlabeloff'>"
+                html1 += value
+                html1 += "</span><br /><textarea class='raiz'></textarea></td>"
+                if index2 == 4 or index2 == 10:
+                    html1 += "</tr><tr><td></td>"
+            html1 += "</tr></td></tr><tr><td colspan='8'><hr class='possep'><td></tr>"
+            self.webdata.append((posmorph.name, posmorph.web_features, html1))
+            self.webdict[posmorph.name] = index1
 
     def anal_get_webindex(self, anal):
         """Get the index among the POS features displayed in the web app for the analysis."""

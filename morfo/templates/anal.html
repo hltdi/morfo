@@ -30,7 +30,7 @@ table.pos
 }
 td.pos
 {
-  padding: 1em 0 0;
+  padding: 10px 0 0;
   vertical-align: top;
   width: 250px
 }
@@ -41,7 +41,7 @@ hr.possep
 }
 td.raiz
 {
-  padding: 1em 0 0;
+  padding: 10px 0 0;
   width: 150px;
 }
 span.lengua
@@ -72,7 +72,7 @@ textarea.raiz
     font-weight: normal;
     font-style: italic;
     padding: 4px 4px;
-    margin: 10px 6px 6px 0px;
+    margin: 0px 6px 6px 0px;
 }
 textarea.analnum
 {
@@ -88,10 +88,21 @@ textarea.analnum
 }
 span.featlabel
 {
-    font-weight: bold;
+    font-weight: normal;
     font-size: 100%;
 }
 span.featlabeloff
+{
+    font-weight: normal;
+    font-size: 100%;
+    color: #cccccc;
+}
+span.poslabel
+{
+    font-weight: bold;
+    font-size: 100%;
+}
+span.poslabeloff
 {
     font-weight: bold;
     font-size: 100%;
@@ -297,94 +308,30 @@ Analysis: {{ analysis }}; analindex {{analindex}}; webindex {{webindex}}.
 
 <tr>
   <td class="pos"><span
-    class="featlabel">categoría gramatical</span><br/><span class="vallabel">{{data[0]}}</span>
+    class="poslabel">categoría gramatical</span><br/><span class="vallabel">{{data[0]}}</span>
   </td>
-  <td class="raiz"><span class="featlabel">raíz</span><br/>
+  <td class="raiz"><span class="poslabel">raíz</span><br/>
   <textarea class="raiz">{{analysis.root}}</textarea>
   </td>
-  {% if data[1] %}
-  <td class="raiz"><span class="featlabeloff">citación</span><br/>
-  <textarea class="raiz">{{analysis.citation}}</textarea>
-  </td>
-  {% else %}
-  <td></td>
-  {% endif %}
-  <td style="width: 500px"></td>
-</tr>
-<tr>
-  <td></td>
-  <td colspan="3">
-  <table class="left">
-    <tr>
-      {% for feature in data[2] %}
+      {% for feature in data[1] %}
        {% set value = feature[0] %}
       <td class="raiz"><span
 	class="featlabel">{{value}}</span><br />
 	<textarea class="raiz">{{analysis[value]}}</textarea>
       </td>
-      {% if loop.index0 == 6 %}
+       {% if loop.index0 == 4 or loop.index0 == 10 %}
     </tr>
-  </table>
-  </td>
   <tr>
     <td></td>
-    <td colspan="3">
-      <table class="left">
-	<tr>
-      {% endif %}
+       {% endif %}
       {% endfor %}
     </tr>
-  </table>
   </td>
 </tr>
+<tr><td colspan="8"><hr class='possep'><td></tr>
 
 {% else %}
-<tr>
-  <td class="pos"><span
-    class="featlabeloff">categoría gramatical</span><br/><span class="vallabeloff">{{data[0]}}</span>
-  </td>
-  <td class="raiz"><span class="featlabeloff">raíz</span><br/>
-  <textarea class="raiz"></textarea>
-  </td>
-  {% if data[1] %}
-  <td class="raiz"><span class="featlabeloff">citación</span><br/>
-  <textarea class="raiz"></textarea>
-  </td>
-  {% else %}
-  <td></td>
-  {% endif %}
-  <td style="width: 800px"></td>
-</tr>
-<tr>
-  <td></td>
-  <td colspan="3">
-  <table class="left">
-    <tr>
-      {% for feature in data[2] %}
-      <td class="raiz"><span
-	class="featlabeloff">{{feature[0]}}</span><br />
-	<textarea class="raiz"></textarea>
-      </td>
-      {% if loop.index0 == 6 %}
-    </tr>
-  </table>
-  </td>
-  <tr>
-    <td></td>
-    <td colspan="3">
-      <table class="left">
-	<tr>
-      {% endif %}
-      {% endfor %}
-    </tr>
-  </table>
-  </td>
-</tr>
-<tr>
-  <td colspan="4">
-    <hr class='possep'>
-  <td>
-</tr>
+{{data[2]|safe}}
 
 {% endif %}
 

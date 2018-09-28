@@ -1395,16 +1395,24 @@ class POSMorphology:
                 if self.excl(feat, val, feats_used):
                     continue
                 if isinstance(val, FeatStruct):
+                    webvals = []
                     abbrevs2, feats_used2 = self.expfv(val, top=feat, webdict=webdict)
                     fvstring = abbrevs2
                     if feats_used2 is not True:
                         for feat2, val2 in val.items():
                             if self.excl(feat2, val2, feats_used2):
                                 continue
-                            fvstring.append(self.fval_string(feat2, val2, webdict=webdict))
+                            fvstring.append(self.fval_string(feat2, val2, webdict=None))
+                            if webdict != None:
+                                if val2 is True:
+                                    webvals.append(self.exab(feat2))
+                                elif val2 is not False:
+                                    webvals.append("{}={}".format(exab(self.feat2), self.exab(val2)))
                     if fvstring:
                         fvstring = ', '.join(fvstring)
                         s += '  {} = {}\n'.format(self.exab(feat), fvstring)
+                        if webdict != None and webvals:
+                            webdict[self.exab(feat)] = webvals
                 else:
                     if webdict != None:
                         webdict[self.exab(feat)] = val
@@ -1490,7 +1498,7 @@ class POSMorphology:
         """Just a short form for expand_abbrev."""
         return self.feat_abbrevs.get(string, string)
 
-    def fval_string(self, feat, val, webdict=None):
+    def fval_string(self, feat, val, webdict=None, top=True):
         if webdict != None:
             webdict[self.exab(feat)] = self.exab(val)
         if isinstance(val, bool):
