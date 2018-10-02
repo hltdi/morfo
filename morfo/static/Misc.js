@@ -4,7 +4,7 @@ function ingresar() {
     form.submit();
 }
 function idioma(abbrev) {
-    cargando();
+    cargando(abbrev);
     form = document.getElementById("form");
     form.labrev.value = abbrev;
 /*    form.action = "anal"; */
@@ -26,8 +26,15 @@ function contacto() {
     form.action = "contacto";
     form.submit();
 }
-function cargando() {
-    document.getElementById("cargando").innerHTML = "<p></p><span class='cargando'>Cargando base de datos (podría tardarse)...</span><p></p>";
+function cargando(abbrev) {
+    if (['spa', 'grn', 'qu', 'quc'].indexOf(abbrev) != -1) {
+	text = "Cargando datos ...";
+    } else if (abbrev == 'am') {
+	text = "ውሂብ እየተጫነ ነው...";
+    } else {
+	text = "Loading data...";
+    }
+    document.getElementById("cargando").innerHTML = "<p></p><span class='cargando'>" + text + "</span><p></p>";
 }
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
 function mostrarDespleg() {

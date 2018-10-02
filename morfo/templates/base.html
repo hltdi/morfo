@@ -7,22 +7,28 @@
 morfo: análisis y generación morfológica
 </title>
 
+{% block style %}{% endblock %}
+
 </head>
 
 <body>
 
-<form action='' id='form' action="anal" method="post">
+<form action='' name="Form1" id='form' action="anal" method="post">
 
 <table class="left">
   <tr class="white">
     <td class="title">
+    <a href=".">
     <img class='banner' src="{{url_for('static', filename='banner_logo.png')}}"
       alt="" width="315px" height="56px" />
+    </a>
     </td>
 
-    <td class="title" style="width: 495px"></td>
+    <td class="title" style="width: 435px"></td>
 
-    <td class="menu" style="width: 245px">
+    {% block menu %}
+
+    <td class="menu" style="width: 285px">
       <div class='despleg-wrap'>
       <button type="button" class="despleg"
 	onclick="mostrarDespleg()">
@@ -55,49 +61,31 @@ morfo: análisis y generación morfológica
       </div>
       </div>
     </td>
-    <td class="menu" style="width: 180px">
+    <td class="menu" style="width: 245px">
       <button class="menu" onclick="analizar()">INICIAR SESIÓN</button>
     </td>
-    <td class="menu" style="width: 135px">
+    <td class="menu" style="width: 220px">
       <button class="menu" onclick="acerca()">ACERCA DE</button>
-    </td>
-    <td class="menu" style="width: 130px">
-      <button class="menu" onclick="contacto()">CONTACTO</button>
-    </td>
+    {% endblock %}
 
   </tr>
 </table>
 <input type="hidden" name="labrev" value="">
+<input type="hidden" name="ayuda" value=false>
 <input type="hidden" name="language" value={{ language }}>
 <input type="hidden" name="webdata" value={{ webdata|e }}>
+</form>
 <hr>
 
-<h1>¡Bienvenida/o a
-<span class='morfo'>
-<span class='brown'>m</span><span class='green'>o</span><span class='red'>r</span><span class='blue'>f</span><span class='magenta'>o</span></span>!
-</h1>
+{% block heading1 %}{% endblock %}
 
 <div id="cargando">
 
-<p>
-<span class='morfo'>
-<span class='brown'>m</span><span class='green'>o</span><span class='red'>r</span><span class='blue'>f</span><span class='magenta'>o</span></span>
-es una aplicación que analiza y genera palabras en algunas lenguas.
-</p>
-<p>
-  Para usar
-<span class='morfo'>
-<span class='brown'>m</span><span class='green'>o</span><span
-  class='red'>r</span><span class='blue'>f</span><span
-  class='magenta'>o</span></span>,
-  primero seleccione un idioma. Despu&eacute;s de que se cargue la
-  base de datos lingüística, va a aparecer la ventana donde se
-  analizan palabras.
-</p>
-  
-</form>
+{% block body %}{% endblock %}
 
 </div>
+
+{% block script %}{% endblock %}
 
 <script async="" src="{{url_for('static', filename='Misc.js')}}"></script>
 

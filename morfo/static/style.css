@@ -73,6 +73,11 @@ hr
     border-style: solid;
     border-color: #000000;
 }
+hr.section
+{
+  border-top: 1px dashed #000000;
+  border-bottom: 0;
+}
 p
 {
 	margin-top: .5em;
@@ -230,7 +235,7 @@ span.cargando
 {
     font-size: 125%;
     font-weight: bold;
-    font-style: italic;
+    font-style: normal;
 }
 span.username
 {

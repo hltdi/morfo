@@ -47,18 +47,18 @@ def analyze():
     global ANALYSES
     ANALYSES = anal_word(LANGUAGE.abbrev, WORD, web=True)
 
-@app.route('/')
-def index():
-    print("In index...")
-    return redirect(url_for('base'))
+#@app.route('/')
+#def index():
+#    print("In index...")
+#    return redirect(url_for('base'))
 
-@app.route('/base', methods=['GET', 'POST'])
-def base():
+@app.route('/', methods=['GET', 'POST'])
+def index():
     global SESSION
     global LANGUAGE
     global LOADED
     form = request.form
-    print("base form: {}".format(form))
+    print("index form: {}".format(form))
     if 'labrev' in form:
         lg_abbrev = form.get('labrev')
         SESSION = init_session(lg_abbrev, user=USER)
@@ -68,7 +68,7 @@ def base():
         print("new session with {}".format(LANGUAGE))
         return render_template('anal.html', language=LANGUAGE, webdata=LANGUAGE.webdata,
                                labrev=lg_abbrev)
-    return render_template('base.html')
+    return render_template('index.html')
 
 @app.route('/acerca', methods=['GET', 'POST'])
 def acerca():
@@ -196,9 +196,10 @@ def anal():
             # This should behave like 'borrar'
             ultanal = True
             ANAL_INDEX = 0
+            WORD = None
             print("no analyses...")
             return render_template('anal.html', error=True, user=username, labrev=lg_abbrev, webdata=webdata,
-                                   analindex=ANAL_INDEX, ultanal=True)
+                                   palabra=None, analindex=ANAL_INDEX, ultanal=True)
     print("Analyses {}".format(ANALYSES))
     # This shouldn't be needed...
     if ANAL_INDEX >= len(ANALYSES):
@@ -215,7 +216,7 @@ def anal():
         ultanal = True
         print("Final analysis")
     print("analysis...")
-    return render_template('anal.html', palabra=WORD, user=username, analindex=ANAL_INDEX,
+    return render_template('anal.html', palabra=WORD, user=username, analindex=ANAL_INDEX, multanal=len(ANALYSES) > 1,
                            language=LANGUAGE, labrev=lg_abbrev, borrar=False, ultanal=ultanal,
                            analysis=analysis, webdata=webdata, webindex=webindex, html=html)
 
