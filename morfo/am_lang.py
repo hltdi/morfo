@@ -107,6 +107,7 @@ def cop_anal2string(anal, webdict=None):
     '''
     s = 'POS: copula'
     webfv(webdict, 'POS', 'copula')
+    webfv(webdict, 'pos', 'cop')
     webfv(webdict, 'root', 'ne-')
     if anal[1]:
         s += ', root: <' + anal[1] + '>'
@@ -138,6 +139,7 @@ def n_anal2string(anal, webdict=None):
     POS = '?POS: ' if '?' in anal[0] else 'POS: '
     s = POS
     webfv(webdict, 'POS', 'noun')
+    webfv(webdict, 'pos', 'n')
     if deverbal:
         if deverbal == 'agt':
             s += 'agentive noun'
@@ -271,6 +273,7 @@ def vb_anal2string(anal, webdict=None):
     POS = '?POS: ' if '?' in anal[0] else 'POS: '
     s = POS + pos
     webfv(webdict, 'POS', 'verb')
+    webfv(webdict, 'pos', 'v')
     if root:
         if '{' in root:
             # Segmented form; not rootwe

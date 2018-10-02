@@ -427,7 +427,7 @@ button.menu
     font-size: 100%;
     text-align: center;
     padding: 0;
-    border: 1;
+    border: 1px solid;
     margin: 0;
     cursor: pointer;
 }
@@ -445,7 +445,7 @@ button.menufixed
     font-size: 100%;
     text-align: center;
     padding: 0;
-    border: 1;
+    border: 1px solid;
     margin: 0;
 }
 /* Help windows */
@@ -486,11 +486,11 @@ ol.help
     float: left;
     overflow: hidden;
     cursor: pointer;
-    border: none;
-    outline: none;
-    background-color: #c86400;
+    border: 0;
+    outline: unset;
+/*    background-color: #c86400; */
     color: #8DEDCD;
-    padding: none;
+    padding: 0;
     margin: 0;
 }
 .despleg {
@@ -504,7 +504,7 @@ ol.help
     padding-right: 4pt;
     padding-bottom: 0;
     cursor: pointer;
-    border: 1;
+    border: 1px solid;
 }
 .despleg:hover, .despleg:active, .despleg:focus
 {

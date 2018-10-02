@@ -242,10 +242,10 @@ $ der
   vai                   [misc=[+vai]]
   kuaa                  [misc=[+kuaa]]
   kuaase                [misc=[+kuaa,+se]]
-  kuaasemi              [misc=[+kuaa,+se,+mi]]
+  kuaasemi              [misc=[+kuaa,+se,+mi],mod=opt|ind|None]
   guasu                 [misc=[+guasu]]
   'imi                  [misc=[+imi]]
-  mi                    [misc=[+mi]]
+  mi                    [misc=[+mi],mod=opt|ind|None]
   mimi                  [misc=[+mimi]]
   'aja                  [misc=[+aja]]
   # where does this belong? how does it relate to noun -rãngue (frustrativo, +fut,+pas)

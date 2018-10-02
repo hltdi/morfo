@@ -117,13 +117,7 @@ feats:
   # only relevant for future tense
   *prob (probabilidad) = None | hi | lo
 
-  impopt (imprv mod) = mi = *False | True;
-                             ke = *False | True;
-                             na = *False | True;
-                             mbae (mba'e) = *False | True;
-                             mo = *False | True
-
-#  rel (relativo) = *None | sjoj | obl
+  *rel (relativo) = *None | sjoj | obl
 
   # relativo
   {rel} (sjoj): relativo = suj/obj
@@ -156,6 +150,23 @@ feats:
 	          vol (se) = *False | True;
 	          rae (ra'e) = *False | True
  
+  *impopt (imprv mod) = mi = *False | True;
+                       ke = *False | True;
+                       na = *False | True;
+                       mbae (mba'e) = *False | True;
+                       mo = *False | True
+
+  {mod, impopt:mi} (imp, True): modo + +mi
+  {mod, impopt:ke} (imp, True): modo + +ke
+  {mod, impopt:na} (imp, True): modo + +na
+  {mod, impopt:mbae} (imp, True): modo + +mba'e
+  {mod, impopt:mo} (imp, True): modo + +mo
+  {mod, impopt:mi} (opt, True): modo + +mi
+  {mod, impopt:ke} (opt, True): modo + +ke
+  {mod, impopt:na} (opt, True): modo + +na
+  {mod, impopt:mbae} (opt, True): modo + +mba'e
+  {mod, impopt:mo} (opt, True): modo + +mo
+
   misc (miscelanéa) = rei   = *False | True;
                       joa   = *False | True;
                       mante = *False | True;

@@ -70,9 +70,9 @@ def load_lang(lang, phon=False, segment=False, load_morph=True,
     elif lang_id == 'ms':
         from . import ms_lang
         language = ms_lang.MS
-    elif lang_id == 'qu':
-        from . import qu_lang
-        language = qu_lang.QU
+#    elif lang_id == 'qu':
+#        from . import qu_lang
+#        language = qu_lang.QU
     if language:
         # Attempt to load additional data from language data file;
         # and FSTs if load_morph is True.

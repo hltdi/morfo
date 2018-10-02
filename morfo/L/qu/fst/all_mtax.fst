@@ -104,6 +104,7 @@ tam -> sb_ob       <sqa:>         [pos=v,pos2=v,cs=None,tam=[+pp,-ps,-ft,-cd,-im
 # Future
 tam -> sb_ob       <sa:>          [pos=v,pos2=v,cs=None,tam=[+ft,-ps,-pp,-cd,-im],sb=[+p1,-p2],m=[TM1=sa]]
 # Nominalizers that *can* take subject/possessor suffixes (also objects for some, but this is not supported)
+# What is this "nft"?
 tam -> nom_sbj     <na:>          [pos=n,pos2=nft,tam=[-ft,-ps,-pp,-cd,-im],ob=[-xpl],m=[TM1=na]]
 tam -> nom_sbj     <spa:>         [pos=n,pos2=ger,tam=[-ft,-ps,-pp,-cd,-im],ob=[-xpl],m=[TM1=spa]]
 tam -> nom_sbj     <sqa:>         [pos=n,pos2=prt,tam=[-ft,-ps,-pp,-cd,-im],ob=[-xpl],m=[TM1=sqa]]
@@ -123,7 +124,7 @@ nom_sbj -> num     >poss<
 ### SUBJECT-OBJECT AGREEMENT 2
 sb_ob -> cond      >sb_ob<
 # Short for sun(chis)man (conditional); skip over cond state
-sb_ob -> indep     <swan:>        [-tr,tam=[+cd],sb=[+p1,+p2,+pl],m=[AGR_TM=swan]];[tam=[+cd],sb=[-p1,-p2],ob=[+p1,+p2,+pl,+excl],m=[AGR_TM=swan]]
+sb_ob -> indep     <swan:>        [-tr,tam=[+cd],sb=[+p1,+p2,+pl],m=[AGR_TM=swan]];[tam=[+cd],sb=[-p1,-p2],ob=[+p1,+p2,+pl],m=[AGR_TM=swan]]
 
 ### CONDITIONAL
 # Conditional, except 2 intransitive (but 1p incl intransitive does have -man)

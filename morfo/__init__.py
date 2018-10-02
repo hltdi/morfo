@@ -160,8 +160,6 @@ def anal_word(language, word, root=True, citation=True, gram=True,
             return analysis
         elif web:
             return web
-#        if raw:
-#            return [(anal[1], anal[-2], anal[-1]) if len(anal) > 2 else (anal[1],) for anal in analysis]
 
 def anal_files(language, infiles, outsuff='.out',
                root=True, citation=True, gram=True,

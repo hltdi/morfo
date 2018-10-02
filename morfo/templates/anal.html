@@ -42,7 +42,8 @@ hr.possep
 td.raiz
 {
   padding: 10px 0 0;
-  width: 150px;
+  width: 160px;
+  vertical-align: top;
 }
 span.lengua
 {
@@ -64,14 +65,27 @@ span.vallabeloff
 }
 textarea.raiz
 {
-    font-family: "Verdana";
+    font-family: "Courier";
     resize: none;
     width: 90%;
-    height: 25px;
+    height: 20px;
     font-size: 100%;
     font-weight: normal;
-    font-style: italic;
-    padding: 4px 4px;
+/*    font-style: italic; */
+    line-height: 1.2em;
+    padding: 3px 3px;
+    margin: 0px 6px 6px 0px;
+}
+textarea.value
+{
+    font-family: "Courier";
+    resize: none;
+    width: 90%;
+    font-size: 100%;
+    font-weight: normal;
+/*    font-style: italic; */
+    line-height: 1.2em;
+    padding: 3px 3px;
     margin: 0px 6px 6px 0px;
 }
 textarea.analnum
@@ -192,9 +206,9 @@ textarea#comment
     </a>
     </td>
 
-    <td class="title" style="width: 490px"></td>
+    <td class="title" style="width: 500px"></td>
 
-    <td class="menu" style="width: 250px">
+    <td class="menu" style="width: 240px">
       <div class='despleg-wrap'>
       <button type="button" class="despleg"
 	onclick="mostrarDespleg()">
@@ -261,25 +275,39 @@ textarea#comment
 <div id='palabra' contenteditable="true">{% if palabra %}{{palabra|safe}}{% endif %}</div>
 </td>
 <td style="width: 30px"></td>
+{% if palabra %}
 <td style="vertical-align: middle">
 <input type="submit" name="borrar" id="narrowbutton" onclick="borrar()" value="Borrar">
 </td>
+{% else %}
+<td></td>
+{% endif %}
 </tr>
 
 <tr>
-<td class='instruc'>
-<div class="instruc" id="instruc_palabra">Escriba una palabra y presione "Intro/Entrar".
+<td colspan="3" class='instruc'>
+<div class="instruc" id="instruc_palabra">
+  {% if palabra %}
+   {% if not ultanal %}
+   Para ver otro análisis, presione el botón "Próximo".
+   {% endif %}
+  Para analizar otra palabra, presione el botón "Borrar".
+  {% else %}
+  Escriba una palabra y presione la tecla "Intro/Entrar".
+  {% endif %}
 </td>
 </div>
 <td></td><td></td>
 </tr>
 </table>
 
+<!--
 {% if analysis %}
 <p>
 Analysis: {{ analysis }}; analindex {{analindex}}; webindex {{webindex}}.
 </p>
 {% endif %}
+-->
 
 <table style="left">
 {% if palabra %}
@@ -305,30 +333,7 @@ Analysis: {{ analysis }}; analindex {{analindex}}; webindex {{webindex}}.
 {% set thisanal = (webindex == loop.index0) %}
 
 {% if thisanal %}
-
-<tr>
-  <td class="pos"><span
-    class="poslabel">categoría gramatical</span><br/><span class="vallabel">{{data[0]}}</span>
-  </td>
-  <td class="raiz"><span class="poslabel">raíz</span><br/>
-  <textarea class="raiz">{{analysis.root}}</textarea>
-  </td>
-      {% for feature in data[1] %}
-       {% set value = feature[0] %}
-      <td class="raiz"><span
-	class="featlabel">{{value}}</span><br />
-	<textarea class="raiz">{{analysis[value]}}</textarea>
-      </td>
-       {% if loop.index0 == 4 or loop.index0 == 10 %}
-    </tr>
-  <tr>
-    <td></td>
-       {% endif %}
-      {% endfor %}
-    </tr>
-  </td>
-</tr>
-<tr><td colspan="8"><hr class='possep'><td></tr>
+{{html|safe}}  
 
 {% else %}
 {{data[2]|safe}}

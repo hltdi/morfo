@@ -762,6 +762,9 @@ class POSMorphology:
             feat_dict = dict(self.feat_list)
             for f in self.explicit_feats:
                 flabel = self.feat_abbrevs.get(f, f)
+                if flabel in [f[0] for f in self.web_features]:
+                    # Feature already recorded
+                    continue
                 nvalues = 1
                 if f in feat_dict:
                     # Feature groups won't be in feat_dict
@@ -1370,6 +1373,9 @@ class POSMorphology:
                                     self.language.tlanguages)
         if webdict != None:
             webdict['POS'] = self.name
+            if 'pos' not in anal and self.pos != 'all':
+                # we don't want "pos: all" for Qu, for example
+                webdict['pos'] = self.pos
             webdict['root'] = root
             # Citation form...
         s += self.pretty_fs(fs, webdict=webdict)
@@ -1383,7 +1389,7 @@ class POSMorphology:
         print(s, file=file)
 
     def pretty_fs(self, fs, printit=False, file=sys.stdout, webdict=None):
-        '''Print out an FS.'''
+        '''Print out an FS and/or store pretty values in webdict.'''
         s = ''
         expansions, feats_used = self.expfv(fs, webdict=webdict)
         for exp in expansions:
@@ -1407,7 +1413,7 @@ class POSMorphology:
                                 if val2 is True:
                                     webvals.append(self.exab(feat2))
                                 elif val2 is not False:
-                                    webvals.append("{}={}".format(exab(self.feat2), self.exab(val2)))
+                                    webvals.append("{}={}".format(self.exab(feat2), self.exab(val2)))
                     if fvstring:
                         fvstring = ', '.join(fvstring)
                         s += '  {} = {}\n'.format(self.exab(feat), fvstring)
@@ -1438,23 +1444,6 @@ class POSMorphology:
                 if webdict != None:
                     webdict[self.exab(fvs[0][0])] = expansion
                 return [expansion], True
-        # Check feature groups
-        if not top and self.feature_groups:
-            for feats, properties in self.feature_groups.items():
-                if any([(feat in feats_used) for feat in feats]):
-                    continue
-                for groupvalues, groupname, groupvalue in properties:
-                    found = True
-                    for feat, value in zip(feats, groupvalues):
-                        if feat not in fs or fs[feat] != value:
-                            found = False
-                            break
-                    if found:
-                        feats_used.extend(feats)
-                        expansions.append("{} = {}".format(groupname, groupvalue))
-                        if webdict != None:
-                            webdict[groupname] = groupvalue
-                    
         for fvs, exp in self.fv_abbrevs:
             match = True
             if all([(fv[0] in feats_used) for fv in fvs]):
@@ -1480,6 +1469,51 @@ class POSMorphology:
                 feats_used.extend([fv[0] for fv in fvs])
 #        if expansions:
 #            print("top {}, fs {}, expansions {}, feats_used {}".format(top, fs.__repr__(), expansions, feats_used))
+        # Check feature groups
+        if not top and self.feature_groups:
+            groupnames = []
+            for feats, properties in self.feature_groups:
+#                if any([(feat in feats_used) for feat in feats]):
+#                    continue
+                for groupvalues, groupname, groupvalue, groupoper in properties:
+                    found = True
+                    for feat, value in zip(feats, groupvalues):
+                        if ":" in feat:
+#                            print("feats {}, properties {}, feat {}, value {}, oper {}".format(feats, properties, feat, value, groupoper))
+                            feat1, feat2 = feat.split(':')
+                            if feat1 not in fs or feat2 not in fs[feat1] or fs[feat1][feat2] != value:
+                                found = False
+                                break
+                            else:
+                                feats_used.append(feat1)
+                        elif feat not in fs or fs[feat] != value:
+                            found = False
+                            break
+                        else:
+                            feats_used.append(feat)
+                    if found:
+                        if groupname in groupnames and groupoper:
+                            # If this groupname already has a value and we're setting the value rather than
+                            # appending it, stop here.
+                            continue
+                        groupnames.append(groupname)
+                        expansions.append("{} = {}".format(groupname, groupvalue))
+                        if webdict != None:
+                            if not groupoper:
+#                                print("Adding {} to {}".format(groupvalue, groupname))
+                                # Add the groupvalue to groupname's values
+                                if groupname not in webdict:
+                                    webdict[groupname] = [groupvalue]
+                                else:
+                                    v = webdict[groupname]
+                                    if not isinstance(v, list):
+                                        v = [v]
+                                    v.append(groupvalue)
+                                    webdict[groupname] = v
+                            else:
+                                # Set the value for groupname
+                                webdict[groupname] = groupvalue
+                    
         return expansions, feats_used
 
     def excl(self, feat, val, feats_used):
