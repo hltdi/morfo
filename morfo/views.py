@@ -33,9 +33,9 @@ ANAL_INDEX = 0
 # Abbreviations of languages already loaded
 LOADED = []
 
-def init_word():
-    ANALYSES = WORD = None
-    ANAL_INDEX = 0
+#def init_word():
+#    ANALYSES = WORD = None
+#    ANAL_INDEX = 0
 
 #def load_language(abbrev):
 #    global LOADED
@@ -178,7 +178,6 @@ def anal():
         print("BORRAR")
         ANALYSES = WORD = None
         ANAL_INDEX = 0
-#        init_word()
         print("erased...")
         return render_template('anal.html', palabra=None, user=username, analindex=0,
                                language=LANGUAGE, labrev=lg_abbrev, analysis=None,
@@ -209,13 +208,13 @@ def anal():
     analysis = ANALYSES[ANAL_INDEX]
     webindex = LANGUAGE.anal_get_webindex(analysis)
     ANAL_INDEX += 1
-    print("Analysis {}: {}".format(ANAL_INDEX, analysis))
+#    print("Analysis {}: {}".format(ANAL_INDEX, analysis))
     html = LANGUAGE.anal2html(analysis)
-    print("HTML: {}".format(html))
+#    print("HTML: {}".format(html))
     if ANAL_INDEX == len(ANALYSES):
         ultanal = True
         print("Final analysis")
-    print("analysis...")
+#    print("analysis...")
     return render_template('anal.html', palabra=WORD, user=username, analindex=ANAL_INDEX, multanal=len(ANALYSES) > 1,
                            language=LANGUAGE, labrev=lg_abbrev, borrar=False, ultanal=ultanal,
                            analysis=analysis, webdata=webdata, webindex=webindex, html=html)

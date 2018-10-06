@@ -1,19 +1,73 @@
 name: k'iche'
 
+if: spa
+
+seg: a e i j l m n o r s u w x y "'" ä ë ï ö ü
+     d f g h v z
+     B
+     b b' ch ch' k k' p p' q q' t t' tz tz'
+
+feats:
+
+  pos: v verbo
+
+  *ab = p2 = *False | True;
+       frm = *False | True;
+       plr = *False | True;
+       p1 = *False | True
+
+  {ab:p1, ab:p2, ab:plr} (True, False, False): absolutivo = 1 pers sing
+  {ab:p1, ab:p2, ab:plr} (True, False, True): absolutivo = 1 pers plur
+  {ab:p1, ab:p2, ab:plr, ab:frm} (False, True, False, True): absolutivo = 2 prs sng fml
+  {ab:p1, ab:p2, ab:plr, ab:frm} (False, True, False, False): absolutivo = 2 pers sing
+  {ab:p1, ab:p2, ab:plr, ab:frm} (False, True, True, True): absolutivo = 2 prs prl fml
+  {ab:p1, ab:p2, ab:plr, ab:frm} (False, True, True, False): absolutivo = 2 pers plur
+  {ab:p1, ab:p2, ab:plr} (False, False, False): absolutivo = 3 pers sing
+  {ab:p1, ab:p2, ab:plr} (False, False, True): absolutivo = 3 pers plur
+
+  *er = xpl = *False | True;
+       p2 = *False | True;
+       frm = *False | True;
+       plr = *False | True;
+       p1 = *False | True
+
+  {er:p1, er:p2, er:plr} (True, False, False): ergativo = 1 pers sing
+  {er:p1, er:p2, er:plr} (True, False, True): ergativo = 1 pers plur
+  {er:p1, er:p2, er:plr, er:frm} (False, True, False, True): ergativo = 2 prs sng fml
+  {er:p1, er:p2, er:plr, er:frm} (False, True, False, False): ergativo = 2 pers sing
+  {er:p1, er:p2, er:plr, er:frm} (False, True, True, True): ergativo = 2 prs prl fml
+  {er:p1, er:p2, er:plr, er:frm} (False, True, True, False): ergativo = 2 pers plur
+  {er:p1, er:p2, er:plr, er:xpl} (False, False, False, True): ergativo = 3 pers sing
+  {er:p1, er:p2, er:plr, er:xpl} (False, False, True, True): ergativo = 3 pers plur
+
+  tam (tmp/asp/mod) = fut (futuro) = *False | True;
+        cmp (completivo) = *False | True;
+        prh (prohibitivo) = *False | True;
+        prf (perfecto) = *False | True;
+        stv (estativo) = *False | True;
+        imv (imperativo) = *False | True
+
+  trm (terminador) = *False (-) | True (+)
+
+  {mov:xpl, mov:go} (True, True): movimiento = ir
+  {mov:xpl, mov:go} (True, False): movimiento = venir
+#  {mov:xpl} (False):
+
+  *mov = xpl = *False | True;
+        go = *False | True
+
+  pst (posicional) = *False | True
+
+  der (derivación) = aps (antipasivo) = *False | True;
+        frq (frecuentativo) = *False | True;
+        cas (causativo) = *False | True;
+        imm (inmediativo) = *False | True;
+        pas (pasivo) = *False | True
+
+  *%t = es =
+  *%m = 
+
 trans:
-  Loading morphological data for {0}{1} ... = Cargando datos morfológicos para {0}{1} ...
-  Make change to grammatical features? = ¿Cambiar propiedades gramaticales?
-  Please enter a digit between {0} and {1} = Por favor introducí un dígito entre {0} y {1}
-  Current grammatical features = Últimas propiedades gramaticales
-  You selected value {0} for {1} = Seleccionaste {0} para {1}
-  You selected feature {0} = Seleccionaste propiedad {0}
-  yes = sí
-  [{0}] Keep value at {1} = [{0}] Mantener valor {1}
-  Selection = Selección
-  Make another change to grammatical features? = ¿Cambiar otra propiedad gramatical?
-  Options = Opciones
-  True = +
-  False = -
   word = palabra
   root = raíz
   affix = afijo
@@ -25,5 +79,4 @@ trans:
   pronoun = pronombre
   adverb = adverbio
   POS = CG
-  Analyzing words in = Analizando palabras en
-  Writing analysis in = Escribiendo análisis en
+

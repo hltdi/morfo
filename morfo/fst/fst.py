@@ -194,13 +194,17 @@ class FSTCascade(list):
         
     def get_fst_dir(self, dirname='test'):
         if not self.language:
-            d = os.path.join(os.path.dirname(__file__), os.path.pardir, 'languages', dirname)
+            d = os.path.join(os.path.dirname(__file__), os.path.pardir, 'L', dirname)
         else:
             d = self.language.directory
         return os.path.join(d, 'fst')
 
-    def get_lex_dir(self):
-        return os.path.join(self.language.directory, 'lex')
+    def get_lex_dir(self, dirname=''):
+        if not self.language:
+            d = os.path.join(os.path.dirname(__file__), os.path.pardir, 'L', dirname)
+        else:
+            d = self.language.directory
+        return os.path.join(d, 'lex')
 
     def add(self, fst):
         """Add an FST to the dictionary with its label as key."""
@@ -442,7 +446,7 @@ class FSTCascade(list):
 
     @staticmethod
     def load(filename, seg_units=[], create_networks=True, subcasc=None, language=None,
-             weight_constraint=None, gen=False, verbose=True):
+             dirname='', weight_constraint=None, gen=False, verbose=True):
         """
         Load an FST cascade from a file.
 
@@ -455,12 +459,13 @@ class FSTCascade(list):
 
         return FSTCascade.parse(label, open(filename, encoding='utf-8').read(), directory=directory,
                                 subcasc=subcasc, create_networks=create_networks, seg_units=seg_units,
+                                dirname=dirname,
                                 language=language, weight_constraint=weight_constraint,
                                 gen=gen, verbose=verbose)
 
     @staticmethod
     def parse(label, s, directory='', create_networks=True, seg_units=[],
-              subcasc=None, language=None,
+              subcasc=None, language=None, dirname='',
               weight_constraint=None, gen=False, verbose=False):
         """
         Parse an FST cascade from the contents of a file as a string.
@@ -519,7 +524,7 @@ class FSTCascade(list):
                 if create_networks:
                     filename = m.group(1)
                     if not subcasc_indices or len(cascade) in subcasc_indices:
-                        fst = FST.load(os.path.join(cascade.get_fst_dir(), filename),
+                        fst = FST.load(os.path.join(cascade.get_fst_dir(dirname=dirname), filename),
                                        cascade=cascade, weighting=cascade.weighting(),
                                        seg_units=seg_units, weight_constraint=weight_constraint,
                                        gen=gen,
@@ -537,7 +542,7 @@ class FSTCascade(list):
                 if create_networks:
                     filename = m.group(1)
                     if not subcasc_indices or len(cascade) in subcasc_indices:
-                        fst = FST.load(os.path.join(cascade.get_fst_dir(), filename),
+                        fst = FST.load(os.path.join(cascade.get_fst_dir(dirname=dirname), filename),
                                        cascade=cascade, weighting=cascade.weighting(),
                                        seg_units=seg_units, weight_constraint=weight_constraint,
                                        gen=gen,
@@ -556,7 +561,7 @@ class FSTCascade(list):
                     label = m.group(1)
                     filename = label + '.fst'
                     if not subcasc_indices or len(cascade) in subcasc_indices:
-                        fst = FST.load(os.path.join(cascade.get_fst_dir(), filename),
+                        fst = FST.load(os.path.join(cascade.get_fst_dir(dirname=dirname), filename),
                                        cascade=cascade, weighting=cascade.weighting(),
                                        seg_units=seg_units, weight_constraint=weight_constraint,
                                        gen=gen,
@@ -578,7 +583,7 @@ class FSTCascade(list):
                     if not subcasc_indices or len(cascade) in subcasc_indices:
                         if verbose:
                             print('Adding lex FST {} to cascade'.format(label))
-                        fst = FST.load(os.path.join(cascade.get_lex_dir(), filename),
+                        fst = FST.load(os.path.join(cascade.get_lex_dir(dirname=dirname), filename),
                                        cascade=cascade, weighting=cascade.weighting(),
                                        seg_units=seg_units, weight_constraint=weight_constraint,
                                        gen=gen, reverse=cascade.r2l,
@@ -2031,8 +2036,7 @@ class FST:
 
     @staticmethod
     def parse(label, s, weighting=None, cascade=None, fst=None,
-              directory='', seg_units=[], gen=False,
-              verbose=False,
+              directory='', seg_units=[], gen=False, verbose=False,
               weight_constraint=None):
         """
         Parse an FST from a string consisting of multiple lines from a file.
@@ -2111,8 +2115,7 @@ class FST:
                 continue
 
             # Transition arc(s)
-            # MG: Changes here to allow for weight at end,
-            # optional ':' separator, and
+            # MG: Changes here to allow for weight at end, optional ':' separator, and
             # multiple arcs joining the same two states (separated by ';')
             m = ARC_RE.match(line)
             if m:
@@ -2783,10 +2786,10 @@ class FST:
 #                    s = '  Output: ' + output
                     if in_pos >= len(input):
                         print(s + ' end of input')
-                        if trace > 1: print('  weight: {}'.format(accum_weight))
+                        print('  weight: {}'.format(accum_weight))
                     else:
                         print(s + ' input pos: {}, char: {}'.format(in_pos, input[in_pos]))
-                        if trace > 1: print('  weight: {}'.format(accum_weight))
+                        print('  weight: {}'.format(accum_weight))
 
                 # Get a list of arcs we can possibly take.
                 arcs = self.outgoing(state)

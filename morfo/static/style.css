@@ -6,7 +6,7 @@ letters:
 #009696
 #ff1919
 #0000ff
-c800c8
+#c800c8
 */
 
 body
@@ -340,6 +340,9 @@ input.text
         font-size: 100%;
         align: center;
         width: 100px;
+	border-style: outset;
+/*	border-color: #c86400; */
+	border-width: 3px;
 }
 
 #altbutton
@@ -432,7 +435,7 @@ button.menu
     font-size: 100%;
     text-align: center;
     padding: 0;
-    border: 1px solid;
+    border: 3px outset;
     margin: 0;
     cursor: pointer;
 }
@@ -509,7 +512,7 @@ ol.help
     padding-right: 4pt;
     padding-bottom: 0;
     cursor: pointer;
-    border: 1px solid;
+    border: 3px outset;
 }
 .despleg:hover, .despleg:active, .despleg:focus
 {

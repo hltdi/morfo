@@ -84,7 +84,7 @@ def n_get_citation(root, fs, guess=False, vc_as=False):
         # It's a deverbal noun
         return vb_get_citation(root, fs, guess=guess, vc_as=vc_as)
     else:
-        return root    
+        return None
 
 def simplify(word):
     """Simplify Amharic orthography."""
@@ -108,7 +108,7 @@ def cop_anal2string(anal, webdict=None):
     s = 'POS: copula'
     webfv(webdict, 'POS', 'copula')
     webfv(webdict, 'pos', 'cop')
-    webfv(webdict, 'root', 'ne-')
+    webfv(webdict, 'root', "ነ-")
     if anal[1]:
         s += ', root: <' + anal[1] + '>'
     s += '\n'
@@ -163,7 +163,9 @@ def n_anal2string(anal, webdict=None):
 #            webfv(webdict, 'citation', citation)
     else:
         s += 'noun'
-        rc = root
+        rc = geezify(root)
+#        sera2geez(GEEZ_SERA['am'][1], root, lang='am')
+        print("Root {}".format(rc))
         if citation:
             rc = "{}({})".format(root, citation)
         webfv(webdict, 'root', rc)
@@ -215,7 +217,7 @@ def n_anal2string(anal, webdict=None):
             if any_gram: gram += ','
             gram += ' negative'
             any_gram = True
-            webfv(webdict, 'negative', True)
+            webfv(webdict, 'negative', '+')
         if fs.get('plr'):
             if any_gram: gram += ','
             gram += ' plural'
@@ -225,22 +227,22 @@ def n_anal2string(anal, webdict=None):
             if any_gram: gram += ','
             any_gram = True
             gram += ' definite'
-            webfv(webdict, 'definite', True)
+            webfv(webdict, 'definite', '+')
         if fs.get('dis'):
             if any_gram: gram += ','
             any_gram = True
             gram += ' distrib(Iyye-)'
-            webfv(webdict, 'distributive', True)
+            webfv(webdict, 'distributive', '+')
         if rl and rl.get('acc'):
             if any_gram: gram += ','
             any_gram = True
             gram += ' accusative'
-            webfv(webdict, 'accusative', True)
+            webfv(webdict, 'accusative', '+')
         if rl and rl.get('gen'):
             if any_gram: gram += ','
             any_gram = True
             gram += ' genitive'
-            webfv(webdict, 'genitive', True)
+            webfv(webdict, 'genitive', '+')
 #        der = fs.get('der')
 #        if der and der.get('ass'):
 #            if any_gram: gram += ','
@@ -637,13 +639,15 @@ def n_postproc(analysis):
         if not gram1.get('v'):
             # This is not deverbal; convert the "root" (really the stem) to Geez
             # (It's a tuple, so can't mutate it.)
-            analysis = (sera2geez(GEEZ_SERA['am'][1], analysis[0], lang='am'),) + analysis[1:]
+            analysis = (geezify(analyses[0]),) + analysis[1:]
+#                sera2geez(GEEZ_SERA['am'][1], analysis[0], lang='am'),) + analysis[1:]
 #            analysis[0] = sera2geez(GEEZ_SERA['am'][1], analysis[0], lang='am')
 
 ## Create Language object for Amharic, including preprocessing, postprocessing,
 ## and segmentation units (phones).
 AM = language.Language("አማርኛ", 'am',
-              postproc=lambda form: sera2geez(GEEZ_SERA['am'][1], form, lang='am'),
+              postproc=lambda form: geezify(form),
+#              sera2geez(GEEZ_SERA['am'][1], form, lang='am'),
               preproc=lambda form: geez2sera(GEEZ_SERA['am'][0], form, lang='am', simp=True),
               postpostproc=lambda form: postproc_root(form),
               stat_root_feats=['vc', 'as'],
@@ -750,17 +754,6 @@ AM.morphology['n'].explicit_feats = ["plr", "poss", "def", "acc", "gen", "pp", "
 AM.morphology['n'].feat_abbrevs = \
   {'plr': "plural", 'poss': "possessor", "def": "definite", "acc": "accusative", "dis": "distributive", "gen": "genitive", "devrb": "deverbal",
    'pp': 'preposition'}
-AM.morphology['cop'].fv_abbrevs = \
-  (([['p1', True], ['p2', False], ['plr', False]], "1 prs sng"),
-   ([['p1', True], ['p2', False], ['plr', True]], "1 prs plr"),
-   ([['p1', False], ['p2', True], ['plr', False], ['fem', False]], "2 prs sng mas"),
-   ([['p1', False], ['p2', True], ['plr', False], ['fem', True]], "2 prs sng fem"),
-   ([['p1', False], ['p2', True], ['plr', False], ['frm', True]], "2 prs frml"),
-   ([['p1', False], ['p2', True], ['plr', True]], "2 prs plr"),
-   ([['p1', False], ['p2', False], ['plr', False]], "3 prs sng"),
-   ([['p1', False], ['p2', False], ['plr', False], ['frm', True]], "3 prs frml"),
-   ([['p1', False], ['p2', False], ['plr', True]], "3 prs plr")
-   )
 
 AM.morphology['cop'].name = 'copula'
 AM.morphology['cop'].defaultFS = language.FeatStruct("[cj2=None,-neg,sb=[-fem,-p1,-p2,-plr,-frm],tm=prs]")

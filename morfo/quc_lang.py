@@ -252,59 +252,6 @@ def feats_to_fs(gram):
 
     return FSSet(fs)
 
-def v_anal_to_dict(root, fs):
-    args = []
-    # List of features that are true
-    bools = []
-    strings = {}
-
-    gram = {}
-
-    gram['root'] = root
-
-    sbj = fs['sb']
-    obj = fs.get('ob', None)
-    vc = fs['vc']
-    asp = fs['as']
-    tm = fs['tm']
-
-    # Arguments
-    # The first item in args is a list of category labels
-    labels = ['person', 'number']
-    args.append(labels)
-    # The second item in args is a list of argument category lists
-    args1 = []
-    args1.append(agr_to_list(sbj, 'subject'))
-    if obj.get('expl'):
-        args1.append(agr_to_list(obj, 'object'))
-    args.append(args1)
-
-    # TAM
-    if tm == 'imf':
-        strings['tense/mood'] = 'imperfective'
-    elif tm == 'prf':
-        strings['tense/mood'] = 'perfective'
-    elif tm == 'ger':
-        strings['tense/mood'] = 'gerundive'
-    else:
-        strings['tense/mood'] = 'jussive/imperative'
-
-    # DERIVATIONAL STUFF
-    if vc == 'ps':
-        strings['voice'] = 'passive'
-    elif vc == 'tr':
-        strings['voice'] = 'transitive'
-
-    if asp == 'it':
-        strings['aspect'] = 'iterative'
-    elif asp == 'rc':
-        strings['aspect'] = 'reciprocal'
-
-    gram['args'] = args
-    gram['strings'] = strings
-    gram['bools'] = bools
-
-    return gram
 
 def list_to_arg(dct, prefix):
     '''Person, number.'''
@@ -333,31 +280,6 @@ def list_to_arg(dct, prefix):
         arg['plr'] = False
 
     return arg
-
-def v_dict_to_anal(root, dct, freeze=True):
-    fs = language.FeatStruct()
-    root = root or dct['root']
-
-    # Arguments
-    sbj = list_to_arg(dct, 'sbj')
-    if dct.get('obj'):
-        obj = list_to_arg(dct, 'obj')
-    else:
-        obj = language.FeatStruct()
-        obj['expl'] = False
-    fs['sb'] = sbj
-    fs['ob'] = obj
-    
-    # TAM: labels are the same as FS values
-    fs['tm'] = dct.get('tam', 'prf')
-
-    # DERIVATIONAL STUFF
-    fs['as'] = dct.get('asp', 'smp')
-    fs['vc'] = dct.get('voice_ti', 'smp')
-
-    # OTHER GRAMMAR
-
-    return [root, FSSet(fs)]
 
 def anal_to_gram(anals, morph_cats):
     grams = []

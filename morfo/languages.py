@@ -33,9 +33,17 @@ from .session import *
 
 LANGUAGES = {}
 
+# Convert 2-character to 3-character language codes
+ISO1to3 = {'qu': 'quz',
+           'es': 'spa',
+           'gn': 'grn',
+           'ki': 'quc'}
+
 def get_lang_id(string):
-    '''Get a language identifier from a string which may be the name
-    of the language.'''
+    '''Get a 3-character language identifier from a string which may be the name
+    of the language or a 2-character code.'''
+    # Expand code if
+    string = ISO1to3.get(string, string)
     lang = string if len(string) <= 3 else string.replace("'", "")[:2]
     return lang.lower()
 
@@ -55,15 +63,15 @@ def load_lang(lang, phon=False, segment=False, load_morph=True,
     elif lang_id == 'ti':
         from . import ti_lang
         language = ti_lang.TI
-    elif lang_id == 'om':
-        from . import om_lang
-        language = om_lang.OM
+#    elif lang_id == 'om':
+#        from . import om_lang
+#        language = om_lang.OM
     elif lang_id == 'stv':
         from . import stv_lang
         language = stv_lang.STV
-    elif lang_id == 'quc':
-        from . import quc_lang
-        language = quc_lang.KI
+#    elif lang_id == 'quc':
+#        from . import quc_lang
+#        language = quc_lang.KI
     elif lang_id == 'es':
         from . import es_lang
         language = es_lang.ES

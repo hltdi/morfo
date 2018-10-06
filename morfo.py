@@ -147,6 +147,26 @@ def casc_gen(casc, string, fs, start_i, end_i=0, trace=0):
     else:
         return casc[start_i].inverted().transduce(s, f, seg_units=seg_units, timeout=10)
 
+def ti_stem():
+    casc = morfo.fst.FSTCascade.load("morfo/L/ti/cas/vb_stem.cas", dirname='ti',
+                                     seg_units=[['a', 'e', 'E', 'i', 'I', 'o', 'u', '@', 'A',
+                                                 'w', 'y', "'", '`', '|', '_'],
+                                                {'b': ['b', 'bW'], 'c': ['c', 'cW'],
+                                                 'C': ['C', 'CW'], 'd': ['d', 'dW'],
+                                                 'f': ['f', 'fW'], 'g': ['g', 'gW'],
+                                                 'h': ['h', 'hW'], 'H': ['H', 'HW'],
+                                                 'j': ['j', 'jW'], 'k': ['k', 'kW'],
+                                                 'K': ['K', 'KW'], 'l': ['l', 'lW'],
+                                                 'm': ['m', 'mW'], 'n': ['n', 'nW'],
+                                                 'p': ['p', 'pW'], 'P': ['P', 'PW'],
+                                                 'N': ['N', 'NW'], 'q': ['q', 'qW'],
+                                                 'Q': ['Q', 'QW'], 'r': ['r', 'rW'],
+                                                 's': ['s', 'sW'], 'S': ['S', 'SW'],
+                                                 't': ['t', 'tW'], 'T': ['T', 'TW'],
+                                                 'v': ['v', 'vW'], 'x': ['x', 'xW'],
+                                                 'z': ['z', 'zW'], 'Z': ['Z', 'ZW']}])
+    return casc.compose(relabel=False)
+
 def main():
     pass
 

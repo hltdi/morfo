@@ -39,9 +39,9 @@ from .morphology import *
 ## Regexes for parsing language data
 # Language name
 LG_NAME_RE = re.compile(r'\s*n.*?:\s*(.*)')
-# Backup language abbreviation
+# Interface language abbreviation
 # l...: 
-BACKUP_RE = re.compile(r'\s*l.*?:\s*(.*)')
+IF_RE = re.compile(r'\s*if*?:\s*(.*)')
 ## preprocessing function
 #PREPROC_RE = re.compile(r'\s*pre*?:\s*(.*)')
 # Segments (characters)
@@ -141,6 +141,8 @@ class Language:
 #        self.trans = trans or {}
         self.directory = self.get_dir()
         self.tlanguages = [abbrev]
+        # Interface language
+        self.if_language = None
         if self.backup:
             self.tlanguages.append(self.backup)
         # Whether the language data and FSTs have been loaded
@@ -362,10 +364,10 @@ class Language:
                 self.label = label
                 continue
 
-            m = BACKUP_RE.match(line)
+            m = IF_RE.match(line)
             if m:
                 lang = m.group(1).strip()
-                self.backup = lang
+                self.if_language = lang
                 self.tlanguages.append(lang)
                 continue
 

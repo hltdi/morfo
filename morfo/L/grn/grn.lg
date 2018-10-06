@@ -1,6 +1,6 @@
 name: guaraní
 
-# lang backup: es
+if: spa
 
 seg: a e i o u y á é í ó ú ý ã ẽ ĩ õ ũ ỹ
      b d f h j l ñ p s t v ' g ĝ g̃ k _ ( )

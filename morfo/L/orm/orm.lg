@@ -1,0 +1,87 @@
+name: afaan oromoo
+
+if: eng
+
+seg: b f g h j k l m q r t w x y ' -
+     v z
+     B F G H J K L M Q R T W X Y V Z
+     a aa e ee i ii o oo u uu
+     c ch d dh n ny p ph s sh
+     A Aa E Ee I Ii O Oo U Uu
+     C Ch D Dh N Ny P Ph S Sh
+
+feats:
+
+  pos: v verb
+
+  *sb = p2 = *False | True;
+       fem = *False | True;
+       p1 = *False | True;
+       pl = *False | True
+
+  {sb:p1, sb:pl} (True, False): subject = 1 pers sing
+  {sb:p1, sb:pl} (True, True): subject = 1 pers plur
+  {sb:p2, sb:pl} (True, False): subject = 2 pers sing
+  {sb:p2, sb:pl} (True, True): subject = 2 pers plur
+  {sb:p1, sb:p2, sb:pl, sb:fem} (False, False, False, False): subject = 3 prs sng mas
+  {sb:p1, sb:p2, sb:pl, sb:fem} (False, False, False, True): subject = 3 prs sng fem
+  {sb:p1, sb:p2, sb:pl} (False, False, True): subject = 3 pers plur
+
+  tm (tense) = prs (present) | pst (past) | contemp (contemporary) | sub (subordinate) | imv (imperative) | prf (perfect)
+
+  neg (negative) = *False | True (+)
+
+  der (derivation) = cs (causative) = *False | True;
+        ps (passive) = *False | True;
+	autoben (autobenefactive) = *False | True
+
+  # 3 pers case suffixes
+  *ins (3 pers instrum) = *False | True
+  *dat (3 pers dative) = *False | True
+  {ins} (True): 3 sing case = instrumental
+  {dat} (True): 3 sing case = dative
+
+  ger (gerund) = *False | True (+)
+
+  cnj (conjunction) = ti | s | woo | tu | oo | tti | simmoo | f | yyuu | llee | moo | mmoo
+
+  1s_sb (1 sing subj) = *False | True (+)
+
+  # nominalized forms
+  *agt = *False | True
+  *inf = *False | True
+  *case = dat | ins | sb | loc | gen | bs | abl
+  *fem = *False | True
+
+  {agt} (True): nominalization + agent
+  {inf} (True): nominalization + infinitive
+  {fem} (True): nominalization + feminine
+  {case} (dat): nominalization + case:dative
+  {case} (ins): nominalization + case:instrum
+  {case} (sb): nominalization + case:subject
+  {case} (loc): nominalization + case:locative
+  {case} (gen): nominalization + case:genitive
+  {case} (bs): nominalization + case:base
+  {case} (abl): nominalization + case:ablative
+
+  cont (continuative) = *False | True (+)
+
+  prt (participle) = *False | True
+
+#  inter = *False | True
+
+  pos: n noun/adjective
+
+  case = ins (instrumental) | dat (dative) | loc (locative) | abl (ablative) | bs (base) | sb (subjective)
+
+  fem (feminine) = *False | True (+)
+
+  1s_sb (1 pers subj) = *False | True (+)
+
+  def (definite) = *False | True (+)
+
+  cnj (conjunction) = mmoo | s | tu | f | simmoo | moo | oo | llee | woo
+
+  gen (genitive) = *False | True (+)
+
+  pl (plural) = *False | True (+)

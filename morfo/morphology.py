@@ -1480,8 +1480,9 @@ class POSMorphology:
                     for feat, value in zip(feats, groupvalues):
                         if ":" in feat:
 #                            print("feats {}, properties {}, feat {}, value {}, oper {}".format(feats, properties, feat, value, groupoper))
+#                            print("fs: {}".format(fs.__repr__()))
                             feat1, feat2 = feat.split(':')
-                            if feat1 not in fs or feat2 not in fs[feat1] or fs[feat1][feat2] != value:
+                            if feat1 not in fs or not fs[feat1] or feat2 not in fs[feat1] or fs[feat1][feat2] != value:
                                 found = False
                                 break
                             else:
