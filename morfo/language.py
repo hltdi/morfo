@@ -1674,7 +1674,7 @@ for name, entry in \
    ('next_button', (('eng', 'Next'), ('spa', 'Próximo'))),
    ('pos_label', (('eng', 'part of speech'), ('spa', 'categoría gramatical'))),
    ('root_label', (('eng', 'root'), ('spa', 'raíz'))),
-   ('analysis_head', (('eng', 'Morfological analysis'), ('spa', 'Análisis morfológico'))),
+   ('analysis_head', (('eng', 'Morphological analysis'), ('spa', 'Análisis morfológico'))),
    ('analysis_label', (('eng', 'Analysis'), ('spa', 'Análisis')))
    ]:
    Language.add_IF(name, entry)
