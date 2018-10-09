@@ -657,6 +657,8 @@ TI.morphology['v'].sig_features = ['as', 'vc']
 # TI.morphology['v'].sig_features2 = ['sb', 'ob']
 # Defective roots
 TI.morphology['v'].defective = ['al_o']
+# Interface language
+TI.if_language = 'eng'
 
 def roman2geez(value):
     """Convert a value (prep or conj) to geez."""

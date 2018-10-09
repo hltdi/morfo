@@ -15,24 +15,22 @@ morfo: análisis y generación morfológica
 
 <form action='' name="Form1" id='form' action="anal" method="post">
 
-<table class="left">
-  <tr class="white">
-    <td class="title">
+<div class="banner">
+  <div class="logo">
     <a href=".">
     <img class='banner' src="{{url_for('static', filename='banner_logo.png')}}"
       alt="" width="315px" height="56px" />
     </a>
-    </td>
+  </div>
 
-    <td class="title" style="width: 435px"></td>
-
-    {% block menu %}
-
-    <td class="menu" style="width: 285px">
-      <div class='despleg-wrap'>
-      <button type="button" class="despleg"
-	onclick="mostrarDespleg()">
-	{% if language %}IDIOMA ▾ | <span class="language">{{language}}</span>
+  {% block menu %}
+  <div class="menu">
+    <table class="menu">
+      <tr>
+    <td class="menuright">
+      <div class='menu-wrap-right'>
+      <button type="button" class="despleg" onclick="mostrarDespleg()">
+	{% if language %} {{ifdict.language_menu}} ▾ | <span class="language">{{language}}</span>
 	{% else %}SELECCIONAR IDIOMA ▾
 	{% endif %}
 	</button>
@@ -60,22 +58,28 @@ morfo: análisis y generación morfológica
 	{% endif %}
       </div>
       </div>
-    </td>
-    <td class="menu" style="width: 245px">
-      <button class="menu" onclick="analizar()">INICIAR SESIÓN</button>
-    </td>
-    <td class="menu" style="width: 220px">
-      <button class="menu" onclick="acerca()">ACERCA DE</button>
+      <td class="menuright">
+      <div class='menu-wrap-right'>
+        <button class="menu" onclick="ingresar()">{{ifdict.login_menu}}</button>
+      </div>
+      </td>
+      <td class="menuright">
+      <div class='menu-wrap-right'>
+      <button class="menu" onclick="acerca()">{{ifdict.about_menu}}</button>
+      </div>
+      </td>
+    </tr>
+  </table>
+  </div>
     {% endblock %}
-
-  </tr>
-</table>
+</div>
 <input type="hidden" name="labrev" value="">
 <input type="hidden" name="ayuda" value=false>
 <input type="hidden" name="language" value={{ language }}>
 <input type="hidden" name="webdata" value={{ webdata|e }}>
 </form>
-<hr>
+<p></p>
+<hr class="main">
 
 {% block heading1 %}{% endblock %}
 

@@ -27,11 +27,11 @@ from flask import request, session, g, redirect, url_for, abort, render_template
 from morfo import app, exit, load, anal_word, seg, gen, init_session
 
 # Global variables for views; probably a better way to do this...
-LANGUAGE = ANALYSES = USER = WORD = SESSION = None
+LANGUAGE = ANALYSES = USER = WORD = SESSION = IF = None
 USERS_INITIALIZED = False
 ANAL_INDEX = 0
 # Abbreviations of languages already loaded
-LOADED = []
+#LOADED = []
 
 #def init_word():
 #    ANALYSES = WORD = None
@@ -56,18 +56,18 @@ def analyze():
 def index():
     global SESSION
     global LANGUAGE
-    global LOADED
+    global IF
     form = request.form
     print("index form: {}".format(form))
     if 'labrev' in form:
         lg_abbrev = form.get('labrev')
         SESSION = init_session(lg_abbrev, user=USER)
         LANGUAGE = SESSION.language
-#        loaded = lg_abbrev in LOADED
-#        LOADED.append(lg_abbrev)
-        print("new session with {}".format(LANGUAGE))
-        return render_template('anal.html', language=LANGUAGE, webdata=LANGUAGE.webdata,
-                               labrev=lg_abbrev)
+        IF = LANGUAGE.get_if_dict()
+        print("new session with {}, dict {}".format(LANGUAGE, IF))
+        return render_template('anal.html',
+                               language=LANGUAGE, webdata=LANGUAGE.webdata,
+                               ifdict=IF, labrev=lg_abbrev)
     return render_template('index.html')
 
 @app.route('/acerca', methods=['GET', 'POST'])
@@ -181,11 +181,11 @@ def anal():
         print("erased...")
         return render_template('anal.html', palabra=None, user=username, analindex=0,
                                language=LANGUAGE, labrev=lg_abbrev, analysis=None,
-                               ultanal=ultanal, webdata=webdata)
+                               ifdict=IF, ultanal=ultanal, webdata=webdata)
     if not 'palabra' in form:
         print("no word...")
         return render_template('anal.html', palabra=None, language=LANGUAGE, analysis=None,
-                               labrev=lg_abbrev, webdata=webdata, ultanal=ultanal)
+                               ifdict=IF, labrev=lg_abbrev, webdata=webdata, ultanal=ultanal)
     if not WORD:
         # Get the word
         WORD = form['palabra']
@@ -198,13 +198,14 @@ def anal():
             WORD = None
             print("no analyses...")
             return render_template('anal.html', error=True, user=username, labrev=lg_abbrev, webdata=webdata,
-                                   palabra=None, analindex=ANAL_INDEX, ultanal=True)
+                                   ifdict=IF, palabra=None, analindex=ANAL_INDEX, ultanal=True)
     print("Analyses {}".format(ANALYSES))
+#    print("IF dict {}".format(form.get('ifdict')))
     # This shouldn't be needed...
     if ANAL_INDEX >= len(ANALYSES):
         print("no more analyses...")
         return render_template('anal.html', palabra=WORD, user=username, language=LANGUAGE, labrev=lg_abbrev,
-                               analysis=None, ultanal=True, webdata=webdata)
+                               ifdict=IF, analysis=None, ultanal=True, webdata=webdata)
     analysis = ANALYSES[ANAL_INDEX]
     webindex = LANGUAGE.anal_get_webindex(analysis)
     ANAL_INDEX += 1
@@ -217,7 +218,7 @@ def anal():
 #    print("analysis...")
     return render_template('anal.html', palabra=WORD, user=username, analindex=ANAL_INDEX, multanal=len(ANALYSES) > 1,
                            language=LANGUAGE, labrev=lg_abbrev, borrar=False, ultanal=ultanal,
-                           analysis=analysis, webdata=webdata, webindex=webindex, html=html)
+                           ifdict=IF, analysis=analysis, webdata=webdata, webindex=webindex, html=html)
 
 @app.route('/fin', methods=['GET', 'POST'])
 def fin():

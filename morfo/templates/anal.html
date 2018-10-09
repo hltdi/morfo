@@ -184,78 +184,8 @@ textarea#comment
 </style>
 {% endblock %}
 
-<body>
-
-<table class='left'>
-<form id='form' name="Form1" method=POST>
-
-<input type="hidden" name="labrev" value="">
-
-<tr class="brown">
-    <td class="title">
-    <a href="base">
-    <img class='banner' src="{{url_for('static',
-      filename='banner_logo.png')}}" alt="" width="315px"
-      height="56px" />
-    </a>
-    </td>
-
-    <td class="title" style="width: 500px"></td>
-
-    <td class="menu" style="width: 240px">
-      <div class='despleg-wrap'>
-      <button type="button" class="despleg"
-	onclick="mostrarDespleg()">
-	{% if language %}IDIOMA ▾ | <span class="language">{{language}}</span>
-	{% else %}SELECCIONAR IDIOMA ▾
-	{% endif %}
-	</button>
-      <div id="menudespleg" class="contenido-despleg">
-	{% if (not language) or (language.abbrev != 'spa') %}
-	<span class='opinic' onclick="idioma('spa')">ESPAÑOL</span>
-	{% endif %}
-	{% if  (not language) or (language.abbrev != 'grn') %}
-	<span class='opinic' onclick="idioma('grn')">GUARANÍ</span>
-	{% endif %}
-	{% if  (not language) or (language.abbrev != 'qu') %}
-	<span class='opinic' onclick="idioma('qu')">QHICHWA</span>
-	{% endif %}
-	{% if  (not language) or (language.abbrev != 'quc') %}
-	<span class='opinic' onclick="idioma('quc')">K'ICHE'</span>
-	{% endif %}
-	{% if  (not language) or (language.abbrev != 'om') %}
-	<span class='opinic' onclick="idioma('om')">AFAAN OROMOO</span>
-	{% endif %}
-	{% if  (not language) or (language.abbrev != 'am') %}
-	<span class='opinic' onclick="idioma('am')">አማርኛ</span>
-	{% endif %}
-	{% if  (not language) or (language.abbrev != 'ti') %}
-	<span class='opinic' onclick="idioma('ti')">ትግርኛ</span>
-	{% endif %}
-      </div>
-      </div>
-    </td>
-    {% if user %}
-    <td class="menuuser" style="width: 180px">{{ user }}</td>
-    {% else %}
-    <td class="menu" style="width: 180px">
-       <button class="menu" onclick="ingresar()">INICIAR SESIÓN</button>
-    </td>
-    {% endif %}
-    <td class="menu" style="width: 135px"><button class="menu"
-      onclick="mostrarAyuda();">AYUDA</button></td>
-    <td class="menu" style="width: 130px">
-      <button class="menu" onclick="contacto()">CONTACTO</button>
-    </td>
-
-</tr>
-</form>
-
-</table>
-<hr>
-
 {% block heading1 %}
-  <h1>Análisis morfológico</h1>
+  <h1>{{ifdict.analysis_head}}</h1>
 {% endblock %}
 
 {% block body %}
@@ -272,7 +202,7 @@ textarea#comment
 <td style="width: 30px"></td>
 {% if palabra %}
 <td style="vertical-align: middle">
-<input type="submit" name="borrar" id="narrowbutton" onclick="borrar()" value="Borrar">
+<input type="submit" name="borrar" id="narrowbutton" onclick="borrar()" value={{ifdict.delete_button}}>
 </td>
 {% else %}
 <td></td>
@@ -284,11 +214,11 @@ textarea#comment
 <div class="instruc" id="instruc_palabra">
   {% if palabra %}
    {% if not ultanal %}
-   Para ver otro análisis, presione el botón "Próximo".
+    {{ifdict.next_instruc}}
    {% endif %}
-  Para analizar otra palabra, presione el botón "Borrar".
+  {{ifdict.another_instruc}}
   {% else %}
-  Escriba una palabra y presione la tecla "Intro/Entrar".
+  {{ifdict.word_instruc}}
   {% endif %}
 </td>
 </div>
@@ -307,13 +237,13 @@ Analysis: {{ analysis }}; analindex {{analindex}}; webindex {{webindex}}.
 <table style="left">
 {% if palabra and multanal %}
 <tr>
-  <td><span class="analnum">Análisis</span>
+  <td><span class="analnum">{{ifdict.analysis_label}}</span>
     <textarea class="analnum">{{ analindex }}</textarea>
   </td>
   <td style="width: 30px"></td>
   {% if not ultanal %}
   <td style="vertical-align: bottom">
-    <input type="submit" name="proxanal" id="narrowbutton" onclick="proxanal()" value="Próximo">
+    <input type="submit" name="proxanal" id="narrowbutton" onclick="proxanal()" value={{ifdict.next_button}}>
   </td>
   {% endif %}
 </tr>
@@ -339,6 +269,12 @@ Analysis: {{ analysis }}; analindex {{analindex}}; webindex {{webindex}}.
 
 </table>
 {% endif %}
+
+<!--
+<p>
+{{ ifdict }}
+</p>
+-->
 
 <form name="Form2" method=POST action='anal'>
 <input type="hidden" name="palabra" value="">
@@ -436,7 +372,6 @@ function palabra() {
 
 function palabraNuevaLinea() {
     f = palabra();
-    // May contain <br>
     f = f.replace(/<br>/g, "");
     document.Form2.palabra.value = f;
     document.Form2.action = "anal";
@@ -444,11 +379,6 @@ function palabraNuevaLinea() {
 }
 
 /*
-function borrarPalabra() {
-    document.getElementById("palabra").innerHTML = "";
-}
-*/
-
 function cambiarMeta(button, choiceid) {
     newitem = document.getElementById(choiceid).innerHTML;
     olditem = document.getElementById(button).innerHTML;
@@ -459,6 +389,7 @@ function cambiarMeta(button, choiceid) {
     document.getElementById(choiceid).innerHTML = olditem;
     actualTra();
 }
+*/
 
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
 function desplegar(button) {

@@ -1,6 +1,6 @@
 function ingresar() {
     form = document.getElementById("form");
-    form.action = "login";
+    form.action = "anal";
     form.submit();
 }
 function idioma(abbrev) {
@@ -18,7 +18,7 @@ function analizar() {
 }
 function acerca() {
     form = document.getElementById("form");
-    form.action = "acerca";
+    form.action = "anal";
     form.submit();
 }
 function contacto() {
@@ -29,8 +29,8 @@ function contacto() {
 function cargando(abbrev) {
     if (['spa', 'grn', 'qu', 'quc'].indexOf(abbrev) != -1) {
 	text = "Cargando datos ...";
-    } else if (abbrev == 'am') {
-	text = "ውሂብ እየተጫነ ነው...";
+//    } else if (abbrev == 'am') {
+//	text = "ውሂብ እየተጫነ ነው...";
     } else {
 	text = "Loading data...";
     }

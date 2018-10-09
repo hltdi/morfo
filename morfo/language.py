@@ -95,6 +95,9 @@ class Language:
 
     T = TDict()
 
+    IF = {'spa': {},
+          'eng': {}}
+
     def __init__(self, label='', abbrev='', backup='',
                  preproc=None, postproc=None, read_cache=True,
                  # There may be a further function for post-processing
@@ -160,6 +163,13 @@ class Language:
 
     def __str__(self):
         return self.label or self.abbrev
+
+    def get_if_abbrev(self):
+        return self.if_language or self.abbrev
+
+    def get_if_dict(self):
+        if_abbrev = self.get_if_abbrev()
+        return Language.IF[if_abbrev]
 
     def get_dir(self):
         """Where data for this language is kept."""
@@ -236,6 +246,15 @@ class Language:
             else:
                 return entry
         return False
+
+    @staticmethod
+    def add_IF(name, entries):
+        """Add another entry to the interface dictionaries (IF)."""
+        for lg_abbrev, text in entries:
+            if lg_abbrev not in Language.IF:
+                print("Warning: {} not in IF dictionary".format(lg_abbrev))
+                return
+            Language.IF[lg_abbrev][name] = text
 
     @staticmethod
     def make(name, abbrev, load_morph=False,
@@ -368,7 +387,7 @@ class Language:
             if m:
                 lang = m.group(1).strip()
                 self.if_language = lang
-                self.tlanguages.append(lang)
+#                self.tlanguages.append(lang)
                 continue
 
             m = PUNC_RE.match(line)
@@ -1334,14 +1353,13 @@ class Language:
                 feat_freq = self.morphology.get_feat_freq(grammar)
                 root_freq *= feat_freq
             # Find the citation form of the root if required
+            cite = None
             if citation and p and self.morphology[p].citation:
-                cite = self.morphology[p].citation(root, grammar, guess, stem)
-                if postproc:
-                    cite = self.postprocess(cite)
-            else:
-                cite = None
-                # Prevent analyses with same citation form and FS (results is a set)
-                # Include the grammatical information at the end in case it's needed
+                citeform = self.morphology[p].citation(root, grammar, guess, stem)
+                if postproc and citeform:
+                    cite = self.postprocess(citeform)
+            # Prevent analyses with same citation form and FS (results is a set)
+            # Include the grammatical information at the end in case it's needed
             results.add((cat, root, cite, grammar if gram else None, grammar, round(root_freq)))
         return list(results)
 
@@ -1544,6 +1562,7 @@ class Language:
     def set_web(self):
         """Set the features and number of values and index for each POS."""
         if not self.webdata:
+            ifdict = self.get_if_dict()
             multpos = True
             limit1 = 5
             limit2 = 12
@@ -1558,11 +1577,13 @@ class Language:
                 html = "<tr>"
                 if multpos:
                     html += "<td class='pos'><span class='poslabeloff'>"
-                    html += "categoría gramatical"
+                    html += ifdict.get('pos_label')
                     html += "</span><br/><span class='vallabeloff'>"
                     html += posmorph.name
                     html += "</span></td>"
-                html += "<td class='raiz'><span class='poslabeloff'>raíz</span><br/>"
+                html += "<td class='raiz'><span class='poslabeloff'>"
+                html += ifdict.get('root_label')
+                html += "</span><br/>"
                 html += "<textarea class='raiz'></textarea></td>"
                 for index2, feature in enumerate(webfeats):
                     value = feature[0]
@@ -1591,6 +1612,7 @@ class Language:
         else:
             posmorph = self.morphology[pos]
         webfeats = posmorph.web_features
+        ifdict = self.get_if_dict()
         multpos = True
         limit1 = 5
         limit2 = 12
@@ -1601,11 +1623,13 @@ class Language:
         html = "<tr>"
         if multpos:
             html += "<td class='pos'><span class='poslabel'>"
-            html += "categoría gramatical"
+            html += ifdict.get('pos_label')
             html += "</span><br/><span class='vallabel'>"
             html += posmorph.name
             html += "</span></td>"
-        html += "<td class='raiz'><span class='poslabel'>raíz</span><br/>"
+        html += "<td class='raiz'><span class='poslabel'>"
+        html += ifdict.get('root_label')
+        html += "</span><br/>"
         html += "<textarea class='raiz'>"
         html += "{}".format(anal.get('root', 'root'))
         html += "</textarea></td>"
@@ -1634,3 +1658,23 @@ class Language:
         html += "</tr></td></tr><tr><td colspan='8'><hr class='possep'><td></tr>"
         return html
 
+for name, entry in \
+  [
+   ('language_menu', (('eng', 'LANGUAGE'), ('spa', 'IDIOMA'))),
+   ('login_menu', (('eng', 'LOG IN'), ('spa', 'IDENTIFICARSE'))),
+   ('about_menu', (('eng', 'ABOUT'), ('spa', 'ACERCA DE'))),
+   ('word_instruc', (('eng', 'Type a word in the space and hit the "Enter" key.'),
+                     ('spa', 'Escriba una palabra y presione la tecla "Intro/Entrar."'))),
+   ('another_instruc', (('eng', 'To analyze another word, click on the "Delete" button.'),
+                        ('spa', 'Para analizar otra palabra, presione el botón "Borrar".'))),
+   ('next_instruc', (('eng', 'To see another analysis, click on the "Next" button.'),
+                     ('spa', 'Para ver otro análisis, presione el botón "Próximo".'))),
+   ('delete_button', (('eng', 'Delete'), ('spa', 'Borrar'))),
+   ('copy_button', (('eng', 'Copy'), ('spa', 'Copiar'))),
+   ('next_button', (('eng', 'Next'), ('spa', 'Próximo'))),
+   ('pos_label', (('eng', 'part of speech'), ('spa', 'categoría gramatical'))),
+   ('root_label', (('eng', 'root'), ('spa', 'raíz'))),
+   ('analysis_head', (('eng', 'Morfological analysis'), ('spa', 'Análisis morfológico'))),
+   ('analysis_label', (('eng', 'Analysis'), ('spa', 'Análisis')))
+   ]:
+   Language.add_IF(name, entry)

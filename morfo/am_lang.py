@@ -629,19 +629,17 @@ def list_to_arg(dct, prefix):
 
     return arg
 
-def n_postproc(analysis):
-    '''Postprocess a noun, replacing the root, if deverbal with postprocessed form.
-    analysis is a root and a single FS.'''
-    gram1 = analysis[1]
-#    gram1 = list(analysis[1])[0]
-    if analysis[0]:
-        # There is a root
-        if not gram1.get('v'):
-            # This is not deverbal; convert the "root" (really the stem) to Geez
-            # (It's a tuple, so can't mutate it.)
-            analysis = (geezify(analyses[0]),) + analysis[1:]
-#                sera2geez(GEEZ_SERA['am'][1], analysis[0], lang='am'),) + analysis[1:]
-#            analysis[0] = sera2geez(GEEZ_SERA['am'][1], analysis[0], lang='am')
+#def n_postproc(analysis):
+#    '''Postprocess a noun, replacing the root, if deverbal with postprocessed form.
+#    analysis is a root and a single FS.'''
+#    gram1 = analysis[1]
+#    if analysis[0]:
+#        # There is a root
+#        if not gram1.get('v'):
+#            # This is not deverbal; convert the "root" (really the stem) to Geez
+#            # (It's a tuple, so can't mutate it.)
+#            analysis = (geezify(analysis[0]),) + analysis[1:]
+##                sera2geez(GEEZ_SERA['am'][1], analysis[0], lang='am'),) + analysis[1:]
 
 ## Create Language object for Amharic, including preprocessing, postprocessing,
 ## and segmentation units (phones).
@@ -784,8 +782,11 @@ AM.morphology['cop'].anal2string = lambda fss, webdict: cop_anal2string(fss, web
 
 ## Postprocessing function for nouns (treats roots differently)
 # AM.morphology['v'].postproc = lambda analysis: vb_postproc(analysis)
-AM.morphology['n'].postproc = lambda analysis: n_postproc(analysis)
+# AM.morphology['n'].postproc = lambda analysis: n_postproc(analysis)
 # AM.morphology['cop'].postproc = lambda analysis: cop_postproc(analysis)
+
+# Interface language
+AM.if_language = 'eng'
 
 def load_anal(pos='v', lex=True, guess=False):
     if lex:
