@@ -165,7 +165,7 @@ def n_anal2string(anal, webdict=None):
         s += 'noun'
         rc = geezify(root)
 #        sera2geez(GEEZ_SERA['am'][1], root, lang='am')
-        print("Root {}".format(rc))
+#        print("Root {}".format(rc))
         if citation:
             rc = "{}({})".format(root, citation)
         webfv(webdict, 'root', rc)
@@ -741,7 +741,7 @@ AM.morphology['v'].web_feats = \
 
 AM.morphology['n'].name = 'noun'
 AM.morphology['n'].defaultFS = \
-    language.FeatStruct("[pos=n,-acc,-def,-neg,-fem,-itu,as=smp,cnj=None,-dis,-gen,-plr,poss=[-expl,-p1,-p2,-plr,-fem,-frm],pp=None,v=None,vc=smp,rl=[-p,-gen,-acc]]")
+    language.FeatStruct("[pos=n,-acc,cs=None,-def,-neg,-fem,-itu,as=smp,cnj=None,-dis,-gen,-plr,poss=[-expl,-p1,-p2,-plr,-fem,-frm],pp=None,v=None,vc=smp,rl=[-p,-gen,-acc]]")
 AM.morphology['n'].FS_implic = {'poss': [['expl'], 'def'],
                                 ('pp', ('be', 'le', 'ke', 'wede', 'Inde', 'sIle', 'Iske')): [['rl', ['p']]],
                                 ('gen', True): [['rl', ['gen']]],

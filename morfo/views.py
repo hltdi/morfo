@@ -24,7 +24,7 @@
 # Created 2018.9.11
 
 from flask import request, session, g, redirect, url_for, abort, render_template, flash
-from morfo import app, exit, load, anal_word, seg, gen, init_session
+from morfo import app, exit, load, anal_word, seg_word, gen, init_session
 
 # Global variables for views; probably a better way to do this...
 LANGUAGE = ANALYSES = USER = WORD = SESSION = IF = None

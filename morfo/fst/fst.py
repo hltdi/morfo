@@ -2580,7 +2580,7 @@ class FST:
                   # related to generation
                   gen=False, print_word=False, print_prefixes=None,
                   seg_units=[], reject_same=False,
-                  trace=0, tracefeat='', timeit=False, timeout=20):
+                  trace=0, tracefeat='', timeit=False, timeout=200):
         """Return the output for all paths through the FST for the input and initial weight. (MG)"""
         if timeit:
             time1 = time.time()

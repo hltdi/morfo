@@ -36,6 +36,9 @@ from .morphology import *
 # from .anal import *
 # from .trans import *
 
+## Regex for extracting root from segmentation string
+SEG_ROOT_RE = re.compile(r".*{(.+)}.*")
+
 ## Regexes for parsing language data
 # Language name
 LG_NAME_RE = re.compile(r'\s*n.*?:\s*(.*)')
@@ -246,6 +249,14 @@ class Language:
             else:
                 return entry
         return False
+
+    @staticmethod
+    def root_from_seg(segmentation):
+        """Extract the root from a segmentation expression."""
+        r = SEG_ROOT_RE.match(segmentation)
+        if r:
+            return r.group(1).split("+")[0]
+        return ''
 
     @staticmethod
     def add_IF(name, entries):
@@ -1019,8 +1030,7 @@ class Language:
                             elif not minim:
                                 if analyses:
                                     # Convert the analyses to a string
-                                    analysis = self.analyses2string(word, analyses,
-                                                                    form_only=segment or not gram,
+                                    analysis = self.analyses2string(word, analyses, seg=segment, form_only=not gram,
                                                                     word_sep=word_sep)
                                 elif segment:
                                     analysis = "{}: {}\n".format(word, form)
@@ -1117,10 +1127,16 @@ class Language:
                     s += '  {} {} {}\n'.format(anal[0], anal[1].__repr__(), anal[2])
         return s
 
-    def analyses2string(self, word, analyses, form_only=False, word_sep='\n',
+    def analyses2string(self, word, analyses, seg=False, form_only=False, word_sep='\n',
                         webdicts=None):
         '''Convert a list of analyses to a string, and if webdicts, add analyses to dict.'''
-        if form_only:
+        if seg:
+            if analyses:
+                analyses = [':'.join((a[0], a[1])) for a in analyses]
+                return "{} -- {}{}".format(word, ';;'.join(analyses), word_sep)
+            else:
+                return word + word_sep
+        elif form_only:
             if analyses:
 #                print('analyses', analyses)
                 return word + ': ' + ', '.join(analyses) + word_sep
@@ -1229,7 +1245,7 @@ class Language:
                     return []
                 # Assume these are the *only* analyses
                 get_all = False
-                a = self.proc_anal_noroot(form, self.morphology.get_analyzed(form))
+                a = self.proc_anal_noroot(form, self.morphology.get_analyzed(form), segment=segment)
                 if cache:
                     to_cache.extend(a)
                 analyses.extend(a)
@@ -1283,6 +1299,10 @@ class Language:
                                                                citation=citation and not segment,
                                                                segment=segment, guess=True, gram=gram,
                                                                postproc=postproc, freq=rank or report_freq))
+        if cache and not found:
+#            print("Adding new anal {}, {}".format(word, to_cache))
+            # Or use form instead of word
+            self.add_new_anal(word, to_cache)
         if not analyses:
             # Impossible to analyze the word/form.
             if no_anal != None:
@@ -1292,30 +1312,36 @@ class Language:
                 # Or use form instead of word
                 self.add_new_anal(word, to_cache)
             return analyses
-        if rank and len(analyses) > 1 and not segment:
+        if rank and len(analyses) > 1:
             analyses.sort(key=lambda x: -x[-1])
         # Select the n best analyses
         analyses = analyses[:nbest]
+        string = ''
         if print_out or webdicts != None:
             # Print out stringified version and/or add analyses to webdicts
-            string = self.analyses2string(word, analyses, form_only=segment or not gram, webdicts=webdicts)
+            string = self.analyses2string(word, analyses, seg=segment,
+                                          form_only=not gram, webdicts=webdicts)
             if print_out:
                 print(string)
-        elif not string:
+        elif not string and not segment:
             analyses =  [(anal[1], anal[-2], anal[-1]) if len(anal) > 2 else (anal[1],) for anal in analyses]
 
         return analyses
 
     def simp_anal(self, analysis, postproc=False, segment=False):
         '''Process analysis for unanalyzed cases.'''
-        if postproc:
-            # Convert the word to Geez.
-            analysis[0] = self.postproc(analysis[0])
         if segment:
-            return analysis[0]
-        return None, analysis[0], None, 100
+            return analysis[0], analysis[1], 100000
+#            return analysis[0]
+        elif postproc:
+            # Convert the word to Geez.
+            analysis[1] = self.postproc(analysis[1])
+#            analysis[0] = self.postproc(analysis[0])
+        pos, form = analysis
+        return pos, form, None, 100000
+#        return None, analysis[0], None, 100000
 
-    def proc_anal_noroot(self, form, analyses):
+    def proc_anal_noroot(self, form, analyses, segment=False):
         '''Process analyses with no roots/stems.'''
         return [(analysis.get('pos'), None, None, analysis, None, 0) for analysis in analyses]
 
@@ -1327,12 +1353,36 @@ class Language:
         If freq, include measure of root and morpheme frequency.'''
         results = set()
         if segment:
-            return [analysis[0] for analysis in analyses]
+            res = []
+            for analysis in analyses:
+                feats = analysis[1]
+                if not feats:
+                    # No analysis
+                    continue
+                if isinstance(feats, str):
+                    pos = feats
+                else:
+                    pos = feats.get('pos')
+                root = self.postpostprocess(analysis[0])
+                # Remove { } from root
+                real_root = Language.root_from_seg(root)
+#                print("Root {}, real root {}".format(root, real_root))
+                root_freq = 0
+                if freq:
+#                    print("Figuring freq for root {} and feats {}".format(real_root, feats.__repr__()))
+                    root_freq = self.morphology.get_root_freq(real_root, feats)
+                    feat_freq = self.morphology.get_feat_freq(feats)
+                    root_freq *= feat_freq
+                res.append((pos, root, root_freq))
+            return res
         for analysis in analyses:
-            root = analysis[0]
+            root = self.postpostprocess(analysis[0])
+#            root = analysis[0]
             grammar = analysis[1]
             if not grammar:
-                p = pos or ''
+#                results.add((root, None, 0))
+                continue
+#                p = pos or ''
             elif not pos:
                 p = grammar.get('pos', '')
             else:
@@ -1346,7 +1396,7 @@ class Language:
 #            proc_root = analysis[0]
             root_freq = 0
 #            for g in grammar:
-            if freq:
+            if freq and grammar:
                 # The freq score is the count for the root-feature combination
                 # times the product of the relative frequencies of the grammatical features
                 root_freq = self.morphology.get_root_freq(root, grammar)
