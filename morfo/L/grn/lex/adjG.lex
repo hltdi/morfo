@@ -109,6 +109,7 @@ irundy
 mba'ekuaáva
 pu'akáva
 akãratĩva
+jare
 javorái
 jejokuapy
 jekojoja

@@ -111,6 +111,7 @@ mba'ekuaáva
 pirevai
 pu'akáva
 akãratĩva
+jare
 javorái
 jejokuapy
 jekojoja

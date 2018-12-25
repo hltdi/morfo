@@ -92,3 +92,7 @@ hi'ári         ha'e      [pos=s,caso=ari,poses=[pp=0],grd=None,n=0,-neg,-adj]
 ore'ári        ore       [pos=s,caso=ari,poses=[pp=0],grd=None,n=1,-neg,-adj]
 pende'ári    pende       [pos=s,caso=ari,poses=[pp=0],grd=None,n=1,-neg,-adj]
 hi'árikuéra ha'e         [pos=s,caso=ari,poses=[pp=0],grd=None,n=1,-neg,-adj]
+
+## gua (only 3rd person?)
+hesegua         ha'e      [pos=s,caso=gua,poses=[pp=0],grd=None,n=0,-neg,-adj]
+heseguakuéra    ha'e      [pos=s,caso=gua,poses=[pp=0],grd=None,n=1,-neg,-adj]

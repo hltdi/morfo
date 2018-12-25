@@ -209,6 +209,7 @@ japeusa
 japu
 jarara
 jararã
+jare
 jarýi
 jasy
 jasyapy

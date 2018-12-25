@@ -1,7 +1,7 @@
 #### Amharic infinitive, agent, instrumental, manner noun
 ### INFINITIVE
-## mesber:           me12e3        [tmp=[n=3,c1=1,c2=2,   c3=3?,  c4=None, c_1=c,  c_2=2, -c_2gem, -c_1gem, v_1=...
-## meTey_eq
+## mesber:        me12e3        [tmp=[n=3,c1=1,c2=2,  c3=3?,  c4=None, c_1=c,  c_2=2, -c_2gem, -c_1gem, -c1gem, v_1=e, v1=None, v2=e, v3=None, v4=None, pre=me, suff=None]]
+## meTey_eq       meTey_eq      [tmp=[n=3,c1=1,c2=
 ## megabez
 ## mecal
 ## meCoh
@@ -22,21 +22,20 @@
 ### MANNER
 ## as_ebaber:  a1_e2a2e3
 ###
-### Template features:
-### pre, c_1, v_1, c1, c_2gem, c_2, c1gem
 ### Example templates
-###  teCberebber-e:    te12e3e4_e5,   [tmp=[n=5,c1=12,c2=3,   c3=None,c4=None, c_1=c,   c_2=c, +c_2gem, -c1gem, v_1=e, v1=e, v2=e,   v3=None,v4=None,pre=te  ]]
-###  gelebabbeT-e:     1e2e3a3_e4,    [tmp=[n=4,c1=1, c2=2,   c3=3,   c4=None, c_1=c,   c_2=3, +c_2gem, -c1gem, v_1=e, v1=e, v2=e,   v3=a,   v4=None,pre=None]]
-###  y-nkWakW_-al:     12a2_a,        [tmp=[n=5,c1=12,c2=None,c3=None,c4=None, c_1=None,c_2=2, +c_2gem, -c1gem, v_1=a, v1=a, v2=None,v3=None,v4=None,pre=None]] 
-###  awwexenegagger-e: a1_e2e3e4a4_e5 [tmp=[n=5,c1=1, c2=2,   c3=3,   c4=4,    c_1=c,   c_2=4, +c_2gem, +c1gem, v_1=e, v1=e, v2=e,   v3=e,   v4=a,  ,pre=a   ]]
-###  babba:            1a2_a          [tmp=[n=4,c1=1, c2=None,c3=None,c4=None, c_1=None,c_2=2, +c_2gem, -c1gem, v_1=a, v1=a, v2=None,v3=None,v4=None,pre=None]]
-###  sebabber-e:       1e2a2_e3       [tmp=[n=3,c1=1, c2=2,   c3=None,c4=None, c_1=c,   c_2=2, +c_2gem, -c1gem, v_1=e, v1=e, v2=a,   v3=None,v4=None,pre=None]]
-### pre:    {te, a, as, aste, tt, None}
-### c1:     {1, 12, None}
+###  teCberebber-e:    te12e3e4_e5,   [tmp=[n=5,c1=1,c2=2,   c3=None,c4=None, c_1=c,   c_2=c, +c_2gem, -c1gem, v_1=e, v1=e, v2=e,   v3=None,v4=None,pre=te  ]]
+###  gelebabbeT-e:     1e2e3a3_e4,    [tmp=[n=4,c1=1,c2=2,   c3=3,   c4=None, c_1=c,   c_2=3, +c_2gem, -c1gem, v_1=e, v1=e, v2=e,   v3=a,   v4=None,pre=None]]
+###  y-nkWakW_-al:     12a2_a,        [tmp=[n=5,c1=1,c2=None,c3=None,c4=None, c_1=None,c_2=2, +c_2gem, -c1gem, v_1=a, v1=a, v2=None,v3=None,v4=None,pre=None]] 
+###  awwexenegagger-e: a1_e2e3e4a4_e5 [tmp=[n=5,c1=1,c2=2,   c3=3,   c4=4,    c_1=c,   c_2=4, +c_2gem, +c1gem, v_1=e, v1=e, v2=e,   v3=e,   v4=a,  ,pre=a   ]]
+###  babba:            1a2_a          [tmp=[n=4,c1=1,c2=None,c3=None,c4=None, c_1=None,c_2=2, +c_2gem, -c1gem, v_1=a, v1=a, v2=None,v3=None,v4=None,pre=None]]
+###  sebabber-e:       1e2a2_e3       [tmp=[n=3,c1=1,c2=2,   c3=None,c4=None, c_1=c,   c_2=2, +c_2gem, -c1gem, v_1=e, v1=e, v2=a,   v3=None,v4=None,pre=None]]
+### Template features:
+### pre:    {te, a, as, aste, me, ma, mas, maste, teste, meste, None}
+### c1:     {1, None}
 ### c2:     {2, None}
 ### c3:     {3, None}
 ### c4:     {4, None}
-### c_1:    {C, t, None}
+### c_1:    {c, t, None}
 ### c_2:    {1, 2, 3, 4, None}
 ### c1gem:  {True, False}
 ### c_2gem: {True, False}
@@ -45,52 +44,60 @@
 ### v3:     {e, a, None}
 ### v4:     {a, None}
 ### v_1:    {e, a, o, i, E, u, Wa, W, None}
+### suff:   {i, iya, None}
 ### n:      {3, 4, 5}
 
 -> start
 
 ### PREFIXES
 
-start -> stem       <aleme:>  [v=inf,+neg]
+# Temporary template
 
-start -> stem       <me:>     [v=inf,-neg];[v=ins]
+# handled: pre, suff, c1gem, c1
+start -> tmp       [:]       [tmp=[c2=None,c3=None,c4=None,c_1=None,c_2=None,-c_2gem,v1=None,v2=None,v3=None,v4=None,v_1=None,n=3]]
 
-start -> stem       [:]       [v=agt]
+tmp -> stem       <aleme:>  [v=inf,+neg]
 
-start -> man0      [a:]       [v=man]
-man0 -> man        [/:]
+tmp -> stem       <me:>     [v=inf,-neg];[v=ins]
 
-stem -> a          [a:]       [vc=tr]
-stem -> a/         <a/:>      [vc=tr,as=rc];[vc=tr,as=it]
-stem -> te         <te:>      [vc=ps,v=agt]
-stem -> /C         [/:]       [vc=ps,v=inf];[vc=ps,v=ins]
-stem -> |          [X/L]      [vc=ps,v=inf];[vc=ps,v=ins]
-te -> |            [X/L]
-a -> |             [X/L]
-man0 -> |          [X/L]
-stem -> tt         <t_:>      [vc=ps,v=inf];[vc=ps,v=ins]
+tmp -> stem       [:]       [v=agt]
 
-stem -> as         <as:>      [v=agt];[v=inf];[v=ins]
-as ->  ast         [t:]       [vc=tr]
+tmp -> man0      [a:]       [v=man,vc=smp,as=smp,tmp=[pre=a]]
+man0 -> man        [/:]     [tmp=[+c1gem]]
+
+stem -> a0         [:]        [v=inf,tmp=[pre=ma]];[v=agt,tmp=[pre=a]];[v=ins,tmp=[pre=ma]]
+a0 -> a            [a:]       [vc=tr,tmp=[-c1gem]]
+a0 -> a/           <a/:>      [vc=tr,as=rc,tmp=[+c1gem]];[vc=tr,as=it,tmp=[+c1gem]]
+stem -> te         <te:>      [vc=ps,v=agt,tmp=[pre=te,-c1gem]]
+stem -> /C         [/:]       [vc=ps,v=inf,tmp=[pre=me,+c1gem]];[vc=ps,v=ins,tmp=[pre=me,+c1gem]]
+stem -> |          [X/L]      [vc=ps,v=inf,tmp=[pre=me,-c1gem]];[vc=ps,v=ins,tmp=[pre=me,-c1gem]]
+te -> |            [X/L]      [tmp=[-c1gem]]
+a -> |             [X/L]      [tmp=[-c1gem]]
+man0 -> |          [X/L]      [tmp=[-c1gem]]
+stem -> tt         <t_:>      [vc=ps,v=inf,tmp=[pre=met,-c1gem]];[vc=ps,v=ins,tmp=[pre=met,-c1gem]]
+
+stem -> as         <as:>      [tmp=[-c1gem]]
+as ->  ast         [t:]       [vc=tr,v=agt,tmp=[pre=aste,c1=None]];[vc=tr,v=inf,tmp=[pre=maste,c1=None]];[vc=tr,v=ins,tmp=[pre=maste,c1=None]]
 ast -> aste        [e:']
 
-start -> astM      <ast:>     [v=man]
+tmp -> astM      <ast:>      [v=man,tmp=[pre=aste,-c1gem]]
 astM -> asteM      [e:']
 
-as -> simp          [:]       [vc=cs]
-te -> simp          [:]
-a -> simp           [:]       [as=smp]
-stem -> simp        [:]       [vc=smp,as=smp];[vc=smp,as=it]
-/C -> simp          [:]
-a/ -> simp          [:]
+as -> simp          [:]       [vc=cs,v=agt,tmp=[pre=as,c1=1]];[vc=cs,v=inf,tmp=[pre=mas,c1=1]];[vc=cs,v=imp,tmp=[pre=mas,c1=1]]
+te -> simp          [:]       [tmp=[c1=1]]
+a -> simp           [:]       [as=smp,tmp=[c1=1]]
+stem -> simp0       [:]       [v=agt,tmp=[pre=None,-c1gem,c1=1]];[v=inf,tmp=[pre=me,c1=1]];[v=ins,tmp=[pre=me,-c1gem,c1=1]]
+simp0 -> simp       [:]       [vc=smp,as=smp];[vc=smp,as=it]
+/C -> simp          [:]       [tmp=[c1=1]]
+a/ -> simp          [:]       [tmp=[c1=1]]
 
 ### END
 
 -1 -> -1C           [X/L]
--1C -> end          [:]       [v=inf];[v=man]
+-1C -> end          [:]       [v=inf,tmp=[suff=None]];[v=man,tmp=[suff=None]]
 -1C -> -1i          [i:]      [v=agt];[v=ins]
--1i -> end          [:]       [v=agt]
--1i -> end          [a:]      [v=ins]
+-1i -> end          [:]       [v=agt,tmp=[suff=i]]
+-1i -> end          [a:]      [v=ins,tmp=[suff=iya]]
 
 # Final vowels for most situations
 -2V -> -1           [e:]      [v=man];[v=inf];[v=ins]
@@ -99,7 +106,7 @@ a/ -> simp          [:]
 # Final L
 -2V -> -1C          [:']      [v=agt];[v=man];[v=ins]
 -2V -> -2V.t        [a:']     [v=inf]
--2V.t -> end        [t:]
+-2V.t -> end        [t:]      [tmp=[suff=None]]
 # Final *
 -2V -> -1C          [:*]      [v=agt];[v=man];[v=ins]
 # infinitive and alternate for -* manner noun
@@ -117,20 +124,20 @@ a/ -> simp          [:]
 -3V -> -2A          [:]       [vc=smp,v=inf];[vc=tr,v=inf];[vc=smp,v=ins];[vc=tr,v=ins];[vc=tr,v=agt]
 -2AL -> -2A_        [X/L]
 
-# initial L; no vc=tr possible
--3L -> -3LV         [:']
+# initial L; no vc=tr possible; c1=None
+-3L -> -3LV         [:']      [tmp=[c1=None]]
 -3LV -> -2AL        [a:]
 
-simp -> -3          [:]
-as -> -3L           [:]       [vc=cs]
-stem -> -3L         [:]       [vc=smp,as=smp];[vc=smp,as=it]
-te -> -3L           [:]
-tt -> -3L           [:]
+simp -> -3          [:]       
+as -> -3L           [:]       [vc=cs,tmp=[c1=None,pre=as]]
+stem -> -3L         [:]       [vc=smp,as=smp,tmp=[c1=None,pre=None]];[vc=smp,as=it,tmp=[c1=None,pre=None]]
+te -> -3L           [:]       [tmp=[c1=None]]
+tt -> -3L           [:]       [tmp=[c1=None]]
 
-# C1=L in CCCC; ?? apparently behaves like CCC in ps and cs (no tr)
-as -> -3            [:']      [vc=cs]
-te -> -3            [:']
-/C -> -3            [:']
+# C1=L in CCCC; ?? apparently behaves like CCC in ps and cs (no tr); c1=None
+as -> -3            [:']      [vc=cs,tmp=[c1=None,pre=as]]
+te -> -3            [:']      [tmp=[c1=None,pre=te]]
+/C -> -3            [:']      [tmp=[c1=None]]
 
 ### A (C*C, imperfective with w, y, L as C2; reduplicated: CaC*C)
 ### the same pattern of vowels works with all reduplicated forms
@@ -163,11 +170,11 @@ te -> -3            [:']
 simp -> -3.2         [:]
 
 # reduplicated cases
-stem -> -4.2         [:]       [as=it]
-/C -> -4.2           [:]       [as=it]
-te -> -4.2           [:]       [as=it]
-a/ -> -4.2           [:]       [as=it]
-man -> -4.2          [:]
+stem -> -4.2         [:]       [as=it,tmp=[c1=1]]
+/C -> -4.2           [:]       [as=it,tmp=[c1=1]]
+te -> -4.2           [:]       [as=it,tmp=[c1=1]]
+a/ -> -4.2           [:]       [as=it,tmp=[c1=1]]
+man -> -4.2          [:]       [tmp=[c1=1]]
 
 ### B (CC_C, C2 cannot be L)
 
@@ -178,7 +185,7 @@ man -> -4.2          [:]
 # Drop the gemination in passive infinitive and instrumental
 -2B_ -> -2V         [:_]       [vc=ps,v=inf];[vc=ps,v=ins]
 
-# initial L; no vc=tr
+# initial L; no vc=tr; c1=None
 -3L -> -3LBV        [:']     [vc=smp];[vc=ps];[vc=cs]
 -3LBV -> -2B        [a:]
 
@@ -193,19 +200,19 @@ man -> -4.2          [:]
 -4.4V -> -2.4       [a:']
 
 -4.4 -> -4.4V       [X/L]
-# C1=L: aneTTese
+# C1=L: aneTTese; c1=None
 -4.4L -> -3.4       [a:']
 -5.4V -> -4.4       [e:]
 -5.4 -> -5.4V       [X]
 
-simp -> -4.4        [:]       
-simp -> -5.4        [:]       
+simp -> -4.4        [:]
+simp -> -5.4        [:]
 
 ast -> -2.4         [a:']
 tt -> -2.4          [a:']
 
-# C1=L
-start -> -4.4L      [:]       [vc=smp]
+# C1=L; c1=None
+tmp -> -4.4L      [:]       [vc=smp,tmp=[c1=None]]
 
 ### ...aCC: C (CaCC), CCaCC, C|CaCC, C|CCaCC
 ### including as=it versions of nearly all classes
@@ -230,10 +237,10 @@ start -> -4.4L      [:]       [vc=smp]
 -3aV.L -> -2.L.4    [a]
 -2.L.4 -> -2.L.4_   [X]
 -2.L.4_ -> -2.LV    [:]
--2.LV -> end        [i:']     [v=agt];[v=ins]
--2.LV -> -2a.LV     [a:]      [v=inf]
+-2.LV -> end        [i:']     [v=agt,tmp=[suff=i]];[v=ins,tmp=[suff=iya]]
+-2.LV -> -2a.LV     [a:]      [v=inf,tmp=[suff=None]]
 -2a.LV -> end       [t:']
--2.LV -> end        [:']      [v=man]
+-2.LV -> end        [:']      [v=man,tmp=[suff=None]]
 
 -4a -> -4aV         [X/L]
 -5aV -> -4a         [e:]      
@@ -243,11 +250,9 @@ start -> -4.4L      [:]       [vc=smp]
 -4aLV -> -3a        [a:]
 -4aL -> -3a         [a:']   [vc=cs]
 -4aL -> -3a         [:']     [vc=ps]
-##-4aL -> -3a         [a:']   [vc=cs];[vc=smp]
-##-4aL -> -3a         [:']     [vc=ps]
 
-aste -> -3a         [:]
-asteM -> -3a        [:]
+aste -> -3a         [:]     [tmp=[c1=None]]
+asteM -> -3a        [:]     [tmp=[c1=None]]
 
 | -> -3a            [:|]
 | -> -4a            [:|]
@@ -255,34 +260,33 @@ asteM -> -3a        [:]
 | -> -5a            [:|]
 
 # manner CCC -> CeCaCeC, CCCC -> CeCeCaCeC
-man -> -4a          [:]
-man -> -5a          [:]
+man -> -4a          [:]   [tmp=[c1=1]]
+man -> -5a          [:]   [tmp=[c1=1]]
 
-simp -> -3a         [:]
-simp -> -4a         [:]
+simp -> -3a         [:]   [tmp=[c1=1]]
+simp -> -4a         [:]   [tmp=[c1=1]]
 # tegbabi
-te -> -4a.L         [:]
+te -> -4a.L         [:]   [tmp=[c1=1]]
 # agbab
-man0 -> -4a.L       [:]
+man0 -> -4a.L       [:]   [tmp=[c1=1]]
 # magbabat, magbabiya, agbabi
-a -> -4a.L          [:]
+a -> -4a.L          [:]   [tmp=[c1=1]]
 # megbabat, megbabiya
-stem -> -4a.L       [:]       [v=inf,vc=ps];[v=ins,vc=ps]
-simp -> -5a         [:]
+stem -> -4a.L       [:]   [v=inf,vc=ps,tmp=[c1=1]];[v=ins,vc=ps,tmp=[c1=1]]
+simp -> -5a         [:]   [tmp=[c1=1]]
 
 # To get +it and +cs,+it for C1=L, CCC
-as -> -4aL          [:]       [vc=cs]
-te -> -4aL          [:]
-stem  -> -4aL       [:]       [vc=smp]
+as -> -4aL          [:]       [vc=cs,tmp=[c1=None]]
+te -> -4aL          [:]       [tmp=[c1=None]]
+stem  -> -4aL       [:]       [vc=smp,tmp=[c1=None]]
 
 # +it for CCCC with C1=L
-stem -> -4a         [a:']     [vc=smp]
-a/ -> -4a           [:']
-as -> -4a           [:']      [vc=cs]
-i/ -> -4a           [:']
-te -> -4a           [:']
+stem -> -4a         [a:']     [vc=smp,tmp=[c1=None,pre=None]]
+a/ -> -4a           [:']      [tmp=[c1=None,pre=a]]
+as -> -4a           [:']      [vc=cs,tmp=[c1=None,pre=as]]
+te -> -4a           [:']      [tmp=[c1=None,pre=te]]
 
-ast -> -3a          [e:']
-tt -> -3a           [e:']
+ast -> -3a          [e:']      [tmp=[c1=None]]
+tt -> -3a           [e:']      [tmp=[c1=None]]
 
 end ->

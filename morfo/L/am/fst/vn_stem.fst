@@ -231,7 +231,6 @@ stem  -> -4aL       [:]       [vc=smp]
 stem -> -4a         [a:']     [vc=smp]
 a/ -> -4a           [:']
 as -> -4a           [:']      [vc=cs]
-i/ -> -4a           [:']
 te -> -4a           [:']
 
 ast -> -3a          [e:']
