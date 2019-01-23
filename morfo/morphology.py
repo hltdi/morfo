@@ -228,14 +228,13 @@ class Morphology(dict):
         position = Morphology.simple if simplify else Morphology.complex
         # Need to split and take first element because there may be semantic categories in the words file.
         if os.path.exists(path):
-            file = open(path, encoding='utf8')
-            if ortho:
-                # Read in the words as a list
-                self.words[position] = [w.strip().split()[0] for w in file]
-            else:
-                # Read in ortho:phon pairs as a dict
-                self.words_phon[position] = dict([w.split().split()[0] for w in file])
-            file.close()
+            with open(path, encoding='utf8') as file:
+                if ortho:
+                    # Read in the words as a list
+                    self.words[position] = [w.strip().split()[0] for w in file]
+                else:
+                    # Read in ortho:phon pairs as a dict
+                    self.words_phon[position] = dict([w.strip().split() for w in file])
         else:
             self.words = []
             self.words_phon = []
@@ -749,7 +748,7 @@ class POSMorphology:
         name = self.fst_name(generate=generate, simplified=simplified,
                              guess=guess, phon=phon, segment=segment)
         path = os.path.join(self.morphology.get_cas_dir(), name + '.cas')
-        print("Looking for cas at {}".format(path))
+#        print("Looking for cas at {}".format(path))
         return os.path.exists(path)
 
     ## Web app stuff
