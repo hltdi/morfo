@@ -1130,6 +1130,7 @@ class Language:
     def analyses2string(self, word, analyses, seg=False, form_only=False, word_sep='\n',
                         webdicts=None):
         '''Convert a list of analyses to a string, and if webdicts, add analyses to dict.'''
+#        print("analyses2string: {}".format(analyses))
         if seg:
             if analyses:
                 analyses = [':'.join((a[0], a[1])) for a in analyses]
@@ -1351,6 +1352,7 @@ class Language:
                   freq=True):
         '''Process analyses according to various options, returning a list of analysis tuples.
         If freq, include measure of root and morpheme frequency.'''
+#        print("Proc anal {} ; {} ; {}".format(form, pos, analyses))
         results = set()
         if segment:
             res = []
@@ -1360,9 +1362,10 @@ class Language:
                     # No analysis
                     continue
                 if isinstance(feats, str):
-                    pos = feats
+                    pos1 = feats
                 else:
-                    pos = feats.get('pos')
+                    pos1 = feats.get('pos')
+                pos = pos1 or pos
                 root = self.postpostprocess(analysis[0])
                 # Remove { } from root
                 real_root = Language.root_from_seg(root)
@@ -1374,6 +1377,7 @@ class Language:
                     feat_freq = self.morphology.get_feat_freq(feats)
                     root_freq *= feat_freq
                 res.append((pos, root, root_freq))
+#            print("Processed: {}".format(res))
             return res
         for analysis in analyses:
             root = self.postpostprocess(analysis[0])
@@ -1391,7 +1395,7 @@ class Language:
             # grammar is a single FS
             if not show_root and not segment:
                 analysis[0] = None
-            if postproc and self.morphology[p].postproc:
+            if postproc and p in self.morphology and self.morphology[p].postproc:
                 self.morphology[p].postproc(analysis)
 #            proc_root = analysis[0]
             root_freq = 0

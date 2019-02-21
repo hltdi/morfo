@@ -942,6 +942,7 @@ class POSMorphology:
              to_dict=False, sep_anals=False,
              timeit=False, trace=False, tracefeat=''):
         """Analyze form."""
+#        print("Analyzing {}".format(form))
         fst = self.get_fst(generate=False, guess=guess, phon=phon, segment=segment)
         if guess:
             if phon:

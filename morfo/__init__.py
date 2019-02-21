@@ -157,6 +157,8 @@ def anal_word(language, word, root=True, citation=True, gram=True,
         elif web:
             return web
 
+anal = anal_word
+
 def anal_files(language, infiles, outsuff='.out',
                root=True, citation=True, gram=True,
                preproc=True, postproc=True, guess=False, raw=False,

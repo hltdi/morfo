@@ -2580,7 +2580,7 @@ class FST:
                   # related to generation
                   gen=False, print_word=False, print_prefixes=None,
                   seg_units=[], reject_same=False,
-                  trace=0, tracefeat='', timeit=False, timeout=200):
+                  trace=0, tracefeat='', timeit=False, timeout=500):
         """Return the output for all paths through the FST for the input and initial weight. (MG)"""
         if timeit:
             time1 = time.time()
@@ -2895,6 +2895,8 @@ class FST:
                         # UNKNOWN as the output character only makes sense if UNKNOWN is the input character;
                         # the same holds for stringsets
                         # add whatever UNKNOWN or the stringset matched on the input to the output
+                        if in_pos > len(input) - 1:
+                            print("Something wrong with {} and/or input {} at position {}".format(out_string, input, in_pos))
                         out_string = input[in_pos]
                     # always add 1 CHAR, unless '', right?
                     if in_string != '':

@@ -28,9 +28,8 @@ import morfo
 def get_lang(abbrev, guess=True, phon=False, cache='', verbose=False):
     """Return the language with abbreviation abbrev, loading it
     if it's not already loaded."""
-    return morfo.get_language(abbrev, cache=cache, phon=phon, guess=guess,
-                                  load=True,
-                                  verbose=verbose)
+    return morfo.get_language(abbrev, cache=cache, phon=phon, guess=guess, load=True,
+                              verbose=verbose)
 
 def get_pos(abbrev, pos, phon=False, segment=False, load_morph=False,
             guess=True, verbose=False):
@@ -147,25 +146,80 @@ def casc_gen(casc, string, fs, start_i, end_i=0, trace=0):
     else:
         return casc[start_i].inverted().transduce(s, f, seg_units=seg_units, timeout=10)
 
-def ti_stem():
-    casc = morfo.fst.FSTCascade.load("morfo/L/ti/cas/vb_stem.cas", dirname='ti',
-                                     seg_units=[['a', 'e', 'E', 'i', 'I', 'o', 'u', '@', 'A',
-                                                 'w', 'y', "'", '`', '|', '_'],
-                                                {'b': ['b', 'bW'], 'c': ['c', 'cW'],
-                                                 'C': ['C', 'CW'], 'd': ['d', 'dW'],
-                                                 'f': ['f', 'fW'], 'g': ['g', 'gW'],
-                                                 'h': ['h', 'hW'], 'H': ['H', 'HW'],
-                                                 'j': ['j', 'jW'], 'k': ['k', 'kW'],
-                                                 'K': ['K', 'KW'], 'l': ['l', 'lW'],
-                                                 'm': ['m', 'mW'], 'n': ['n', 'nW'],
-                                                 'p': ['p', 'pW'], 'P': ['P', 'PW'],
-                                                 'N': ['N', 'NW'], 'q': ['q', 'qW'],
-                                                 'Q': ['Q', 'QW'], 'r': ['r', 'rW'],
-                                                 's': ['s', 'sW'], 'S': ['S', 'SW'],
-                                                 't': ['t', 'tW'], 'T': ['T', 'TW'],
-                                                 'v': ['v', 'vW'], 'x': ['x', 'xW'],
-                                                 'z': ['z', 'zW'], 'Z': ['Z', 'ZW']}])
-    return casc.compose(relabel=False)
+# Testing Amharic deverbal nouns
+
+AN_BASIC = ["melqem", "meleqaqem", "leqami", "leqaqami", "'aleqaqem", "melaqem", "telaqami",
+            "meCeres", "meCerares", "Cerax", "Cerarax", "'aCerares",
+            "mebaken", "mebekaken", "bakaN", "'abekaken",
+            "megenTel", "megeneTaTel", "genTay", "geneTaTay", "'ageneTaTel", "megenaTel", "tegenaTay",
+            "mewexenger", "mewexenegager", "wexengari", "wexenegagari", "'awexenegager",
+            "meCberber", "meCberebaber", "teCberbari", "teCberebabari", "'aCberebaber", "meCberaber"]
+
+AN_XaX = ["megelameT", "magelameT", "gelamaC", "'agelemameT",
+          "mensafef", "tensafafi"]
+
+AN_L1 = ["mamen", "masamen", "metamen", "mastemamen", "metemamen",
+         "'amaN", "tamaN", "temamaN", "'astemamaN", "'astemamen",
+         "mades", "masades", "metades", "mastedades", "metedades",
+         "'adax", "tadax", "tedadax", "'astedades",
+         "manTes", "masneTes", "meneTes", "'aneTaTes"]
+
+AN_L2 = ["mecal", "mecacal", "cay", "cacay", "'acacal"]
+
+AN_L3 = ["megbat", "gebi", "megebat", "masgebat", "megbabat", "megebabat", "gebabi",
+         "'agebab", "'agbab", "tegbabi", "'agebabi", "'agbabi",
+         "meqret", "qeri", "meseTet", "masqeret", "meqeraret", "qerari", "'aqerar", "'aqeraret",
+         "mamat", "masamat", "metamat", "'ami", "tami",
+         "'astemam", "metemamat", "mastemamat", "temami", "'astemami",
+         "mayet", "metayet", "masayet", "'asteyayet"]
+
+AN_L4 = ["melalat", "malalat", "'alela", "lay",
+         "mezergat", "zergi", "mezeregagat", "'azeregag",
+         "meselcet", "selci", "maselcet", "'aselecac",
+         "mebelaxet", "'abelexax", "'abelexaxet", "'abelax",
+         "mengagat", "tengagi",
+         "manqelafat", "'anqelafi", "'anqelefaf",
+         "menkeratet", "tenkeratac", "'ankeretatet"]
+
+AN_wy2 = ["meSom", "meSWaSWam", "SWami", "SWaSWami", "'aSWaSWam",
+          "mecer", "mecacar", "cari", "cacari", "'acacar",
+          "mefEz", "mefafEz", "fiyaZ", "fafiyaZ", "'afafEz"]
+
+def segment(fst, form, printout=True):
+    seg = fst.anal(form, segment=True)
+    if seg:
+        if len(seg) > 20:
+            seg = "TOO MANY SEGMENTATIONS"
+        else:
+            seg = ', '.join(["{}:{}".format(x[0], x[1].get('v')) for x in seg])
+    else:
+        seg = "FAILED"
+    if printout:
+        print("{} -- {}".format(form, seg))
+    else:
+        return form, seg
+
+def segall(fst, forms):
+    for form in forms:
+        segment(fst, form, True)
+
+def analyze(fst, form, printout=True):
+    a = fst.anal(form)
+    if a:
+        if len(a) > 20:
+            a = "TOO MANY ANALYSES"
+        else:
+            a = ', '.join(["{}:{};{};{}".format(x[0], x[1].get('v'), x[1].get('as'), x[1].get('vc')) for x in a])
+    else:
+        a = "FAILED"
+    if printout:
+        print("{} -- {}".format(form, a))
+    else:
+        return form, a
+
+def analall(fst, forms):
+    for form in forms:
+        analyze(fst, form, True)
 
 def main():
     pass
