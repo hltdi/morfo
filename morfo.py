@@ -185,6 +185,13 @@ AN_wy2 = ["meSom", "meSWaSWam", "SWami", "SWaSWami", "'aSWaSWam",
           "mecer", "mecacar", "cari", "cacari", "'acacar",
           "mefEz", "mefafEz", "fiyaZ", "fafiyaZ", "'afafEz"]
 
+amV1 = ["ይመሳስላሉ", "ይመሳሰላሉ", "ያመሳስላል"]
+amV2 = ["ተባበሩ", "ተሳሳሙ", "ተግባቡ", "ተጭበረባበሩ"]
+amV3 = ["ይጠብቃል", "ባከነ", "ቀባጠረ"]
+amV4 = ["ተጋጠሙ", "አጋጠመ"]
+amN1 = ["መቀጠል", "መቀጠያ", "ቀጣይ", "አቀጣጠል"]
+amN2 = ["ያለምክንያት", "አለምክንያት", "አለመንሳፈፍ", "ኢፍትሃዊ"]
+
 def segment(fst, form, printout=True):
     seg = fst.anal(form, segment=True)
     if seg:
