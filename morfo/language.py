@@ -1232,13 +1232,14 @@ class Language:
             if unal_word:
                 if only_anal:
                     return []
-                a = self.simp_anal([unal_word], postproc=postproc, segment=segment)
-                if cache:
-                    to_cache.append((form, ''))
-                if segment:
-                    analyses.append(form)
-                else:
-                    analyses.append(a)
+                a = self.simp_anal(unal_word, postproc=postproc, segment=segment)
+#                if cache:
+#                    to_cache.append((form, ''))
+                analyses.append(a)
+#                if segment:
+#                    analyses.append(form)
+#                else:
+#                    analyses.append(a)
             # ... or is already analyzed, without any root/stem (for example, there is a POS and/or
             # a translation
             elif form in self.morphology.analyzed:
@@ -1331,6 +1332,7 @@ class Language:
 
     def simp_anal(self, analysis, postproc=False, segment=False):
         '''Process analysis for unanalyzed cases.'''
+#        print("Simp anal: {}".format(analysis))
         if segment:
             return analysis[0], analysis[1], 100000
 #            return analysis[0]
