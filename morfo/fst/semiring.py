@@ -260,8 +260,41 @@ class FSSet(set):
         return [fs.copy() for fs in self]
 
     @staticmethod
+    def compareFSS(fss_list):
+        """Compare feature values in a list of FSSs, first reducing each to a single FS with all shared values."""
+        fs_list = [FSSet.FSS2FS(fss) for fss in fss_list]
+        shared, diff = FSSet.compare(fs_list)
+        return diff
+
+    @staticmethod
+    def FSS2FS(fss):
+        """Convert the FSSet to a FeatStruct that includes the features shared across the set of FeatStructs
+        in the FSSet."""
+        fs = FeatStruct()
+        fsslist = list(fss)
+        fs0 = fsslist[0]
+        fss_rest = fsslist[1:]
+        for f1 in fs0.keys():
+            fs01 = fs0.get(f1)
+            shared = True
+            for fs2 in fss_rest:
+                if f1 not in fs2:
+                    shared = False
+                    break
+                fs21 = fs2.get(f1)
+                if fs01 != fs21:
+                    shared = False
+                    break
+            if shared:
+                # Each FS has a value and they're all equal, so add this to
+                # the shared values
+                fs[f1] = fs01
+        return fs
+
+    @staticmethod
     def compare(fss):
-        """Compare feature values in the FS set, returning a pair of dicts: shared values, different values."""
+        """Compare feature values in the FS set, returning a pair of dicts: shared values, different values.
+        fss can also be a list of FeatStruct instances."""
         if len(fss) == 1:
             return list(fss)[0], {}
         feats = set()

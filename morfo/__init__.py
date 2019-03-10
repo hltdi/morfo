@@ -1,7 +1,7 @@
 """
 This file is part of morfo, which is a project of PLoGS.
 
-Copyleft 2018, PLoGS and Michael Gasser.
+Copyleft 2018, 2019, PLoGS and Michael Gasser.
 
     morfo is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@ Copyleft 2018, PLoGS and Michael Gasser.
 Author: Michael Gasser <gasser@indiana.edu>
 """
 
-# __all__ = ['languages', 'language', 'morphology', 'strip']
+# __all__ = ['languages', 'language', 'morphology', 'strip', 'session', 'fst']
 
 from flask import Flask, url_for, render_template
 _version = '1.0'
@@ -105,7 +105,8 @@ def seg_file(language, infile, outfile=None,
 
 def anal_word(language, word, root=True, citation=True, gram=True,
               roman=False, segment=False, guess=False, dont_guess=False,
-              web=None, cache='', rank=True, freq=True, nbest=100, raw=False):
+              web=None, cache='', rank=True, freq=True, nbest=100, raw=False,
+              display_feats=None):
     '''Analyze a single word, trying all available analyzers, and print out
     the analyses.
     
@@ -138,6 +139,8 @@ def anal_word(language, word, root=True, citation=True, gram=True,
     @type  nbest:    int
     @param raw:      whether the analyses should be returned in "raw" form
     @type  raw:      boolean
+    @param display_feats: features to show in output string
+    @type display_feats: list of strings or None
     @return:         a list of analyses (if raw is True); dict of features (if web is True)
     @rtype:          list of (root, feature structure) pairs or string->string dict
     '''
@@ -150,7 +153,7 @@ def anal_word(language, word, root=True, citation=True, gram=True,
                                       root=root, citation=citation, gram=gram,
                                       segment=segment, only_guess=guess,
                                       guess=not dont_guess, webdicts=web,
-                                      nbest=nbest,
+                                      nbest=nbest, display_feats=display_feats,
                                       string=not raw, print_out=not raw)
         if raw:
             return analysis
@@ -371,6 +374,33 @@ def get_features(language, pos=None):
                 feats.append((pos, posmorph.get_features()))
             return feats
 
+### Processing word count files.
+
+def anal_word_counts(language, path, features, write=False):
+    """Process a file consisting of a word and a count on each line, displaying only
+    features in analysis. If write is True, write the results to a file (path with
+    additional extension 'anl'). Otherwise return a list of results."""
+    language = get_language(language)
+    result = []
+    if language:
+        n = 0
+        with open(path, encoding='utf8') as file:
+            for line in file:
+                n += 1
+                word, count = line.split()
+                anal = language.anal_word(word, display_feats=features)
+                if not anal:
+                    anal = word
+                result.append("{} {}".format(anal, count))
+                if n % 500 == 0:
+                    print("Processed {} words".format(n))
+        if write:
+            with open(path + '.anl', 'w', encoding='utf8') as file:
+                for line in result:
+                    print(line, file=file)
+        else:
+            return result
+
 ### Functions for debugging and creating FSTs
 
 def cascade(language, pos, gen=False, phon=False, segment=False, 
@@ -489,7 +519,7 @@ def get_pos(abbrev, pos, phon=False, segment=False, load_morph=False,
     load_lang(abbrev, segment=segment, phon=phon, load_morph=load_morph,
               guess=guess, verbose=verbose)
     lang = get_language(abbrev, phon=phon, segment=segment, load=load_morph,
-                               verbose=verbose)
+                        verbose=verbose)
     if lang:
         return lang.morphology[pos]
 

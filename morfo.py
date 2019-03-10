@@ -123,7 +123,7 @@ def casc_gen(casc, string, fs, start_i, end_i=0, trace=0):
     seg_units = casc.seg_units
     s = string
     if not isinstance(fs, morfo.fst.semiring.FSSet):
-        f = morfo.morpho.semiring.FSSet(fs)
+        f = morfo.morfo.semiring.FSSet(fs)
     else:
         f = fs
     if end_i:
@@ -145,6 +145,172 @@ def casc_gen(casc, string, fs, start_i, end_i=0, trace=0):
             print(s)
     else:
         return casc[start_i].inverted().transduce(s, f, seg_units=seg_units, timeout=10)
+
+# Analyzing Guarani word types
+def anal_grn(start=0, end=45000):
+    morfo.anal_word_counts("grn", "../LingData/Gn/words5.txt", ["tm", "ps", "ns", "po", "no"], write=True)
+
+def proc_grn_feats(pos=None, feat=None):
+    """Count different feature values for Guarani word tokens."""
+    result = {}
+    with open("../LingData/Gn/words5.txt.anl", encoding='utf8') as inf:
+        for line in inf:
+            item, count = line.split()
+            if ';' in item:
+                # Otherwise no real analysis, so ignore the line
+                count = int(count)
+                word, anals = item.split(';')
+                anals = anals.split('|')
+                nanals = len(anals)
+                count1 = count / nanals
+                for anal in anals:
+                    root_feats = anal.split(':')
+                    if len(root_feats) == 1:
+                        # No features
+                        continue
+                    root, feats = anal.split(':')
+                    if pos and '_' + pos not in root:
+                        continue
+                    if feats == '[]':
+                        continue
+                    feats = morfo.fs.FeatStruct(feats)
+                    feats.freeze()
+                    if feat:
+                        if feat not in feats:
+                            continue
+                        else:
+                            feats = feats[feat]
+                    # Update the counts
+                    if feats not in result:
+                        result[feats] = 0
+                    c = result[feats]
+                    c = round(c + count1, 2)
+                    result[feats] = c
+#    result = list(result.items())
+#    result.sort(key=lambda x: x[1], reverse=True)
+    return result
+
+def proc_grn_roots(pos=None, features=None):
+    """Count different feature-value combinations for each Guarani root that appears
+    in word token list."""
+    result = {}
+    with open("../LingData/Gn/words5.txt.anl", encoding='utf8') as inf:
+        for line in inf:
+            item, count = line.split()
+            if ';' in item:
+                # Otherwise no real analysis, so ignore the line
+                count = int(count)
+                word, anals = item.split(';')
+                anals = anals.split('|')
+                nanals = len(anals)
+                count1 = count / nanals
+#                if count1 < 0.2:
+#                    print("count1: {}, item: {}, count: {}, n: {}".format(count1, item, count, nanals))
+                for anal in anals:
+                    root_feats = anal.split(':')
+                    if len(root_feats) == 1:
+                        # No features
+                        if features:
+                            continue
+                        root = root_feats[0]
+                        if pos and '_' + pos not in root:
+                            continue
+                        if root not in result:
+                            result[root] = {}
+                        root_feats = result[root]
+                        if None not in root_feats:
+                            root_feats[None] = 0
+                        root_feats[None] += count1
+                        continue
+                    root, feats = anal.split(':')
+                    if pos and '_' + pos not in root:
+                        continue
+                    if '*' in root:
+                        root = root.replace('*', word)
+                    root = root.split('_')[0]
+                    if root not in result:
+                        result[root] = {}
+                    root_feats = result[root]
+                    if feats == '[]':
+                        feats = None
+                        if features:
+                            continue
+                    else:
+                        feats = morfo.fs.FeatStruct(feats)
+                        feats.freeze()
+                        if features:
+                            fv = [(feat, feats.get(feat, 'out')) for feat in features]
+                            for feat, value in fv:
+                                if value != 'out':
+                                    if feat not in root_feats:
+                                        root_feats[feat] = {}
+                                    if value not in root_feats[feat]:
+                                        root_feats[feat][value] = 0
+                                    rfv = root_feats[feat][value]
+                                    rfv = round(rfv + count1, 2)
+                                    root_feats[feat][value] = rfv
+    todel = []
+    for key in result:
+        if not result[key]:
+            todel.append(key)
+    for key in todel:
+        del result[key]
+##    for item, counts in result.items():
+##        for feat, vcounts in counts.items():
+##            vcounts = list(vcounts.items())
+##            vcounts.sort(key=lambda x: x[1], reverse=True)
+##            counts[feat] = vcounts
+##    if write:
+##        result = list(result.items())
+##        result.sort(key=lambda x: x[0])
+##        with open(write, 'w', encoding='utf8') as file:
+##            for item, counts in result:
+##                if counts:
+##                    item = item.split('_')[0]
+##                    print("{} :: {}".format(item, counts), file=file)
+    return result
+
+##def proc_grn_root_fvs(pos, fvs):
+##    result = {}
+##    forms = []
+##    with open("../LingData/Gn/words5.txt.anl", encoding='utf8') as inf:
+##        for line in inf:
+##            item, count = line.split()
+##            if ';' in item:
+##                # Otherwise no real analysis, so ignore the line
+##                count = int(count)
+##                word, anals = item.split(';')
+##                anals = anals.split('|')
+##                nanals = len(anals)
+##                count1 = count / nanals
+##                count2 = 0
+##                for anal in anals:
+##                    root_feats = anal.split(':')
+##                    if len(root_feats) == 1:
+##                        # No features
+##                        continue
+##                    root, feats = anal.split(':')
+##                    if feats == '[]':
+##                        continue
+##                    if '_' + pos not in root:
+##                        continue
+##                    if '*' in root:
+##                        root = root.replace('*', word)
+##                    feats = morfo.fs.FeatStruct(feats)
+##                    found = True
+##                    for f, v in fvs:
+##                        if f not in feats or feats[f] != v:
+##                            found = False
+##                            break
+##                    if found:
+##                        count2 += count1
+##                if count2:
+##                    if root not in result:
+##                        result[root] = []
+##                    result[root].append((word, count2))
+##                    forms.append((word, count2))
+##    return result, forms
+    
 
 # Testing Amharic deverbal nouns
 

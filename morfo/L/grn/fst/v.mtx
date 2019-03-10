@@ -57,7 +57,7 @@ $ pro
     tache$                [pos=v,cat=che,mod=opt];[pos=v,cat=adj,mod=opt]
   # 1 sing oj; 2 or 3 sj
   [po=1,no=0,+trans]
-    che$                  [cat=a,mod=ind]
+    che$                  [cat=a,mod=ind,ps=2|3]
   ## 2 sing.
   # 2 sing sj; 3 or null oj
   [ps=2,ns=0,po=3]
@@ -166,15 +166,16 @@ $ voz
 $ preraiz
   # sometimes also with reflx
   i                     [subcat=i,+trans,po=3];[subcat=i,+trans,po=2,ps=1];[subcat=i,-trans,-rflx]
-  gue                   [subcat=gue,ps=3,po=3];[subcat=gue,ps=1,ns=1,-clu,po=3]
-# strict rules for gue
-#[subcat=gue,sj=[-1,-2],oj=[-1,-2]];[subcat=gue,sj=[+1,-2,+p],oj=[-1,-2]]
-  # 1p or 2p (3s) objects or passive/reflexive
-  re                    [subcat=gue,po=1];[subcat=gue,po=2,ps=2|3];
-                        [subcat=gue,voz=reflx,+rflx]
+  gue                   [subcat=gue]
+# stricter rules for +gue with gue verbs
+#[subcat=gue,ps=3,po=3];[subcat=gue,ps=1,ns=1,-clu,po=3]
+  # 1p or 2p (3s) objects or passive/reflexive with gue verbs (allow it to be missing too)
+  re                    [subcat=gue,po=1];[subcat=gue,po=2,ps=3];[subcat=gue,voz=reflx,+rflx]
   --                    [subcat=0];[pos=v,mod=None];
                         [subcat=i,po=1];[subcat=i,po=2];[subcat=i,+rflx];
-                        [subcat=gue,ps=1,ns=0];[subcat=gue,ps=2];[subcat=gue,ps=1,ns=1,+clu]
+			[subcat=gue]
+# stricter rules for -gue with gue verbs
+#[subcat=gue,ps=1,ns=0];[subcat=gue,ps=2];[subcat=gue,ps=1,ns=1,+clu]
 
 ### RAIZ
 
@@ -182,7 +183,7 @@ $ raiz
   +ai_trans+            [+rztrans,cat=a,subcat=i]
   +ai_intrans+          [-rztrans,cat=a,subcat=i]
   +ague_trans+          [+rztrans,cat=a,subcat=gue]
-  +ague_intrans+        [-rztrans,cat=a,subcat=gue]
+#  +ague_intrans+        [-rztrans,cat=a,subcat=gue]
   +a_trans+             [+rztrans,cat=a,subcat=0]
   +a_intrans+           [-rztrans,cat=a,subcat=0]
   +che+                 [cat=a,-rztrans,subcat=0,voz=caus|intrans_caus|reflx_caus|recip_caus];[cat=che,subcat=0]
@@ -378,9 +379,9 @@ $ tmp3
   !tei                  [rel=None,-nom,mod=ind,-neg,+negipv]
   # asp=[-plus,-hab,-dud,-perf,-nec,-impf]
   # oblique relativizers; where/to which, etc. X
-  ha(*)                 [rel=obl,tm=None,mod=ind]
-  hague(*)              [rel=obl,tm=None,mod=ind,-negipv]
-  harã(*)               [rel=obl,tm=None,mod=ind,-negipv]
+  ha(*)                 [rel=obl,+nom,tm=None,mod=ind]
+  hague(*)              [rel=obl,+nom,tm=None,mod=ind,-negipv]
+  harã(*)               [rel=obl,+nom,tm=None,mod=ind,-negipv]
   harangue(*)           [rel=obl,+nom,mod=ind]
   --                    [-negipv,impopt=[-mi,-mo,-ke,-na,-katu,-mbae]]
 

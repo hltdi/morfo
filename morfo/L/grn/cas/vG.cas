@@ -59,7 +59,7 @@ weighting = UNIFICATION
 ### B -> m, D -> n, J -> ñ antes de nasales
 >nas<
 ## Realize M, X (->m, ->ng; ->p, ->k in dflt_v)
->PM<
+>PM_G<
 ## Realize P
 >P1.ar<
 ## Realize <h as r, <j and <ñ as 0 when there's a preceding $

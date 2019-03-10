@@ -97,8 +97,8 @@ def load_lang(lang, phon=False, segment=False, load_morph=True,
         if not language:
             # Impossible to make language with desired FST
             return False
-    if cache != False:
-        language.read_cache(segment=segment)
+#    if cache != False:
+#        language.read_cache(segment=segment)
     LANGUAGES[lang_id] = language
     if language.backup:
         # If there's a backup language, load its data file so the translations

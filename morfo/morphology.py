@@ -206,24 +206,26 @@ class Morphology(dict):
         return freq
 
     def set_root_freqs(self):
+        """If there's a root statistics file for analysis, load it."""
         filename = 'root_freqs.dct'
         path = os.path.join(self.get_stat_dir(), filename)
         try:
             with open(path, encoding='utf-8') as roots:
                 self.root_freqs = eval(roots.read())
         except IOError:
-            pass
-#            print('No root frequency file {} found'.format(path))
+            print('No root frequency file {} found'.format(path))
+#            pass
 
     def set_feat_freqs(self):
+        """If there's a feat statistics file for analysis, load it."""
         filename = 'feat_freqs.dct'
         path = os.path.join(self.get_stat_dir(), filename)
         try:
             with open(path, encoding='utf-8') as feats:
                 self.feat_freqs = eval(feats.read())
         except IOError:
-            pass
-#            print('No file frequency file {} found'.format(path))
+            print('No feature frequency file {} found'.format(path))
+#            pass
 
     def set_words(self, filename='words.lex', ortho=True, simplify=False):
         '''Set the list/dict of unanalyzed words, reading them in from a file, one per line.'''
@@ -598,6 +600,9 @@ class POSMorphology:
         self.web_features = []
         # List of feature groups [([features], group_name),...]
         self.feature_groups = feature_groups or None
+        # Frequency statistics for generation
+        self.root_freqs = None
+        self.feat_freqs = None
 
     def __str__(self):
         '''Print name.'''
@@ -729,6 +734,26 @@ class POSMorphology:
                         else:
                             self.analyzed_phon[Morphology.simple][word] = [phon, root, fs]
             file.close()
+
+    def set_root_freqs(self):
+        """If there's a root statistics file for generation for this POS, load it."""
+        filename = self.pos + '_root_freqs.dct'
+        path = os.path.join(self.morphology.get_stat_dir(), filename)
+        try:
+            with open(path, encoding='utf-8') as roots:
+                self.root_freqs = eval(roots.read())
+        except IOError:
+            print('No generation root frequency file {} found for {}'.format(path, self.pos))
+
+    def set_feat_freqs(self):
+        """If there's a feat statistics file for generation for this POS, load it."""
+        filename = self.pos + '_feat_freqs.dct'
+        path = os.path.join(self.morphology.get_stat_dir(), filename)
+        try:
+            with open(path, encoding='utf-8') as feats:
+                self.feat_freqs = eval(feats.read())
+        except IOError:
+            print('No generation feature frequency file {} found for {}'.format(path, self.pos))
 
     def make_generated(self):
         """Create a dictionary of analyzed words for generation."""
@@ -1061,9 +1086,10 @@ class POSMorphology:
 
     def gen(self, root, features=None, from_dict=False, postproc=False, update_feats=None,
             guess=False, simplified=False, phon=False, segment=False, fst=None,
-            print_word=False, print_prefixes=None,
+            print_word=False, print_prefixes=None, sort=True,
             interact=False, timeit=False, timeout=100, trace=False):
-        """Generate word from root and features."""
+        """Generate word from root and features. If sort is True, sort the outputs using
+        data in 'pos_' files in stat/."""
         fss = None
         if interact and self.feat_list:
             # Get user input from menu
@@ -1094,6 +1120,9 @@ class POSMorphology:
             gens = fst.transduce(root, features, seg_units=self.morphology.seg_units,
                                  gen=True, print_word=print_word, print_prefixes=print_prefixes,
                                  trace=trace, timeit=timeit, timeout=timeout)
+            if len(gens) > 1 and sort and self.feat_freqs:
+                gens = self.score_gen_output(root, gens)
+                gens.sort(key=lambda g: g[-1], reverse=True)
             if postproc:
                 # For languages with non-roman orthographies
                 for gen in gens:
@@ -1588,6 +1617,40 @@ class POSMorphology:
                     print('Changing dependent feature', feat_path, 'to value', feat_value)
                     fs.__setitem__(tuple(dep[:-1]), dep[-1])
         return fs
+
+    def score_gen_output(self, root, output):
+        """Given multiple outputs from gen(), score them on the features that distinguish
+        them."""
+        forms = [o[0] for o in output]
+        feats = [o[1] for o in output]
+        diffs = FSSet.compareFSS(feats)
+        root_scores = [0.0] * len(forms)
+        feat_scores = [0.0] * len(forms)
+        # root-feature frequencies
+        if self.root_freqs and root in self.root_freqs:
+            root_freqs = self.root_freqs[root]
+            for feat, values in diffs.items():
+                if feat in root_freqs:
+                    root_feat_freqs = root_freqs[feat]
+                    root_feat_values = [root_feat_freqs.get(value, 0.0) for value in values]
+                    root_scores = [(x + y) for x, y in zip(root_scores, root_feat_values)]
+        # total feature frequencies
+        if self.feat_freqs:
+            for feat, values in diffs.items():
+                if feat in self.feat_freqs:
+                    feat_freqs = self.feat_freqs[feat]
+                    feat_values = [feat_freqs.get(value, 0.0) for value in values]
+                    feat_scores = [(x + y) for x, y in zip(feat_scores, feat_values)]
+        # scale the feat_scores by the proportion of the total root_scores to the feat_scores
+        rootsum = sum(root_scores)
+        featsum = sum(feat_scores)
+        if featsum:
+            scaling = rootsum/featsum
+            scores = [(r + f * scaling) for r, f in zip(root_scores, feat_scores)]
+        else:
+            scores = root_scores
+        # return the outputs with scores appended
+        return [o + [s] for o, s in zip(output, scores)]
 
 class MorphCat(list):
     """A list of morphs, default first."""

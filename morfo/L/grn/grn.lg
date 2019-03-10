@@ -231,6 +231,8 @@ feats:
 
   pl (número) = *False (singular) | True (plural)
 
+  neg (negativo) = *False | True
+
   caso = *None|pe|peve|gui|guive|re|vo|icha|ichagua|guy|guype|gua|pegua|ygua|ndi|pype|ypype|ari|vove
 
   poses (posesivo) = pp = *0 | 3 (3 pers) | 2 (2 pers) | 1 (1 pers);

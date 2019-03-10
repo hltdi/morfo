@@ -108,10 +108,11 @@ class Language:
                  seg_units=None,
                  # list of grammatical features to be combined with roots for statistics,
                  # e.g., voice and aspect for Amharic verb roots (assume there's only
-                 # list)
+                 # list); used for disambiguation in analysis
                  stat_root_feats=None,
                  # list of lists of grammatical features for statistics, e.g.,
-                 # [poss, expl] for Amharic (whether it's explicitly possessive)
+                 # [poss, expl] for Amharic (whether it's explicitly possessive);
+                 # used for disambiguation in analysis
                  stat_feats=None,
                  citation_separate=True):
 #                 msgs=None, trans=None):
@@ -181,6 +182,11 @@ class Language:
     def get_data_file(self):
         """Data file for language."""
         return os.path.join(self.get_dir(), self.abbrev + '.lg')
+
+#    def get_stat_dir(self):
+#        """Statistics directory: root and feature frequencies
+#        for disambiguation."""
+#        return os.path.join(self.directory, 'stat')
 
     def get_cache_dir(self):
         """File with cached analyses."""
@@ -889,6 +895,10 @@ class Language:
                     self.morphology[pos].load_fst(gen=True, guess=True, phon=True, segment=segment,
                                                   create_casc=False,
                                                   recreate=recreate, verbose=verbose)
+            # Load statistics for generation
+            self.morphology[pos].set_root_freqs()
+            self.morphology[pos].set_feat_freqs()
+            
         return True
 
     def get_fsts(self, generate=False, phon=False, segment=False):
@@ -1063,13 +1073,14 @@ class Language:
         """Create a minimal string representing the analysis of a word.
         feats are features to include from the FeatStruct(s) in the
         analyses."""
-#        print('form {}, analyses {}'.format(form, analyses))
+#        print('form {}, analyses {}, feats {}'.format(form, analyses, feats))
         analysis = "{}".format(form)
         if analyses:
             root_pos = set()
             if len(analyses) == 1:
                 if analyses[0][0]:
                     a = analyses[0]
+#                    root = a[0]
                     # There is a real analysis
                     pos = a[0]
                     root = a[1]
@@ -1077,10 +1088,12 @@ class Language:
                     if '+' in root:
                         # This would not work for prefixes
                         root, x, suffixes = root.partition('+')
-                    rpg_string = "{}:{}".format('*' if root==form else root, pos)
+                    rpg_string = "{}_{}".format('*' if root==form else root, pos)
+#                    rg_string = "{}".format('*' if root==form else root)
                     part_fs = ''
                     if feats:
                         fs = a[3]
+#                        fs = a[1]
                         if fs:
                             part_fs = fs.part_copy(feats, simpfeats).__repr__()
                             rpg_string = "{}:{}".format(rpg_string, part_fs)
@@ -1092,11 +1105,14 @@ class Language:
                 for anal in analyses:
                     pos = anal[0]
                     root = anal[1]
-                    rpg_string = '*' if root==form else root
+#                    root = anal[0]
+#                    rpg_string = '*' if root==form else root
                     if pos:
-                        rpg_string = "{}:{}".format('*' if root==form else root, pos)
+                        rpg_string = "{}_{}".format('*' if root==form else root, pos)
+#                        rg_string = "{}".format('*' if root==form else root)
                         if feats:
                             fs = anal[3]
+#                            fs = anal[1]
                             if fs:
                                 part_fs = fs.part_copy(feats, simpfeats).__repr__()
                                 rpg_string = "{}:{}".format(rpg_string, part_fs)
@@ -1106,9 +1122,9 @@ class Language:
 #                    else:
 #                        root_pos.add((root, ''))
                 if root_pos:
-                    rp_string = '|'.join(root_pos)
+                    rpg_string = '|'.join(root_pos)
 # ["{}{}".format(r, p) for r, p in root_pos])
-                    analysis = "{};{}".format(analysis, rp_string)
+                    analysis = "{};{}".format(analysis, rpg_string)
         return analysis
 
     def pretty_analyses(self, analyses):
@@ -1193,7 +1209,7 @@ class Language:
                   root=True, stem=True, citation=True, gram=True,
                   get_all=True, to_dict=False, preproc=False, postproc=False,
                   cache=True, no_anal=None, string=False, print_out=False,
-                  rank=True, report_freq=True, nbest=100,
+                  display_feats=None, rank=True, report_freq=True, nbest=100,
                   only_anal=False):
         '''Analyze a single word, trying all existing POSs, both lexical and guesser FSTs.
 
@@ -1316,9 +1332,12 @@ class Language:
             return analyses
         if rank and len(analyses) > 1:
             analyses.sort(key=lambda x: -x[-1])
+        string = ''
+        if display_feats:
+            string = self.minim_string(word, analyses, display_feats)
+            return string
         # Select the n best analyses
         analyses = analyses[:nbest]
-        string = ''
         if print_out or webdicts != None:
             # Print out stringified version and/or add analyses to webdicts
             string = self.analyses2string(word, analyses, seg=segment,
@@ -1410,7 +1429,7 @@ class Language:
                 root_freq *= feat_freq
             # Find the citation form of the root if required
             cite = None
-            if citation and p and self.morphology[p].citation:
+            if citation and p and p in self.morphology and self.morphology[p].citation:
                 citeform = self.morphology[p].citation(root, grammar, guess, stem)
                 if postproc and citeform:
                     cite = self.postprocess(citeform)
