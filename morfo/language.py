@@ -1140,6 +1140,9 @@ class Language:
             for anal in anals:
                 if len(anal) == 1:
                     s += '  {}\n'.format(anal[0])
+                elif not anal[1]:
+                    # punctuation
+                    continue
                 else:
                     # root, features, frequency
                     s += '  {} {} {}\n'.format(anal[0], anal[1].__repr__(), anal[2])
