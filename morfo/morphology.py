@@ -144,23 +144,28 @@ class Morphology(dict):
     def is_word(self, word, simple=False, ortho=True):
         """Is word an unanalyzable word?"""
         if ortho and (word in self.punctuation or word in PUNC_TOKENS):
-            return word
-        if ortho and not self.words:
-            return None
-        if not ortho and not self.words_phon:
-            return None
-        if ortho:
-            word_rec = self.words
-            return word_rec.get(word, False)
-        else:
-            word_rec = self.words_phon
-            return word_rec.get(word, False)
+            return 'punc', word
+        if (ortho and not self.words) or (not ortho and not self.words_phon):
+            return None, None
+        return self.get_pos_word(word, ortho=ortho)
 #        if ortho:
-#            word_rec = self.words[Morphology.simple if simple else Morphology.complex]
-#            return word in word_rec and word
+#            words = self.words
+#            return words.get(word, False)
 #        else:
-#            word_rec = self.words_phon[Morphology.simple if simple else Morphology.complex]
-#            return word_rec.get(word, False)
+#            words = self.words_phon
+#            return words.get(word, False)
+
+    def get_pos_word(self, word, ortho=True):
+        """Check if the word is unanalyzable and return its POS (if available)
+        and the word if it is."""
+        words = self.words if ortho else self.words_phon
+        entry = words.get(word, False)
+        if entry:
+            if len(entry) == 2:
+                return entry
+            else:
+                return None, entry
+        return False
 
     def feat_name(self, values):
         if any(values):
@@ -205,7 +210,7 @@ class Morphology(dict):
                     freq *= freq0
         return freq
 
-    def set_root_freqs(self):
+    def set_root_freqs(self, verbosity=0):
         """If there's a root statistics file for analysis, load it."""
         filename = 'root_freqs.dct'
         path = os.path.join(self.get_stat_dir(), filename)
@@ -213,10 +218,10 @@ class Morphology(dict):
             with open(path, encoding='utf-8') as roots:
                 self.root_freqs = eval(roots.read())
         except IOError:
-            print('No root frequency file {} found'.format(path))
-#            pass
+            if verbosity:
+                print('No root frequency file {} found'.format(path))
 
-    def set_feat_freqs(self):
+    def set_feat_freqs(self, verbosity=0):
         """If there's a feat statistics file for analysis, load it."""
         filename = 'feat_freqs.dct'
         path = os.path.join(self.get_stat_dir(), filename)
@@ -224,8 +229,8 @@ class Morphology(dict):
             with open(path, encoding='utf-8') as feats:
                 self.feat_freqs = eval(feats.read())
         except IOError:
-            print('No feature frequency file {} found'.format(path))
-#            pass
+            if verbosity:
+                print('No feature frequency file {} found'.format(path))
 
     def set_words(self, filename='words.lex', ortho=True, simplify=False):
         '''Set the list/dict of unanalyzed words, reading them in from a file, one per line.'''
@@ -735,7 +740,7 @@ class POSMorphology:
                             self.analyzed_phon[Morphology.simple][word] = [phon, root, fs]
             file.close()
 
-    def set_root_freqs(self):
+    def set_root_freqs(self, verbosity=0):
         """If there's a root statistics file for generation for this POS, load it."""
         filename = self.pos + '_root_freqs.dct'
         path = os.path.join(self.morphology.get_stat_dir(), filename)
@@ -743,9 +748,10 @@ class POSMorphology:
             with open(path, encoding='utf-8') as roots:
                 self.root_freqs = eval(roots.read())
         except IOError:
-            print('No generation root frequency file {} found for {}'.format(path, self.pos))
+            if verbosity:
+                print('No generation root frequency file {} found for {}'.format(path, self.pos))
 
-    def set_feat_freqs(self):
+    def set_feat_freqs(self, verbosity=0):
         """If there's a feat statistics file for generation for this POS, load it."""
         filename = self.pos + '_feat_freqs.dct'
         path = os.path.join(self.morphology.get_stat_dir(), filename)
@@ -753,7 +759,8 @@ class POSMorphology:
             with open(path, encoding='utf-8') as feats:
                 self.feat_freqs = eval(feats.read())
         except IOError:
-            print('No generation feature frequency file {} found for {}'.format(path, self.pos))
+            if verbosity:
+                print('No generation feature frequency file {} found for {}'.format(path, self.pos))
 
     def make_generated(self):
         """Create a dictionary of analyzed words for generation."""
@@ -1400,9 +1407,9 @@ class POSMorphology:
 
     ## Pretty printing and web dictionary analysis
 
-    def pretty_anal(self, anal, webdict=None):
-        root = anal[1]
-        fs = anal[3]
+    def pretty_anal(self, anal, webdict=None, root=None, fs=None):
+        root = root or anal[1]
+        fs = fs or anal[3]
         # Leave out the part of speech for now
         s = self.language.T.tformat('{} = {}\n{} = <{}>\n',
                                     ['POS', self.name, 'root', root],

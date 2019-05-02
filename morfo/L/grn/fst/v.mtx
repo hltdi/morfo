@@ -223,7 +223,6 @@ $ der
   # combinaciones
   'asypa                [misc=[+pa,+asy]]
   katupa                [misc=[+pa,+katu]]
-#  panunga               [misc=[+pa,+nunga]] ?
   serei                 [asp=[+vol],misc=[+rei]]
   # ¿cómo distinguir órdenes diferentes?
   sePa                  [asp=[+vol],misc=[+pa]]
@@ -266,7 +265,7 @@ $ adj
   # should this be +nom to include postpositions (not excluded now because it's not explicitly -nom)?
   Pyre                  [cat=a|che,pos=adj,misc=[+pyre]]
   # anything in this FST without Pyre is a verb
-  --                    [pos=v]  # ,misc=[-pyre]]
+  --                    [pos=v]
 
 ### TIEMPO 1 -- antes del negativo; incluye conjuncion(es): Meve
 $ tmp1
@@ -277,11 +276,11 @@ $ tmp1
   !jave                 [pp=jave]    # while
   !vove                 [pp=vove]    # while
   # This is tonic ramo: recently; not sure it belongs here
-  ramo                  [asp=[+ramo]]
-  rõ                    [asp=[+ramo]]
-  ramoje(v)y            [asp=[+ramo,+jevy]]
-  ramomba               [asp=[+ramo],misc=[+pa]]
-  --                    [asp=[-ramo],pp=None];[asp=[-ramo],pp=jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
+  ramo                  [asp=[+ramo],pp=None|jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
+  rõ                    [asp=[+ramo],pp=None|jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
+  ramoje(v)y            [asp=[+ramo,+jevy],pp=None|jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
+  ramomba               [asp=[+ramo],misc=[+pa],pp=None|jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
+  --                    [asp=[-ramo],pp=None|jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
 
 ### NEGATIVO (YSAJA MBOTOVÉVA) con o sin GRADO, KOKATU -- antes del negativo
 $ neg2
@@ -326,8 +325,6 @@ $ mavointe1
   # va'erã almost always dominates the accent: 
   !mante                [misc=[+mante],+mante]        # obl: va'erã
   !manterei             [misc=[+manterei],+mante]     # obl: va'erã
-# ?? should be !
-#  voi                   [misc=[+voi],+voi]
   !ntevoi               [misc=[+voi,+nte],+nte1]
   !ntema                [asp=[+ma],misc=[+nte],+nte1]
   !gueter(e)i           [asp=[+gueteri]]
@@ -401,7 +398,7 @@ $ pospnom
   !gui                  [pp=gui,mod=ind]
   # desde que
   !guive                [pp=guive,mod=ind]
-  --                    [pp=None];[pp=vove|kuevo|vo|ramo|jepe|ramojepe|peve|rire|jave|ramojepe]
+  --                    [pp=None|vove|kuevo|vo|ramo|jepe|ramojepe|peve|rire|jave|ramojepe]
 
 ### INTERROGATIVE suffixes
 ###   ?mod=ind, ?-nom
@@ -434,7 +431,7 @@ $ jepimavointe
   voínte                [misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
   !ntevoi               [misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
   !ntemavoi             [asp=[+ma],misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
-  --                    [pp=None];[pp=jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vove]
+  --                    [pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vove]
 
 ### RAMO 2 + JEPE 2
 $ ramo2
@@ -445,7 +442,7 @@ $ ramo2
   !jepe                 [pp=jepe]  # often !ramojepe; can follow vonte
   !ramojepe             [pp=ramojepe]
   !rõjepe               [pp=ramojepe]
-  --                    [pp=None];[pp=peve|jave|rire|haguã|gui|guive|pe|re|icha|vo|kuevo|vove|rangue]
+  --                    [pp=None|peve|jave|rire|haguã|gui|guive|pe|re|icha|vo|kuevo|vove|rangue]
 
 ### NDA / JE / KO and combinations, etc.
 $ ndajeko

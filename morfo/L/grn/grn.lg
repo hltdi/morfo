@@ -130,7 +130,8 @@ feats:
   {voz, med} (reflx, True): voz = med reflx
   {voz, med} (recip, True): voz = med recip
   {voz, med} (caus, True): voz = med caus
-#  med (mediativo) = *False | True
+
+  *med (mediativo) = *False | True
 
   grd (grado) = *None | ve | ete | eterei	
 
@@ -266,6 +267,8 @@ feats:
   tm (tiempo) = None | kue | re | rã | rangue | akue
 
   grd (grado) = *None | ve | ive | ete | eterei | rasa | etereirasa
+
+  *%n = *0 | 1
  
   *%pregrd = False | True
   *%prepregrd = *False | True

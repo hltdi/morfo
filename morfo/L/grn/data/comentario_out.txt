@@ -1,0 +1,1437 @@
+- mba'éichapa
+  mba'éichapa [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,+inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'éichapa [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,+inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- karai
+  karai [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  karai [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  karai [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- avy'a
+  vy'a [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=0,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+- aime
+  ime [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=0,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+- haguere
+  <hague [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+
+- pende
+  pende [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=1,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+- apytépe
+  apyte [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  apyte [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- upéicha
+  upe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- rupi
+  <hupi [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- che
+  che [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=0,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+
+
+
+- ahekahápe
+  <heka [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,+nom,ns=0,po=3,pos=v,pp=pe,-pregrd,ps=1,rel=obl,-rflx,+rztrans,subcat=0,tm=None,+trans,voz=smp] 100
+
+- tape
+  <hape [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+
+- ko
+  ko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=i,-trans] 100
+  ko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,po=2,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=i,-trans] 100
+  ko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,po=1,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=i,-trans] 100
+
+
+
+- tapejejoko
+  joko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=opt,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=2,+rflx,+rztrans,subcat=0,-trans,voz=reflx] 100
+  jejoko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=opt,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=2,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+
+- guasu
+  guasu [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  guasu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  guasu [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- ñande
+  ñande [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=1,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+
+
+
+- che
+  che [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=0,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+
+- ojehu
+  jehu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+- ñandéve
+  ñande [-adj,caso=pe,grd=None,n=1,-neg,pos=s,poses=[pp=0]] 100
+
+
+- jaipotaitereígui
+  potaiterei [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=gui,-pregrd,ps=1,-rflx,+rztrans,subcat=i,+trans,voz=smp] 100
+  pota [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=eterei,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=gui,-pregrd,ps=1,-rflx,+rztrans,subcat=i,+trans,voz=smp] 100
+
+
+
+- guarani
+  guarani [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  guarani [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- omotenonde
+  motenonde [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+
+- mbo'epy
+  mbo'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je,+py],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  mbo'epy [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mbo'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je,+py],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  mbo'epy [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- oikéva
+  ike [asp=[-hikóni,-meme,-rae,-ramo,+va,-vol,-ypy,-ñepyrũ],cat=a,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,po=3,pos=v,pp=None,-pregrd,ps=3,rel=None,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  oikéva [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ike [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,po=3,pos=v,pp=None,-pregrd,ps=3,rel=sjoj,-rflx,-rztrans,subcat=0,tm=None,-trans,voz=smp] 100
+
+
+
+
+
+
+
+- guarani
+  guarani [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  guarani [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+- pe
+  pe [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- oikóramo
+  ko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=ramo,-pregrd,ps=3,-rflx,+rztrans,subcat=i,+trans,voz=smp] 100
+  iko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=ramo,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+
+
+
+
+
+
+
+
+- vai
+  vai [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+- oñemombe'u
+  mombe'u [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,+rflx,+rztrans,subcat=0,-trans,voz=reflx] 100
+  ñemombe'u [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+- sa'i
+  sa'i [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+- sa'i
+  sa'i [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+
+- añetegua
+  añetegua [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  añetegua [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  añete [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=gua,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  añete [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=gua,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  añetegua [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+- mba'apokuéra
+  mba'apo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'apo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- jey
+  jevy [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  y [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+  y [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+  y [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+  jevy [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- guarani
+  guarani [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  guarani [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- py'a
+  py'a [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  py'a [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- tapicha
+  <hapicha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- kuera
+  kuera [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  kuera [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans] 100
+
+- jopy
+  jopy [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=0,-trans] 100
+
+
+
+- upévare
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  upe [+adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  upe [+adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+
+
+
+
+- mymba
+  mymba [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mymba [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- yro
+  yro [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  yro [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- katu
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+
+
+
+
+
+
+- ae
+  ae [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ae [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ñande
+  ñande [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=1,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+- py'a
+  py'a [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  py'a [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- guapy
+  guapy [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans] 100
+  guapy [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  guapy [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  gua [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je,+py],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  gua [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je,+py],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+
+
+
+- guarani
+  guarani [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  guarani [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- ñamba'apo
+  mba'apo [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+
+
+- ñembyatyre
+  mbyaty [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=re] 100
+  mbyaty [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=re] 100
+
+
+
+- hetave
+  <heta [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=ve,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <heta [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=ve,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <heta [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-neg,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  <heta [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- omba'apova'ekue
+  mba'apo [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,po=3,pos=v,pp=None,-pregrd,ps=3,rel=sjoj,-rflx,-rztrans,subcat=0,tm=None,-trans,voz=smp] 100
+  mba'apo [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,po=3,pos=v,pp=None,-pregrd,ps=3,rel=None,-rflx,-rztrans,subcat=0,tm=vaekue,-trans,voz=smp] 100
+
+
+
+
+
+
+
+
+
+
+- mbo'eháramo
+  mbo'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  mbo'eha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[-ha,-hára,-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mbo'eha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[-ha,-hára,-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mbo'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- oñamindu'u
+  ñamindu'u [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+
+- py'aguapýpe
+  py'aguapy [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  py'aguapy [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ojepy'amongeta
+  jepy'amongeta [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+
+- pe
+  pe [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- tekokuaa
+  <hekokuaa [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- ha'e
+  ha'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=0,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+- haguéicha
+  <hague [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,+nom,po=3,pos=v,pp=icha,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <hague [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- che
+  che [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=0,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+
+- che
+  che [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=0,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+- jerovia
+  jerovia [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  jerovia [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans] 100
+  rovia [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+  rovia [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+  jerovia [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  jerovia [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- aikuaa
+  kuaa [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=0,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=i,+trans,voz=smp] 100
+
+
+
+
+- karai
+  karai [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  karai [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  karai [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- kuñakarai
+  kuñakarai [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  kuñakarai [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- chehegui
+  che [-adj,caso=gui,grd=None,n=0,-neg,pos=s,poses=[pp=0]] 100
+
+
+- oguerekóva
+  reko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,po=3,pos=v,pp=None,-pregrd,ps=3,rel=sjoj,-rflx,+rztrans,subcat=gue,tm=None,+trans,voz=smp] 100
+  reko [asp=[-hikóni,-meme,-rae,-ramo,+va,-vol,-ypy,-ñepyrũ],cat=a,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,po=3,pos=v,pp=None,-pregrd,ps=3,rel=None,-rflx,+rztrans,subcat=gue,+trans,voz=smp] 100
+
+- ambue
+  ambue [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ambue [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ambue [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- techa
+  <hecha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+- tape
+  <hape [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+
+
+- ñamindu'u
+  ñamindu'u [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=0,-trans] 100
+
+- karai
+  karai [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  karai [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  karai [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- marangatu
+  marangatu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+
+
+- a
+  a [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  a [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  a [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- opa
+  pa [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  opa [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  opa [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- mba'e
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- eréva
+  'e [asp=[-hikóni,-meme,-rae,-ramo,+va,-vol,-ypy,-ñepyrũ],cat=a,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,ns=0,po=3,pos=v,pp=None,-pregrd,ps=2,-refl,rel=None,-rztrans,subcat=0,-trans,voz=smp] 100
+  'e [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,ns=0,po=3,pos=v,pp=None,-pregrd,ps=2,-refl,rel=sjoj,-rztrans,subcat=0,tm=None,-trans,voz=smp] 100
+
+- nde
+  nde [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=0,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+
+
+
+- mba'éicha
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- hagua
+  <hagua [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=gua,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=gua,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+
+
+
+
+- upévare
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  upe [+adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  upe [+adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- che
+  che [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=0,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+- a
+  a [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  a [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  a [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- me
+  me [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  me [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- ko
+  ko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=i,-trans] 100
+  ko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,po=2,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=i,-trans] 100
+  ko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,po=1,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=i,-trans] 100
+
+
+
+- mba'éichapa
+  mba'éichapa [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,+inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'éichapa [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,+inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ikatupyry
+  katupyry [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+- jaiporukuaaramo
+  poru [asp=[-hikóni,-rae,+ramo],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[+kuaa],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=jave,-pregrd,ps=1,-rflx,+rztrans,subcat=i,+trans,voz=smp] 100
+  poru [asp=[-hikóni,-rae,+ramo],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[+kuaa],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=vove,-pregrd,ps=1,-rflx,+rztrans,subcat=i,+trans,voz=smp] 100
+  poru [asp=[-hikóni,-rae,+ramo],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[+kuaa],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=peve,-pregrd,ps=1,-rflx,+rztrans,subcat=i,+trans,voz=smp] 100
+  poru [asp=[-hikóni,-rae,+ramo],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[+kuaa],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=i,+trans,voz=smp] 100
+  poru [asp=[-hikóni,-rae,+ramo],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[+kuaa],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=rire,-pregrd,ps=1,-rflx,+rztrans,subcat=i,+trans,voz=smp] 100
+
+
+
+- tembiapo
+  <hembiapo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+- yro
+  yro [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  yro [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- katu
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+- poha
+  poha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  poha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+
+- mbaretéicha
+  mbarete [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mbarete [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- heta
+  <heta [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <heta [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <heta [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- mba'e
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ikatu
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+- ñamohenda
+  mohenda [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+
+
+- rupive
+  <hupi [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  <hupi [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+- che
+  che [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=0,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+
+
+- hetaite
+  <heta [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=ete,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <heta [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=ete,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <heta [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ete,-inter,-neg,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- jesareko
+  jesareko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans] 100
+  jesareko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  jesareko [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  jesareko [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- areko
+  reko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=0,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=gue,+trans,voz=smp] 100
+
+
+
+
+
+
+- mba'éicha
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mba'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=icha,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- pe
+  pe [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- rory
+  <hory [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+- ombovy'a
+  vy'a [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,+trans,voz=caus] 100
+
+- chupekuéra
+  ha'e [-adj,caso=pe,grd=None,n=1,-neg,pos=s,poses=[pp=0]] 100
+
+
+
+
+- marandu
+  marandu [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  marandu [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ñembohasa
+  ñembohasa [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ñembohasa [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans] 100
+  mbohasa [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+  mbohasa [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+
+
+
+
+
+- ha'e
+  ha'e [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=0,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+- poha
+  poha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  poha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+
+- mbarete
+  mbarete [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  mbarete [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mbarete [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- jejopy
+  jejopy [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  jejopy [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans] 100
+  jejopy [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  jopy [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+  jopy [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+  jejopy [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- aguyje
+  aguyje [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  aguyje [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  aguyje [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  aguyje [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  aguyje [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  aguyje [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  aguyje [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- maitei
+  maitei [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  maitei [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- irũnguéra
+  irũ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  irũ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ko'ẽrõ
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ko'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- pyhareve
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=ve,-inter,+pas,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=re] 100
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=ve,-inter,-neg,+pas,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=re] 100
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,+re],dim=None,grd=ve,-inter,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  pyhare [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-ha,-hára,-je],dim=None,grd=ve,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pyhareve [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-ha,-hára,-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pyhare [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-ha,-hára,-je],dim=None,grd=ve,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,+re],dim=None,grd=ve,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=ve,-inter,+pas,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=re] 100
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,+re],dim=None,grd=ve,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  pyhare [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-ha,-hára,-je],dim=None,grd=ve,-inter,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pyhareve [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-ha,-hára,-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pyha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,+pas,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,+re],dim=None,grd=ve,-inter,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  pyha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,+pas,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  pyha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-neg,+pas,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  pyha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-neg,+pas,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=ve,-inter,-neg,+pas,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=re] 100
+  pyhare [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-ha,-hára,-je],dim=None,grd=ve,-inter,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- aravo
+  aravo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  aravo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- peve
+  pe [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=ve,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- ñambosako'iñaína
+  mbosako'i [asp=[-hikóni,-meme,+prg,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+
+
+- aty
+  aty [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  aty [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  aty [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  aty [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  aty [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ty [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=0,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+  aty [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  aty [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ;
+  ; None 100000
+
+- hasyeterei
+  <hasy [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=eterei,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=0,-trans] 100
+  <hasy [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=eterei,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <hasy [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=eterei,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <hasy [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=eterei,-inter,-neg,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- tembiapo
+  <hembiapo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- pa'ũme
+  pa'ũ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pa'ũ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ñañombyaty
+  mbyaty [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,+rflx,+rztrans,subcat=0,-trans,voz=recip] 100
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ñañomongeta
+  ñomongeta [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+- porã
+  porã [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+
+- haguã
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=None,-inter,-neg,-pl,pos=n,poses=[-ext,pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- upévare
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  upe [+adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  upe [+adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upéva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=re,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ko'ẽrõ
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ko'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ikatúramo
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=ramo,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+- ñamopa'ũ'imi
+  mopa'ũ [asp=[-hikóni,-rae,-ramo],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[+imi],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+
+- rembiapo
+  <hembiapo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- iporãta
+  porã [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,tm=ta,-trans,voz=smp] 100
+
+
+- omoneĩma
+  moneĩ [asp=[-hikóni,+ma,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- che
+  che [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=0,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+
+
+- tapichápe
+  <hapicha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- oñemoguahẽ
+  moguahẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,+rflx,+rztrans,subcat=0,-trans,voz=reflx] 100
+  ĝuahẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,+rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+
+- marandu
+  marandu [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  marandu [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- rupi
+  <hupi [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- katu
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  katu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+- nombohováiri
+  mbohovái [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,+neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+
+- ko'ẽrõ
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ko'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ñañe'ẽ
+  ñe'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ñamohenda
+  mohenda [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+
+
+
+
+
+
+
+
+
+
+- apo
+  po [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=0,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  apo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  apo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+
+
+- aja
+  ja [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=0,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+- jajapokuaáva
+  <japo [asp=[-hikóni,-rae,-ramo,+va],cat=a,+clu,grd=None,-inter,-med,misc=[+kuaa],mod=ind,-neg,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,rel=None,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+  <japo [asp=[-hikóni,-rae,-ramo],cat=a,+clu,grd=None,-inter,-med,misc=[+kuaa],mod=ind,-neg,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,rel=sjoj,-rflx,+rztrans,subcat=0,tm=None,+trans,voz=smp] 100
+
+- ñamyasãi
+  myasãi [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+- hagua
+  <hagua [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=gua,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=gua,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- guarani
+  guarani [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  guarani [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- viru
+  viru [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  viru [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+
+
+
+- porãve
+  porã [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=ve,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=ve,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=ve,-inter,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=ve,-inter,-neg,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=ve,-inter,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=ve,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+  po [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=ve,-inter,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+
+
+
+
+
+
+- ñaimemi
+  ime [asp=[-hikóni,-rae,-ramo],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[+mi],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+- hetaiterei
+  <heta [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=eterei,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <heta [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=eterei,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  <heta [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=eterei,-inter,-neg,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- rembiaporã
+  <hembiapo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+  <hembiapo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,+fut,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=rã] 100
+  <hembiaporã [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- ñambojoja
+  mbojoja [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+  joja [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,-rztrans,subcat=0,+trans,voz=caus] 100
+
+
+- mbarakasã
+  mbarakasã [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mbarakasã [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- jajoecháta
+  joecha [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,-rztrans,subcat=0,tm=ta,-trans,voz=smp] 100
+
+- ko'ẽrõ
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=rire,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=vove,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=ramo,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=jave,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=peve,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,+ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ko'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,+conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- maitei
+  maitei [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  maitei [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- poha'arõta
+  <ha'arõ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,-clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,no=1,po=2,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,tm=ta,+trans,voz=smp] 100
+
+
+- ijáma
+  ja [asp=[-hikóni,+ma,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ja [-adj,asp=[+ma,-ndaje,-ngau,-niko,-nipo],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- peẽme
+  pende [-adj,caso=pe,grd=None,n=1,-neg,pos=s,poses=[pp=0]] 100
+
+
+- ko
+  ko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=i,-trans] 100
+  ko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,po=2,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=i,-trans] 100
+  ko [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,po=1,pos=v,pp=None,-pregrd,-rflx,+rztrans,subcat=i,-trans] 100
+
+- pyhare
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=re] 100
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,-kue,-rã],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=re] 100
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,+re],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  py [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+ha,-je,+re],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  pyhare [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-ha,-hára,-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pyha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  pyha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pas,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=re] 100
+  pyhare [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-ha,-hára,-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- hape
+  <hape [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[-ext,pp=3],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+- táva
+  táva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  táva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- Paraguaýpe
+  paraguay [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  paraguay [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- aravo
+  aravo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  aravo [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- peve
+  pe [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=ve,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=ve,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- Paraguái
+  paraguái [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  paraguái [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- (
+  ( None 100000
+
+
+
+
+
+- )
+  ) None 100000
+
+
+- Paraguái
+  paraguái [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  paraguái [-adj,-anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+
+
+
+
+
+
+
+
+
+- rombosako'ivaroína
+  mbosako'i [asp=[-hikóni,-meme,+prg,-rae,-ramo,+va,-vol,-ypy,-ñepyrũ],cat=a,-clu,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,rel=None,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+  mbosako'i [asp=[-hikóni,-meme,+prg,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,-clu,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,no=0,ns=1,po=2,pos=v,pp=None,-pregrd,ps=1,rel=sjoj,-rflx,+rztrans,subcat=0,tm=None,+trans,voz=smp] 100
+  mbosako'i [asp=[-hikóni,-meme,+prg,-rae,-ramo,+va,-vol,-ypy,-ñepyrũ],cat=a,-clu,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,no=0,ns=1,po=2,pos=v,pp=None,-pregrd,ps=1,rel=None,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+  mbosako'i [asp=[-hikóni,-meme,+prg,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,-clu,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,rel=sjoj,-rflx,+rztrans,subcat=0,tm=None,+trans,voz=smp] 100
+
+
+- ñe'ẽnguéra
+  ñe'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ñe'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,+pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ko'ẽ
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=intrans_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=reflx_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=recip_caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=caus] 100
+  ko'ẽ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=che,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  ko'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ko'ẽ [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- peñeha'arõta
+  <ha'arõ [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=2,+rflx,+rztrans,subcat=0,tm=ta,-trans,voz=reflx] 100
+
+
+
+
+
+
+- mbo'ehára
+  mbo'e [-adj,+anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+hára,-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+  mbo'ehára [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-ha,-hára,-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mbo'ehára [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-ha,-hára,-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  mbo'e [-adj,+anim,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[+hára,-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,+suf],tm=None] 100
+
+
+- ore
+  ore [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=1,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+- rombohapekuaa
+  mbohape [asp=[-hikóni,-rae,-ramo],cat=a,-clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[+kuaa],mod=ind,-neg,-negipv,no=0,po=2,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+  mbohape [asp=[-hikóni,-rae,-ramo],cat=a,-clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[+kuaa],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+
+
+- jarekóma
+  reko [asp=[-hikóni,+ma,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=gue,+trans,voz=smp] 100
+
+- ñande
+  ñande [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,grd=None,-inter,n=1,-neg,pos=s,poses=[pp=0],-pregrd,-prepregrd] 100
+
+
+- (
+  ( None 100000
+
+
+
+
+
+
+- (
+  ( None 100000
+
+
+- )
+  ) None 100000
+
+
+- rorekótama
+  reko [asp=[-hikóni,+ma,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,-clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=gue,tm=ta,+trans,voz=smp] 100
+  reko [asp=[-hikóni,+ma,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,-clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,no=0,po=2,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=gue,tm=ta,+trans,voz=smp] 100
+
+
+
+
+
+
+
+
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- upépe
+  upe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  upe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],+c,caso=pe,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- omba'apóta
+  mba'apo [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,-rztrans,subcat=0,tm=ta,-trans,voz=smp] 100
+
+- tapicha
+  <hapicha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ikatupyrýva
+  katupyry [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,po=3,pos=v,pp=None,-pregrd,ps=3,rel=sjoj,-rflx,-rztrans,subcat=0,tm=None,-trans,voz=smp] 100
+  katupyry [asp=[-hikóni,-meme,-rae,-ramo,+va,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,po=3,pos=v,pp=None,-pregrd,ps=3,rel=None,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+
+
+
+- pe
+  pe [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  pe [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- jeýma
+  jevy [-adj,asp=[+ma,-ndaje,-ngau,-niko,-nipo],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  y [-adj,-anim,asp=[+ma,-ndaje,-ngau,-niko,-nipo],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext,pp=0],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+  y [-adj,-anim,asp=[+ma,-ndaje,-ngau,-niko,-nipo],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+  jevy [-adj,asp=[+ma,-ndaje,-ngau,-niko,-nipo],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  y [-adj,-anim,asp=[+ma,-ndaje,-ngau,-niko,-nipo],-c,caso=None,-conjet,der=[+je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[+pre,-suf],tm=None] 100
+
+
+- rupi
+  <hupi [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ñambohape
+  mbohape [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+
+
+
+
+- amo
+  amo [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=adj,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=None,-neg,-negipv,pos=v,pp=None,-pregrd,-rflx,-rztrans,subcat=0,-trans,voz=smp] 100
+
+
+- tapicha
+  <hapicha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- rupi
+  <hupi [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ohendu
+  <hendu [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,po=3,pos=v,pp=None,-pregrd,ps=3,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- umíva
+  umíva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  umíva [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+
+
+- ;
+  ; None 100000
+
+
+
+
+- jaiporukuaa
+  poru [asp=[-hikóni,-rae,-ramo],cat=a,+clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[+kuaa],mod=ind,-neg,-negipv,ns=1,po=3,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=i,+trans,voz=smp] 100
+
+
+
+- maitei
+  maitei [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  maitei [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- ha
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[pp=0],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+  ha [-adj,asp=[-katu,-ma,-mante,-manterei,-ndaje,-ngau,-niko,-nipo,-nte,-voi],-c,caso=None,-conjet,der=[-je],dim=None,grd=None,-inter,-neg,-pl,pos=n,poses=[+ext],-pregrd,-prepregrd,subcat=[-pre,-suf],tm=None] 100
+
+- pojopy
+  jopy [asp=[-hikóni,-meme,-rae,-ramo,-vol,-ypy,-ñepyrũ],cat=a,-clu,grd=None,impopt=[-katu,-ke,-mbae,-mi,-mo,-na],-inter,-med,misc=[-aja,-guasu,-guau,-imi,-joa,-katu,-kuaa,-mi,-mimi,-pa,-porã,-rangue,-rei,-vai],mod=ind,-neg,-negipv,no=1,po=2,pos=v,pp=None,-pregrd,ps=1,-rflx,+rztrans,subcat=0,+trans,voz=smp] 100
+
+- ndéve
+  nde [-adj,caso=pe,grd=None,n=0,-neg,pos=s,poses=[pp=0]] 100
+
+
+

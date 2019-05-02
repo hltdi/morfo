@@ -221,7 +221,7 @@ class Language:
         # Empty new_anals in case we want to add things later
         self.new_anals.clear()
 
-    def read_cache(self, segment=False):
+    def read_cache(self, segment=False, verbosity=0):
         """Read cached entries into self.cached from a file."""
         file = self.get_cache_file(segment=segment)
         try:
@@ -238,7 +238,8 @@ class Language:
                     analyses = [(r, FeatStruct(a, freeze=True) if a else None) for r, a in analyses]
                     self.cached[word] = analyses
         except IOError:
-            print('No such cache file as {}'.format(file))
+            if verbosity:
+                print('No such cache file as {}'.format(file))
 
     def get_cached_anal(self, word):
         """Returns cached analyses for word if any."""
@@ -292,7 +293,8 @@ class Language:
             return
         self.load_attempted = True
         filename = self.get_data_file()
-        print("Looking for language data file at {}".format(filename))
+        if verbose:
+            print("Looking for language data file at {}".format(filename))
         if not os.path.exists(filename):
             print(Language.T.tformat('No language data file for {}', [self], self.tlanguages))
             pass
@@ -1041,11 +1043,11 @@ class Language:
                                 if analyses:
                                     # Convert the analyses to a string
                                     analysis = self.analyses2string(word, analyses, seg=segment, form_only=not gram,
-                                                                    word_sep=word_sep)
+                                                                    short=True, word_sep=word_sep)
                                 elif segment:
                                     analysis = "{}: {}\n".format(word, form)
                                 else:
-                                    analysis = '?word: ' + word + '\n'
+                                    analysis = Language.T.tformat('?{}: {}\n', ['word', word], self.tlanguages)
                         # Either store the analyses in the dict or write them to the terminal or the file
                         if storedict:
                             if analysis:
@@ -1055,7 +1057,7 @@ class Language:
                                 string += " "
                             string += analysis
                         elif raw:
-                            analysis = self.pretty_analyses(analysis)
+                            analysis = self.pretty_analyses(word, analysis)
                             print(analysis, file=out)
                         elif not minim:
                             print(analysis, file=out)
@@ -1127,10 +1129,10 @@ class Language:
                     analysis = "{};{}".format(analysis, rpg_string)
         return analysis
 
-    def pretty_analyses(self, analyses):
+    def pretty_analyses(self, word, analyses):
         """Print raw analyses."""
         if not analyses:
-            return ''
+            return "- {}\n".format(word)
         form = analyses[0]
         anals = analyses[1]
         s = '- ' + form + '\n'
@@ -1144,9 +1146,8 @@ class Language:
         return s
 
     def analyses2string(self, word, analyses, seg=False, form_only=False, word_sep='\n',
-                        webdicts=None):
+                        short=False, webdicts=None):
         '''Convert a list of analyses to a string, and if webdicts, add analyses to dict.'''
-#        print("analyses2string: {}".format(analyses))
         if seg:
             if analyses:
                 analyses = [':'.join((a[0], a[1])) for a in analyses]
@@ -1160,24 +1161,38 @@ class Language:
             else:
                 return word + word_sep
         s = ''
-        if not analyses:
-            s += '?'
+#        if not analyses:
+#            s += '?{}'.format(word)
+#        else:
         s += Language.T.tformat('{}: {}\n', ['word', word], self.tlanguages)
         for analysis in analyses:
-            pos = analysis[0]
-            if pos:
-                webdict = None
-                pos = pos.replace('?', '')
-                if webdicts != None:
-                    webdict = {}
-                    webdicts.append(webdict)
-                if pos in self.morphology:
-                    if self.morphology[pos].anal2string:
-                        s += self.morphology[pos].anal2string(analysis, webdict=webdict)
-                    else:
-                        s += self.morphology[pos].pretty_anal(analysis, webdict=webdict)
-                elif self.morphology.anal2string:
-                    s += self.morphology.anal2string(analysis, webdict=webdict)
+            if short:
+                # What happens with file analysis
+                root = analysis[0]
+                features = analysis[1]
+                if features:
+                    pos = features.get('pos')
+                    if pos:
+                        if pos in self.morphology:
+                            s += self.morphology[pos].pretty_anal(analysis, root=root, fs=features)
+                        elif self.morphology.anal2string:
+                            s += self.morphology.anal2string(analysis, webdict=webdict)
+            else:
+                # What happens with analysis of individual words
+                pos = analysis[0]
+                if pos:
+                    webdict = None
+                    pos = pos.replace('?', '')
+                    if webdicts != None:
+                        webdict = {}
+                        webdicts.append(webdict)
+                    if pos in self.morphology:
+                        if self.morphology[pos].anal2string:
+                            s += self.morphology[pos].anal2string(analysis, webdict=webdict)
+                        else:
+                            s += self.morphology[pos].pretty_anal(analysis, webdict=webdict)
+                    elif self.morphology.anal2string:
+                        s += self.morphology.anal2string(analysis, webdict=webdict)
         return s
 
     def analysis2dict(self, analysis, record_none=False, ignore=[]):
@@ -1249,13 +1264,7 @@ class Language:
                 if only_anal:
                     return []
                 a = self.simp_anal(unal_word, postproc=postproc, segment=segment)
-#                if cache:
-#                    to_cache.append((form, ''))
                 analyses.append(a)
-#                if segment:
-#                    analyses.append(form)
-#                else:
-#                    analyses.append(a)
             # ... or is already analyzed, without any root/stem (for example, there is a POS and/or
             # a translation
             elif form in self.morphology.analyzed:

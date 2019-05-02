@@ -789,6 +789,7 @@ tañykã
 <hechagi
 <hechapyrã
 <hechauka
+<hechaukarã
 teju
 <hekaka
 <heko

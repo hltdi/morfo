@@ -219,8 +219,7 @@ def anal_file(language, infile, outfile=None,
                            only_guess=guess, guess=not dont_guess, raw=raw, nbest=nbest,
                            sep_punc=sep_punc, feats=feats, simpfeats=simpfeats,
                            word_sep=word_sep, sep_ident=sep_ident, minim=minim,
-                           lower_all=lower_all,
-                           start=start, nlines=nlines)
+                           lower_all=lower_all, start=start, nlines=nlines)
 
 ##def anal_gui(language, infile, outfile=None):
 ##    '''Open a window for reading in a file where words can be clicked for analysis.'''
