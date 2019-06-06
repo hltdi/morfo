@@ -8,12 +8,14 @@ exhib  exhibir
 sIG  seguir
 persist  persistir
 recluy  recluir
+ocluy  ocluir
 permit  permitir
 concluy  concluir
 retribuy  retribuir
 requIEr  requerir
 compart  compartir
 coincid  coincidir
+reincid  reincidir
 recib  recibir
 percib  percibir
 embIst  embestir
@@ -41,16 +43,19 @@ cErn  cernir
 discErn  discernir
 hEnd  hendir
 luZ  lucir
+trasluZ  traslucir
 distinG  distinguir
 concurr  concurrir
 resid  residir
 conviv  convivir
 viv  vivir
+reviv  revivir
 exiJ  exigir
 incluy  incluir
 un  unir
 re_un  reunir
 exist  existir
+preexist  preexistir
 constituy  constituir
 sobreviv  sobrevivir
 subsist  subsistir
@@ -93,6 +98,7 @@ destituy  destituir
 pref!r  preferir
 invIst  investir
 asum  asumir
+reasum  reasumir
 acud  acudir
 añad  añadir
 surt  surtir
@@ -128,6 +134,7 @@ describ  describir            [tm=prs|prt|ipf|fut|cnd|sbp|sbi|ipv|inf|ger]
 sufr  sufrir
 embut  embutir
 bat  batir
+rebat  rebatir
 expand  expandir
 huy  huir
 evad  evadir
@@ -160,6 +167,7 @@ pul  pulir
 fund  fundir
 derruy  derruir
 construy  construir
+reconstruy  reconstruir
 concIb  concebir
 revIst  revestir
 escind  escindir
@@ -199,7 +207,8 @@ depart  departir
 repIt  repetir
 sugIEr  sugerir
 pId  pedir
-inscrib  inscribir              [tm=prs|prt|ipf|fut|cnd|sbp|sbi|ipv|inf|ger]
+inscrib  inscribir               [tm=prs|prt|ipf|fut|cnd|sbp|sbi|ipv|inf|ger]
+prescrib  prescribir             [tm=prs|prt|ipf|fut|cnd|sbp|sbi|ipv|inf|ger]
 advIErt  advertir
 aplaud  aplaudir
 finJ  fingir
@@ -219,6 +228,7 @@ intuy  intuir
 desobstruy  desobstruir
 hIErv  hervir
 bull  bullir
+rebull  rebullir
 curt  curtir
 derrIt  derretir
 diluy  diluir
@@ -238,8 +248,10 @@ unJ  ungir
 malpar  malparir
 par  parir
 mIEnt  mentir
+desmIEnt  desmentir
 tup  tupir
 proh_ib  prohibir
+inh_ib  inhibir
 rI_  reír
 sonrI_  sonreír
 frI_  freír

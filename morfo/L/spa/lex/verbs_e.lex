@@ -231,6 +231,22 @@ entonteC  entontecer
 enardeC  enardecer
 embeb  embeber
 encareC  encarecer
+remeC remecer
+desembruteC desembrutecer
+embruteC embrutecer
+renaC renacer
+desadormeC desadormecer
+escarneC escarnecer
+obscureC obscurecer
+guareC guarecer
+revend  revender
+socorr  socorrer
+sobreentend  sobreentender
+remord  remorder
+entremet  entremeter
+desencog  desencoger
+reabsorb  reabsorber
+trascend  trascender
 # other possibilities for pres 1s and pres subj
 yaC  yacer
 # neither pres nor pres subj

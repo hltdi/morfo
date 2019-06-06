@@ -1,22 +1,25 @@
 """
-This file is part of L3Morpho.
+This file is part of morfo, which is a project of PLoGS.
 
-    L3Morpho is free software: you can redistribute it and/or modify
+    <http://homes.soic.indiana.edu/gasser/plogs.html>
+
+    Copyleft 2018, 2019. PLoGS and Michael Gasser <gasser@indiana.edu>.
+
+    morfo is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    L3Morpho is distributed in the hope that it will be useful,
+    morfo is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with L3Morpho.  If not, see <http://www.gnu.org/licenses/>.
+    along with morfo.  If not, see <http://www.gnu.org/licenses/>.
 
 -----------------------------------------------------------------
-Support for romanizing Geez and geezing romanized AfSem languages.
-Author: Michael Gasser <gasser@indiana.edu>
+Support for romanizing Geez and geezifying romanized AfSem languages.
 
 Makes use of a modified version of the SERA conventions for romanizing
 Geez (Yitna & Yaqob, 1997).
@@ -92,6 +95,30 @@ SEG_UNITS = {'stv': [["a", "A", "e", "E", "i", "I", "o", "O", "u", "U", "M", "w"
                       "z": ["z", "zW"], "Z": ["Z", "ZW"],
                       "^": ["^s", "^S", "^h", "^hW", "^sW", "^SW"]}],
              }
+
+### TOP-LEVEL FUNCTIONS
+
+def geezify(form, lang='am'):
+    return sera2geez(GEEZ_SERA[lang][1], form, lang=lang)
+
+def romanize(form, lang='am'):
+    return geez2sera(GEEZ_SERA[lang][0], form, lang=lang)
+
+def geezify_root(root, lang='am'):
+    """Convert a sequence of root consonants (and other characters
+    used in morfo representations of roots) to Geez.
+    >>> geezify_root("sbr")
+    '<ስ_ብ_ር>'
+    >>> geezify_root("bakn")
+    '<ባክ_ን>'
+    >>> geezify_root("Ty_q")
+    '<ጥ_ይ:_ቅ>'
+    >>> geezify_root("x|qWTqWT")
+    '<ሽቍ_ጥ_ቍ_ጥ>'
+    """
+    table = GEEZ_SERA.get(lang, [[],[]])[1]
+    if table:
+        return root2geez(table, root, lang=lang)
 
 def no_convert(form):
     '''Skip conversion for simple cases: non-Geez, punctuation, numerals.'''
@@ -175,12 +202,6 @@ def sera2geez(table, form, lang='am'):
         res += trans
         n += 1
     return res
-
-def geezify(form, lang='am'):
-    return sera2geez(GEEZ_SERA[lang][1], form, lang=lang)
-
-def romanize(form, lang='am'):
-    return geez2sera(GEEZ_SERA[lang][0], form, lang=lang)
 
 def root2geez(table, root, lang='am'):
     '''Convert a verb root to Geez.'''

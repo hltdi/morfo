@@ -8,6 +8,7 @@ entreabiert entreabrir
 circunscrit  circunscribir
 descrit    describir
 inscrit    inscribir
+prescrit   prescribir
 proscrit   proscribir
 transcrit  transcribir 
 frit       freír

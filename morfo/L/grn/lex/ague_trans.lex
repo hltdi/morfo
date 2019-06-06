@@ -7,3 +7,5 @@ rojy
 rova
 rovia
 ru
+ropurahéi
+rosapukái

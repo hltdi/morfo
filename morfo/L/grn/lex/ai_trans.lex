@@ -48,3 +48,5 @@ pyvu
 sambyhy
 sãmbyhy
 su'u
+pichy
+pykúi

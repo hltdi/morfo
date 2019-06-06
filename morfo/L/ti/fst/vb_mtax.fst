@@ -86,6 +86,7 @@ stemend -> sbjs   [$:]
 ### SUBJECT SUFFIXES AND OBJECT INFIXES
 sbjs -> sbjs_i    [:]    [tm=imf];[tm=j_i]
 sbjs -> sbjs_p    [:]    [tm=prf];[tm=ger]
+
 ## IMPERFECTIVE, JUSSIVE/IMPERATIVE
 # 2/3 plural
 sbjs_i -> sbjs_iu   [u:]   [sb=[-p1,+plr,-fem]]

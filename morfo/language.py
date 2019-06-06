@@ -1029,8 +1029,7 @@ class Language:
                                                       preproc=False, postproc=postproc and not raw,
                                                       cache=cache, no_anal=no_anal,
                                                       rank=rank, report_freq=report_freq, nbest=nbest,
-                                                      string=not raw, print_out=False,
-                                                      only_anal=storedict)
+                                                      string=not raw, print_out=False, only_anal=storedict)
                             if minim:
                                 analysis = self.minim_string(form, analyses, feats=feats, simpfeats=simpfeats)
                             elif raw and analyses: 
@@ -1350,13 +1349,15 @@ class Language:
             return string
         # Select the n best analyses
         analyses = analyses[:nbest]
+#        print("Ranked analyses: {}".format(analyses))
+#        print("print_out {}, string {}, segment {}".format(print_out, string, segment))
         if print_out or webdicts != None:
             # Print out stringified version and/or add analyses to webdicts
             string = self.analyses2string(word, analyses, seg=segment,
                                           form_only=not gram, webdicts=webdicts)
             if print_out:
                 print(string)
-        elif not string and not segment:
+        elif not segment:
             analyses =  [(anal[1], anal[-2], anal[-1]) if len(anal) > 2 else (anal[1],) for anal in analyses]
 
         return analyses

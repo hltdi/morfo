@@ -1,7 +1,7 @@
 ### Verbos irregulares
 
 ## hi'ã (only 3p indicative tense-less)
-hi'ã             hi'ã       [ps=3,cat=a,subcat=0,mod=ind,po=3,-refl,voz=smp,-rztrans,-trans]
+hi'ã             hi'ã       [ps=3,cat=che,subcat=0,mod=ind,po=3,-refl,voz=smp,-rztrans,-trans]
 
 ## 'a: caerse
 ha'a             'a         [ps=1,ns=0,neg=None,cat=a,subcat=0,mod=ind,po=3,-refl,voz=smp,-rztrans,-trans]
