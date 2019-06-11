@@ -327,7 +327,7 @@ gua'i
 haru
 ijyképe
 ja'yvere
-jaojohéi
+<jaojohéi
 japyhara
 jatapy
 jaty
@@ -373,7 +373,7 @@ ty
 ñami
 ñamindu'u
 ñarõ
-ñatõi
+<ñatõi
 ñe'ẽarandu
 ñe'ẽguyguy
 ñe'ẽho
@@ -1616,3 +1616,8 @@ yvyrareity
 mboarete
 <hecharamo
 itasã'o
+mba'epuru
+mboapiryta
+mbojoguy
+mboyguy
+momba'e'ỹ

@@ -145,6 +145,7 @@ py'atarova
 ##
 <hakambyjái
 <hakuã
+<haku
 <hataindy
 <hatatĩ
 <hepyno

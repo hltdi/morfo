@@ -146,6 +146,7 @@ py'atarova
 <henyhẽ
 ##
 <hakambyjái
+<haku
 <hakuã
 <hataindy
 <hatatĩ

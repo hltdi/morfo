@@ -233,7 +233,7 @@ myatã
 mohatã  myatã
 myaña
 myendy
-myenyhẽ  myenyhẽ
+myenyhẽ
 moakãnga'u
 moakãpytĩ
 moakãraku
@@ -333,7 +333,7 @@ gua'i
 haru
 ijyképe
 ja'yvere
-jaojohéi
+<jaojohéi
 japyhara
 jatapy
 jaty
@@ -421,7 +421,7 @@ ty
 ñami
 ñamindu'u
 ñarõ
-ñatõi
+<ñatõi
 ñe'ẽarandu
 ñe'ẽguyguy
 ñe'ẽho
@@ -1058,6 +1058,7 @@ myandy
 myangu'i
 myanyhẽ    myenyhẽ
 myasẽ
+muasẽ    myasẽ
 myataindy
 muataindy  myataindy
 moataindy  myataindy
@@ -1673,3 +1674,8 @@ yvyrareity
 <ñandukuaa
 <ñandupe'a
 <hecharamo
+mba'epuru
+mboapiryta
+mbojoguy
+mboyguy
+momba'e'ỹ
