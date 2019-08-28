@@ -312,6 +312,7 @@ yvate
 <hakuvy
 <hapy'ỹva
 <hasy'imi
+<hasy'ỹ
 <hatatĩ
 <hatã'ỹva
 <haviju

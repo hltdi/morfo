@@ -42,10 +42,12 @@ feats:
 
   *ps = 3 | 2 | 1
   # clusivity: False = exlusive (ore); True = inclusive (ñande)
-  *clu = *False | True
+# +- clu; leave out of defaults so that both are possible when not specified  
+#  *clu = *False | True
 
   *po = *3 | 2 | 1
-  *oclu = *False | True
+# +- oclu; leave out of defaults so that both are possible when not specified  
+#  *oclu = *False | True
 
   *ns = 0 | 1
   *no = *0 | 1
@@ -149,7 +151,8 @@ feats:
                   hikóni = *False | True;
 	          ramo = *False | True;
 	          vol (se) = *False | True;
-	          rae (ra'e) = *False | True
+	          rae (ra'e) = *False | True;
+		  obl (va'erã) = *False | True
  
   *impopt (imprv mod) = mi = *False | True;
                        ke = *False | True;

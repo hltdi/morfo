@@ -365,6 +365,7 @@ kuñataĩ
 ky'ỹi
 kygua
 kyhyje
+kyhyje'ỹ
 kyju
 kypa
 kype
@@ -4127,3 +4128,5 @@ yvytĩ
 ñyrõ
 ñúdo
 úra
+tuja
+lekaja

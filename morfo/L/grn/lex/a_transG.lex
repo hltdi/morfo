@@ -115,14 +115,14 @@ tapi'a'o
 topa
 # irregular: ind, 1s, 3; imp 2s
 # regular: opt; neg; ind, 2; ind, 1p; imp 2p
-'u    [+neg];[mod=opt];
+'u    [+neg];[mod=opt];[voz=reflx,-trans,+rztrans,+rflx];
       [mod=ind,ps=1,ns=1];
       [mod=ind,ps=2];
       [mod=imp,ns=1]
 vende
 # irregular: ind, 1s, 3; imp 2s
 # regular: opt; neg; ind, 2; ind, 1p; imp 2p
-y'u   [+neg];[mod=opt];
+y'u   [+neg];[mod=opt];[voz=reflx,-trans,+rztrans,+rflx];
       [mod=ind,ps=1,ns=1];
       [mod=ind,ps=2];
       [mod=imp,ns=1]
@@ -301,7 +301,6 @@ moĩve
 <hechavai
 <hekauka
 <hekopyty
-<hekotevẽ
 <henduka
 <hendupa
 <hesa'o
@@ -1621,3 +1620,4 @@ mboapiryta
 mbojoguy
 mboyguy
 momba'e'ỹ
+ñe'ẽ

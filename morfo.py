@@ -25,11 +25,11 @@ Author: Michael Gasser <gasser@indiana.edu>
 """ 
 import morfo
 
-def get_lang(abbrev, guess=True, phon=False, cache='', verbose=False):
+def get_lang(abbrev, segment=False, guess=True, phon=False, cache='', verbose=False):
     """Return the language with abbreviation abbrev, loading it
     if it's not already loaded."""
     return morfo.get_language(abbrev, cache=cache, phon=phon, guess=guess, load=True,
-                              verbose=verbose)
+                              segment=segment, verbose=verbose)
 
 def get_pos(abbrev, pos, phon=False, segment=False, load_morph=False,
             guess=True, verbose=False):

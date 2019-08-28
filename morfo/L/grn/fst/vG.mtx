@@ -33,7 +33,7 @@ $ neg1
 $ pro
   -> fin_raiz     +v_irrG+   [cat=a,subcat=0]  # saltar voz para verbos irregulares
   # Adjectives don't need any prefix (and <h -> h); neither do verb infinitives
-  --                      [pos=a,cat=adj,subcat=0];[pos=v,tmp=inf,-rflx,-trans,mod=None]
+  --                      [pos=a,cat=adj,subcat=0];[pos=v,tmp=inf,-rflx,-trans]
   ## 1 sing
   # 1 sing sj; 3 or null oj
   [ps=1,ns=0,po=3]
@@ -150,7 +150,7 @@ $ raiz
 $ fin_raiz
 # For infinitives, stop here
 # marks the end of the root; needed to control spread of nasality
-  %                     [mod=ind,tmp=prs|fut|prt|ipf|pcp];[mod=opt,tmp=sbp];[mod=imp,tmp=ipv];[mod=ind,tmp=ipv,+negipv];[pos=v,tmp=inf,mod=None]                    
+  %                     [mod=ind,tmp=prs|fut|prt|ipf|pcp];[mod=opt,tmp=sbp];[mod=imp,tmp=ipv];[mod=ind,tmp=ipv,+negipv];[pos=v,tmp=inf]                    
 ### MEDIATIVO
 
 $ caus
@@ -247,14 +247,13 @@ $ mantegueteri
 ### TIEMPO 3, MODALIDAD, RELATIVIZACIÓN
 $ tmp3
   va'ekue*              [tm=vaekue,tmp=pcp,mod=ind,rel=None];[rel=sjoj,tm=None,tmp=prt|ipf,mod=ind]
-  # va'erã should really be prob=hi
-  va'erã*               [tm=vaerã,tmp=fut,prob=None,-neg,-negipv,mod=ind,rel=None];[rel=sjoj,tm=None,tmp=fut,-neg,-negipv,mod=ind]
+  va'erã*               [tm=vaerã,asp=[+obl],prob=None,-neg,-negipv,mod=ind,rel=None,tmp=fut];[rel=sjoj,tm=None,tmp=fut,-neg,-negipv,mod=ind]
   # va is probably not compatible with some other aspect markers (ma?)
   !va                   [asp=[+va],mod=ind,tmp=prs,rel=None];[rel=sjoj,tm=None,mod=ind,tmp=prs]
   'akue                 [tm=akue,tmp=prt,rel=None,mod=ind]
   !mi                   [tm=mi,tmp=ipf,rel=None,mod=ind]
   !ne                   [tm=ne,tmp=fut,prob=lo,rel=None,-neg,-negipv,mod=ind]
-  'arã                  [tm=arã,prob=None,tmp=fut,-neg,-negipv,rel=None,mod=ind]
+  'arã                  [tm=arã,prob=None,tmp=fut,-neg,-negipv,rel=None,mod=ind,asp=[-obl]]
   !ke                   [tmp=ipv|sbp,impopt=[+ke],mod=imp|opt,rel=None,-neg,-negipv]
   mi                    [tmp=ipv|sbp,impopt=[+mi],mod=imp|opt,rel=None,-neg,-negipv]
   !na                   [tmp=ipv|sbp,impopt=[+na],mod=imp|opt,rel=None,-neg,-negipv]
@@ -264,7 +263,7 @@ $ tmp3
   ha*                   [rel=obl,tm=None,tmp=prs,mod=ind,-negipv]
   hague*                [rel=obl,tm=None,tmp=prt,mod=ind,-negipv]
   harã*                 [rel=obl,tm=None,tmp=fut,mod=ind,-negipv]
-  --                    [rel=None,prob=None,tm=None|ta|kuri|rakae|moã,-negipv,impopt=[-mi,-ke,-na],asp=[-va]]
+  --                    [rel=None,prob=None,tm=None|ta|kuri|rakae|moã,-negipv,impopt=[-mi,-ke,-na],asp=[-va,-obl]]
 
 ### SECOND SET OF POSTPOSITIONS, CONJUNCTIONS
 ### (some pp features have changed in v.mtx and should be adjusted here)
@@ -330,7 +329,7 @@ $ hikoni
 
 ### Pronombres opcionales de 3a persona
 $ oj_3p
-  _chupe                [po=3,no=0,pos=v,+trans,mod=ind|opt,+ojxpl]
-  _chupekuéra           [po=3,no=1,pos=v,+trans,mod=ind|opt,+ojxpl]
-  --                    [po=1];[po=2];[po=3,-trans];[pos=a];[mod=None];[po=3,-ojxpl]
+  _chupe                [po=3,no=0,pos=v,+trans,mod=ind|opt,+ojxpl,voz=smp|caus]
+  _chupekuéra           [po=3,no=1,pos=v,+trans,mod=ind|opt,+ojxpl,voz=smp|caus]
+  --                    [po=1,-ojxpl];[po=2,-ojxpl];[pos=a,-ojxpl];[tmp=inf,-ojxpl];[po=3,-ojxpl];[po=3,-trans,-ojxpl]
 

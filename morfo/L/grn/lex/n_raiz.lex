@@ -365,6 +365,7 @@ kuñataĩ
 ky'ỹi
 kygua
 kyhyje
+kyhyje'ỹ
 kyju
 kypa
 kype
