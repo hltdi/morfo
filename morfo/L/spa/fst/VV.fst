@@ -8,7 +8,7 @@ start -> start  [X;V-a,I;Q]
 start -> adel   [:a]
 adel -> start   [o;e]
 start -> a      [a]
-a -> start      [X;Q;e;i] # other vowels possible?
+a -> start      [X;Q;e;i;u] # other vowels possible?
 
 # delete e before o
 #start -> edel   [:e]

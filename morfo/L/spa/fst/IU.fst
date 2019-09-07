@@ -1,12 +1,15 @@
-# I -> i when there is another vowel and it's not i, e otherwise
+# I -> i when there is another vowel and it's not i, e
 # U -> O when there is no other vowel
-# IE -> ! / E
+# IE -> E
 
 -> start
 
 start -> start  [X;V-I,U;Q]
 
+# pidió, prefirió
 start -> Ii     [i:I;U]
+Ii -> IiE       [:E]
+IiE -> IiC      [X;_]
 # one or more consonants or _
 Ii -> IiC       [X;_]
 IiC -> IiC      [X]
@@ -18,10 +21,11 @@ IiC -> IiCi     [i]
 # ... another vowel or accent
 IiCi -> start   [V2;']
 
+# muero, prefiero
 start -> Ie     [e:I;O:U]
 # s, n or nothing else ends the word
 Ie -> end       [s;n;:]
-# two or more additional syllables
+# additional syllables
 Ie -> IeC       [X;_]
 # ' can precede the vowel
 IeC -> IeC      [X;']
@@ -32,14 +36,18 @@ IeCi -> IeCi    [a]
 IeC -> Ii       [i:I]
 # and that's followed by a consonant or nothing
 IeCi -> start   [X]
-IeCV -> IeCVC   [X]
+# prefiere(s)
+IeC -> IeCV     [V-i,í;e:I]
+IeCV -> end     [X]
 
-# words like sentir; IE -> ! / E
-start -> I!     [!:I]
-I! -> Ii        [:E]
+# words like sentir; IE -> E
+#start -> I!     [!:I]
+#I! -> Ii        [:E]
 start -> Id     [:I]
 Id -> Ie        [E]
 
 start ->
 end ->
 IeCi ->
+IeCV ->
+Ii ->

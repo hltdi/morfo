@@ -18,7 +18,7 @@ impel  impeler
 converJ  converger
 apareC  aparecer
 perteneC  pertenecer
-extend  extender
+extEnd  extender
 suspend  suspender
 promet  prometer
 compromet  comprometer
@@ -117,7 +117,7 @@ enfureC  enfurecer
 enloqueC  enloquecer
 tem  temer
 aborreC  aborrecer
-conmov  conmover
+conmOv  conmover
 enterneC  enternecer
 escoJ  escoger
 embelleC  embellecer
@@ -148,7 +148,7 @@ guarneC  guarnecer
 contend  contender
 esclareC  esclarecer
 absOlv  absolver
-desatend  desatender
+desatEnd  desatender
 reprend  reprender
 respond  responder
 entromet  entrometer
@@ -241,13 +241,14 @@ obscureC obscurecer
 guareC guarecer
 revend  revender
 socorr  socorrer
-sobreentend  sobreentender
+sobreentEnd  sobreentender
 remord  remorder
 entremet  entremeter
 desencog  desencoger
 reabsorb  reabsorber
-trascend  trascender
+trascEnd  trascender
 # other possibilities for pres 1s and pres subj
 yaC  yacer
 # neither pres nor pres subj
 ol  oler     [tm=prt|ipf|fut|cnd|sbi|ipv|inf|ger|prc]
+atrev  atrever

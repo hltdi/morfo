@@ -105,7 +105,7 @@ estanK  estancar
 rebals  rebalsar
 interrelacion  interrelacionar
 enclaustr  enclaustrar
-demostr  demostrar
+demOstr  demostrar
 tipifiK  tipificar
 ilustr  ilustrar
 ejemplifiK  ejemplificar
@@ -2332,7 +2332,7 @@ adivin  adivinar
 rebos  rebosar
 roZ  rozar
 sobr  sobrar
-soñ  soñar
+sOñ  soñar
 enterr  enterrar
 chicote  chicotear
 descascar  descascarar
@@ -2479,7 +2479,7 @@ gesticul  gesticular
 refren  refrenar
 aburgues  aburguesar
 apolill  apolillar
-descont  descontar
+descOnt  descontar
 chate  chatear
 embaraZ  embarazar
 capt  captar
@@ -3035,7 +3035,7 @@ reconquist  reconquistar
 desgañit  desgañitar
 connot  connotar
 abatat  abatatar
-recont  recontar
+recOnt  recontar
 replant  replantar
 desajust  desajustar
 jurament  juramentar
@@ -3095,6 +3095,24 @@ mendiG  mendigar
 remanG  remangar
 litiG  litigar
 homoloG  homologar
+desempeñ  desempeñar
+bast  bastar
+atent  atentar
+export  exportar
+reorient  reorientar
+retom  retomar
+aboG  abogar
+posibilit  posibilitar
+desactiv  desactivar
+brind  brindar
+fich  fichar
+argument  argumentar
+arriesG  arriesgar
+aparK  aparcar
+financi  financiar
+enunci  enunciar
+exclam  exclamar
+emigr  emigrar
 # everything but sing (except vos) and 3pl pres, pres subj, and tú impv 
 juG  jugar      [p=1,n=1,tm=prs];[p=2,n=0,tm=prs,+VOS];[tm=ipv,p=2,n=0,+VOS,+ipv];
                 [tm=prt];[tm=ipf];[tm=fut];[tm=cnd];[tm=sbi];[tm=inf];[tm=ger];[tm=prc]

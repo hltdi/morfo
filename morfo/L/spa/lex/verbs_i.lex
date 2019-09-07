@@ -37,7 +37,7 @@ difund  difundir
 interrump  interrumpir
 urJ  urgir
 influy  influir
-ref!r  referir
+refIEr  referir
 concErn  concernir
 cErn  cernir
 discErn  discernir
@@ -95,7 +95,7 @@ oprim  oprimir
 asist  asistir
 exim  eximir
 destituy  destituir
-pref!r  preferir
+prefIEr  preferir
 invIst  investir
 asum  asumir
 reasum  reasumir
@@ -121,8 +121,8 @@ asIEnt  asentir
 remit  remitir
 exprim  exprimir
 persIG  perseguir
-adqu!r  adquirir
-inqu!r inquirir
+adquIEr  adquirir             [tm=prs,p=1,n=0];[tm=prs,p=3];[tm=prs,p=2,n=0,-VOS];[tm=prt,p=3];[tm=sbi];[tm=sbp,p=1,n=0];[tm=sbp,p=2];[tm=sbp,p=3];[tm=ipv,n=0,-VOS]
+inquIEr inquirir              [tm=prs,p=1,n=0];[tm=prs,p=3];[tm=prs,p=2,n=0,-VOS];[tm=prt,p=3];[tm=sbi];[tm=sbp,p=1,n=0];[tm=sbp,p=2];[tm=sbp,p=3];[tm=ipv,n=0,-VOS]
 transmit  transmitir
 sacud  sacudir
 desluZ  deslucir
@@ -209,6 +209,7 @@ sugIEr  sugerir
 pId  pedir
 inscrib  inscribir               [tm=prs|prt|ipf|fut|cnd|sbp|sbi|ipv|inf|ger]
 prescrib  prescribir             [tm=prs|prt|ipf|fut|cnd|sbp|sbi|ipv|inf|ger]
+suscrib  suscribir               [tm=prs|prt|ipf|fut|cnd|sbp|sbi|ipv|inf|ger]
 advIErt  advertir
 aplaud  aplaudir
 finJ  fingir
@@ -272,7 +273,7 @@ subdivid  subdividir
 punJ  pungir
 desist  desistir
 resarZ  resarcir
-def!r  deferir
+defIEr  deferir
 plañ  plañir
 podr  podrir
 resum  resumir
@@ -287,3 +288,6 @@ recurr  recurrir
 bland  blandir
 presum  presumir
 zahIEr  zaherir
+consist  consistir
+incumpl  incumplir
+dimit  dimitir

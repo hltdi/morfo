@@ -163,8 +163,8 @@ inf -> end  [:]     [tm=inf]
 
 # Gerundio
 stem_a1 -> ppr  <ando:> 
-stem_e1 -> ppr  <iendo:>
-stem_i1 -> ppr  <iendo:>
+stem_e1 -> ppr  <i'endo:>
+stem_i1 -> ppr  <i'endo:>
 ppr -> end  [:]      [tm=ger]
 
 # Participio

@@ -154,16 +154,16 @@ stem_a1 -> inf    <ar:>
 # Realize the special vowel I as i when there is another vowel other than i,
 #   as e otherwise
 # Convert U to O (when no vowel follows)
-# and IE to ! or E
+# and IE to or E
 stem_e1 -> inf    <er:>
 stem_i1 -> inf    <ir:>
 inf -> end  [:]     [tm=inf]
 
 # Gerundio
 stem_a1 -> ppr  <ando:> 
-stem_e1 -> ppr  <iendo:>
-stem_i1 -> ppr  <iendo:>
-ppr -> end  [:]      [tm=ger]
+stem_e1 -> ppr  <i'endo:>
+stem_i1 -> ppr  <i'endo:>
+ppr -> end  [:]    [tm=ger]
 
 # Participio
 stem_a1 -> pps       <ad:>

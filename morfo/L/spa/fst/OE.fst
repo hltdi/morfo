@@ -1,16 +1,16 @@
 # O -> ue when accented, o otherwise
 # E -> ie when accented, e otherwise
-# ! -> ie when accented, i otherwise
 # U -> ue when accented, u otherwise
 
 -> start
 
-start -> start  [X;V-O,E,!,U;Q-']
+start -> start  [X;V-O,E,U;Q-']
 
-## explicitly accented O, E, !, U
+## muero, prefiero, cuento, cierro
+## explicitly accented O, E, U
 start -> ac     [:']
 # make a diphthong...
-ac -> acV.e     [u:O;i:E;i:!;u:U]
+ac -> acV.e     [u:O;i:E;u:U]
 # ... putting the accent before the e
 acV.e -> start  <'e:>
 
@@ -18,8 +18,9 @@ acV.e -> start  <'e:>
 start -> AC     [']
 AC -> start     [V2]
 
-## unexplicitly accented O, E, !, U
-start -> V.e    [u:O;i:E;i:!;u:U]
+## muero, prefiero, cuento, cierro
+## unexplicitly accented O, E, U
+start -> V.e    [u:O;i:E;u:U]
 V.e -> Ve       [e:]
 Ve -> end       [X-n,s]       # this never happens with verbs (except -d)?
 Ve -> VeC       [X]
@@ -29,8 +30,9 @@ VeC -> VeCV     [V0]
 # ... and followed by nothing or consonant other than s,n
 VeCV -> end     [s;n;:]
 
-## unaccented O, E, !, U
-start -> V      [o:O;e:E;i:!;u:U]
+## murimos, preferimos, contamos, cerramos
+## unaccented O, E, U
+start -> V      [o:O;e:E;u:U]
 V -> end        [s;n;:]
 V -> VC         [X]
 VC -> VC        [X]

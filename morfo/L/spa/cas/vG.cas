@@ -6,11 +6,11 @@ weighting = UNIFICATION
 
 ### Stringsets
 ## Vowels
-V = {a, e, i, o, u, á, é, í, ó, ú, ü, E, O, I, U, !}
-V0 = {a, e, i, o, u, E, I, O, U, !}
+V = {a, e, i, o, u, á, é, í, ó, ú, ü, E, O, I, U}
+V0 = {a, e, i, o, u, E, I, O, U}
 V1 = {á, é, í, ó, ú}
 V2 = {a, e, i, o, u, á, é, í, ó, ú, ü}
-V3 = {E, O, I, U, !}
+V3 = {E, O, I, U}
 V4 = {a, e, i, o, u}
 ## Consonants
 X = {b, c, ch, d, f, g, h, j, k, l, ll, m, n, ñ, p, qu, r, rr, s, t, v, w, x, y, z, C, G, J, K, Z}
@@ -32,7 +32,7 @@ Q = {', _}
 >Vacc<
 # Drop the ' (accent symbol) before vowels in one-syllable words
 >Vacc1<
-# Realize the special vowels O, E, U, !
+# Realize the special vowels O, E, U
 >OE<
 # Realize vowel (and optional h) followed by _u/_i as V(h)ú/í when accented,
 # V(h)u/i otherwise
@@ -44,7 +44,7 @@ Q = {', _}
 # Realize the special vowel I as i when there is another vowel other than i,
 #   as e otherwise
 # Convert U to O (when no vowel follows)
-# and IE to ! or E
+# and IE to E
 >IU<
 # Realize some sequences of vowels::
 # delete a before o/e: hablo

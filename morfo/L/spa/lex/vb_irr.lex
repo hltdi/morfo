@@ -1,3 +1,8 @@
+# ADQUIRIR, INQUIRIR (unlike other IE verbs)
+adquir  adquirir  stem_i1  [tm=ipf|inf|ger|prc|fut|cnd];[tm=ipv,n=0];[tm=prs,p=1,n=1];[tm=prs,p=2,n=0];[tm=sbp,p=1,n=1]
+adquir  adquirir  stem_i   [tm=prt,p=1|2]
+inquir  inquirir  stem_i1  [tm=ipf|inf|ger|prc|fut|cnd];[tm=ipv,n=0];[tm=prs,p=1,n=1];[tm=prs,p=2,n=0];[tm=sbp,p=1,n=1]
+inquir  inquirir  stem_i   [tm=prt,p=1|2]
 # ANDAR
 # pret, imperf subj; other forms in verb-a
 anduv  andar   irr_prt   [tm=prt|sbi]
@@ -91,26 +96,26 @@ hay   haber   e_sub_prs1  [tm=sbp]
 # preterite, past subjunctive
 hub  haber   irr_prt   [tm=prt|sbi]
 # imperative
-#he   haber    end     [tm=ipv,p=2,n=0,-VOS,+ipv]
+he   haber    end     [tm=ipv,p=2,n=0,-VOS,+ipv]
 habé haber    end     [tm=ipv,p=2,n=0,+VOS,+ipv]
 # HACER
 # vos imperative too
 hac   hacer   stem_e1   [tm=prs|ipf|inf|ger];[tm=ipv,p=2,n=0,+VOS,+ipv] # ;[tm=ipv,sj=[-1,+2,+p],-AL,+ipv]
-# haz  hacer    end       [tm=ipv,p=2,n=0,-VOS,+ipv]
+haz  hacer    end       [tm=ipv,p=2,n=0,-VOS,+ipv]
 hech  hacer   pps       []
 hiZ   hacer   irr_prt   [tm=prt|sbi]
 hag   hacer   e_sub_prs1  [tm=prs|sbp]
 har'  hacer   fut       [tm=fut|cnd]
 # deshacer
 deshac   deshacer   stem_e1   [tm=prs|ipf|inf|ger];[tm=ipv,p=2,n=0,+VOS,+ipv]  # ;[tm=ipv,sj=[-1,+2,+p],-AL,+ipv]
-# deshaz   deshacer   end  [tm=ipv,p=2,n=0,-VOS,+ipv]
+ deshaz   deshacer   end  [tm=ipv,p=2,n=0,-VOS,+ipv]
 deshech  deshacer   pps      []
 deshiZ   deshacer   irr_prt   [tm=prt|sbi]
 deshag   deshacer   e_sub_prs1  [tm=prs|sbp]
 deshar'  deshacer   fut       [tm=fut|cnd]
 # satisfacer
 satisfac   satisfacer    stem_e1  [tm=prs|ipf|inf|ger];[tm=ipv,p=2,n=0,+VOS,+ipv] # ;[tm=ipv,sj=[-1,+2,+p],-AL,+ipv]
-# satisfaz  satisfacer   end  [tm=ipv,p=2,n=0,-VOS,+ipv]
+satisfaz  satisfacer   end  [tm=ipv,p=2,n=0,-VOS,+ipv]
 satisfech  satisfacer  pps      []
 satisfiZ   satisfacer   irr_prt   [tm=prt|sbi]
 satisfag   satisfacer   e_sub_prs1  [tm=prs|sbp]
@@ -126,10 +131,10 @@ id   ir    adjsuff     [tm=prc]
 vay  ir    e_sub_prs1  [tm=sbp]
 voy  ir    end         [tm=prs,p=1,n=0]
 vas  ir    end         [tm=prs,p=2,n=0]
-# ve   ir    end         [tm=ipv,p=2,n=0,-VOS,+ipv]
+ve   ir    end         [tm=ipv,p=2,n=0,-VOS,+ipv]
 andá ir    end         [tm=ipv,p=2,n=0,+VOS,+ipv]
 # id   ir    end         [tm=ipv,sj=[-1,+2,+p],-AL,+ipv]
-iba  ir    person      [tm=ipf]
+'iba  ir    person      [tm=ipf]
 ir'  ir    fut         [tm=fut|cnd]
 # preterite
 fue  ir    end         [tm=prt,p=3,n=0]
@@ -169,7 +174,7 @@ sal   salir  stem_i1    [tm=prs|ipf|sbp|inf|ger|prc];[tm=ipv,p=2,n=0,+VOS,+ipv] 
 saldr' salir  fut       [tm=fut|cnd]
 salg  salir  e_sub_prs1 [tm=prs|sbp]
 # imperative
-#sal   salir   end  [tm=ipv,p=2,n=0,-VOS,+ipv]
+sal   salir   end  [tm=ipv,p=2,n=0,-VOS,+ipv]
 # pret regular
 sal   salir   ie_prt     [tm=prt|sbi]
 # SER
@@ -177,7 +182,7 @@ sal   salir   ie_prt     [tm=prt|sbi]
 ser'  ser   fut         [tm=fut|cnd]
 # present
 soy   ser   end         [tm=prs,p=1,n=0]
-#eres  ser   end         [tm=prs,p=2,n=0,-VOS]
+eres  ser   end         [tm=prs,p=2,n=0,-VOS]
 # vos
 sos   ser   end         [tm=prs,p=2,n=0,+VOS]
 es    ser   end         [tm=prs,p=3,n=0]
