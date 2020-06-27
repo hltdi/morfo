@@ -3113,6 +3113,7 @@ financi  financiar
 enunci  enunciar
 exclam  exclamar
 emigr  emigrar
+respect  respectar
 # everything but sing (except vos) and 3pl pres, pres subj, and tú impv 
 juG  jugar      [p=1,n=1,tm=prs];[p=2,n=0,tm=prs,+VOS];[tm=ipv,p=2,n=0,+VOS,+ipv];
                 [tm=prt];[tm=ipf];[tm=fut];[tm=cnd];[tm=sbi];[tm=inf];[tm=ger];[tm=prc]

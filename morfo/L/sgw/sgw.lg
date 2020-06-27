@@ -1,13 +1,156 @@
 name: chaha
+code: ch
 
-seg: a e i o u E I
+preproc: geez
+postproc: geez
+
+seg: a e i o u E I A
      b bW c C d f fW g gW gY h j
      k kW kY K KW KY l m mW n p pW q qW qY r s
      S t T w x xW xY y z Z
-     A B D F | % .
+     B D F | % . *
 
 feats:
 
-  pos: v verb
-  tm = imf | prf | ger | j_i
+## nouns
+
+  pos: n noun
+
+  def = False | True
+
+  pp = 0 | 1 | 2 | 3
+  pn = 1 | 2
+  pg = m | f
+
+  cp = 0 | 1 | 2 | 3
+  cn = 1 | 2
+  cg = m | f
+
+  tns = None | prs | pst
+
+  cnj = None | m | x | K | a
+
+  prep = None | ye | be | te
+
+  misc = goal = False | True ;
+         sim = False | True ;
+	 dir = False | True
+
+## infinitive
+
+  pos: inf infinitive
+
+  def = False | True
+
+  pp = 0 | 1 | 2 | 3
+  pn = 1 | 2
+  pg = m | f
+
+  cp = 0 | 3
+
+  tns = None | prs | pst
+
+  cnj = None | m | x | K | a
+
+  prep = None | ye | be | te
+
+  misc = goal = False | True ;
+         sim = False | True ;
+	 dir = False | True
+
+## perfective verbs, including prohibitive
+
+  pos: vp verb_perfective
+
+  sp = 3 | 2 | 1 | None
+
+  sn = 1 | 2
+
+  sg = m | f
+
+  op = None | 3 | 2 | 1
+
+  on = 1 | 2
+
+  og = m | f
+
+  # accusative | benefactive | malefactive
+  ot = a | b | m
+
+  vc = ps = False | True;
+       cs = False | True
+
+  as = None | it | rc
+
+  neg = False | True
+
+  sub = None | t | b | y
+
+  misc = caus = False | True
+
+## imperfective verbs, including both -tE future form
+  
+  pos: vi verb_imperf
+
+#  tm = imf | j_i
+
+  sp = 3 | 2 | 1 | None
+
+  sn = 1 | 2
+
+  sg = m | f
+
+  op = None | 3 | 2 | 1
+
+  on = 1 | 2
+
+  og = m | f
+
+  # accusative | benefactive | malefactive
+  ot = a | b | m
+
+  vc = ps = False | True;
+       cs = False | True
+
+  as = None | it | rc
+
+  neg = False | True
+
+  sub = None | t | b
+
+  fut = None | def
+
+  misc = mconv = False | True;
+	 purp = False | True
+
+## jussive-imperative verbs, including -xe future forms and t- converb
+  
+  pos: vj verb_jussive
+
+  sp = 3 | 2 | 1 | None
+
+  sn = 1 | 2
+
+  sg = m | f
+
+  op = None | 3 | 2 | 1
+
+  on = 1 | 2
+
+  og = m | f
+
+  # accusative | benefactive | malefactive
+  ot = a | b | m
+
+  vc = ps = False | True;
+       cs = False | True
+
+  as = None | it | rc
+
+  neg = False | True
+
+  fut = None | indef
+
+  misc = tconv = False | True;
+         mconv = False | True
 

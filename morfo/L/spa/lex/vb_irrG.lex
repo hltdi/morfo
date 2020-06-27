@@ -1,3 +1,8 @@
+# ADQUIRIR, INQUIRIR (unlike other IE verbs)
+adquir  adquirir  stem_i1  [tm=ipf|inf|ger|prc|fut|cnd];[tm=ipv,n=0];[tm=prs,p=1,n=1];[tm=prs,p=2,n=0];[tm=sbp,p=1,n=1]
+adquir  adquirir  stem_i   [tm=prt,p=1|2]
+inquir  inquirir  stem_i1  [tm=ipf|inf|ger|prc|fut|cnd];[tm=ipv,n=0];[tm=prs,p=1,n=1];[tm=prs,p=2,n=0];[tm=sbp,p=1,n=1]
+inquir  inquirir  stem_i   [tm=prt,p=1|2]
 # ANDAR
 # pret, imperf subj; other forms in verb-a
 anduv  andar   irr_prt   [tm=prt|sbi]

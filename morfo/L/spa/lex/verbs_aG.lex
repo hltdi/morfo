@@ -2605,6 +2605,25 @@ mendiG  mendigar
 remanG  remangar
 litiG  litigar
 homoloG  homologar
+desempeñ  desempeñar
+bast  bastar
+atent  atentar
+export  exportar
+reorient  reorientar
+retom  retomar
+aboG  abogar
+posibilit  posibilitar
+desactiv  desactivar
+brind  brindar
+fich  fichar
+argument  argumentar
+arriesG  arriesgar
+aparK  aparcar
+financi  financiar
+enunci  enunciar
+exclam  exclamar
+emigr  emigrar
+respect  respectar
 # everything but 2s (vos) and 3pl pres, pres subj
 juG  jugar      [p=1,n=1,tam=[+tmp]];[p=2,n=0,tam=[-fut,-prt,-sub,-ipf,+tmp]];
                 [tam=[+fut]];[tam=[+prt]];[tam=[+ipf]];

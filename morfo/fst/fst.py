@@ -98,6 +98,8 @@ CASC_MTAX_RE = re.compile(r'>(.+?\.mtx)<')
 INIT_RE = re.compile(r'->\s*(\S+)$')
 # state ->
 FINAL_RE = re.compile(r'(\S+)\s*->\s*(?:\[([^\]]*)\])?$')
+# Transducer reverses input before transducing
+R2L_RE = re.compile(r'\s*r2l\s*$')
 # src -> dest [arc] [weight]
 ARC_RE = re.compile(r'(\S+)?\s*->\s*(\S+)\s*\[(.*?)\]\s*(.*?)$')
 # src -> dest <arc> [weight]
@@ -220,6 +222,8 @@ class FSTCascade(list):
         inv.init_weight = self.init_weight
         inv._weighting = self._weighting
         inv._stringsets = self._stringsets
+        if self.r2l:
+            inv.r2l = True
         return inv
 
     def compose(self, begin=0, end=None, first=None, last=None, subcasc=None, backwards=False,
@@ -1090,19 +1094,13 @@ class FST:
         if trace:
             print('Deleting state {}'.format(label))
 
-#        if len(self._incoming[label]) > 100:
-#            print('Deleting {}, incoming {}'.format(label, self._incoming[label]))
-#        if len(self._outgoing[label]) > 100:
-#            print('Deleting {}, incoming {}'.format(label, self._outgoing[label]))
         # Delete the incoming/outgoing arcs.
         for arc in self._incoming[label]:
             if arc in self._src:    # It may have been deleted already (MG)
-#self.arcs():  
                 self._outgoing[self._src[arc]].remove(arc)   # First remove from other end (MG)
                 del (self._src[arc], self._dst[arc], self._in_string[arc],
                      self._out_string[arc], self._arc_descr[arc])
         for arc in self._outgoing[label]: 
-#            if arc in self.arcs():
             if arc in self._src:    # It may have been deleted already (MG)
                 self._incoming[self._dst[arc]].remove(arc)   # First remove from other end (MG)
                 del (self._src[arc], self._dst[arc], self._in_string[arc],
@@ -1284,6 +1282,8 @@ class FST:
         """Swap all in_string/out_string pairs."""
         fst = self.copy(del_suffix(self.label, '.') + '_inv')
         fst._in_string, fst._out_string = fst._out_string, fst._in_string
+        if self._reverse:
+            fst._reverse = True
         return fst
 
     def reversed(self):
@@ -1291,18 +1291,11 @@ class FST:
         fst = self.copy()
         fst._incoming, fst._outgoing = fst._outgoing, fst._incoming
         fst._src, fst._dst = fst._dst, fst._src
-#        init = self._initial_state
-#        final = self._get_final_states()
-#        fst._is_final[init] = True
-#        for f in final:
-#            fst._is_final[f] = False
-#        fst._initial_state = final[0]
         return fst
     
     def trim(self, label='', trace=0):
         '''Trim by eliminating deadends.'''
         if trace:
-#            print('Trimming')
             deleted = 0
             t0 = time.clock()
             t = t0
@@ -1332,8 +1325,6 @@ class FST:
                     print('  Retaining {} valid states after {} minute(s)'.format(n_states,
                                                                                   round((t1 - t0) / 60.0, 2)))
                     t = t1
-#            if trace and n_states % 10000 == 0:
-#                print('  Checked {} states starting at final'.format(n_states))
             srcs = [self.src(arc) for arc in self.incoming(state)]
             queue += [s for s in srcs if s not in path_to_final]
             path_to_final.update(srcs)
@@ -1347,8 +1338,6 @@ class FST:
                     print('  Deleted {} states after {} minute(s)'.format(deleted,
                                                                           round((t1 - t0) / 60.0, 2)))
                     t = t1
-#            if trace and deleted % 10000 == 0:
-#                print('  Deleted', deleted, 'states')
             self.del_state(state)
 
         if trace and deleted > 0:
@@ -1609,6 +1598,8 @@ class FST:
         print('Writing FST to {}'.format(filename))
         out = open(filename, 'w', encoding='utf-8')
         # Write the features and values, defaultFS, and stringsets
+        if fst.r2l():
+            out.write("r2l\n")
         if features:
             out.write('features=' + str(fst.get_features(exclude=exclude_features)) + '\n')
         if defaultFS:
@@ -1832,6 +1823,12 @@ class FST:
                     fst.set_finalizing_string(label, finalizing_string)
                 continue
 
+            # right-to-left transduction
+            m = R2L_RE.match(line)
+            if m:
+                fst._reverse = True
+                continue
+
             # Transition arc(s)
             m = ARC_RE.match(line)
             if m:
@@ -1853,12 +1850,17 @@ class FST:
                 for arc_spec in strings:
                     arc = fst._parse_arc(arc_spec)
                     if isinstance(arc, list):
-                        # A stringset
-                        # Only works where in_string and out_string are the same
-                        for string in arc:
-                            fst.add_arc(src, dst, string, string, weight=weight)
+                        # out_string is a stringset label
+                        for instring, outstring in arc:
+                            fst.add_arc(src, dst, instring, outstring, weight=weight)
                     else:
                         fst.add_arc(src, dst, arc[0], arc[1], weight=weight)
+#                        # A stringset
+#                        # Only works where in_string and out_string are the same
+#                        for string in arc:
+#                            fst.add_arc(src, dst, string, string, weight=weight)
+#                    else:
+#                    fst.add_arc(src, dst, arc[0], arc[1], weight=weight)
                 continue
 
             if nstates % 1000 == 0:
@@ -1899,7 +1901,7 @@ class FST:
             mtax = MTax(fst, directory=directory)
             mtax.parse(label, open(filename, encoding='utf-8').read(),
                        verbose=verbose)
-            FST.compile_mtax(mtax, gen=gen, verbose=verbose)
+            FST.compile_mtax(mtax, gen=gen, cascade=cascade, verbose=verbose)
             return fst
 
         elif suffix == 'ar':
@@ -1924,7 +1926,7 @@ class FST:
                                    dest=dest_lex, verbose=False)
 
     @staticmethod
-    def compile_mtax(mtax, gen=False, verbose=False):
+    def compile_mtax(mtax, gen=False, cascade=None, verbose=False):
         # Create a final state
         final_label = DFLT_FINAL
         mtax.states.append([final_label, {'paths': [], 'shortcuts': []}])
@@ -1946,8 +1948,8 @@ class FST:
                         if verbose:
                             print('Creating FST from lex file', in_string)
                         fst1 = mtax.fst.load(os.path.join(mtax.cascade.get_lex_dir(), in_string),
-                                             weighting=mtax.weighting, cascade=mtax.cascade,
-                                             seg_units=mtax.seg_units,
+                                             weighting=mtax.weighting, cascade=cascade,
+                                             seg_units=mtax.seg_units, reverse=cascade.r2l,
                                              lex_features=True, dest_lex=False)
                     if verbose:
                         print('Inserting', fst1.label, 'between', src, 'and', dest)
@@ -2140,12 +2142,17 @@ class FST:
                 for arc_spec in strings:
                     arc = fst._parse_arc(arc_spec)
                     if isinstance(arc, list):
-                        # A stringset
-                        # Only works where in_string and out_string are the same
-                        for string in arc:
-                            fst.add_arc(src, dst, string, string, weight=weight)
+                        # out_string is a stringset label
+                        for instring, outstring in arc:
+                            fst.add_arc(src, dst, instring, outstring, weight=weight)
                     else:
                         fst.add_arc(src, dst, arc[0], arc[1], weight=weight)
+#                        # A stringset
+#                        # Only works where in_string and out_string are the same
+#                        for string in arc:
+#                            fst.add_arc(src, dst, string, string, weight=weight)
+#                    else:
+#                    fst.add_arc(src, dst, arc[0], arc[1], weight=weight)
                 continue
 
             #{ Multiple transitions connecting src to dst: insert a simple, non-branching FST
@@ -2229,9 +2236,8 @@ class FST:
                 if not fst1:
                     fst1 = FST.load(os.path.join(directory, filename), weighting=weighting, cascade=cascade,
                                     seg_units=seg_units, weight_constraint=weight_constraint, verbose=verbose)
-                if fst1._reverse:
-                    print("{} is right-to-left".format(fst1))
-#                    fst1 = fst1.reversed()
+#                if fst1._reverse:
+#                    print("{} is right-to-left".format(fst1))
                 fst.insert(fst1, src, dst, weight=weight)
                 continue
             #}
@@ -2300,6 +2306,9 @@ class FST:
                 # There is a value for either in_string or out_string or both
                 in_string = groups[0] if groups[0] else ''
                 out_string = groups[2] if groups[2] else ''
+                outss = self.stringset(out_string)
+                if outss:
+                    return [(in_string, o) for o in outss]
             else:
                 # the : is missing; use the same value for both strings
                 # (which can't be '')
@@ -2582,7 +2591,7 @@ class FST:
     def transduce(self, input, init_weight=None, split_string='',
                   # related to generation
                   gen=False, print_word=False, print_prefixes=None,
-                  seg_units=[], reject_same=False,
+                  seg_units=[], reject_same=False, result_limit=5,
                   trace=0, tracefeat='', timeit=False, timeout=TIMEOUT):
         """Return the output for all paths through the FST for the input and initial weight. (MG)"""
         if timeit:
@@ -2610,12 +2619,16 @@ class FST:
             # output[1] is output string (if success)
             # output[2] is accumulated weight (if success)
             # There can be failures and duplicate successes
+            if len(result) >= result_limit:
+                break
             if output[1] and (output not in result):
                 if self.r2l():
                     # FST operates right-to-left, so reverse the output list of segments before joining
-                    output[1].reverse()
-                    print("Reversed output {}".format(output[1]))
-                word = ''.join(output[1])
+#                    output[1].reverse()
+                    word = ''.join(reversed(output[1]))
+#                    print("Reversed output {}".format(output[1]))
+                else:
+                    word = ''.join(output[1])
                 if reject_same and word == original_word:
 #                    print('{} is the same the original word')
                     continue
@@ -2819,17 +2832,12 @@ class FST:
                             accumfvals = {fs.get(tracefeat) for fs in accum_weight}
                             if not input_match:
                                 print('OUTPUT: {}; {} FAILED TO MATCH {}'.format(''.join(output), accumfvals, weightfvals))
-#                            else:
-#                                print(' Matched {}'.format(tracefvals))
                     if input_match and (in_pos < len(input) or in_string == ''):
                         # Don't bother if we've already reached the end of the word
                         if trace:
                             matching_arcs.append((arc[3:], in_string, self.out_string(arc), weight))
                             any_matches = True
                         frontier_elem = (arc, in_pos, len(output)) + ((input_match,) if weight else ())
-#                        if not in_string:
-#                            frontier.insert(0, frontier_elem)
-#                        else:
                         frontier.append(frontier_elem)
                     elif trace:
                         if trace > 2 and not input_match:

@@ -1,7 +1,10 @@
 alkila
 # irregular
-'e   [mod=ind,+neg,ps=1];
-     [mod=ind,-neg,ps=1,ns=1]
+'e   [+neg,ps=1,tmp=prs];[-neg,ps=1,ns=1,tmp=prs];
+     [+neg,ps=1,tmp=fut];[-neg,ps=1,ns=1,tmp=fut];
+     [+neg,ps=1,tmp=pcp];[-neg,ps=1,ns=1,tmp=pcp];
+     [+neg,ps=1,tmp=ipf];[-neg,ps=1,ns=1,tmp=ipf];
+     [+neg,ps=1,tmp=prt];[-neg,ps=1,ns=1,tmp=prt]
 <ha'anga
 <hapera'arõ
 <ha'arõ
@@ -115,17 +118,17 @@ tapi'a'o
 topa
 # irregular: ind, 1s, 3; imp 2s
 # regular: opt; neg; ind, 2; ind, 1p; imp 2p
-'u    [+neg];[mod=opt];[voz=reflx,-trans,+rztrans,+rflx];
-      [mod=ind,ps=1,ns=1];
-      [mod=ind,ps=2];
-      [mod=imp,ns=1]
+'u    [+neg];[tmp=sbp];[voz=reflx,-trans,+rztrans,+rflx];
+      [ps=1,ns=1,tmp=prs];[ps=1,ns=1,tmp=prt];[ps=1,ns=1,tmp=fut];[ps=1,ns=1,tmp=ipf];[ps=1,ns=1,tmp=pcp];
+      [ps=2,tmp=prs];[ps=2,tmp=prt];[ps=2,tmp=fut];[ps=2,tmp=ipf];[ps=2,tmp=pcp];
+      [tmp=ipv,ns=1]
 vende
 # irregular: ind, 1s, 3; imp 2s
 # regular: opt; neg; ind, 2; ind, 1p; imp 2p
-y'u   [+neg];[mod=opt];[voz=reflx,-trans,+rztrans,+rflx];
-      [mod=ind,ps=1,ns=1];
-      [mod=ind,ps=2];
-      [mod=imp,ns=1]
+y'u   [+neg];[tmp=sbp];[voz=reflx,-trans,+rztrans,+rflx];
+      [ps=1,ns=1,tmp=prs];[ps=1,ns=1,tmp=prt];[ps=1,ns=1,tmp=fut];[ps=1,ns=1,tmp=ipf];[ps=1,ns=1,tmp=pcp];
+      [ps=2,tmp=prs];[ps=2,tmp=prt];[ps=2,tmp=fut];[ps=2,tmp=ipf];[ps=2,tmp=pcp];
+      [tmp=ipv,ns=1]
 ñaha'ã
 <ñandu
 ñangareko
@@ -932,6 +935,7 @@ mopẽrõ
 moraguyrõ
 morãnge
 morãngue
+moraĝe
 mosakã
 mosã
 mosãju

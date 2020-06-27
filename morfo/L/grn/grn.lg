@@ -67,10 +67,10 @@ feats:
   {po, no, clu} (1, 1, True): objeto = 1 prs pl incl
   {po, no} (2, 1): objeto = 2 pers plr
 
-  mod (modo) = ind (indicativo) |
-               imp (imperativo) |
-               opt (optativo) |
-               None (-)
+#  mod (modo) = ind (indicativo) |
+#               imp (imperativo) |
+#               opt (optativo) |
+#               None (-)
 
   tm (tiempo) = None |
                 vaekue (va'ekue) |
@@ -83,6 +83,7 @@ feats:
 		moã (mo'ã) |
 		kuri |
 		rakae (raka'e) |
+		rae (ra'e) |
 		ta |
 		chéne
 
@@ -94,6 +95,7 @@ feats:
 		  ipv (imperativo) |
 		  ipf (imperfecto) |
 		  pcp (pluscuamprf) |
+		  cnd (condicional) |
 		  inf (infinitivo)
 
   # Combine different realizations of negative
@@ -160,16 +162,16 @@ feats:
                        mbae (mba'e) = *False | True;
                        mo = *False | True
 
-  {mod, impopt:mi} (imp, True): modo + +mi
-  {mod, impopt:ke} (imp, True): modo + +ke
-  {mod, impopt:na} (imp, True): modo + +na
-  {mod, impopt:mbae} (imp, True): modo + +mba'e
-  {mod, impopt:mo} (imp, True): modo + +mo
-  {mod, impopt:mi} (opt, True): modo + +mi
-  {mod, impopt:ke} (opt, True): modo + +ke
-  {mod, impopt:na} (opt, True): modo + +na
-  {mod, impopt:mbae} (opt, True): modo + +mba'e
-  {mod, impopt:mo} (opt, True): modo + +mo
+#  {mod, impopt:mi} (imp, True): modo + +mi
+#  {mod, impopt:ke} (imp, True): modo + +ke
+#  {mod, impopt:na} (imp, True): modo + +na
+#  {mod, impopt:mbae} (imp, True): modo + +mba'e
+#  {mod, impopt:mo} (imp, True): modo + +mo
+#  {mod, impopt:mi} (opt, True): modo + +mi
+#  {mod, impopt:ke} (opt, True): modo + +ke
+#  {mod, impopt:na} (opt, True): modo + +na
+#  {mod, impopt:mbae} (opt, True): modo + +mba'e
+#  {mod, impopt:mo} (opt, True): modo + +mo
 
   misc (miscelanéa) = rei   = *False | True;
                       joa   = *False | True;
@@ -197,7 +199,7 @@ feats:
 		      imi = *False | True;
 	 	      ko = *False | True
 
-  ## Features that are never included pretty or web output
+  ## Features that are never included in pretty or web output
   *%rztrans (raíz transitiva) = False | True
   *%rflx (reflexivo) = False | True
   *%cat (categoría) = a | che | adj
@@ -240,6 +242,8 @@ feats:
   caso = *None|pe|peve|gui|guive|re|vo|icha|ichagua|guy|guype|gua|pegua|ygua|ndi|pype|ypype|ari|vove
 
   poses (posesivo) = pp = *0 | 3 (3 pers) | 2 (2 pers) | 1 (1 pers);
+                     np = *0 (sing) | 1 (plur);
+#		     clu = *False (excl) | True (incl);
                      ext = *True | False (internal)
 
   der (derivación) = ha = *False | True;
@@ -261,13 +265,15 @@ feats:
 		  ngau (nga'u) = *False | True;
 		  nipo = *False | True
 
+  tm (tiempo) = *None | re | rã | rangue | kue
+
   inter (interrogativo) = *False | True
   conjet (conjetural) = *False | True
   adj (adjetivizado) = *False | True
 
   dim (diminutivo) = None | mi | i | imi | ray
 
-  tm (tiempo) = None | kue | re | rã | rangue | akue
+#  *%tm (tiempo) = None | kue | re | rã | rangue | akue
 
   grd (grado) = *None | ve | ive | ete | eterei | rasa | etereirasa
 

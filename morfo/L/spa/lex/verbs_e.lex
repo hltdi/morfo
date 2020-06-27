@@ -5,7 +5,7 @@ resplandeC  resplandecer
 empequeñeC  empequeñecer
 ard  arder
 prend  prender
-llOv  llover
+llOv  llover                [tm=prs|prt|ipf|fut|cnd|sbp|sbi|inf|ger|prc,p=3,n=0]
 coJ  coger
 pose_  poseer
 permaneC  permanecer

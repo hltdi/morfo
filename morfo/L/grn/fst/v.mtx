@@ -25,28 +25,28 @@
 ### 2017.3.7
 ###   +-neg, +=negipv; person, number feats, etc. to match vG
 
-### PREFIJO NEGATIVO, YSAJA MBOTOVÉVA 
+$ neg0
+  -> pro  [rel=sjoj];[rel=None,mod=opt];[-neg,-negipv];[pos=a];[+negipv,-neg]
+  --      [+neg,rel=None];[+neg,rel=obl]
+
+### PREFIJO NEGATIVO, YSAJA MBOTOVÉVA
 
 $ neg1
   -> tmp2     +ndaipori+  [+neg,-negipv] # ndaipóri and variants
   -> tmp1     +ndikatui+  [+neg,-negipv] # ndikatúi (alongside ndoikatúi)
-  [+neg,-negipv,mod=ind]
-    Da                    [pos=v,cat=a,ps=2,ns=1];[pos=v,cat=a,ps=1,ns=1,+clu];[pos=v,cat=a,po=1];[pos=v,cat=a,ps=3,po=2];
-                          [pos=v,cat=che,voz=smp,-rztrans,-trans];[pos=v,cat=adj,voz=smp,-rztrans,-trans]
-    De                    [pos=v,cat=a,ps=2,ns=0,po=3]
-    Do                    [pos=v,cat=a,ps=1,ns=1,-clu,po=3];[pos=v,cat=a,ps=1,po=2]
-    D                     [pos=v,cat=a,ps=1,ns=0,po=3];[pos=v,cat=a,ps=3,po=3]
-  --                      [pos=v,cat=a,-neg];
-                          [pos=v,cat=che,subcat=0,voz=smp,-rztrans,-trans,-neg];
-                          [pos=v,cat=adj,subcat=0,voz=smp,-rztrans,-rflx,-trans,-neg];
-			  [pos=a,cat=adj,subcat=0,voz=smp]
+  [+neg,-negipv,pos=v]
+    Da                    [cat=a,ps=2,ns=1];[cat=a,ps=1,ns=1,+clu];[cat=a,po=1];[cat=a,ps=3,po=2];
+                          [cat=che,voz=smp,-rztrans,-trans];[cat=adj,voz=smp,-rztrans,-trans]
+    De                    [cat=a,ps=2,ns=0,po=3]
+    Do                    [cat=a,ps=1,ns=1,-clu,po=3];[cat=a,ps=1,po=2]
+    D                     [cat=a,ps=1,ns=0,po=3];[cat=a,ps=3,po=3]
 
 ### PRONOMBRES: NÚMERO Y PERSONA, PAPAPY HA AVAITE
 
 $ pro
   -> fin_raiz     +v_irr+     # saltar voz para verbos irregulares
   # Adjectives don't need any prefix (and <h -> h, but what about reta?)
-  --                      [pos=a,cat=adj,subcat=0];[pos=v,-rflx,-trans,mod=None]
+  --                      [pos=a,cat=adj,subcat=0,-neg,-negipv]
   ## 1 sing
   # 1 sing sj; 3 or null oj
   [ps=1,ns=0,po=3]
@@ -293,10 +293,9 @@ $ neg2
   Etereíri              [grd=eterei,+neg,-negipv,+pregrd]
   Eterei'ỹ              [grd=eterei,+neg,-negipv,mod=ind,+pregrd]
   ## just negation
-  # should 'ỹ be restricted to "nominals"? or does it nominalize? (-'ỹre, -'ỹme, etc.)
-  'ỹ                    [+neg,-negipv,mod=ind,-pregrd]
-  !Ri                   [+neg,-negipv,-pregrd]
-  --                    [-neg,-pregrd]
+  !Ri                   [+neg,-negipv,-pregrd,rel=None];[+neg,-negipv,-pregrd,rel=obl]
+  'ỹ                    [+neg,-negipv,mod=ind,-pregrd,rel=sjoj];[+neg,-negipv,mod=opt,-pregrd,rel=None]
+  --                    [-neg,-pregrd,-negipv];[+negipv,-pregrd,-neg]
 
 ### GRADO, KOKATU -- después del negativo
 $ grd
@@ -308,7 +307,7 @@ $ grd
   Ete(*)                [grd=ete,-pregrd]
   Eterei(*)             [grd=eterei,-pregrd]
   rasa(*)               [grd=rasa,-pregrd]                        # no examples of this
-  Etereirasa(*)         [grd=etereirasa,-pregrd]                       # no examples of this
+  Etereirasa(*)         [grd=etereirasa,-pregrd]                  # no examples of this
   --                    [grd=None];[+pregrd]
 
 ### TIEMPO 2 (ta, chéne)
@@ -334,18 +333,18 @@ $ mavointe1
 $ tmp3
   ## va'ekue, va'erã, va can be relative/nominal or not; the asp feature is only relevant when they're not
   # asp=[+plus]
-  va'ekue(*)            [tm=vaekue,mod=ind,rel=None];[rel=sjoj,tm=None,mod=ind]
-  va'ékue               [tm=vaekue,mod=ind,rel=None];[rel=sjoj,tm=None,mod=ind]
+  va'ekue(*)            [tm=vaekue,mod=ind,rel=None,-negipv];[rel=sjoj,tm=None,mod=ind,-negipv]
+  va'ékue               [tm=vaekue,mod=ind,rel=None,-negipv];[rel=sjoj,tm=None,mod=ind,-negipv]
   # asp=[+obl]
   va'erã(*)             [tm=vaerã,prob=hi,-neg,-negipv,mod=ind,rel=None];[rel=sjoj,tm=None,-neg,-negipv,mod=ind]
   # asp=[+hab]
-  !va                   [asp=[+va],mod=ind,rel=None];[rel=sjoj,tm=None,mod=ind]
+  !va                   [asp=[+va],mod=ind,rel=None,-negipv];[rel=sjoj,tm=None,mod=ind,-negipv]
   # features not clear
-  va'e                  [rel=sjoj,+nom,mod=ind]
+  va'e                  [rel=sjoj,+nom,mod=ind,-negipv]
   # asp=[+perf]
-  'akue                 [tm=akue,rel=None,-nom,mod=ind]
+  'akue                 [tm=akue,rel=None,-nom,mod=ind,-negipv]
   # asp=[+impf]
-  !mi                   [tm=mi,rel=None,-nom,mod=ind]
+  !mi                   [tm=mi,rel=None,-nom,mod=ind,-negipv]
   # asp=[+dud]
   !ne                   [tm=ne,rel=None,-neg,-negipv,-nom,mod=ind]
   # asp=[+nec]
@@ -376,11 +375,11 @@ $ tmp3
   !tei                  [rel=None,-nom,mod=ind,-neg,+negipv]
   # asp=[-plus,-hab,-dud,-perf,-nec,-impf]
   # oblique relativizers; where/to which, etc. X
-  ha(*)                 [rel=obl,+nom,tm=None,mod=ind]
+  ha(*)                 [rel=obl,+nom,tm=None,mod=ind,-negipv]
   hague(*)              [rel=obl,+nom,tm=None,mod=ind,-negipv]
   harã(*)               [rel=obl,+nom,tm=None,mod=ind,-negipv]
-  harangue(*)           [rel=obl,+nom,mod=ind]
-  --                    [-negipv,impopt=[-mi,-mo,-ke,-na,-katu,-mbae]]
+  harangue(*)           [rel=obl,+nom,mod=ind,-negipv]
+  --                    [-negipv,impopt=[-mi,-mo,-ke,-na,-katu,-mbae],rel=None]
 
 ### POSTPOSITIONS, CONJUNCTIONS (including haguã)
 $ pospnom

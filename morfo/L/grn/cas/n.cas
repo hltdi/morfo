@@ -30,6 +30,8 @@ weighting = UNIFICATION
 @G = {mb, nd, ng, nt}
 ## lower-case non-nasal segments
 @x = {a, e, i, o, u, y, á, é, í, ó, ú, ý, ch, g, h, j, k, l, p, r, rr, s, t, v, ', <h, <j, !, $, <, E, I, *, X, B, Q, W}
+## nasal vowels
+@Z = {ã, ẽ, ĩ, õ, ũ, ỹ}
 
 ### FSTs
 # Realiza valores de J,B,Q,X,<h por defecto; suprime !

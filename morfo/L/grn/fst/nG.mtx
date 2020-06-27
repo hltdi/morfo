@@ -15,8 +15,8 @@ $ poses
   ## posesión external, e.g., retã
   che_^                    [poses=[pp=1,np=0,+ext]]                    
   De_^                     [poses=[pp=2,np=0,+ext]]    # ;[poses=[pp=23,np=0,+ext]]
-  ñaDe_^                   [poses=[pp=1,np=1,+cp,+ext]]
-  ore_^                    [poses=[pp=1,np=1,-cp,+ext]]
+  ñaDe_^                   [poses=[pp=1,np=1,+clu,+ext]]
+  ore_^                    [poses=[pp=1,np=1,-clu,+ext]]
   peDe_^                   [poses=[pp=2,np=1,+ext]]
   ^                        [poses=[pp=3,+ext]]         # ;[poses=[pp=23,+ext]]
   ## posesión de 3p morfológica ('internal') (3 pers), e.g., hetã, itata
@@ -36,17 +36,19 @@ $ raiz
   ## Categoria de raíz: s
   # these can take loc suffixes (-ha, etc.), usually with possessive prefix
   -> loc   +n_raizG+    [pos=n]
+  # these are derived from verbs or other nouns with suffix -'va
+  -> caso  +n_va+       [pos=n,+va,-pregrd,dim=None,tm=None,n=0,-prepregrd]
   # already have je/ñe- prefix
   -> loc   +n_je+       [pos=n,der=[-je]]
   # already have -ha suffix
-  -> loc   +n_ha+       [pos=n,der=[-ha,-hára]]
+  -> loc   +n_ha+       [pos=n,der=[-ha,-hára],-va]
   # already have -hára suffix
-  -> loc   +n_haraG+    [pos=n,der=[-hára,-ha]]
+  -> loc   +n_haraG+    [pos=n,der=[-hára,-ha],-va]
   # Names and places can't take !va or derivational affixes
-  -> dim   +n_name+     [pos=n,n=0,poses=[pp=0],grd=None,-neg,-adj,subcat=[-pre,-suf]]
-  -> dim   +n_place+    [pos=n,n=0,poses=[pp=0],grd=None,-neg,-anim,-adj,subcat=[-pre,-suf]]
+  -> dim   +n_name+     [pos=n,n=0,poses=[pp=0],grd=None,-neg,-adj,subcat=[-pre,-suf],-va]
+  -> dim   +n_place+    [pos=n,n=0,poses=[pp=0],grd=None,-neg,-anim,-adj,subcat=[-pre,-suf],-va]
   ## Categoria de raíz: v (incluso adjetivos)
-  -> loc     +vG+       [pos=n,subcat=[+pre]];[pos=n,subcat=[+suf]]
+  -> loc     +vG+       [pos=n,subcat=[+pre],-va];[pos=n,subcat=[+suf],-va]
 
 ### Derivación: v -> s; locativo, etc.
 # How many of these will be actually generated?
@@ -107,8 +109,8 @@ $ neg
 ### Adjectivizante (antes de caso)
 # not sure about the feature (adj vs. noun?)
 $ adj
-  !va               [+adj]
-  --                [-adj]
+  !va               [+adj,+va]
+  --                [-adj,-va]
 
 ### GRADO, KOKATU 1
 
@@ -123,13 +125,13 @@ $ pregrd
 ### Allow multiple values for caso (guy+pe, pe+gua+re)
 
 $ caso
-  !Be           [caso=pe,+c]
-  !Beve         [caso=peve,+c]
-  !gui          [caso=gui,+c]
-  !guive        [caso=guive,+c]
-  !re           [caso=re,+c]
-  !vo           [caso=vo,+c]
-  !icha         [caso=icha,+c]
+  !Be           [caso=pe,+c,-va]
+  !Beve         [caso=peve,+c,-va]
+  !gui          [caso=gui,+c,-va]
+  !guive        [caso=guive,+c,-va]
+  !re           [caso=re,+c,-va]
+  !vo           [caso=vo,+c,-va]
+  !icha         [caso=icha,+c,-va]
   ichagua       [caso=ichagua,+c]
   guy           [caso=guy,+c]
   guype         [caso=guype,+c]
@@ -143,7 +145,16 @@ $ caso
   pýpe          [caso=ypype,+c]
   'ári          [caso=ari,+c]
   # solo con expresiones de tiempo
-  !vove         [caso=vove,+c]
+  !vove         [caso=vove,+c,-va]
+  # stress with -'va-derived nouns
+  pe           [caso=pe,+c,+va]
+  peve         [caso=peve,+c,+va]
+  gui          [caso=gui,+c,+va]
+  guive        [caso=guive,+c,+va]
+  re           [caso=re,+c,+va]
+  vo           [caso=vo,+c,+va]
+  icha         [caso=icha,+c,+va]
+  vove         [caso=vove,+c,+va]
   --            [caso=None,-c]
 
 ### GRADO, KOKATU 2

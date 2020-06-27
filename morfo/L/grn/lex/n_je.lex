@@ -201,6 +201,7 @@ jevy'a
 ñemokyrỹi
 ñemomandu'a
 ñemombia
+ñemombe'u
 ñemombo
 ñemombyta
 ñemomimói
@@ -225,8 +226,11 @@ jevy'a
 ñemoñeko'õi
 ñemoñyrõ
 ñemuhanguero
+ñemuha
+ñemuharóga
 ñemuhára
 ñemyakỹ
+ñemyasãi
 ñemyatimoiha
 ñemyatyrõ
 ñemyaña
@@ -246,3 +250,4 @@ jevy'a
 ñeñotỹ
 ñeĩ
 ñeĩha
+ñemoñare

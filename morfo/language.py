@@ -32,6 +32,8 @@ import os, sys, re, copy, itertools
 LANGUAGE_DIR = os.path.join(os.path.dirname(__file__), 'L')
 
 from .morphology import *
+
+from .rule import *
 # FUTURE
 # from .anal import *
 # from .trans import *
@@ -42,6 +44,8 @@ SEG_ROOT_RE = re.compile(r".*{(.+)}.*")
 ## Regexes for parsing language data
 # Language name
 LG_NAME_RE = re.compile(r'\s*n.*?:\s*(.*)')
+# cod...: (additional language code)
+CODE_RE = re.compile(r'\s*cod.*?:\s*(.*)')
 # Interface language abbreviation
 # l...: 
 IF_RE = re.compile(r'\s*if*?:\s*(.*)')
@@ -89,6 +93,9 @@ EXPL_FEAT_RE = re.compile(r'\s*xf(.*):\s*(.*)\s*=\s*(.*)')
 # Preprocessing: replace characters in first list with last char
 # clean: â, ä = ã
 CLEAN_RE = re.compile(r'\s*cle.*?:\s*(.*)\s*=\s*(.*)')
+# Pre- and post-processing (only works for Geez script now)
+PREPROC_RE = re.compile(r'\s*preproc.*?:\s*(.*)')
+POSTPROC_RE = re.compile(r'\s*preproc.*?:\s*(.*)')
 
 ## Regex for checking for non-ascii characters
 ASCII_RE = re.compile(r'[a-zA-Z]')
@@ -118,6 +125,8 @@ class Language:
                  # [poss, expl] for Amharic (whether it's explicitly possessive);
                  # used for disambiguation in analysis
                  stat_feats=None,
+                 # RE rules for joining segments
+                 rules=None,
                  citation_separate=True):
 #                 msgs=None, trans=None):
         """
@@ -134,6 +143,8 @@ class Language:
         """
         self.label = label
         self.abbrev = abbrev or label[:3]
+        # additional abbreviations for language
+        self.codes = []
         # Backup language for term translation, etc.
         self.backup = backup
         self.morphology = None
@@ -159,6 +170,8 @@ class Language:
             self.tlanguages.append(self.backup)
         # Whether the language data and FSTs have been loaded
         self.load_attempted = False
+        # Whether the morphology has been loaded
+        self.morpho_loaded = False
         self.cached = {}
         # Cached entries read in when language is loaded
         if read_cache:
@@ -169,6 +182,8 @@ class Language:
         # Data for web app
         self.webdata = []
         self.webdict = {}
+        # RE rules for joining segments
+        self.rules = rules or {}
 
     def __str__(self):
         return self.label or self.abbrev
@@ -187,6 +202,12 @@ class Language:
     def get_data_file(self):
         """Data file for language."""
         return os.path.join(self.get_dir(), self.abbrev + '.lg')
+
+    # Directory for translation data
+
+    def get_trans_dir(self):
+        """File with cached analyses."""
+        return os.path.join(self.get_dir(), 'trans')
 
 #    def get_stat_dir(self):
 #        """Statistics directory: root and feature frequencies
@@ -280,8 +301,7 @@ class Language:
             Language.IF[lg_abbrev][name] = text
 
     @staticmethod
-    def make(name, abbrev, load_morph=False,
-             segment=False, phon=False,
+    def make(name, abbrev, load_morph=False, segment=False, phon=False,
              guess=True, poss=None, verbose=False):
         """Create a language using data in the language data file."""
         lang = Language(abbrev=abbrev)
@@ -302,7 +322,6 @@ class Language:
             print("Looking for language data file at {}".format(filename))
         if not os.path.exists(filename):
             print(Language.T.tformat('No language data file for {}', [self], self.tlanguages))
-            pass
         else:
             if verbose:
                 print(Language.T.tformat('Loading language data from {}', [filename], self.tlanguages))
@@ -330,9 +349,13 @@ class Language:
 
         lines = data.split('\n')[::-1]
 
+        postproc = ''
+        preproc = ''
+
         seg = []
         punc = []
         abbrev = {}
+        
         fv_abbrev = {}
         trans = {}
         fv_dependencies = {}
@@ -431,9 +454,31 @@ class Language:
 #                    self.trans[w.strip()] = g.strip()
                 continue
 
+            m = PREPROC_RE.match(line)
+            if m:
+                preproc = m.group(1)
+                if preproc == 'geez':
+                    from .geez import geez2sera
+                    self.preproc = lambda form: geez2sera(None, form, lang=self.abbrev)
+                continue
+
+            m = POSTPROC_RE.match(line)
+            if m:
+                postproc = m.group(1)
+                if postproc == 'geez':
+                    from .geez import sera2geez
+                    self.postproc = lambda form: sera2geez(None, form, lang=self.abbrev)
+                continue
+
             m = CLEAN_RE.match(line)
             if m:
                 # Ignore in morfo
+                continue
+
+            m = CODE_RE.match(line)
+            if m:
+                code = m.group(1)
+                self.codes.append(code.strip())
                 continue
 
             m = FEATS_RE.match(line)
@@ -941,6 +986,7 @@ class Language:
             self.morphology[pos].set_root_freqs()
             self.morphology[pos].set_feat_freqs()
             
+        self.morpho_loaded = True
         return True
 
     def get_fsts(self, generate=False, phon=False, segment=False):

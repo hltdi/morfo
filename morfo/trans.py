@@ -3,7 +3,7 @@ This file is part of morfo, which is part of the PLoGS project.
 
     <http://homes.soic.indiana.edu/gasser/plogs.html>
 
-    Copyleft 2018.
+    Copyleft 2019.
     PLoGS and Michael Gasser <gasser@indiana.edu>.
 
     morfo is free software: you can redistribute it and/or modify
@@ -26,6 +26,9 @@ Multilingual objects and morphological translation.
 (Not supported yet.)
 
 """
+
+from .languages import *
+
 class Multiling(dict):
 
     def __init__(self, abbrev, *lang_pos, load_lexicons=False):

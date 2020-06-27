@@ -71,6 +71,7 @@ class FSSet(set):
             # Freeze each feature structure
             for index, itm in enumerate(items):
                 if isinstance(itm, FeatStruct):
+#                    print("Freezing {}".format(itm.__repr__()))
                     itm.freeze()
                 else:
                     # Umm...how is it possible for itm not to be a feature structure?
@@ -127,6 +128,23 @@ class FSSet(set):
             # Get rid of all instances of TOP and unification failures
             return FSSet(*filter(lambda x: x != 'fail', result1))
 
+    def unify_FS(self, fs, strict=False, verbose=False):
+        """Attempt to unify this FSSet with a simple FeatStruct instance, basically filter
+        the FeatStructs in the set by their unification with fs. Pretty much like FSSet.unify()."""
+        # This is a list of the unifications of the elements of self with fs
+        result1 = [simple_unify(f1, fs, strict=strict, verbose=verbose) for f1 in list(self)]
+        if every(lambda x: x == TOP, result1):
+            return TOPFSS
+        else:
+            # All FeatStructs in self that unify with fs
+            result2 = list(filter(lambda x: x != 'fail', result1))
+            if verbose:
+                print("unify_FS: unifying {} with {}, result {}".format(self, fs.__repr__(), result2))
+            if not result2:
+                # None of the FeatStructs in self unifies with fs
+                return 'fail'
+            return FSSet(*result2)
+
     def get(self, feature, default=None):
         """Get the value of the feature in the first FeatStruct that has one."""
         for fs in self:
@@ -143,10 +161,12 @@ class FSSet(set):
     @staticmethod
     def parse(string):
         """string could be a single FS or several separated by ';'."""
+#        print("FSSet parser parsing {}".format(string))
         if string == '[]':
             return TOPFSS
         strings = [s.strip() for s in string.split(';')]
         strings = reduce_lists([FSSet.proc_fv(s) for s in strings])
+#        print("  Strings: {}".format(strings))
         return FSSet(*strings)
 
     @staticmethod
@@ -236,9 +256,17 @@ class FSSet(set):
         """Return a new fsset with feats updated to match each fs in fsset."""
         fslist = []
         for fs in fsset:
-            fs_copy = feats.copy()
-            fs_copy.update(fs)
-            fslist.append(fs_copy)
+            if isinstance(feats, FSSet):
+                fslist1 = []
+                for fs1 in feats:
+                    fs1_copy = fs1.copy()
+                    fs1_copy.update(fs)
+                    fslist1.append(fs1_copy)
+                fslist.extend(fslist1)
+            else:
+                fs_copy = feats.copy()
+                fs_copy.update(fs)
+                fslist.append(fs_copy)
         return FSSet(*fslist)
 
     @staticmethod

@@ -9,7 +9,6 @@ aguyje
 ahoja
 ahy'o
 ahõ
-aipóva
 ajaka
 ajúra
 akangape
@@ -34,7 +33,6 @@ ama
 amambái
 amandáu
 ambue
-amóva
 anana
 andai
 andu
@@ -183,7 +181,6 @@ hy'a
 hyvi
 húvol
 hũngy
-imbokáva
 inga'a
 irũ
 ita
@@ -281,10 +278,10 @@ kamuatĩ
 kamísa
 kane'õ
 kangue
+kañy
 kapi'i
 kapi'ipe
 kapi'y
-kapi'ỹva
 kapilla
 karaguata
 karai
@@ -310,7 +307,6 @@ kerayvoty
 kesu
 kirikiri
 ko'ã
-ko'ãva
 ko'ẽ
 ko'ẽju
 ko'ẽsoro
@@ -378,11 +374,9 @@ kyvy
 káma
 kámapy
 káso
-káva
 kéra
 kóche
 kóga
-kóva
 kũ
 lembu
 liméta
@@ -401,16 +395,9 @@ mangavy
 mano
 marandu
 maravichu
-máva
 mba'apo
 mba'asy
 mba'e
-chemba'e   [poses=[pp=0]]
-nemba'e    [poses=[pp=0]]
-imba'e     [poses=[pp=0]]
-ñanemba'e  [poses=[pp=0]]
-oremba'e   [poses=[pp=0]]
-penemba'e  [poses=[pp=0]]
 mba'ekuaa
 mba'epota
 mba'eputomi
@@ -487,14 +474,10 @@ nevu
 ngululu
 no'õ
 notĩriva
-oha'uvõva
-oikovéva
-ojopýva
 oka
 okaraygua
 okára
 opa
-oti'ỹva
 ovecha
 ovetã
 pa'i
@@ -507,6 +490,7 @@ pana
 panambi
 para
 paragua
+paraguasu
 paraguái
 parana
 parralty
@@ -520,10 +504,8 @@ pepoatã
 pere
 pesẽngue
 peteĩ
-peteĩva
 petỹ
 petỹndy
-péva
 pindo
 pira
 pirapire
@@ -872,14 +854,12 @@ tytýi
 tyvyro
 tyvyta
 tyvyty
-táva
 tavagua
 tĩ
 tĩ'atã
 tĩsyry
 tũ
 tũngusu
-umíva
 uru
 urugua
 urugua'y
@@ -966,7 +946,6 @@ yvága
 ñakurutũ
 ñakyrã
 ñana
-ñande'ỹva
 ñandu
 ñanduti
 ñandy
@@ -987,51 +966,11 @@ yvága
 ñe'ẽpapára
 ñe'ẽporãhaipyre
 ñe'ẽrã
-ñe'ẽtéva
-ñeha'ã
-ñehetũ
-ñeimo'ã
-ñeko'õi
-ñekuave'ẽ
-ñekõi
-ñemba'apo'ỹ
-ñembiso
-ñembojapiro
-ñembosarái
-ñembotavy
-ñemimbi
-ñemitỹ
-ñemo'ã
-ñemoambue
-ñemoangapyhy
-ñemomarandu
-ñemomba'eguasu
-ñemombyky
-ñemomirĩ
-ñemomýi
-ñemondýi
-ñemongakuaa
-ñemongora
-ñemoporã
-ñemopotĩ
-ñemopu'ã
-ñemosãso
-ñemoña
-ñemoñare
-ñemoñe'ẽ
-ñemu
-ñemuña
-ñensuguy
-ñenupã
-ñepepirũ
-ñeporandu
-ñepyrũ
-ñepysyrõ
-ñepytyvõ
 ñoha'ãnga
 ñomongeta
 ñomopeteĩ
 ñopytyvõ
+ñorairõ
 ñu
 ñuatindy
 ñuatĩ
@@ -1041,51 +980,6 @@ yvága
 ĝuaimi
 ĝuahẽ
 ñeĝuahẽ
-# parentesco; biformes
-rajy   [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
-tajýra  rajy [poses=[pp=0]];[poses=[-ext]]
-ra'y   [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
-ta'ýra  ra'y   [poses=[pp=0]];[poses=[-ext]]
-ryke   [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
-tykéra  ryke   [poses=[pp=0]];[poses=[-ext]]
-ryke'y   [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
-tyke'ýra  ryke'y   [poses=[pp=0]];[poses=[-ext]]
-ryvy   [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
-tyvýra  ryvy   [poses=[pp=0]];[poses=[-ext]]
-ru          [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
-túva  ru   [poses=[pp=0]];[poses=[-ext]]
-# so'o, to'o, ro'o, ho'o
-so'o
-# what features go with these??
-to'o    so'o
-ho'o    so'o
-ro'o    so'o
-# initial vowel, accented or only character
-a      [poses=[+ext]];[poses=[pp=0]]
-ánga   [poses=[+ext]];[poses=[pp=0]]
-ára    [poses=[+ext]];[poses=[pp=0]]
-áva    [poses=[+ext]];[poses=[pp=0]]
-ã      [poses=[+ext]];[poses=[pp=0]]
-úva    [poses=[+ext]];[poses=[pp=0]]
-y      [poses=[+ext]];[poses=[pp=0]]
-# triformes sin t-: 0, h, r
-<hóga          [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-<hogajára      [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-# apparently -mi causes stress to shift
-<hogami        [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-<hogapypegua   [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-<hogatuku      [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-# family: not -ygua case suffix (precedes Kuéra)
-<hogaygua      [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-<hogyhairã     [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-<hogyhũhai     [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-<hogyke        [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-# <hokẽ and other nouns derived from it
-<hokẽ          [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-<hokẽja'o      [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-<hokẽjapoka    [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-<hokẽkua       [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
-<hokẽpyrũnga   [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
 'aky
 <ha'i
 <hagua
@@ -1193,14 +1087,10 @@ y      [poses=[+ext]];[poses=[pp=0]]
 <henyhẽ
 <hepyete
 <hepyme'ẽ
-<hepyme'ẽva
-<hera'ỹva
 <heraguapy
 <heraite
-<herajojáva
 <herarãngue
 <herasýi
-<herañe'ẽtéva
 <herañemongy'a
 <herekose
 <herekuave'ỹme
@@ -1238,22 +1128,17 @@ y      [poses=[+ext]];[poses=[pp=0]]
 <hesápe
 <heta
 <hete'i
-<hete'ỹva
 <heteguasu
 <hetejoja
-<hetejojáva
 <hetekangy
 <hetekoni
 <hetekuaa
 <hetekãngy
-<hetekãngýva
 <hetepyso
 <hetepýu
 <heterasy
 <hetereko
 <heterupi
-<heteñembo'ýva
-<hetyma'ỹva
 <hetymakarẽ
 <hetymakua
 <hetãguaita
@@ -1293,7 +1178,6 @@ y      [poses=[+ext]];[poses=[pp=0]]
 <hopeky
 <hopepireko
 <hopyta
-<horýva
 <hosã
 <hova'aty
 <hova'atã
@@ -1332,7 +1216,6 @@ y      [poses=[+ext]];[poses=[pp=0]]
 <hyakuãvu
 <hyakuãvurei
 <hyapurasa
-<hyapúva
 <hyechivi
 <hyegua'a
 <hyekue'o
@@ -1372,7 +1255,6 @@ aguechororĩ
 aguekúi
 aguyjevete
 ahojachara
-ahy'ojejoheiháva
 ahy'ojere
 ahy'okua
 ahy'okue
@@ -1480,11 +1362,11 @@ amavera
 ambopi
 ambota
 ambotaroky
+amundaje
 amundajeróga
 amyrỹi
 anatee
 andaraguy
-angu'a'ýva
 ani
 aoanambusu
 aoapopy
@@ -1537,11 +1419,8 @@ apiru'a
 apohare
 apokytã
 aponde'a
-apopa'ỹva
 apoporã'ỹ
-apopyrãva
 apose
-apoukapýva
 apovaihare
 apu'a
 apyeta
@@ -1553,7 +1432,6 @@ apykua
 apymbohapy
 apyrajoaju
 apyre
-apysa'ỹva
 apysakua
 apysakuára
 apysapykuaa
@@ -1592,8 +1470,8 @@ aramboyveguaiteve
 aramboyveguapuku
 arambyky
 arambyte
-arandukuaa
 aranduka'aty
+arandukuaa
 arandukuaavete
 arandupy
 aranduty
@@ -1646,7 +1524,6 @@ asu
 asuka
 asukary
 asukaryru
-asúva
 ati'yrasy
 atipe
 atukupekandu
@@ -1675,7 +1552,6 @@ avasovy
 avatihu'ipõ
 avatimirĩndy
 avatisoka
-avatáva
 avañe'ẽ
 avañe'ẽkuaa
 avañe'ẽrape
@@ -1727,7 +1603,6 @@ eichu
 eimbujape
 eiraity
 eirarua
-eirarúva
 ermáno
 forifõ
 garata
@@ -1785,10 +1660,6 @@ hakuvy
 hakã
 haporẽ
 he
-he'ise'avýva
-he'isejojáva
-he'iséva
-he'íva
 hi'upyhe
 hi'upyrã
 ho
@@ -1813,11 +1684,7 @@ hãinga
 hévae
 hópo
 hýi
-ijapeguypeguáva
-ijara'ỹva
-ijeheguíva
 ijetu'u
-ikane'õ'ỹva
 ililla
 inga
 ini
@@ -1825,8 +1692,6 @@ inimbe
 inimbe'i
 inimbo
 intentinosẽ
-ipochýva
-iróva
 irũngatu
 irũngue
 ita'apysakua
@@ -1888,7 +1753,6 @@ jairaso
 jakarey
 jakuete
 jakuma
-japapukúva
 japaro
 japeju
 japepo'a
@@ -1897,7 +1761,6 @@ japikua
 japuete
 japyhypy
 jari'i
-jasukáva
 jasyho
 jasyrokái
 jatajyva
@@ -1908,7 +1771,6 @@ jatykapy
 javevuiry
 joajujera
 joapy
-joapýva
 joasa
 joayhuve'ỹ
 joecharei
@@ -1925,10 +1787,8 @@ joyke'ýra
 joykécho
 ju'ai
 juhupyty
-juiñakãva
 jukahare
 jukyryru
-jukytýva
 jukyvosa
 jurasã
 juruai
@@ -1954,7 +1814,6 @@ jyraty
 jyry
 jyryvi
 jyryvisã
-jyva'ỹva
 jyvaguy
 jyvanga
 jyvaypi
@@ -2049,7 +1908,6 @@ karréra
 karréta
 karuete
 karuete'ỹ
-karuháva
 karurã
 karuse
 karusu
@@ -2159,6 +2017,7 @@ kuatiaviru
 kuatiañe'ẽ'i
 kuatiañe'ẽryru
 kuaty
+kuerái
 kuchu
 kuli
 kumare
@@ -2196,7 +2055,6 @@ kuãtĩ
 kuñambia
 kuñareko
 kuñarekovai
-kuñarekóva
 kuñaretekuaa
 kuñavera
 ky
@@ -2214,7 +2072,6 @@ kysetĩ
 kyta
 kytaguái
 kytakuéra
-kytapapýva
 kytasoso
 kytasyry
 kytãngue
@@ -2295,13 +2152,12 @@ mba'apose'ỹ
 mba'asykuera
 mba'asykuera'ỹ
 mba'asypo'i
-mba'e'ýva
 mba'eandugua
 mba'eapu'a
+mba'eapo
 mba'eapy
 mba'eapyte
 mba'eguasu
-mba'ehéva
 mba'eichaitépa
 mba'ejarýi
 mba'ejeka
@@ -2340,6 +2196,7 @@ mba'erepykue
 mba'erepypapa
 mba'ererahauka
 mba'ererupy
+mba'ereruhára
 mba'eresapo
 mba'eresapyso
 mba'eresaruru
@@ -2376,7 +2233,6 @@ mbiche
 mbiru'a
 mbiti
 mbitĩ
-mbo'aváva
 mbo'e
 mbo'ehakoty
 mbo'ehao
@@ -2391,8 +2247,6 @@ mbo'ykarai
 mbohováiva
 mbohérava
 mbojahe'orendu
-mbojoavýva
-mbojoguáva
 mboka'i
 mbokaguasu
 mbokaja'ygue
@@ -2445,7 +2299,6 @@ mendare
 mendareko
 mendarepy
 mendave'ỹ
-mendáva
 mensu
 mesa
 metron
@@ -2476,7 +2329,6 @@ morotĩngue
 moñe'ẽayvu
 moñe'ẽkirirĩ
 moñyrõreko
-moĩmba'ỹva
 muakã
 muchachokue
 mumu
@@ -2503,24 +2355,12 @@ nandiguasu
 narãrykue
 nupã
 ogapegua
-oikoreíva
-oikuaa'ỹva
-oikuaáva
-ojehureíva
-ojehúva
-ojoguáva
 okaragua
-okay'úva
 okaygua
-oporohenóiva
-oporopohãnóva
-otyryrýva
 ouva'erã
 ovechara'y
 ovi
 oviru
-oñamindu'úva
-oñeme'ẽva
 oñoñe'ẽ
 pa'ũ'i
 pa'ũjere
@@ -2536,7 +2376,6 @@ papykõi
 papyteĩ
 para'yga
 paragua'i
-paraguasu
 paragua'y
 parapa
 parapara'i
@@ -2556,7 +2395,6 @@ peteĩcha
 pichyvy
 pijy
 pikypói
-pindaapaháva
 pini
 piraju
 pirakua
@@ -2610,7 +2448,6 @@ pu'a
 pu'aka'ỹ
 pu'akareko
 pujoja
-pujojáva
 pukarã
 puko
 pukõi
@@ -2883,7 +2720,6 @@ tĩ'ovi
 tĩatĩ
 tĩcha'ĩ
 tĩguasu
-tĩguáva
 tĩkandu
 tĩku'a
 tĩky'a
@@ -2899,7 +2735,6 @@ tĩpyguasu
 tĩpẽ
 tĩvã
 upeigua
-upéva
 uruague
 urukure'a
 uruvutĩ
@@ -3015,7 +2850,6 @@ ysyporembo
 ysypoysy
 ysyry'a
 ysyryka
-ysyrykáva
 ysyrysẽ
 ysẽ
 ytaku
@@ -3208,16 +3042,6 @@ yũ
 ñupyso
 ñuryvo
 ýrupi
-ýva
-ñorãirõ       ñorairõ
-ĝuaiguĩ     ĝuaiĝui
-guaiguĩ     ĝuaiĝui
-tupao              tupão
-guahẽ      ĝuahẽ
-ñeguahẽ    ñeĝuahẽ
-juaju  joaju
-ñañua   añuã
-ñañuva  añuã
 <ha'angahai
 <ha'angamỹi
 <ha'yanga
@@ -3319,7 +3143,7 @@ juaju  joaju
 <hesavi
 <hesavã
 <hetakue
-<hetavéva
+<hetami
 <heteku'e
 <hetemýi
 <heteñe'ẽ
@@ -3330,7 +3154,6 @@ juaju  joaju
 <heñói
 <hia
 <hie'ỹ
-<hie'ỹva
 <hindy
 <hirísia
 <hiti
@@ -3457,7 +3280,6 @@ guyra'api
 guyrajura
 guyrapytã
 ikatu'ỹha
-ipu'akavéva
 itaeta
 itakurutĩ
 itaky
@@ -3466,7 +3288,6 @@ itapu'i
 itarovy
 itaveraite
 itaveraovy
-itujavéva
 ja'e'ỹ
 jaguarete'i
 jaguaveve
@@ -3501,7 +3322,6 @@ jejasuru
 jejojái
 jejoporu
 jejuhupy
-jejuru'óva
 jeka
 jekaguai
 jekakuaa
@@ -3604,7 +3424,6 @@ karu'i
 karãiha
 karãu
 karóna
-karóva
 karẽngue
 katupa
 katupyry
@@ -3716,7 +3535,6 @@ mbotovepy
 mboveraha
 mbovevuiha
 mbovuha
-mbovyvéva
 mbuekovia
 mbuepoti
 mbyakuha
@@ -3725,7 +3543,6 @@ mbyekovia
 mbyjakuaa
 mbyry'ái
 mbytepegua
-mbytepeguáva
 mbéu
 meguã
 membyme
@@ -3778,30 +3595,13 @@ ogaraity
 ogasapa
 ogyhairã
 ogyhũhai
-ohendúva
-oipyteha'ãva
-oitypeíva
-ojapóva
-oka'apíva
-okopíva
-okéva
 okẽ
 okẽ'i
 ombohováiva
-omombe'úva
-oporoapĩva
-oporombotavýva
-oporomomembýva
-oporomopa'ũva
 opurahéiva
 ovechame
 ovetã'i
 oygue
-oñe'ẽkuaáva
-oñe'ẽva
-oñemitỹva
-oñepyrũva
-oĩmbáva
 pakovaty
 paku
 pareha
@@ -3837,7 +3637,6 @@ piro'yha
 pitaha
 pitarã'i
 po'areka
-poapyhováva
 poguasu
 poguy
 poguypegua
@@ -3862,7 +3661,6 @@ porombopukaha
 porombotavy
 poromoingoporãse
 poromomba'e
-poromomembýva
 poronupãse
 pororo
 poroñotỹha
@@ -4024,7 +3822,6 @@ yvytĩ
 ñe'ẽyvoty
 ñeakãkarãi
 ñeguahẽmba
-ñeha'ỹi'óva
 ñekambu
 ñemboaguara
 ñemboare
@@ -4102,6 +3899,7 @@ yvytĩ
 ñemotĩñe'ẽ
 ñemoñára
 ñemoĩ
+ñemyasãi
 ñemyatã
 ñemyenyhẽ
 ñemyrõ
@@ -4136,3 +3934,67 @@ yvytĩ
 ñyrõ
 ñúdo
 úra
+tuja
+lekaja
+mboaguera
+apajerekõi
+chemba'e  [poses=[pp=0]]
+nemba'e   [poses=[pp=0]]
+imba'e    [poses=[pp=0]]
+ñanemba'e [poses=[pp=0]]
+oremba'e  [poses=[pp=0]]
+penemba'e [poses=[pp=0]]
+# parentesco; biformes
+rajy  [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
+tajýra  rajy [poses=[pp=0]];[poses=[-ext]]
+ra'y  [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
+ta'ýra  ra'y   [poses=[pp=0]];[poses=[-ext]]
+ryke  [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
+tykéra  ryke   [poses=[pp=0]];[poses=[-ext]]
+ryke'y  [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
+tyke'ýra  ryke'y   [poses=[pp=0]];[poses=[-ext]]
+ryvy  [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
+tyvýra  ryvy   [poses=[pp=0]];[poses=[-ext]]
+ru         [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3,+ext]]
+túva  ru   [poses=[pp=0]];[poses=[-ext]]
+# so'o, to'o, ro'o, ho'o
+so'o
+# what features go with these??
+#to'o    so'o
+#ho'o    so'o
+#ro'o    so'o
+# initial vowel, accented or only character
+a     [poses=[+ext]];[poses=[pp=0]]
+ánga  [poses=[+ext]];[poses=[pp=0]]
+ára   [poses=[+ext]];[poses=[pp=0]]
+áva   [poses=[+ext]];[poses=[pp=0]]
+ã     [poses=[+ext]];[poses=[pp=0]]
+úva   [poses=[+ext]];[poses=[pp=0]]
+y     [poses=[+ext]];[poses=[pp=0]]
+# triformes sin t-: 0, h, r
+<hóga         [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+<hogajára     [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+# apparently -mi causes stress to shift
+<hogami       [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+<hogapypegua  [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+<hogatuku     [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+# family: not -ygua case suffix (precedes Kuéra)
+<hogaygua     [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+<hogyhairã    [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+<hogyhũhai    [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+<hogyke       [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+# <hokẽ and other nouns derived from it
+<hokẽ         [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+<hokẽja'o     [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+<hokẽjapoka   [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+<hokẽkua      [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+<hokẽpyrũnga  [poses=[pp=1]];[poses=[pp=2]];[poses=[pp=3]]
+ñorãirõ       ñorairõ
+ĝuaiguĩ     ĝuaiĝui
+guaiguĩ     ĝuaiĝui
+tupao              tupão
+guahẽ      ĝuahẽ
+ñeguahẽ    ñeĝuahẽ
+juaju  joaju
+ñañua   añuã
+ñañuva  añuã

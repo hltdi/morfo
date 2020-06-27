@@ -63,6 +63,8 @@ SHORTCUT_LEX_FS_RE = re.compile(r'\s*->\s*(\S+)\s*\+(.*?)\+\s*(\[.+?\])$')
 
 class MTax:
 
+    PARSER = FSSet.parse
+
     def __init__(self, fst, directory=''):
         self.fst = fst
         self.cascade = fst.cascade
@@ -70,6 +72,9 @@ class MTax:
         self.directory = directory
         self.weighting = UNIFICATION_SR
         self.states = []
+
+    def __repr__(self):
+        return "MTax {}".format(self.fst.label)
 
     def parse(self, label, s, verbose=False):
         """
@@ -166,7 +171,8 @@ class MTax:
             if m:
                 indentation, fs = m.groups()
                 # a FeatStruct, not a FSSet
-                weight = FeatStructParser().parse(fs)
+                weight = MTax.PARSER(fs)
+#                FeatStructParser().parse(fs)
                 current_fs = weight
                 current_indent = len(indentation)
                 continue
@@ -175,10 +181,13 @@ class MTax:
             m = PATH_RE.match(line)
             if m:
                 indentation, in_string, fss = m.groups()
-                weight = self.weighting.parse(fss)
+                weight = MTax.PARSER(fss)
                 if len(indentation) > current_indent and current_fs:
                     # Update FSS with current FS
-                    weight = weight.update(weight, current_fs)
+#                    print("  String {}, FS {}, current FS {}".format(in_string, weight, current_fs.__repr__()))
+                    weight = weight.unify(current_fs)
+#                    weight.update(weight, current_fs)
+#                    print("  New weight {}".format(weight))
                 current_state[1]['paths'].append((in_string, weight))
                 continue
 
@@ -186,6 +195,7 @@ class MTax:
             m = SHORTCUT_FS_RE.match(line)
             if m:
                 next_state, fss = m.groups()
+                fss = self.weighting.parse(fss)
                 current_state[1]['shortcuts'].append((next_state, None, fss))
                 print("Shortcut {}, {}".format(next_state, fss))
                 continue
@@ -219,94 +229,94 @@ class MTax:
             
             raise ValueError("bad line: %r" % line)
 
-    def compile(self, gen=False, verbose=False):
-        # Create a final state
-        final_label = DFLT_FINAL
-        self.states.append([final_label, {'paths': [], 'shortcuts': []}])
-        self.fst.add_state(final_label)
-        self.fst.set_final(final_label)
-
-        # Now make the paths between the successive states
-        for index, state in enumerate(self.states[:-1]):
-            src = state[0]
-            paths = state[1].get('paths')
-            dest = self.states[index+1][0]
-            # Do the normal paths
-            for in_string, weight in paths:
-                if '.lex' in in_string:
-                    # in_string is a lex filename
-                    label = in_string.split('.')[0]
-                    fst1 = self.cascade.get(label) if self.cascade else None
-                    if not fst1:
-                        if verbose:
-                            print('Creating FST from lex file', in_string)
-                        fst1 = self.fst.load(os.path.join(self.cascade.get_lex_dir(), in_string),
-                                             weighting=self.weighting, cascade=self.cascade,
-                                             seg_units=self.seg_units,
-                                             lex_features=True, dest_lex=False)
-                    if verbose:
-                        print('Inserting', fst1.label, 'between', src, 'and', dest)
-                    self.fst.insert(fst1, src, dest, weight=weight, mult_dsts=False)
-                if '.cas' in in_string:
-                    # in_string is a cascade filename
-                    label = in_string.split('.')[0]
-                    fst1 = self.cascade.get(label) if self.cascade else None
-                    if not fst1:
-                        if verbose:
-                            print('Inserting cascade {} between {} and {}'.format(label, src, dest))
-                        casc = FSTCascade.load(os.path.join(self.cascade.get_cas_dir(), in_string), seg_units=self.seg_units,
-                                               language=self.cascade.language,
-                                               weight_constraint=self.weight_constraint)
-                        if verbose:
-                            print('Composing {}'.format(casc))
-                        fst1 = casc.compose()
-                        # Record the new composed FST in the higher cascade
-                        if self.cascade:
-                            self.cascade.add(fst1)
-#                        if verbose:
-                        print('Inserting cascade {} between {} and {}'.format(fst1.label, src, dest))
-                        if casc.reverse:
-                            print(" Cascade is reversed")
-                            fst1 = fst1.reversed()
-                    self.fst.insert(fst1, src, dest, weight=weight, mult_dsts=False)
-                elif '.fst' in in_string:
-                    # in_string is a FST filename
-                    label = in_string.split('.')[0]
-                    fst1 = self.cascade.get(label) if self.cascade else None
-                    if not fst1:
-                        if verbose:
-                            print('Compiling FST from file', in_string)
-                        fst1 = self.fst.load(os.path.join(self.cascade.get_fst_dir(), in_string),
-                                             weighting=self.weighting, cascade=self.cascade,
-                                             seg_units=self.seg_units)
-                    if verbose:
-                        print('Inserting', fst1.label, 'between', src, 'and', dest)
-                    self.fst.insert(fst1, src, dest, weight=weight, mult_dsts=False)
-                elif in_string == NO_INPUT:
-                    self.fst.add_arc(src, dest, '', '', weight=weight)
-                else:
-                    self.fst._make_mult_arcs(in_string, '', src, dest, weight, self.seg_units, gen=gen)
-            # Do the shortcuts
-            shortcuts = state[1].get('shortcuts')
-            for dest, file, fss in shortcuts:
-                if file:
-                    if fss:
-                        wt = fss
-                    else:
-                        wt = TOPFSS
-#                    if verbose:
-#                        print('lex shortcut', file)
-                    label = file.split('.')[0]
-                    fst1 = self.cascade.get(label) if self.cascade else None
-                    if not fst1:
-                        fst1 = self.fst.load(os.path.join(self.cascade.get_lex_dir(), file),
-# os.path.join(self.directory, file),
-                                             weighting=self.weighting, cascade=self.cascade,
-                                             seg_units=self.seg_units,
-                                             lex_features=True, dest_lex=False)
-                    if verbose:
-                        print('Inserting', fst1.label, 'between', src, 'and', dest)
-                    self.fst.insert(fst1, src, dest, weight=wt, mult_dsts=False)
-                else:
-                    self.fst.add_arc(src, dest, '', '', weight=fss)
+##    def compile(self, gen=False, verbose=False):
+##        # Create a final state
+##        final_label = DFLT_FINAL
+##        self.states.append([final_label, {'paths': [], 'shortcuts': []}])
+##        self.fst.add_state(final_label)
+##        self.fst.set_final(final_label)
+##
+##        # Now make the paths between the successive states
+##        for index, state in enumerate(self.states[:-1]):
+##            src = state[0]
+##            paths = state[1].get('paths')
+##            dest = self.states[index+1][0]
+##            # Do the normal paths
+##            for in_string, weight in paths:
+##                if '.lex' in in_string:
+##                    # in_string is a lex filename
+##                    label = in_string.split('.')[0]
+##                    fst1 = self.cascade.get(label) if self.cascade else None
+##                    if not fst1:
+##                        if verbose:
+##                            print('Creating FST from lex file', in_string)
+##                        fst1 = self.fst.load(os.path.join(self.cascade.get_lex_dir(), in_string),
+##                                             weighting=self.weighting, cascade=self.cascade,
+##                                             seg_units=self.seg_units,
+##                                             lex_features=True, dest_lex=False)
+##                    if verbose:
+##                        print('Inserting', fst1.label, 'between', src, 'and', dest)
+##                    self.fst.insert(fst1, src, dest, weight=weight, mult_dsts=False)
+##                if '.cas' in in_string:
+##                    # in_string is a cascade filename
+##                    label = in_string.split('.')[0]
+##                    fst1 = self.cascade.get(label) if self.cascade else None
+##                    if not fst1:
+##                        if verbose:
+##                            print('Inserting cascade {} between {} and {}'.format(label, src, dest))
+##                        casc = FSTCascade.load(os.path.join(self.cascade.get_cas_dir(), in_string), seg_units=self.seg_units,
+##                                               language=self.cascade.language,
+##                                               weight_constraint=self.weight_constraint)
+##                        if verbose:
+##                            print('Composing {}'.format(casc))
+##                        fst1 = casc.compose()
+##                        # Record the new composed FST in the higher cascade
+##                        if self.cascade:
+##                            self.cascade.add(fst1)
+###                        if verbose:
+##                        print('Inserting cascade {} between {} and {}'.format(fst1.label, src, dest))
+##                        if casc.reverse:
+##                            print(" Cascade is reversed")
+##                            fst1 = fst1.reversed()
+##                    self.fst.insert(fst1, src, dest, weight=weight, mult_dsts=False)
+##                elif '.fst' in in_string:
+##                    # in_string is a FST filename
+##                    label = in_string.split('.')[0]
+##                    fst1 = self.cascade.get(label) if self.cascade else None
+##                    if not fst1:
+##                        if verbose:
+##                            print('Compiling FST from file', in_string)
+##                        fst1 = self.fst.load(os.path.join(self.cascade.get_fst_dir(), in_string),
+##                                             weighting=self.weighting, cascade=self.cascade,
+##                                             seg_units=self.seg_units)
+##                    if verbose:
+##                        print('Inserting', fst1.label, 'between', src, 'and', dest)
+##                    self.fst.insert(fst1, src, dest, weight=weight, mult_dsts=False)
+##                elif in_string == NO_INPUT:
+##                    self.fst.add_arc(src, dest, '', '', weight=weight)
+##                else:
+##                    self.fst._make_mult_arcs(in_string, '', src, dest, weight, self.seg_units, gen=gen)
+##            # Do the shortcuts
+##            shortcuts = state[1].get('shortcuts')
+##            for dest, file, fss in shortcuts:
+##                if file:
+##                    if fss:
+##                        wt = fss
+##                    else:
+##                        wt = TOPFSS
+###                    if verbose:
+###                        print('lex shortcut', file)
+##                    label = file.split('.')[0]
+##                    fst1 = self.cascade.get(label) if self.cascade else None
+##                    if not fst1:
+##                        fst1 = self.fst.load(os.path.join(self.cascade.get_lex_dir(), file),
+### os.path.join(self.directory, file),
+##                                             weighting=self.weighting, cascade=self.cascade,
+##                                             seg_units=self.seg_units,
+##                                             lex_features=True, dest_lex=False)
+##                    if verbose:
+##                        print('Inserting', fst1.label, 'between', src, 'and', dest)
+##                    self.fst.insert(fst1, src, dest, weight=wt, mult_dsts=False)
+##                else:
+##                    self.fst.add_arc(src, dest, '', '', weight=fss)
 

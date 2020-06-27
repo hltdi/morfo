@@ -5,7 +5,7 @@ This file is part of morfo, which is part of the PLoGS project.
 
     <http://homes.soic.indiana.edu/gasser/plogs.html>
 
-    Copyleft 2018, 2019.
+    Copyleft 2018, 2019, 2020.
     PLoGS and Michael Gasser <gasser@indiana.edu>.
 
     morfo is free software: you can redistribute it and/or modify
@@ -52,7 +52,7 @@ def get_pos(abbrev, pos, phon=False, segment=False, load_morph=False,
     morfo.load_lang(abbrev, segment=segment, phon=phon, load_morph=load_morph,
                  guess=guess, verbose=verbose)
     lang = morfo.get_language(abbrev, phon=phon, segment=segment, load=load_morph,
-                                  verbose=verbose)
+                              load_morph=load_morph, verbose=verbose)
     if lang:
         return lang.morphology[pos]
 
@@ -97,6 +97,13 @@ def make_casc(name):
     return fst
 
 ### Debugging functions
+
+def get_feats(fs, feats):
+    """Print values for features feats within feature structure fs."""
+    values = []
+    for feat in feats:
+        values.append("{}={}".format(feat, fs.get(feat)))
+    return ",".join(values)
 
 def casc_anal(casc, string, start_i, end_i=0, trace=0):
     seg_units = casc.seg_units
@@ -190,6 +197,24 @@ def proc_grn_feats(pos=None, feat=None):
 #    result.sort(key=lambda x: x[1], reverse=True)
     return result
 
+# Splitting off Grn derived nouns
+
+GNACC = "áéíóúýãẽĩõũỹ"
+
+def split_grn_nouns():
+    old = []
+    new = []
+    with open("morfo/L/grn/lex/n_raizG.lex", encoding='utf8') as file:
+        for line in file:
+            line = line.strip()
+            if ' ' in line:
+                old.append(line)
+            elif len(line) > 2 and line[-3] in GNACC and line.endswith('va'):
+                new.append(line)
+            else:
+                old.append(line)
+    return old, new
+
 def proc_grn_roots(pos=None, features=None):
     """Count different feature-value combinations for each Guarani root that appears
     in word token list."""
@@ -269,94 +294,6 @@ def proc_grn_roots(pos=None, features=None):
 ##                    item = item.split('_')[0]
 ##                    print("{} :: {}".format(item, counts), file=file)
     return result
-
-##def proc_grn_root_fvs(pos, fvs):
-##    result = {}
-##    forms = []
-##    with open("../LingData/Gn/words5.txt.anl", encoding='utf8') as inf:
-##        for line in inf:
-##            item, count = line.split()
-##            if ';' in item:
-##                # Otherwise no real analysis, so ignore the line
-##                count = int(count)
-##                word, anals = item.split(';')
-##                anals = anals.split('|')
-##                nanals = len(anals)
-##                count1 = count / nanals
-##                count2 = 0
-##                for anal in anals:
-##                    root_feats = anal.split(':')
-##                    if len(root_feats) == 1:
-##                        # No features
-##                        continue
-##                    root, feats = anal.split(':')
-##                    if feats == '[]':
-##                        continue
-##                    if '_' + pos not in root:
-##                        continue
-##                    if '*' in root:
-##                        root = root.replace('*', word)
-##                    feats = morfo.fs.FeatStruct(feats)
-##                    found = True
-##                    for f, v in fvs:
-##                        if f not in feats or feats[f] != v:
-##                            found = False
-##                            break
-##                    if found:
-##                        count2 += count1
-##                if count2:
-##                    if root not in result:
-##                        result[root] = []
-##                    result[root].append((word, count2))
-##                    forms.append((word, count2))
-##    return result, forms
-    
-
-# Testing Amharic deverbal nouns
-
-AN_BASIC = ["melqem", "meleqaqem", "leqami", "leqaqami", "'aleqaqem", "melaqem", "telaqami",
-            "meCeres", "meCerares", "Cerax", "Cerarax", "'aCerares",
-            "mebaken", "mebekaken", "bakaN", "'abekaken",
-            "megenTel", "megeneTaTel", "genTay", "geneTaTay", "'ageneTaTel", "megenaTel", "tegenaTay",
-            "mewexenger", "mewexenegager", "wexengari", "wexenegagari", "'awexenegager",
-            "meCberber", "meCberebaber", "teCberbari", "teCberebabari", "'aCberebaber", "meCberaber"]
-
-AN_XaX = ["megelameT", "magelameT", "gelamaC", "'agelemameT",
-          "mensafef", "tensafafi"]
-
-AN_L1 = ["mamen", "masamen", "metamen", "mastemamen", "metemamen",
-         "'amaN", "tamaN", "temamaN", "'astemamaN", "'astemamen",
-         "mades", "masades", "metades", "mastedades", "metedades",
-         "'adax", "tadax", "tedadax", "'astedades",
-         "manTes", "masneTes", "meneTes", "'aneTaTes"]
-
-AN_L2 = ["mecal", "mecacal", "cay", "cacay", "'acacal"]
-
-AN_L3 = ["megbat", "gebi", "megebat", "masgebat", "megbabat", "megebabat", "gebabi",
-         "'agebab", "'agbab", "tegbabi", "'agebabi", "'agbabi",
-         "meqret", "qeri", "meseTet", "masqeret", "meqeraret", "qerari", "'aqerar", "'aqeraret",
-         "mamat", "masamat", "metamat", "'ami", "tami",
-         "'astemam", "metemamat", "mastemamat", "temami", "'astemami",
-         "mayet", "metayet", "masayet", "'asteyayet"]
-
-AN_L4 = ["melalat", "malalat", "'alela", "lay",
-         "mezergat", "zergi", "mezeregagat", "'azeregag",
-         "meselcet", "selci", "maselcet", "'aselecac",
-         "mebelaxet", "'abelexax", "'abelexaxet", "'abelax",
-         "mengagat", "tengagi",
-         "manqelafat", "'anqelafi", "'anqelefaf",
-         "menkeratet", "tenkeratac", "'ankeretatet"]
-
-AN_wy2 = ["meSom", "meSWaSWam", "SWami", "SWaSWami", "'aSWaSWam",
-          "mecer", "mecacar", "cari", "cacari", "'acacar",
-          "mefEz", "mefafEz", "fiyaZ", "fafiyaZ", "'afafEz"]
-
-amV1 = ["ይመሳስላሉ", "ይመሳሰላሉ", "ያመሳስላል"]
-amV2 = ["ተባበሩ", "ተሳሳሙ", "ተግባቡ", "ተጭበረባበሩ"]
-amV3 = ["ይጠብቃል", "ባከነ", "ቀባጠረ"]
-amV4 = ["ተጋጠሙ", "አጋጠመ"]
-amN1 = ["መቀጠል", "መቀጠያ", "ቀጣይ", "አቀጣጠል"]
-amN2 = ["ያለምክንያት", "አለምክንያት", "አለመንሳፈፍ", "ኢፍትሃዊ"]
 
 def segment(fst, form, printout=True):
     seg = fst.anal(form, segment=True)

@@ -24,7 +24,7 @@ Author: Michael Gasser <gasser@indiana.edu>
 from flask import Flask, url_for, render_template
 _version = '1.0'
 
-from .languages import *
+from .trans import *
 
 app = Flask(__name__)
 app.config.from_object(__name__)

@@ -11,6 +11,8 @@
 ###   m feature with all suffixes as value
 ### 2015.04.13
 ###   derivation expanded somewhat to accommodate imba'apoha, for example
+### 2020.05.27
+###   separated out nouns derived with -'va, mainly to get stress with case suffixes
 
 ### POSESIÓN
 # se supone que, salvo 3 persona pronominal, sea palabra separada
@@ -38,17 +40,19 @@ $ raiz
   ## Categoria de raíz: s
   # these can take loc suffixes (-ha, etc.), usually with possessive prefix
   -> loc   +n_raiz+     [pos=n]
+  # these are derived from verbs or other nouns with suffix -'va
+  -> caso  +n_va+       [pos=n,+va,-pregrd,dim=None,tm=None,n=0,-prepregrd]
   # already have je/ñe- prefix
   -> loc   +n_je+       [pos=n,der=[-je]]
   # already have -ha suffix
-  -> loc   +n_ha+       [pos=n,der=[-ha,-hára]]
+  -> loc   +n_ha+       [pos=n,der=[-ha,-hára],-va]
   # already have -hára suffix
-  -> loc   +n_hara+     [pos=n,der=[-hára,-ha]]
+  -> loc   +n_hara+     [pos=n,der=[-hára,-ha],-va]
   # Names and places can't take !va or derivational affixes
-  -> dim   +n_name+     [pos=n,-pl,poses=[pp=0],grd=None,-neg,-adj,subcat=[-pre,-suf]]
-  -> dim   +n_place+    [pos=n,-pl,poses=[pp=0],grd=None,-neg,-anim,-adj,subcat=[-pre,-suf]]
+  -> dim   +n_name+     [pos=n,-pl,poses=[pp=0],grd=None,-neg,-adj,subcat=[-pre,-suf],-va]
+  -> dim   +n_place+    [pos=n,-pl,poses=[pp=0],grd=None,-neg,-anim,-adj,subcat=[-pre,-suf],-va]
   ## Categoria de raíz: v (incluso adjetivos)
-  -> loc     +v+        [pos=n,subcat=[+pre]];[pos=n,subcat=[+suf]]
+  -> loc     +v+        [pos=n,subcat=[+pre],-va];[pos=n,subcat=[+suf],-va]
 
 ### Derivación: v -> s; locativo, etc.
 # % indica fin de la raíz verbal; necesario para regla de nasalización
@@ -125,14 +129,14 @@ $ pregrd
 ### Allow multiple values for caso (guy+pe, pe+gua+re)
 
 $ caso
-  !Be           [caso=pe,+c]
-  !Beve         [caso=peve,+c]
-  !gui          [caso=gui,+c]
-  !guive        [caso=guive,+c]
-  !re(he)       [caso=re,+c]
-  !vo           [caso=vo,+c]
-  !icha         [caso=icha,+c]
-  ichagua       [caso=ichagua,+c]
+  !Be           [caso=pe,+c,-va]
+  !Beve         [caso=peve,+c,-va]
+  !gui          [caso=gui,+c,-va]
+  !guive        [caso=guive,+c,-va]
+  !re(he)       [caso=re,+c,-va]
+  !vo           [caso=vo,+c,-va]
+  !icha         [caso=icha,+c,-va]
+  ichagua       [caso=ichagua,+c,-va]
   guy           [caso=guy,+c]
   guype         [caso=guype,+c]
   ndi           [caso=ndi,+c]
@@ -146,6 +150,15 @@ $ caso
   'ári          [caso=ari,+c]
   # solo con expresiones de tiempo
   (!)vove       [caso=vove]
+  # stress with -'va-derived nouns
+  pe           [caso=pe,+c,+va]
+  peve         [caso=peve,+c,+va]
+  gui          [caso=gui,+c,+va]
+  guive        [caso=guive,+c,+va]
+  re           [caso=re,+c,+va]
+  vo           [caso=vo,+c,+va]
+  icha         [caso=icha,+c,+va]
+  vove         [caso=vove,+c,+va]
   --            [caso=None,-c]
 
 ### GRADO, KOKATU 2

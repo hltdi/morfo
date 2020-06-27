@@ -22,7 +22,7 @@ _ -> _'         [:']
 _' -> start     [í:i;ú:u;é:e]     # accent the i or u
 
 # unaccented
-_ -> iu         [i;u;e]         # don't accent the i or u
+_ -> iu         [i;u]         # don't accent the i or u
 # last vowel, unaccented
 iu -> end       [s;n;r;:]
 # next vowel accented (no consonant)
@@ -41,6 +41,14 @@ iuCV -> end     [X-n,s]
 iuCV -> iuCVC   [X]
 iuCVC -> iuCVC  [X;Q]
 iuCVC -> start  [V]
+
+_ -> e          [e]
+# last vowel, unaccented
+e -> end        [s;n;r;:]
+# C not end of word
+e -> eC         [X]
+eC -> eCV       [V]
+eCV -> end      [s;n;:]
 
 # any other following vowel or consonant
 _ -> start      [V-i,u,e;X;Q-']

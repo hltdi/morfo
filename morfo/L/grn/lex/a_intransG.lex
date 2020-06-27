@@ -1,9 +1,9 @@
 # irregular: ind, 1s, 3; imp 2s
 # regular: opt; neg; ind, 2; ind, 1p; imp 2p
-'a  [+neg];[mod=opt];
-    [mod=ind,ps=1,ns=1];
-    [mod=ind,ps=2];
-    [mod=imp,ns=1]
+'a  [+neg];[tmp=sbp];
+    [ps=1,ns=1,tmp=prs];[ps=1,ns=1,tmp=prt];[ps=1,ns=1,tmp=fut];[ps=1,ns=1,tmp=ipf];[ps=1,ns=1,tmp=pcp];
+    [ps=2,tmp=prs];[ps=2,tmp=prt];[ps=2,tmp=fut];[ps=2,tmp=ipf];[ps=2,tmp=pcp];
+    [tmp=ipv,ns=1]
 ararecha
 chararã
 chini
@@ -22,8 +22,8 @@ guevi
 guy
 guyguy
 # irregular
-ha  [mod=opt,ps=1];
-    [mod=ind,ps=1,ns=0];
+ha  [tmp=sbp,ps=1];
+    [tmp=prs,ps=1,ns=0];[tmp=prt,ps=1,ns=0];[tmp=fut,ps=1,ns=0];[tmp=ipf,ps=1,ns=0];[tmp=pcp,ps=1,ns=0];
     [ps=1,ns=1,+clu]
 ha'aresa
 <hasa
@@ -75,9 +75,9 @@ jopyru
 jopói
 jovái
 # irregular
-ju     [mod=imp];[mod=opt];
-       [mod=ind,ps=1];
-       [mod=ind,ps=2]
+ju  [ps=1,ns=1,tmp=prs];[ps=1,ns=1,tmp=prt];[ps=1,ns=1,tmp=fut];[ps=1,ns=1,tmp=ipf];[ps=1,ns=1,tmp=pcp];
+    [ps=2,tmp=prs];[ps=2,tmp=prt];[ps=2,tmp=fut];[ps=2,tmp=ipf];[ps=2,tmp=pcp];
+    [tmp=ipv];[tmp=sbp]
 juku'a
 jumosã
 jupi
@@ -195,16 +195,15 @@ vy'a
 # irregular: ind, 1s, 3; imp 2s
 # regular: opt; neg; ind, 2; ind, 1p; imp 2p
 'yguy [+neg];
-      [mod=opt];
-      [mod=ind,ps=1,ns=1,-clu];
-      [mod=ind,ps=2];
-      [mod=imp,ns=1]
+      [tmp=sbp];
+      [tmp=prs,ps=1,ns=1,-clu];[tmp=prt,ps=1,ns=1,-clu];[tmp=fut,ps=1,ns=1,-clu];[tmp=ipf,ps=1,ns=1,-clu];[tmp=pcp,ps=1,ns=1,-clu];
+      [tmp=prs,ps=2];[tmp=prt,ps=2];[tmp=fut,ps=2];[tmp=ipf,ps=2];[tmp=pcp,ps=2];
+      [tmp=prs,ns=1];[tmp=prt,ns=1];[tmp=fut,ns=1];[tmp=ipf,ns=1];[tmp=pcp,ns=1]
 'yta  [+neg];
-      [mod=opt];
-      [mod=ind,ps=1,ns=1,-clu];
-      [mod=ind,ps=2];
-      [mod=imp,ns=1]
-
+      [tmp=sbp];
+      [tmp=prs,ps=1,ns=1,-clu];[tmp=prt,ps=1,ns=1,-clu];[tmp=fut,ps=1,ns=1,-clu];[tmp=ipf,ps=1,ns=1,-clu];[tmp=pcp,ps=1,ns=1,-clu];
+      [tmp=prs,ps=2];[tmp=prt,ps=2];[tmp=fut,ps=2];[tmp=ipf,ps=2];[tmp=pcp,ps=2];
+      [tmp=prs,ns=1];[tmp=prt,ns=1];[tmp=fut,ns=1];[tmp=ipf,ns=1];[tmp=pcp,ns=1]
 ñakãity
 ñakãpytĩ
 ñalmira
@@ -1374,3 +1373,43 @@ yvykarãi
 ñemoangai
 ñuatĩ'o
 <ñakãrapu'ã
+ñeha'ã
+ñehetũ
+ñeimo'ã
+ñeko'õi
+ñekuave'ẽ
+ñekõi
+ñemba'apo'ỹ
+ñembiso
+ñembojapiro
+ñembosarái
+ñembotavy
+ñemimbi
+ñemitỹ
+ñemo'ã
+ñemoambue
+ñemoangapyhy
+ñemomarandu
+ñemomba'eguasu
+ñemombyky
+ñemomirĩ
+ñemomýi
+ñemondýi
+ñemongakuaa
+ñemongora
+ñemoporã
+ñemopotĩ
+ñemopu'ã
+ñemosãso
+ñemoña
+ñemoñare
+ñemoñe'ẽ
+ñemu
+ñemuña
+ñensuguy
+ñenupã
+ñepepirũ
+ñeporandu
+ñepyrũ
+ñepysyrõ
+ñepytyvõ

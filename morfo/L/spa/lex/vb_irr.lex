@@ -192,6 +192,9 @@ son   ser   end         [tm=prs,p=3,n=1]
 #sois   ser   end         [tm=prs,sj=[-1,+2,+p]]
 # present subjunctive
 se    ser   e_sub_prs1  [tm=sbp]
+# imperative (both tú and vos)
+sé    ser   end         [p=2,n=0,tm=ipv,+ipv]
+#sed  ser   end          [tm=ipv,sj=[-1,+2,+p],-AL,+ipv]
 # preterite, past subjunctive
 fue  ser    end         [tm=prt,p=3,n=0]
 fui  ser    end         [tm=prt,p=1,n=0]
@@ -201,9 +204,6 @@ fue  ser    prt2        [tm=prt,n=1,p=3]] ; [tm=sbi]
 s    ser   stem_e1      [tm=inf|ger|prc]
 # imperfect
 'era  ser   person      [tm=ipf]
-# imperative
-sé   ser   end          [tm=ipv,p=2,n=0,+ipv]
-#sed  ser   end          [tm=ipv,sj=[-1,+2,+p],-AL,+ipv]
 # VALER
 val    valer  stem_i1    [tm=prs|ipf|sbp|ipv|inf|ger|prc]
 valdr' valer  fut        [tm=fut|cnd]
