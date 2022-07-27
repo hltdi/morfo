@@ -42,7 +42,7 @@ written by some unidentified author.
 Version 1.0
 """
 
-import re, os, copy, time, functools, glob
+import re, os, copy, time, functools, glob, pickle
 from collections import deque
 # Required for weights.
 from .semiring import *
@@ -1297,7 +1297,7 @@ class FST:
         '''Trim by eliminating deadends.'''
         if trace:
             deleted = 0
-            t0 = time.clock()
+            t0 = time.process_time()
             t = t0
             n_states = 0
 
@@ -1310,7 +1310,7 @@ class FST:
         # node.
         queue = [s for s in self.states() if self.is_final(s)]
         if trace:
-            t1 = time.clock()
+            t1 = time.process_time()
             if t1 - t > 30:
                 print('  Took {} minute(s) to form initial trimming queue'.format(round((t1 - t0) / 60.0, 2)))
                 t = t1
@@ -1320,7 +1320,7 @@ class FST:
             state = queue.pop()
             if trace:
                 n_states += 1
-                t1 = time.clock()
+                t1 = time.process_time()
                 if t1 - t > 30:
                     print('  Retaining {} valid states after {} minute(s)'.format(n_states,
                                                                                   round((t1 - t0) / 60.0, 2)))
@@ -1333,7 +1333,7 @@ class FST:
         for state in to_delete:
             if trace:
                 deleted += 1
-                t1 = time.clock()
+                t1 = time.process_time()
                 if t1 - t > 60:
                     print('  Deleted {} states after {} minute(s)'.format(deleted,
                                                                           round((t1 - t0) / 60.0, 2)))
@@ -1354,7 +1354,7 @@ class FST:
         """
         if trace:
             print('Relabeling')
-            t0 = time.clock()
+            t0 = time.process_time()
             t = t0
             n_states = 0
 
@@ -1380,7 +1380,7 @@ class FST:
         for state in self.states():
             if trace:
                 n_states += 1
-                t1 = time.clock()
+                t1 = time.process_time()
                 if t1 - t > 30:
                     print('  Relabeled {} states after {} minute(s)'.format(n_states,
                                                                             round((t1 - t0) / 60.0, 2)))
@@ -1394,13 +1394,13 @@ class FST:
 
         weight = None
         if trace:
-            t0 = time.clock()
+            t0 = time.process_time()
             t = t0
             n_arcs = 0
         for arc in self.arcs():
             if trace:
                 n_arcs += 1
-                t1 = time.clock()
+                t1 = time.process_time()
                 if t1 - t > 30:
                     print('  Relabeled {} arcs after {} minute(s)'.format(n_arcs,
                                                                           round((t1 - t0) / 60.0, 2)))
@@ -3030,14 +3030,14 @@ class FST:
         composition.add_state(start_name)
         composition._set_initial_state(start_name)
 
-        t0 = time.clock()
+        t0 = time.process_time()
         t = t0
         while states:
             if trace > 1:
                 print('States {}'.format(states))
             state_pairs += 1
             if trace:
-                t1 = time.clock()
+                t1 = time.process_time()
                 if t1 - t > 60:
                     print('  Checked {} state pairs in {} minute(s)'.format(state_pairs,
                                                                             round((t1 - t0) / 60.0, 2)))

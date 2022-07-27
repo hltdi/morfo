@@ -1565,7 +1565,7 @@ class POSMorphology:
         """Exclude the feature value pair from the printed output."""
         if feat in feats_used:
             return True
-        if val is None or val is 0:
+        if val is None or val == 0:
             return True
         if feat in self.excl_feats:
             return True

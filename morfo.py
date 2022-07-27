@@ -5,7 +5,7 @@ This file is part of morfo, which is part of the PLoGS project.
 
     <http://homes.soic.indiana.edu/gasser/plogs.html>
 
-    Copyleft 2018, 2019, 2020.
+    Copyleft 2018, 2019, 2020, 2022.
     PLoGS and Michael Gasser <gasser@indiana.edu>.
 
     morfo is free software: you can redistribute it and/or modify

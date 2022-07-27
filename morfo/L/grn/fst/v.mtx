@@ -32,8 +32,8 @@ $ neg0
 ### PREFIJO NEGATIVO, YSAJA MBOTOVÉVA
 
 $ neg1
-  -> tmp2     +ndaipori+  [+neg,-negipv] # ndaipóri and variants
-  -> tmp1     +ndikatui+  [+neg,-negipv] # ndikatúi (alongside ndoikatúi)
+  -> tmp2     +ndaipori+  [+neg,-negipv,pp=None] # ndaipóri and variants
+  -> tmp1     +ndikatui+  [+neg,-negipv,pp=None] # ndikatúi (alongside ndoikatúi)
   [+neg,-negipv,pos=v]
     Da                    [cat=a,ps=2,ns=1];[cat=a,ps=1,ns=1,+clu];[cat=a,po=1];[cat=a,ps=3,po=2];
                           [cat=che,voz=smp,-rztrans,-trans];[cat=adj,voz=smp,-rztrans,-trans]
@@ -319,15 +319,15 @@ $ tmp2
 
 ### MA/VOI/NTE 1 (antes de tiempo2)
 $ mavointe1
-  !ma                   [asp=[+ma]]
+  !ma                   [asp=[+prf]]
   # !mante is 'obligatorily', seems to require va'erã; tonic mante is 'frequently'
   # va'erã almost always dominates the accent: 
   !mante                [misc=[+mante],+mante]        # obl: va'erã
   !manterei             [misc=[+manterei],+mante]     # obl: va'erã
   !ntevoi               [misc=[+voi,+nte],+nte1]
-  !ntema                [asp=[+ma],misc=[+nte],+nte1]
-  !gueter(e)i           [asp=[+gueteri]]
-  --
+  !ntema                [asp=[+prf],misc=[+nte],+nte1]
+  !gueter(e)i           [asp=[-prf,+gueteri]]
+  --                         [asp=[-prf]]
 
 ### TIEMPO 3, MODALIDAD
 $ tmp3
@@ -418,18 +418,18 @@ $ jepimavointe
   Xuévo                 [pp=kuevo]
   # possibly somewhere else (after -va)
   anga                  [misc=[+anga]]      # piedad
-  # here only because it can follow kuévo
-  !ma                   [asp=[+ma],pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+#  # here only because it can follow kuévo
+#  !ma                   [asp=[+prf2,-prf],pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
   !vo                   [pp=vo]
   !vonte                [misc=[+nte],pp=vo,-nte1]
   !voi                  [misc=[+voi],pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
   !nte                  [misc=[+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
   # tonic mante: 'frequently' (I think)
-  mante                 [asp=[+mante],-mante,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
-  !ntema                [misc=[+nte],asp=[+ma],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  mante                 [asp=[+mante,-prf],-mante,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !ntema                [misc=[+nte],asp=[-prf],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
   voínte                [misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
   !ntevoi               [misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
-  !ntemavoi             [asp=[+ma],misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !ntemavoi             [asp=[-prf],misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
   --                    [pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vove]
 
 ### RAMO 2 + JEPE 2
