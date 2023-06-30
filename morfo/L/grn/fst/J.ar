@@ -1,7 +1,0 @@
-%% Cambiar J a ñ antes de letras nasales (@n) (sustantivos)
-
-# %mult C
-
-J -> ñ
-
-* | * @n *

@@ -1,0 +1,190 @@
+name: qhichwa
+
+if: spa
+
+seg: a e f h i j m n ñ o r u w y
+     k l p q s t
+     ch chh ch' kh k' ll ph p' qh q' sh th t'
+     # foreign consonants
+     b d g v x z
+     # accented vowels
+     á é í ó ú -
+     # capitalized
+     A E F H I J M N Ñ O R U W Y B D G V X Z
+     K L P Q S T
+     Ch Chh Ch' Kh K' Ll Ph P' Qh Q' Sh Th T'
+
+feats:
+
+  pos: all todo
+
+  *pos (cat gramatical) = n (sustantivo) | v (verbo) | adj (adjetivo)
+
+  {pos, pos2} (n, agt): cat gram = sust (agente)
+  {pos, pos2} (n, cn): cat gram = sustantivo
+  {pos, pos2} (v, v): cat gram = verbo
+  {pos, pos2} (n, pron): cat gram = pronombre
+  {pos, pos2} (adj, adj): cat gram = adjetivo
+  {pos, pos2} (n, adj): cat gram = adjetivo
+  {pos, pos2} (n, inf): cat gram = sust (infin)
+  {pos, pos2} (n, nft): cat gram = sust (futuro)
+  {pos, pos2} (n, prt): cat gram = sust (part)
+  {pos, pos2} (n, ger): cat gram = sust (gerun)
+  {pos, pos2} (n, sub): cat gram = sust (subord)
+
+  rpos (cat gram de raíz) = adj (adjetivo) | n (sustantivo) | v (verbo)
+
+  *pos2 (subcat gramatical) = agt (agente) |
+                             ger (gerundio) |
+			     pron (pronombre) |
+			     sub (subordinador) |
+			     cn (sustantivo) |
+			     inf (infinitivo) |
+			     prt (part pretérito) |
+			     nft (fut nominal) |
+			     adj (adjetivo) |
+			     v (verbo)
+
+  *sb = pl = *False | True;
+        p1 = *False | True;
+        p2 = *False | True
+
+  {sb:p1, sb:p2, sb:pl} (True, True, True): sujeto = 1 prs plr incl
+  {sb:p1, sb:p2, sb:pl} (True, False, True): sujeto = 1 prs plr excl
+  {sb:p1, sb:p2, sb:pl, pos} (False, False, False, v): sujeto = 3 prs sing
+  {sb:p1, sb:p2, sb:pl} (False, False, True): sujeto = 3 prs plur
+  {sb:p1, sb:p2, sb:pl} (True, False, False): sujeto = 1 pers sing
+  {sb:p1, sb:p2, sb:pl} (False, True, False): sujeto = 2 prs sing
+  {sb:p1, sb:p2, sb:pl} (False, True, True): sujeto = 2 prs plur
+  {sb:p1, sb:p2} (True, False): sujeto = 1 prs
+  {sb:p1, sb:p2} (False, True): sujeto = 2 prs
+  {sb:p1, sb:p2, pos} (False, False, v): sujeto = 3 prs
+  {sb:pl, pos} (False, v): sujeto = singular
+  {sb:pl, pos} (True, v): sujeto = plural
+
+  *ob = pl = *False | True;
+        p1 = *False | True;
+        xpl = *False | True;
+        p2 = *False | True
+
+  {ob:p1, ob:p2, ob:pl, ob:xpl} (True, True, True, True): objeto = 1 prs plr incl
+  {ob:p1, ob:p2, ob:pl, ob:xpl} (True, False, True, True): objeto = 1 prs plr excl
+  {ob:p1, ob:p2, ob:pl, ob:xpl} (False, False, False, True): objeto = 3 prs sing
+  {ob:p1, ob:p2, ob:pl, ob:xpl} (False, False, True, True): objeto = 3 prs plur
+  {ob:p1, ob:p2, ob:pl, ob:xpl} (True, False, False, True): objeto = 1 pers sing
+  {ob:p1, ob:p2, ob:pl, ob:xpl} (False, True, False, True): objeto = 2 prs sing
+  {ob:p1, ob:p2, ob:pl, ob:xpl} (False, True, True, True): objeto = 2 prs plur
+  {ob:p1, ob:p2, ob:xpl} (True, False, True): objeto = 1 prs
+  {ob:p1, ob:p2, ob:xpl} (False, True, True): objeto = 2 prs
+  {ob:p1, ob:p2, ob:xpl} (False, False, True): objeto = 3 prs
+  {ob:pl, ob:xpl} (False, True): objeto = singular
+  {ob:pl, ob:xpl} (True, True): objeto = plural
+
+  *tam (tmp/asp/mod) = pp (pluscuamperfecto) = *False | True;
+        ps (pretérito) = *False | True;
+        ft (futuro) = *False | True;
+        cd (condicional) = *False | True;
+	im (imperativo) = *False | True
+
+  {tam:pp} (True): tmp/asp/mod + pluscuamperfecto
+  {tam:ps} (True): tmp/asp/mod + pretérito
+  {tam:ft} (True): tmp/asp/mod + futuro
+  {tam:cd} (True): tmp/asp/mod + condicional
+  {tam:im} (True): tmp/asp/mod + imperativo
+  {asp:prg} (True): tmp/asp/mod + progresivo
+  {asp:contin} (y): tmp/asp/mod + continuativo
+  {asp:contin} (n): tmp/asp/mod + discontinuativo
+
+  *asp = prg = *False | True;
+         contin = *None | y | n
+
+  der (derivación) = des (desiderativo) = *False | True;
+        aug (augmentativo) = *False | True;
+        fct (factitivo) = *False | True;
+	caus (causativo) = *False | True;
+        rcp (recíproco) = *False | True;
+	rfl (reflexivo) = *False | True;
+	incl (inclusivo) = *False | True;
+	inch (incoativo) = *False | True;
+	pos (posesivo) = *False | True;
+	dim (diminutivo) = *False | True;
+	cnsc (consecutivo) = *False | True;
+	lim (limitativo) = *False | True;
+	cisloc (cislocativo) = *False | True
+
+  cs (caso) = intrc (interactivo) = *False | True;
+       trm (terminativo) = *False | True;
+       ins (instrumental) = *False | True;
+       abl (ablativo) = *False | True;
+       caus (causativo) = *False | True;
+       prol (prolativo) = *False | True;
+       dstr (distributivo) = *False | True;
+       loc (locativo) = *False | True;
+       ben (benefactivo) = *False | True;
+       ill (ilativo) = *False | True;
+       pos (posicional) = *False | True;
+       gen (genitivo) = *False | True;
+       acc (acusativo) = *False | True
+
+  *prag (pragmática) = dbt (dubitativo) = *False | True;
+         progn (prognosticativo) = *False | True;
+         emot (emotivo) = *False | True;
+         nonassr (no asertivo) = *False | True;
+         top (tópico) = *False | True;
+	 resp (responsivo) = *False | True;
+	 ev = vald (validador) | rprt (reportativo);
+	 xplc (explicitativo) = *False | True;
+         emph (enfático) = *False | True;
+	 intj (interjectivo) = *False | True
+
+  {prag:dbt} (True): pragmática + dubitativo
+  {prag:progn} (True): pragmática + prognosticativo
+  {prag:emot} (True): pragmática + emotivo
+  {prag:nonassr} (True): pragmática + no asertivo
+  {prag:top} (True): pragmática + tópico
+  {prag:resp} (True): pragmática + responsivo
+  {prag:ev} (vald): pragmática + validador
+  {prag:ev} (rprt): pragmática + reportativo
+  {prag:xplc} (True): pragmática + explicitativo
+  {prag:emph} (True): pragmática + enfático
+  {prag:intj} (True): pragmática + interjectivo
+
+  pl (plural) = *False | True (+),
+
+  conj (conjunción) = cop (copulativo) = *False | True;
+         seq (secuencial) = *False | True;
+	 add (aditivo) = *False | True
+
+  *%tr = *False | True
+
+  *%t = es =
+
+  *%m = AGR3 =
+
+trans:
+  Loading morphological data for {0}{1} ... = Cargando datos morfológicos para {0}{1} ...
+  Make change to grammatical features? = ¿Cambiar propiedades gramaticales?
+  Please enter a digit between {0} and {1} = Por favor introduce un dígito entre {0} y {1}
+  Current grammatical features = Últimas propiedades gramaticales
+  You selected value {0} for {1} = Seleccionaste {0} para {1}
+  You selected feature {0} = Seleccionaste propiedad {0}
+  yes = sí
+  [{0}] Keep value at {1} = [{0}] Mantener valor {1}
+  Selection = Selección
+  Make another change to grammatical features? = ¿Cambiar otra propiedad gramatical?
+  Options = Opciones
+  True = +
+  False = -
+  word = palabra
+  root = raíz
+  affix = afijo
+  verb = verbo
+  v = verbo
+  noun = sustantivo
+  n = sustantivo
+  adjective = adjetivo
+  pronoun = pronombre
+  adverb = adverbio
+  POS = CG
+  Analyzing words in = Analizando palabras en
+  Writing analysis in = Escribiendo análisis en

@@ -1,7 +1,0 @@
-%% Change <h to r and delete <j and <ñ when $ precedes
-
-<h -> r
-<j -> 0
-<ñ -> 0
-
-* $ * | *

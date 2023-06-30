@@ -1,0 +1,10 @@
+%% Valores por defecto
+
+J -> j
+B -> p
+Q -> p
+X -> k
+<h -> t
+! -> 0
+
+* | *

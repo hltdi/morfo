@@ -1,0 +1,507 @@
+###
+### Morfotaxis del verbo y adjectivo: areal, aireal, chendal
+###
+### 2013.2.10
+###   Add stem end marker (fin_raíz) to prevent nasal harmony from being affected
+###   by suffixes.
+### 2013.8.13
+###   v_irr -> fin_raiz (instead of neg2); fixed things like ouse
+### 2014.10.18
+###   -> v.mtx, including vc as well as va, excluding suffixes after neg2
+### 2014.11.30
+###   Adding -Meve means we need a conjunction feature
+### 2015.2
+###   Added lots more suffix categories
+### 2015.3.4
+###   As complete as it's ever been
+### 2015.3.20...
+###   Features reorganized. A few more suffixes added.
+### 2015.3.29
+###   More feature reorganization.
+### 2015.4.10
+###   More feature reorganization
+### 2015.4.17
+###   neg=i|ỹ|tei|None in place of multiple neg features
+### 2017.3.7
+###   +-neg, +=negipv; person, number feats, etc. to match vG
+
+$ neg0
+  -> pro  [rel=sjoj];[rel=None,mod=opt];[-neg,-negipv];[pos=a];[+negipv,-neg]
+  --      [+neg,rel=None];[+neg,rel=obl]
+
+### PREFIJO NEGATIVO, YSAJA MBOTOVÉVA
+
+$ neg1
+  -> tmp2     +ndaipori+  [+neg,-negipv,pp=None] # ndaipóri and variants
+  -> tmp1     +ndikatui+  [+neg,-negipv,pp=None] # ndikatúi (alongside ndoikatúi)
+  [+neg,-negipv,pos=v]
+    Da                    [cat=a,ps=2,ns=1];[cat=a,ps=1,ns=1,+clu];[cat=a,po=1];[cat=a,ps=3,po=2];
+                          [cat=che,voz=smp,-rztrans,-trans];[cat=adj,voz=smp,-rztrans,-trans]
+    De                    [cat=a,ps=2,ns=0,po=3]
+    Do                    [cat=a,ps=1,ns=1,-clu,po=3];[cat=a,ps=1,po=2]
+    D                     [cat=a,ps=1,ns=0,po=3];[cat=a,ps=3,po=3]
+
+### PRONOMBRES: NÚMERO Y PERSONA, PAPAPY HA AVAITE
+
+$ pro
+  -> fin_raiz     +v_irr+     # saltar voz para verbos irregulares
+  # Adjectives don't need any prefix (and <h -> h, but what about reta?)
+  --                      [pos=a,cat=adj,subcat=0,-neg,-negipv]
+  ## 1 sing
+  # 1 sing sj; 3 or null oj
+  [ps=1,ns=0,po=3]
+    # areal
+    a                     [cat=a,mod=ind]
+    ta                    [cat=a,mod=opt]
+    che$                  [pos=v,cat=che,mod=ind];[pos=v,cat=adj,mod=ind]
+    tache$                [pos=v,cat=che,mod=opt];[pos=v,cat=adj,mod=opt]
+  # 1 sing oj; 2 or 3 sj
+  [po=1,no=0,+trans]
+    che$                  [cat=a,mod=ind,ps=2|3]
+  ## 2 sing.
+  # 2 sing sj; 3 or null oj
+  [ps=2,ns=0,po=3]
+    re                    [cat=a,mod=ind]
+    e                     [cat=a,mod=imp]
+    tere                  [cat=a,mod=opt]
+    De$                   [pos=v,cat=che,mod=ind];[pos=v,cat=adj,mod=ind]
+    taDe$                 [pos=v,cat=che,mod=opt];[pos=v,cat=adj,mod=opt]
+  # 2 sing oj; 1 or 3 sj
+  [po=2,no=0,+trans]
+    De$                   [cat=a,ps=3,mod=ind]
+    ro                    [cat=a,ps=1,-clu,mod=ind]
+    toro                  [cat=a,ps=1,-clu,mod=opt]
+  ## 3 sing./plur.
+  # 3 sj; 3 or null oj
+  [ps=3,po=3]
+    o                     [cat=a,mod=ind]
+    to                    [cat=a,mod=opt]
+    # 3 pred adjs have i-
+    I                     [pos=v,cat=che,mod=ind];[pos=v,cat=adj,mod=ind]
+    taI                   [pos=v,cat=che,mod=opt];[pos=v,cat=adj,mod=opt]
+  ## 1 plur. incl.
+  # 1 pi sj; 3 or null oj
+  [ps=1,ns=1,+clu,po=3]
+    Ja                    [cat=a,mod=ind]
+    taJa                  [cat=a,mod=opt]
+    ñaDe$                 [pos=v,cat=che,mod=ind];[pos=v,cat=adj,mod=ind]
+    tañaDe$               [pos=v,cat=che,mod=opt];[pos=v,cat=adj,mod=opt]
+  # 1 pi oj; 3 sj
+  ñaDe$                   [cat=a,po=1,no=1,+oclu,ps=3,+trans]
+  ## 1 plur. excl
+  # 1 pe sj; 3 or null oj
+  [ps=1,ns=1,-clu,po=3]
+    ro                    [cat=a,mod=ind]
+    toro                  [cat=a,mod=opt]
+    ore$                  [pos=v,cat=che,mod=ind];[pos=v,cat=adj,mod=ind]
+    taore$                [pos=v,cat=che,mod=opt];[pos=v,cat=adj,mod=opt]
+  # 1 pe oj; 2 or 3 sj
+  ore$                    [cat=a,po=1,no=1,-oclu,ps=2|3,+trans]
+  ## 2 plur.
+  # 2 plur sj; 3 or null oj
+  [ps=2,ns=1,po=3]
+    pe                    [cat=a,mod=ind|imp]
+    tape                  [cat=a,mod=opt]
+    peDe$                 [pos=v,cat=che,mod=ind];[pos=v,cat=adj,mod=ind]
+    tapeDe$               [pos=v,cat=che,mod=opt];[pos=v,cat=adj,mod=opt]
+  # 2 plur oj; 1 or 3 sj
+  [po=2,no=1,+trans]
+    peDe$                 [cat=a,ps=3,mod=ind]
+    po                    [cat=a,ps=1,-clu,mod=ind]
+    # estoy adivinando ...; no he leído nada sobre esta forma
+    tapo                  [cat=a,ps=1,-clu,mod=opt]
+
+### VOZ, ÑE'ẼAPOHO
+
+$ voz
+  # only a(i)real verbs without mood prefixes can be transitive
+  --                    [voz=smp,-rztrans,-rflx,-trans];[cat=a,voz=smp,+rztrans,+trans,-rflx];[pos=v,voz=smp,mod=None]
+  [voz=intrans,+rztrans,-rflx,-trans]
+    # v. subsuntiva (FdG)
+    poro  # objeto subsumido = persona (FdG)
+    mba'e # objeto subsumido = animal o cosa (FdG)
+  # Don't try these with lexical causative mbo/mo-
+  [voz=caus,-rztrans,+trans,-rflx]
+  # apparently Bo and guero can co-occur: -porombogueroguata- (Galeano's long example)
+  # Bo- -> mo-, mbo-, but also m(b)y-, m(b)u- before a and e
+    # v. coactiva (FdG)
+    Bo
+    # v. objetiva (FdG)        
+    guero
+  # v. pasiva / reflexiva
+  Je                   [voz=reflx,+rztrans,-trans,+rflx]
+  # v. reciproca
+  Jo                   [voz=recip,+rztrans,-trans,+rflx]
+  [voz=intrans_caus,-rztrans,-rflx,-trans]
+    poroBo              
+    poroguero
+    mba'eBo
+    mba'eguero
+  [voz=reflx_caus,-rztrans,-trans,+rflx]
+    JeBo
+    Jeguero
+  [voz=recip_caus,-rztrans,-trans,+rflx]
+    JoBo 
+    Joguero
+
+#  2 morphemes, not occurring? (except where second morpheme is lexical)
+#   BoJo
+#   BoJe
+#* no occurrences of 3 voice morphemes in data, though some in artificial examples
+#*  a=poro-mo-ño=mongeta (FdG)
+#*  no=poro-mbo-guero=guataseietereirasápakurihikóni (Galeano)
+#*  [voz=intrans_caus_reflx,+rztrans,oj=[-t,+r]]
+#*    poroBoJe
+#*    porogueroJe
+#*    mba'eBoJe
+#*    mba'egueroJe
+#*  [voz=intrans_caus_recip,+rztrans,-rflx,-trans]
+#*    poroBoJo  
+#*    porogueroJo 
+#*    mba'eBoJo 
+#*    mba'egueroJo 
+
+### PREFIJO DE RAIZ
+
+$ preraiz
+  # sometimes also with reflx
+  i                     [subcat=i,+trans,po=3];[subcat=i,+trans,po=2,ps=1];[subcat=i,-trans,-rflx]
+  gue                   [subcat=gue]
+# stricter rules for +gue with gue verbs
+#[subcat=gue,ps=3,po=3];[subcat=gue,ps=1,ns=1,-clu,po=3]
+  # 1p or 2p (3s) objects or passive/reflexive with gue verbs (allow it to be missing too)
+  re                    [subcat=gue,po=1];[subcat=gue,po=2,ps=3];[subcat=gue,voz=reflx,+rflx]
+  --                    [subcat=0];[pos=v,mod=None];
+                        [subcat=i,po=1];[subcat=i,po=2];[subcat=i,+rflx];
+			[subcat=gue]
+# stricter rules for -gue with gue verbs
+#[subcat=gue,ps=1,ns=0];[subcat=gue,ps=2];[subcat=gue,ps=1,ns=1,+clu]
+
+### RAIZ
+
+$ raiz
+  +ai_trans+            [+rztrans,cat=a,subcat=i]
+  +ai_intrans+          [-rztrans,cat=a,subcat=i]
+  +ague_trans+          [+rztrans,cat=a,subcat=gue]
+#  +ague_intrans+        [-rztrans,cat=a,subcat=gue]
+  +a_trans+             [+rztrans,cat=a,subcat=0]
+  +a_intrans+           [-rztrans,cat=a,subcat=0]
+  +che+                 [cat=a,-rztrans,subcat=0,voz=caus|intrans_caus|reflx_caus|recip_caus];[cat=che,subcat=0]
+  +adj+                 [cat=adj,subcat=0]
+
+$ fin_raiz
+  # marks the end of the root; needed to control spread of nasality
+  % 	      	     	[mod=ind];[mod=opt];[mod=imp];[pos=v,mod=None]
+
+### MEDIATIVO
+
+$ caus
+  uka                   [+med,-lexmed]
+  yka                   [+med,-lexmed]
+  --                    [-med]
+
+### SUFIJOS DERIVACIONALES Y QUASI-DERIVACIONALES
+
+$ der
+# Since the order is mostly unconstrained, record all known combinations
+# (not sure of most of these)
+  se                    [asp=[+vol]]
+  vy                    [misc=[+vy]]
+  # frus: also rãngue
+  rei                   [misc=[+rei]]
+  # colectivo; exige sujeto plural
+  joa                   [misc=[+joa],ns=1]      # colectivo (FdG)
+  Pa                    [misc=[+pa]]
+  # también después del negativo
+  jepe                  [misc=[+jepe]]
+  # dos katu: permisivo (FdG), katu: real, confirmativo?
+  katu                  [misc=[+katu]]
+  nunga                 [misc=[+nunga]]            # proximal (FdG)
+  # but it can follow NEG in ndaikatúigua'u
+  gua'u                 [misc=[+guau]]
+  'asy                  [misc=[+asy]]
+  # combinaciones
+  'asypa                [misc=[+pa,+asy]]
+  katupa                [misc=[+pa,+katu]]
+  serei                 [asp=[+vol],misc=[+rei]]
+  # ¿cómo distinguir órdenes diferentes?
+  sePa                  [asp=[+vol],misc=[+pa]]
+  segua'u               [asp=[+vol],misc=[+guau]]
+  gua'use               [asp=[+vol],misc=[+guau]]
+  Pase                  [asp=[+vol],misc=[+pa]]
+  reiPa                 [misc=[+rei,+pa]]
+  Parei                 [misc=[+rei,+pa]]
+  seParei               [asp=[+vol],misc=[+pa,+rei]]
+  Pajoa                 [misc=[+pa,+joa]]
+  # Reciprocal/collective, plural subjects
+  sejoa                 [misc=[+se,+joa],ns=1]
+  joavy                 [misc=[+se,+joa],ns=1]
+  # Really polysynthesis; do these belong?
+  porã                  [misc=[+porã]]
+  porãkatu              [misc=[+porã,+katu]]
+  vai                   [misc=[+vai]]
+  kuaa                  [misc=[+kuaa]]
+  kuaase                [misc=[+kuaa,+se]]
+  kuaasemi              [misc=[+kuaa,+se,+mi],mod=opt|ind|None]
+  guasu                 [misc=[+guasu]]
+  'imi                  [misc=[+imi]]
+  mi                    [misc=[+mi],mod=opt|ind|None]
+  mimi                  [misc=[+mimi]]
+  'aja                  [misc=[+aja]]
+  # where does this belong? how does it relate to noun -rãngue (frustrativo, +fut,+pas)
+  rãngue                [misc=[+rangue]]
+  rangue                [misc=[+rangue]]
+  # temporal; call them "aspect"
+  'ypy                  [asp=[+ypy]]
+  ñepyrũ                [asp=[+ñepyrũ]]
+  meme                  [asp=[+meme]]
+  je(v)y                [asp=[+jevy]]
+  --                    [asp=[-meme,-ypy,-vol,-ñepyrũ],misc=[-rei,-joa,-pa,-porã,-vai,-kuaa,-guasu,-mi,-rangue,-aja,-mimi,-imi,-katu,-guau]]
+
+### ADJECTIVIZATION
+### accommodates things like juhupyre but not yet ijuhupyre or ojuhupyre
+### nasality rule may not always be followed
+$ adj
+  # should this be +nom to include postpositions (not excluded now because it's not explicitly -nom)?
+  Pyre                  [cat=a|che,pos=adj,misc=[+pyre]]
+  # anything in this FST without Pyre is a verb
+  --                    [pos=v]
+
+### TIEMPO 1 -- antes del negativo; incluye conjuncion(es): Meve
+$ tmp1
+  mo'ã                  [tm=moã,+neg,-negipv,pp=None]
+  va'erã                [tm=vaerã,+neg,-negipv,pp=None]      # asp=[+obl]
+  (!)Meve               [pp=peve]    # until; = Peve in n.mtx; sometimes no !?
+  rire                  [pp=rire]    # after
+  !jave                 [pp=jave]    # while
+  !vove                 [pp=vove]    # while
+  # This is tonic ramo: recently; not sure it belongs here
+  ramo                  [asp=[+ramo],pp=None|jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
+  rõ                    [asp=[+ramo],pp=None|jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
+  ramoje(v)y            [asp=[+ramo,+jevy],pp=None|jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
+  ramomba               [asp=[+ramo],misc=[+pa],pp=None|jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
+  --                    [asp=[-ramo],pp=None|jepe|ramo|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vo|kuevo]
+
+### NEGATIVO (YSAJA MBOTOVÉVA) con o sin GRADO, KOKATU -- antes del negativo
+$ neg2
+  ## ve + neg
+  véi                   [grd=ve,+neg,-negipv,+pregrd]
+  ve'ỹ                  [grd=ve,+neg,-negipv,+pregrd]
+  ## ete, ite, te + neg
+  Etéi                  [grd=ete,+neg,-negipv,+pregrd]
+  Ete'ỹ                 [grd=ete,+neg,-negipv,mod=ind,+pregrd]
+  Etereíri              [grd=eterei,+neg,-negipv,+pregrd]
+  Eterei'ỹ              [grd=eterei,+neg,-negipv,mod=ind,+pregrd]
+  ## just negation
+  !Ri                   [+neg,-negipv,-pregrd,rel=None];[+neg,-negipv,-pregrd,rel=obl]
+  'ỹ                    [+neg,-negipv,mod=ind,-pregrd,rel=sjoj];[+neg,-negipv,mod=opt,-pregrd,rel=None]
+  --                    [-neg,-pregrd,-negipv];[+negipv,-pregrd,-neg]
+
+### GRADO, KOKATU -- después del negativo
+$ grd
+  # Rare; normally precedes negative
+  ve(*)                 [grd=ve,-pregrd]
+  'ive(*)               [grd=ive,-pregrd]
+  mive(*)               [grd=mive,-pregrd]
+  # ete, ite, te
+  Ete(*)                [grd=ete,-pregrd]
+  Eterei(*)             [grd=eterei,-pregrd]
+  rasa(*)               [grd=rasa,-pregrd]                        # no examples of this
+  Etereirasa(*)         [grd=etereirasa,-pregrd]                  # no examples of this
+  --                    [grd=None];[+pregrd]
+
+### TIEMPO 2 (ta, chéne)
+$ tmp2
+  # asp=[-obl]
+  !ta                   [tm=ta,mod=ind]
+  !chéne                [tm=chéne,+neg,-negipv,mod=ind]
+  --
+
+### MA/VOI/NTE 1 (antes de tiempo2)
+$ mavointe1
+  !ma                   [asp=[+prf]]
+  # !mante is 'obligatorily', seems to require va'erã; tonic mante is 'frequently'
+  # va'erã almost always dominates the accent: 
+  !mante                [misc=[+mante],+mante]        # obl: va'erã
+  !manterei             [misc=[+manterei],+mante]     # obl: va'erã
+  !ntevoi               [misc=[+voi,+nte],+nte1]
+  !ntema                [asp=[+prf],misc=[+nte],+nte1]
+  !gueter(e)i           [asp=[-prf,+gueteri]]
+  --                         [asp=[-prf]]
+
+### TIEMPO 3, MODALIDAD
+$ tmp3
+  ## va'ekue, va'erã, va can be relative/nominal or not; the asp feature is only relevant when they're not
+  # asp=[+plus]
+  va'ekue(*)            [tm=vaekue,mod=ind,rel=None,-negipv];[rel=sjoj,tm=None,mod=ind,-negipv]
+  va'ékue               [tm=vaekue,mod=ind,rel=None,-negipv];[rel=sjoj,tm=None,mod=ind,-negipv]
+  # asp=[+obl]
+  va'erã(*)             [tm=vaerã,prob=hi,-neg,-negipv,mod=ind,rel=None];[rel=sjoj,tm=None,-neg,-negipv,mod=ind]
+  # asp=[+hab]
+  !va                   [asp=[+va],mod=ind,rel=None,-negipv];[rel=sjoj,tm=None,mod=ind,-negipv]
+  # features not clear
+  va'e                  [rel=sjoj,+nom,mod=ind,-negipv]
+  # asp=[+perf]
+  'akue                 [tm=akue,rel=None,-nom,mod=ind,-negipv]
+  # asp=[+impf]
+  !mi                   [tm=mi,rel=None,-nom,mod=ind,-negipv]
+  # asp=[+dud]
+  !ne                   [tm=ne,rel=None,-neg,-negipv,-nom,mod=ind]
+  # asp=[+nec]
+  'arã                  [tm=arã,-neg,-negipv,rel=None,-nom,mod=ind]
+  ## "modos apodícticos" (FdG)
+  # impopt is a feature that "modifies" imperative or optative, softening or "hardening"
+  # imperativo terminante (FdG)
+  !ke                   [impopt=[+ke],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  # imperativo reiterativo (FdG)
+  !py                   [impopt=[+py],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  # rogativo cariñoso (FdG)
+  mi                    [impopt=[+mi],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  # rogativo común (FdG)
+  !na                   [impopt=[+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  # permisivo común (FdG)
+  !katu                 [impopt=[+katu],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  # permisivo de decisión (FdG)
+  !mba'e                [impopt=[+mbae],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  # ruego o duda (A&R)
+  !mo                   [impopt=[+mo],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  # combinaciones
+  !kena                 [impopt=[+ke,+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  mína                  [impopt=[+mi,+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  míke                  [impopt=[+mi,+ke],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  míkena                [impopt=[+mi,+ke,+na],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  !katuna               [impopt=[+na,+katu],mod=imp|opt,rel=None,-nom,-neg,-negipv]
+  # Really optative but morphologically indicative
+  !tei                  [rel=None,-nom,mod=ind,-neg,+negipv]
+  # asp=[-plus,-hab,-dud,-perf,-nec,-impf]
+  # oblique relativizers; where/to which, etc. X
+  ha(*)                 [rel=obl,+nom,tm=None,mod=ind,-negipv]
+  hague(*)              [rel=obl,+nom,tm=None,mod=ind,-negipv]
+  harã(*)               [rel=obl,+nom,tm=None,mod=ind,-negipv]
+  harangue(*)           [rel=obl,+nom,mod=ind,-negipv]
+  --                    [-negipv,impopt=[-mi,-mo,-ke,-na,-katu,-mbae],rel=None]
+
+### POSTPOSITIONS, CONJUNCTIONS (including haguã)
+$ pospnom
+  # future conjunction/postposition (~para)
+  haĝua(*)              [pp=haguã,rel=None,+nom,mod=ind,-negipv]
+  haguã(*)              [pp=haguã,rel=None,+nom,mod=ind,-negipv]
+  !Me                   [pp=pe,+nom,mod=ind]
+  !re                   [pp=re,+nom,mod=ind]
+  !icha                 [pp=icha,+nom,mod=ind]
+#  # los siguientes no requieren sufijo relativo (realmente conjunciones?)
+#  # do these belong here? or in NOMINALIZATION?
+#  rangue                [pp=rangue,mod=ind]
+#  rãngue                [pp=rangue,mod=ind]
+  # porque
+  !gui                  [pp=gui,mod=ind]
+  # desde que
+  !guive                [pp=guive,mod=ind]
+  --                    [pp=None|vove|kuevo|vo|ramo|jepe|ramojepe|peve|rire|jave|ramojepe]
+
+### INTERROGATIVE suffixes
+###   ?mod=ind, ?-nom
+### different feature for each suffix?
+$ inter
+  !pa                   [+inter]
+  !piko                 [+inter]
+  !iko                  [+inter]
+  !tiko                 [+inter]
+  !tepa                 [+inter]
+  --                    [-inter]
+
+### JEPI/KUEVO/ANGA (together for convenience only)
+### MA/VOI/NTE 2 (después de tiempo2)
+$ jepimavointe
+  !jepi                 [asp=[+jepi]]
+  # kuévo / nguévo
+  Xuévo                 [pp=kuevo]
+  # possibly somewhere else (after -va)
+  anga                  [misc=[+anga]]      # piedad
+#  # here only because it can follow kuévo
+#  !ma                   [asp=[+prf2,-prf],pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !vo                   [pp=vo]
+  !vonte                [misc=[+nte],pp=vo,-nte1]
+  !voi                  [misc=[+voi],pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !nte                  [misc=[+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  # tonic mante: 'frequently' (I think)
+  mante                 [asp=[+mante,-prf],-mante,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !ntema                [misc=[+nte],asp=[-prf],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  voínte                [misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !ntevoi               [misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  !ntemavoi             [asp=[-prf],misc=[+voi,+nte],-nte1,pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue]
+  --                    [pp=None|jepe|peve|jave|ramo|rire|haguã|gui|guive|pe|re|icha|ramojepe|rangue|vove]
+
+### RAMO 2 + JEPE 2
+$ ramo2
+  !ramo                 [pp=ramo]
+  !rõ                   [pp=ramo]
+  !mo                   [pp=ramo]
+  !maramo               [asp=[+maramo]]
+  !jepe                 [pp=jepe]  # often !ramojepe; can follow vonte
+  !ramojepe             [pp=ramojepe]
+  !rõjepe               [pp=ramojepe]
+  --                    [pp=None|peve|jave|rire|haguã|gui|guive|pe|re|icha|vo|kuevo|vove|rangue]
+
+### NDA / JE / KO and combinations, etc.
+$ ndajeko
+  ## maybe a separate feature for ndaje(ko), je(ko), niko, nipo: narrativo (FdG, TZ)
+  # je(ko) = ndaje(ko) [seems nda can't occur alone]; what about ko?
+  !je(ko)               [misc=[+je]]
+  !ndaje(ko)            [misc=[+ndaje]]
+  # niko = ningo = ngo; seems there is no nasal agreement with verb root?
+  !niko                 [misc=[+niko]]
+  !ningo                [misc=[+ningo]]
+  !ngo                  [misc=[+ngo]]
+  # nipo = nimbo; nasal agreement with verb root?
+  !nipo                 [misc=[+nipo]]
+  !nimbo                [misc=[+nimbo]]
+  # not in A&R
+  !pipo                 [misc=[+pipo]]
+  ## may not belong in this category/slot
+  # enfasis (A&R)
+  !ko                   [misc=[+ko]]
+  !nga'u                [misc=[+ngau]]             # anhelativo (FdG)
+  # must follow va'erã?
+  !mo'ã                 [misc=[+moã]]
+  --
+
+### AÍNA, ... KURI
+# hína can't occur with hikóni
+$ hina
+  'aína                 [asp=[+prg,-hikóni],ps=1,ns=0]
+  reína                 [asp=[+prg,-hikóni],ps=2,ns=0]
+  hína                  [asp=[+prg,-hikóni],ps=3]
+  ñaína                 [asp=[+prg,-hikóni],ps=1,ns=1,+clu]
+  roína                 [asp=[+prg,-hikóni],ps=1,ns=1,-clu]
+  peína                 [asp=[+prg,-hikóni],ps=2,ns=1]
+  # asp=[+rec]
+  kurihína              [tm=kuri,asp=[+hína,-hikóni],mod=ind]
+  --
+
+### RAKA'E, RA'E, KURI (which can also precede hína)
+$ rakaekuri
+  # asp=[+rec]
+  !kuri                 [tm=kuri,mod=ind]
+  # asp=[+rem]
+  raka'e                [tm=rakae,mod=ind]
+  #? is this a past tense?
+  ra'e                  [asp=[+rae],mod=ind]
+  !kurira'e             [tm=kuri,asp=[+rae],mod=ind]
+  --                    [asp=[-rae]]
+
+### AIKÓNI...
+$ hikoni
+  'aikóni               [asp=[+hikóni],ps=1,ns=0]
+  reikóni               [asp=[+hikóni],ps=2,ns=0]
+  hikóni                [asp=[+hikóni],ps=3]
+  ñaikóni               [asp=[+hikóni],ps=1,ns=1,+clu]
+  roikóni               [asp=[+hikóni],ps=1,ns=1,-clu]
+  peikóni               [asp=[+hikóni],ps=2,ns=1]
+  --                    [asp=[-hikóni]]
+
+# Only needed if suffix file is used
+#$ end
+#  # This removes all previous accents
+#  *
+#  --

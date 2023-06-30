@@ -1,7 +1,0 @@
-%% Cambia p/k a mb/ng después de letras nasales en la raíz
-
-P -> mb
-# T -> nd
-# K -> ng
-
-* @N * | *

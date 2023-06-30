@@ -1,0 +1,9 @@
+%% Cambiar B/D/J a m/n/ñ antes de letras nasales (@n)
+
+%mult LC C
+
+B -> m
+D -> n
+J -> ñ
+
+* | * @n * % *

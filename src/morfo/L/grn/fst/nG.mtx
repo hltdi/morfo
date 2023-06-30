@@ -1,0 +1,219 @@
+###
+### Morfotaxis del sustantivo guaraní (generación)
+###
+###
+### 2015.04.14
+###   Created from n.mtx
+
+### POSESIÓN
+# se supone que, salvo 3 persona pronominal, sea palabra separada
+
+$ poses
+  -> plur     +n_pre_irr+   # saltar raíz para sustantivos irregulares
+  -> neg      +pro_irrG+    # saltar raíz y plural
+  -> end      +pro_irr_ppG+ # saltar raíz y caso para pronombres + posposiciones
+  ## posesión external, e.g., retã
+  che_^                    [poses=[pp=1,np=0,+ext]]                    
+  De_^                     [poses=[pp=2,np=0,+ext]]    # ;[poses=[pp=23,np=0,+ext]]
+  ñaDe_^                   [poses=[pp=1,np=1,+clu,+ext]]
+  ore_^                    [poses=[pp=1,np=1,-clu,+ext]]
+  peDe_^                   [poses=[pp=2,np=1,+ext]]
+  ^                        [poses=[pp=3,+ext]]         # ;[poses=[pp=23,+ext]]
+  ## posesión de 3p morfológica ('internal') (3 pers), e.g., hetã, itata
+  I                        [poses=[pp=3,-ext]]              #[pp=3,poses=int]
+  ## ninguna posesión, e.g., tetã, tata
+  --                       [poses=[pp=0]]                   #[poses=None]
+
+### PREFIJOS DERIVACIONALES
+# Will any je- nouns be generated?
+$ je
+  We                    [subcat=[+pre],-anim,der=[+je]]
+  --                    [subcat=[-pre],der=[-je]]
+
+### RAIZ
+
+$ raiz
+  ## Categoria de raíz: s
+  # these can take loc suffixes (-ha, etc.), usually with possessive prefix
+  -> loc   +n_raizG+    [pos=n]
+  # these are derived from verbs or other nouns with suffix -'va
+  -> caso  +n_va+       [pos=n,+va,-pregrd,dim=None,tm=None,n=0,-prepregrd]
+  # already have je/ñe- prefix
+  -> loc   +n_je+       [pos=n,der=[-je]]
+  # already have -ha suffix
+  -> loc   +n_ha+       [pos=n,der=[-ha,-hára],-va]
+  # already have -hára suffix
+  -> loc   +n_haraG+    [pos=n,der=[-hára,-ha],-va]
+  # Names and places can't take !va or derivational affixes
+  -> dim   +n_name+     [pos=n,n=0,poses=[pp=0],grd=None,-neg,-adj,subcat=[-pre,-suf],-va]
+  -> dim   +n_place+    [pos=n,n=0,poses=[pp=0],grd=None,-neg,-anim,-adj,subcat=[-pre,-suf],-va]
+  ## Categoria de raíz: v (incluso adjetivos)
+  -> loc     +vG+       [pos=n,subcat=[+pre],-va];[pos=n,subcat=[+suf],-va]
+
+### Derivación: v -> s; locativo, etc.
+# How many of these will be actually generated?
+# % indica fin de la raíz verbal; necesario para regla de nasalización
+$ loc
+  # verb roots, internally possessed nouns, and occasionally unpossessed nouns
+  %ha                   [der=[+ha,-kue,-rã],subcat=[+suf]]
+  %hague                [der=[+ha,+kue,-rã],subcat=[+suf],+pas]
+  %harã                 [der=[+ha,+rã,-kue],subcat=[+suf],+fut]
+  # only with verb roots?
+  %hára                 [der=[+hára],subcat=[+suf],+anim]
+  # mby immediately after nasal? (requiring P rule)
+  # only with verb roots?
+  %Qy                   [der=[+py],subcat=[+suf]]
+  %hare                 [der=[+ha,+re],subcat=[+suf]]
+  %                     [der=[-ha,-re,-kue,-rã,-hára,-py],subcat=[-suf]]
+
+### Diminutivo (ubicación no segura)
+# all fairly productive
+$ dim
+  mi                [dim=mi]
+  'i                [dim=i]
+  'imi              [dim=imi]
+  ra'y              [dim=ray]
+  --                [dim=None]
+
+### TIEMPO: antes de CASO
+
+$ tmp1
+  Xue               [tm=kue,+pas]
+  re                [tm=re,+pas]
+  rã                [tm=rã,+fut,poses=[pp=0]];[tm=rã,+fut,poses=[+ext]]
+  # internal possession variant of rã (according to A&R)
+  guã               [tm=rã,+fut,poses=[-ext]]
+  rãngue            [tm=rangue,+fut,+pas]
+## not productive with nouns
+#  'akue             [tm=akue,+pas]
+# +pas,+fut possible with guare, hague, harã
+  --                [tm=None]
+
+### PLURAL (ANTES O DESPUÉS DEL NEGATIVO?)
+
+$ plur
+  # realize X as k or ng
+  Xuéra             [n=1]
+  --                [n=0]
+
+### SUFIJO NEGATIVO 1, YSAJA MBOTOVÉVA 
+
+$ neg
+  # how are these different?
+  'ỹ                    [+neg,-prepregrd]
+#  'ỹre                  [+neg,-prepregrd]
+  ve'ỹ                  [+neg,grd=ve,+prepregrd]
+#  ve'ỹre                [+neg,grd=ve,+prepregrd]
+  --                    [-neg,-prepregrd];[grd=ve]
+
+### Adjectivizante (antes de caso)
+# not sure about the feature (adj vs. noun?)
+$ adj
+  !va               [+adj,+va]
+  --                [-adj,-va]
+
+### GRADO, KOKATU 1
+
+$ pregrd
+  --                    [-pregrd]
+  ve                    [grd=ve,+c,+pregrd,-prepregrd]
+  'ive                  [grd=ive,+c,+pregrd,-prepregrd]
+  Ete                   [grd=ete,+c,+pregrd]
+  Eterei                [grd=eterei,+c,+pregrd]
+
+### CASO
+### Allow multiple values for caso (guy+pe, pe+gua+re)
+
+$ caso
+  !Be           [caso=pe,+c,-va]
+  !Beve         [caso=peve,+c,-va]
+  !gui          [caso=gui,+c,-va]
+  !guive        [caso=guive,+c,-va]
+  !re           [caso=re,+c,-va]
+  !vo           [caso=vo,+c,-va]
+  !icha         [caso=icha,+c,-va]
+  ichagua       [caso=ichagua,+c]
+  guy           [caso=guy,+c]
+  guype         [caso=guype,+c]
+  ndi           [caso=ndi,+c]
+  gua           [caso=gua,+c]
+  guare         [caso=gua,+pas,+c]
+  Begua         [caso=pegua,+c]
+  Beguare       [caso=pegua,+c,+pas]
+  ygua          [caso=ygua,+c]
+  pype          [caso=pype,+c]
+  pýpe          [caso=ypype,+c]
+  'ári          [caso=ari,+c]
+  # solo con expresiones de tiempo
+  !vove         [caso=vove,+c,-va]
+  # stress with -'va-derived nouns
+  pe           [caso=pe,+c,+va]
+  peve         [caso=peve,+c,+va]
+  gui          [caso=gui,+c,+va]
+  guive        [caso=guive,+c,+va]
+  re           [caso=re,+c,+va]
+  vo           [caso=vo,+c,+va]
+  icha         [caso=icha,+c,+va]
+  vove         [caso=vove,+c,+va]
+  --            [caso=None,-c]
+
+### GRADO, KOKATU 2
+
+$ grd
+  --                    [grd=None];[+pregrd]
+  ve                    [grd=ve,-pregrd,-prepregrd]
+  'ive                  [grd=ive,-pregrd,-prepregrd]
+  Ete                   [grd=ete,-pregrd]
+  Eterei                [grd=eterei,-pregrd]
+  rasa                  [grd=rasa,-pregrd]
+  Etereirasa            [grd=etereirasa,-pregrd]
+
+### RAMO, RÕ
+### Rare with real nouns, more often with adjectives and adverbs
+
+$ ramo
+  --                    [-conjet]
+#  !ramo                 [+conjet]
+  !rõ                   [+conjet]
+
+### INTERROGATIVE
+$ inter
+  !pa                   [+inter]
+#  !piko                 [+inter]
+#  !iko                  [+inter]
+  --                    [-inter]
+
+### MA/VOI/NTE
+$ mavointe
+  # ¿Por qué es "ma" posible con sustantivos: tapicháma?; sí con adjetivos?
+  !ma                   [asp=[+ma]]
+  # !mante: obligatorily or mante: frequently??
+  !mante                [asp=[+mante]]
+  !manterei             [asp=[+manterei]]
+  !katu                 [asp=[+katu]]
+  katúma                [asp=[+katu,+ma]]
+  !nte                  [asp=[+nte]]
+  # is tonic voi another suffix?
+  !voi                  [asp=[+voi]]
+  !ntevoi               [asp=[+nte,+voi]]
+  !ntema                [asp=[+ma,+nte]]
+  --                    [asp=[-ma,-mante,-manterei,-katu,-voi,-nte]]
+
+### NDA / JE / KO and combinations, etc.
+$ ndajeko
+  !ndaje                [asp=[+ndaje]]
+#  !je(ko)               [asp=[+ndaje]]
+#  !ndajeko              [asp=[+ndaje]]
+#  !ngo                  [asp=[+niko]]
+#  !ko                   [asp=[+niko]]
+  !niko                 [asp=[+niko]]
+#  !ningo                [asp=[+niko]]
+  !nga'u                [asp=[+ngau]]
+  !nipo                 [asp=[+nipo]]
+#  !pipo                 [asp=[+nipo]]
+  --                    [asp=[-ndaje,-niko,-ngau,-nipo]]
+
+$ end
+#  # This removes all previous accents
+#  *
+  --

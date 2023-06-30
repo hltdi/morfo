@@ -1,0 +1,5 @@
+%% Realize the R as r following i,í,ĩ
+
+R -> r
+
+* @i | *

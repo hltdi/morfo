@@ -1,5 +1,0 @@
-ndaipóri         pori        [pos=v,cat=che,voz=smp,-trans,-rflx,-rztrans,ps=3,po=3,-pregrd]
-ndaipori         pori        [pos=v,cat=che,voz=smp,-trans,-rflx,-rztrans,ps=3,po=3,-pregrd]
-ndaiporivéi      pori        [pos=v,cat=che,voz=smp,-trans,-rflx,-rztrans,ps=3,po=3,grd=ve,+pregrd]
-ndaiporimo'ãi    pori        [pos=v,cat=che,voz=smp,-trans,-rflx,-rztrans,ps=3,po=3,tm=moã,tmp=fut,cnj=None,-pregrd]
-ndaiporimo'ãvéi  pori        [pos=v,cat=che,voz=smp,-trans,-rflx,-rztrans,ps=3,po=3,tm=moã,tmp=fut,cnj=None,grd=ve,+pregrd]

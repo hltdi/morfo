@@ -1,5 +1,0 @@
-%% Change I to hi' before accented vowel; can only happen once.
-
-I00 -> hi'
-
-* | @V *

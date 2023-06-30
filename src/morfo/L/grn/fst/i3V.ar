@@ -1,0 +1,5 @@
+%comment Inserta J después de I y antes de vocal; puede ocurrir solo una vez.
+
+0 -> J
+
+* I | @v *

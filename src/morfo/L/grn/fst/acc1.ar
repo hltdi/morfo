@@ -1,0 +1,7 @@
+%% Eliminar todo ! después de vocales con acentos (@V)
+
+%mult C RC
+
+! -> 0
+
+* @V * | -!*

@@ -1,0 +1,13 @@
+guyru
+peju
+pipi
+pirakutu
+poreno
+py'apy
+tykua
+typei
+typeka
+pohéi
+py'amyaña
+py'aperere
+pyhéi

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css')}}" />
+
+<style type="text/css">
+table.example
+{
+    border: 1px solid black;
+    padding: 5px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+table.example tr td,th
+{
+    border: 1px solid black;
+    padding: 3px;
+}
+</style>
+
+<title>
+morfo: análisis y generación morfológica
+</title>
+
+<script>
+function ingresar() {
+    form = document.getElementById("form");
+    form.action = "login";
+    form.submit();
+}
+function traducir() {
+    form = document.getElementById("form");
+    document.getElementById("cargando").innerHTML = "<p></p><span class='cargando'>Cargando base de datos (podría tardarse)...</span><p></p>";
+    form.action = "tra";
+    form.submit();
+}
+/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+function mostrarDespleg() {
+    menu = document.getElementById("menudespleg");
+    list = menu.classList;
+    list.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.despleg')) {
+    var dropdowns = document.getElementsByClassName("contenido-despleg");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+<form action='login' id='form' method="post">
+
+<table class="left">
+  <tr class="white">
+    <td class="title">
+    <a href="base">
+    <img class='banner' src="{{url_for('static',
+      filename='banner_logo.png')}}" alt="" width="315px"
+      height="56px" />
+    </a>
+    </td>
+
+    <td class="title" style="width: 490px"></td>
+
+    <td class="menu" style="width: 250px">
+      <div class='despleg-wrap'>
+      <button type="button" class="despleg" onclick="mostrarDespleg()">SELECCIONAR IDIOMA ▾</button>
+      <div id="menudespleg" class="contenido-despleg">
+        <span class='opinic' onclick="idioma('spa')">ESPAÑOL</span>
+	<span class='opinic' onclick="idioma('grn')">GUARANÍ</span>
+	<span class='opinic' onclick="idioma('qu')">QHICHWA</span>
+	<span class='opinic' onclick="idioma('quc')">K'ICHE'</span>
+	<span class='opinic' onclick="idioma('om')">AFAAN OROMOO</span>
+	<span class='opinic' onclick="idioma('am')">አማርኛ</span>
+	<span class='opinic' onclick="idioma('ti')">ትግርኛ</span>
+      </div>
+      </div>
+    </td>
+    <td class="menu" style="width: 180px">
+       <button class="menu" onclick="ingresar()">INICIAR SESIÓN</button>
+    </td>
+    <td class="menu" style="width: 135px">
+      <button class="menu" onclick="acerca()">ACERCA DE</button>
+    </td>
+    <td class="menu" style="width: 130px">
+      <button class="menu" onclick="contacto()">CONTACTO</button>
+    </td>
+  </tr>
+</table>  
+<input type="hidden" name="labrev" value="">
+<hr>
+
+<h1>
+<span class='morfo'>
+<span class='brown'>m</span><span class='green'>o</span><span
+  class='red'>r</span><span class='blue'>f</span><span
+  class='magenta'>o</span></span>:
+el proyecto
+</h1>
+
+<div id="cargando">
+  <p>
+  <span class='morfo'>
+  <span class='brown'>m</span><span class='green'>o</span><span
+  class='red'>r</span><span class='blue'>f</span><span
+  class='magenta'>o</span></span>
+  es un componente del proyecto <a href="http://homes.soic.indiana.edu/gasser/plogs_es.html">
+  <strong>Procesamiento de Idiomas del
+  Sur Global</strong></a> (PISur), dirigido por Michael Gasser, profesor
+  asociado em&eacute;rito de la <a
+  href="http://www.soic.indiana.edu/">Escuela de Informática,
+  Computación, y Ingeniería</a> de la <a href="https://www.indiana.edu/">Universidad de Indiana</a> en Estados
+  Unidos de Am&eacute;rica.
+  </p>
+
+  <h2>Motivación</h2>
+
+<p>
+  </p>
+
+<h2>Trasfondo teórico</h2>
+  <p>
+</p>
+
+<h2>Metas</h2>
+
+<p>
+  </p>
+  
+<h2>Bibliografía</h2>
+
+<p id="ref1">
+</p>
+
+<p id="ref2">
+</p>
+
+</div>
+</form>
+
+</body>
+</html>
