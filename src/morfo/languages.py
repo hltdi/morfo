@@ -116,15 +116,15 @@ def get_language(language, load=True, phon=False, segment=False, guess=True,
     if isinstance(language, Language):
         return language
     lang_id = get_lang_id(language)
-    lang = LANGUAGES.get(lang_id, None)
+#    lang = LANGUAGES.get(lang_id, None)
     print("** Found language in LANGUAGES")
-    if not lang:
-        if load:
-            print("** Loading language {}".format(lang_id))
-            if not load_lang(lang_id, phon=phon, segment=segment, guess=guess,
+#    if not lang:
+    if load:
+        print("** Loading language {}".format(lang_id))
+        if not load_lang(lang_id, phon=phon, segment=segment, guess=guess,
                              load_morph=load_morph, cache=cache,
                              verbose=verbose):
-                return False
+            return False
         return LANGUAGES.get(lang_id, None)
     if load_morph and not lang.morpho_loaded:
         print("** Loading morphology")
