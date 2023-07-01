@@ -117,6 +117,7 @@ def get_language(language, load=True, phon=False, segment=False, guess=True,
         return language
     lang_id = get_lang_id(language)
     lang = LANGUAGES.get(lang_id, None)
+    print("** Found language in LANGUAGES")
     if not lang:
         if load:
             print("** Loading language {}".format(lang_id))
@@ -126,11 +127,13 @@ def get_language(language, load=True, phon=False, segment=False, guess=True,
                 return False
         return LANGUAGES.get(lang_id, None)
     if load_morph and not lang.morpho_loaded:
+        print("** Loading morphology")
         lang.load_morpho(phon=phon, segment=segment, guess=guess)
         return lang
     if not load_morph:
         return lang
     fst = lang.get_fsts(phon=phon, segment=segment)
+    print("** Couldn't find FSTs")
     if not fst and load:
         print("You cannot do both morphological analysis and segmentation in the same session!")
         if segment:
