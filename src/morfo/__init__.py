@@ -1,7 +1,7 @@
 """
 This file is part of morfo, which is a project of PLoGS.
 
-Copyleft 2018, 2019, PLoGS and Michael Gasser.
+Copyleft 2018, 2019, 2023. PLoGS and Michael Gasser.
 
     morfo is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,27 +21,54 @@ Author: Michael Gasser <gasser@indiana.edu>
 
 # __all__ = ['languages', 'language', 'morphology', 'strip', 'session', 'fst']
 
-from flask import Flask, url_for, render_template
+from flask import Flask, url_for, render_template, session
+from flask_session import Session
 _version = '1.0'
 
 from .trans import *
 
-app = Flask(__name__)
-app.config.from_object(__name__)
-
 print('\n@@@@ This is morfo, version {} @@@@\n'.format(_version))
 
-def init_session(lg_abbrev, user=None, segment=False, web=True):
+app = Flask(__name__)
+SESSION_TYPE = 'filesystem'
+app.config.from_object(__name__)
+Session(app)
+
+INTERACTION = None
+
+@app.route('/set/')
+def set():
+    session['key'] = 'value'
+    return 'ok'
+
+@app.route('/get/')
+def get():
+    return session.get('key', 'not set')
+
+#print("** app session interface: {}".format(app.session_interface))
+
+def init_session(lg_abbrev, user=None, segment=False, web=True, session=None, interaction=None):
     """Create a session with the given language and user."""
-    language = get_language(lg_abbrev, segment=segment)
+    print("*** Creating interaction with session {}".format(session))
+    if web:
+        if 'languages' not in session:
+            session['languages'] = {''}
+        if 'user' not in session:
+            session['user'] = User()
+    if not interaction:
+        # Create a MorfoSession for non-web interaction
+        interaction = Interaction(user=user)
+    language = get_language(lg_abbrev, segment=segment, session=session, interaction=interaction)
     if not language:
         print("WARNING: language {} not found!".format(lg_abbrev))
     if web:
+        session['language'] = lg_abbrev
         # Set web data for language
         language.set_web()
-    return Session(language, user=user)
+    return interaction
+#    return Interaction(language, user=user)
 
-def exit(session=None, save=True, cache=''):
+def exit(session, save=True, cache=''):
     """Exit the program, caching any new analyses for each loaded language
     if save is True."""
     print("Quitting...")
@@ -49,9 +76,12 @@ def exit(session=None, save=True, cache=''):
         really_save = input("Are you sure you want to discard new anaylses?\n[Y]es/[N]o ")
         if really_save and really_save[0].lower() == 'y':
             return
-    for abbrev, language in languages.LANGUAGES.items():
-        language.write_cache(name=cache)
-    languages.LANGUAGES.clear()
+    for abbrev in session['languages']:
+        print("** Should be writing language {} here ***".format(abbrev))
+#        languages.LANGUAGES.items():
+#        language.write_cache(name=cache)
+    session['languages'] = set()
+#    languages.LANGUAGES.clear()
 
 def load(language, phon=False, segment=False, load_morph=True, cache='',
          guess=True, verbose=False):
@@ -108,6 +138,7 @@ def seg_file(language, infile, outfile=None,
 def anal_word(language, word, root=True, citation=True, gram=True,
               roman=False, segment=False, guess=False, dont_guess=False,
               web=None, cache='', rank=True, freq=True, nbest=100, raw=False,
+              interaction=None,
               display_feats=None):
     '''Analyze a single word, trying all available analyzers, and print out
     the analyses.
@@ -146,7 +177,11 @@ def anal_word(language, word, root=True, citation=True, gram=True,
     @return:         a list of analyses (if raw is True); dict of features (if web is True)
     @rtype:          list of (root, feature structure) pairs or string->string dict
     '''
-    language = get_language(language, cache=cache, phon=False, segment=segment)
+    global INTERACTION
+    if not INTERACTION:
+        INTERACTION = init_session(language, web=False)
+#        interaction = Interaction()
+    language = get_language(language, cache=cache, phon=False, segment=segment, interaction=INTERACTION)
     if language:
         if web:
             web = []

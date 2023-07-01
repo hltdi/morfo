@@ -4,7 +4,7 @@
 #
 #   This file is part of morfo: morphological analysis and generation.
 #
-#   Copyleft 2018 PLoGS <gasser@indiana.edu>
+#   Copyleft 2018, 2023. PLoGS <gasser@indiana.edu>
 #   
 #   This program is free software: you can redistribute it and/or
 #   modify it under the terms of the GNU General Public License as
@@ -24,10 +24,10 @@
 # Created 2018.9.11
 
 from flask import request, session, g, redirect, url_for, abort, render_template, flash
-from morfo import app, exit, load, anal_word, seg_word, gen, init_session
+from morfo import app, exit, load, anal_word, seg_word, gen, init_session, INTERACTION
 
 # Global variables for views; probably a better way to do this...
-LANGUAGE = ANALYSES = USER = WORD = SESSION = IF = None
+LANGUAGE = ANALYSES = USER = WORD = IF = None
 USERS_INITIALIZED = False
 ANAL_INDEX = 0
 # Abbreviations of languages already loaded
@@ -45,7 +45,7 @@ ANAL_INDEX = 0
 def analyze():
     """Returns a list of dicts of features and values."""
     global ANALYSES
-    ANALYSES = anal_word(LANGUAGE.abbrev, WORD, web=True)
+    ANALYSES = anal_word(LANGUAGE, WORD, web=True, interaction=INTERACTION)
 
 #@app.route('/')
 #def index():
@@ -54,16 +54,19 @@ def analyze():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    global SESSION
+    global INTERACTION
     global LANGUAGE
     global IF
     form = request.form
     print("index form: {}".format(form))
+    print("*** session {}".format(session))
     if 'labrev' in form:
         lg_abbrev = form.get('labrev')
         print("** Got lg_abbrev {}".format(lg_abbrev))
-        SESSION = init_session(lg_abbrev, user=USER)
-        LANGUAGE = SESSION.language
+        INTERACTION = init_session(lg_abbrev, user=USER, session=session)
+        print("*** INTERACTION: {}".format(INTERACTION))
+        LANGUAGE = INTERACTION.get('language') # language
+#        LANGUAGE = session.get('language')
         IF = LANGUAGE.get_if_dict()
         print("new session with {}, dict {}".format(LANGUAGE, IF))
         return render_template('anal.html',
@@ -138,12 +141,10 @@ def acct():
 #    print("In acct...")
     return render_template('acct.html', language=LANGUAGE)
 
-# View for quick version of program that displays sentence and its translation in
-# side-by-side windows.
 @app.route('/anal', methods=['GET', 'POST'])
 def anal():
     global WORD
-    global SESSION
+    global INTERACTION
     global LANGUAGE
     global ANAL_INDEX
     global ANALYSES
@@ -157,16 +158,16 @@ def anal():
         current_lg_abbrev = LANGUAGE.abbrev
         if lg_abbrev and current_lg_abbrev != lg_abbrev:
             print("Changing language...")
-            SESSION = init_session(lg_abbrev, user=USER)
-            LANGUAGE = SESSION.language
+            INTERACTION = init_session(lg_abbrev, user=USER, session=session)
+            LANGUAGE = INTERACTION.get('language')#.language
             ANALYSES = WORD = None
             ANAL_INDEX = 0
         webdata = LANGUAGE.webdata
 #    print("Form abbrev {}, current abbrev {}".format(lg_abbrev, current_lg_abbrev))
-    if not SESSION:
+    if not INTERACTION:
 #        print("Creating session for {}".format(lg_abbrev))
-        SESSION = init_session(lg_abbrev, user=USER)
-        LANGUAGE = SESSION.language
+        INTERACTION = init_session(lg_abbrev, user=USER, session=session)
+        LANGUAGE = INTERACTION.get('language') #.language
     username = USER.username if USER else ''
 #   AYUDA
 #    if 'ayuda' in form and form['ayuda'] == 'true':
@@ -227,12 +228,12 @@ def fin():
 #    print("Form for fin: {}".format(form))
     modo = form.get('modo')
     global LANGUAGE
-    global SESSION
+    global INTERACTION
     global WORD
     global USER
     global ANAL_INDEX
-    exit(SESSION)
-    LANGUAGE = SESSION = USER = None
+    exit(session)
+    LANGUAGE = INTERACTION = USER = None
     ANAL_INDEX = 0
     return render_template('fin.html', modo=modo, language=LANGUAGE)
 

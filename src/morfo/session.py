@@ -1,7 +1,7 @@
 """
 This file is part of morfo, which is a project of PLoGS.
 
-Copyleft 2018, PLoGS and Michael Gasser.
+Copyleft 2018, 2023. PLoGS and Michael Gasser.
 
     morfo is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,21 +21,29 @@ Author: Michael Gasser <gasser@indiana.edu>
 # Created 2018.9.14
 
 # Sessions with a user (possibly None) interacting with morfo in the web app.
+# 2023: Called Interaction to distinguish from the Flask Session class.
 """
 
 import datetime, sys, os, yaml
 from werkzeug.security import generate_password_hash, check_password_hash
 
-class Session:
+class Interaction(dict):
 
     directory = os.path.join(os.path.dirname(__file__), 'sessions')
 
-    def __init__(self, language, user=None):
-        self.language = language
-        self.user = user
+    def __init__(self, user=None):
+        dict.__init__(self)
+        self['languages'] = {}
 
     def __repr__(self):
-        return ">>{}<<".format(self.language.abbrev)
+        return "->I<-: {} languages".format(len(self['languages']))
+
+#    def __init__(self, language, user=None):
+#        self.language = language
+#        self.user = user
+
+#    def __repr__(self):
+#        return ">>{}<<".format(self.language.abbrev)
 
 class User:
     """User of the system who is registered and whose feedback is saved."""
@@ -60,10 +68,10 @@ class User:
         """name and level are optional. Other fields are required."""
         self.username = username
         self.email = email
-        # Guarani ability
+        # Knowledge of language
         self.level = level
         self.name = name
-        self.creation = creation if creation else User.time()
+#        self.creation = creation if creation else User.time()
         if pw_hash:
             self.pw_hash = pw_hash
         else:
@@ -72,7 +80,7 @@ class User:
         self.nsessions = nsessions
         self.nprocs = nprocs
         # Time data last updated
-        self.update = update or self.creation
+#        self.update = update or self.creation
         # Score based on evaluation of translations
         self.score = score
         # Add to dict of all users
@@ -83,7 +91,7 @@ class User:
             User.new_users[self.username] = self
 
     def __repr__(self):
-        return "{}::{}".format(USER.prefix, self.username)
+        return "{}::{}".format(User.prefix, self.username)
 
     def set_password(self, password):
         self.pw_hash = generate_password_hash(password)
@@ -97,10 +105,10 @@ class User:
     def add_user(self):
         User.users[self.username] = self
 
-    @staticmethod
-    def time():
-        time = get_time()
-        return time.strftime(SHORT_TIME_FORMAT)
+#    @staticmethod
+#    def time():
+#        time = get_time()
+#        return time.strftime(SHORT_TIME_FORMAT)
 
     @staticmethod
     def from_file(username):
@@ -117,8 +125,8 @@ class User:
         d['level'] = self.level
         d['name'] = self.name
         d['email'] = self.email
-        d['creation'] = self.creation
-        d['update'] = self.update
+#        d['creation'] = self.creation
+#        d['update'] = self.update
         d['nsentences'] = self.nsentences
         d['nsessions'] = self.nsessions
         d['score'] = self.score
@@ -152,11 +160,11 @@ class User:
 
     @staticmethod
     def get_users_path():
-        return os.path.join(Session.directory, User.file)
+        return os.path.join(Interaction.directory, User.file)
 
     def get_session_path(self):
         name = self.username + '.sess'
-        return os.path.join(Session.directory, name)
+        return os.path.join(Interaction.directory, name)
 
     def read_sessions(self):
         """Read in the sessions file for this user, returning a list of session dicts."""
@@ -168,7 +176,7 @@ class User:
     def get_path(username):
         # File where the user's data is stored
         filename = "{}.usr".format(username)
-        return os.path.join(Sessions.directory, filename)
+        return os.path.join(Interaction.directory, filename)
 
     @staticmethod
     def read_all():

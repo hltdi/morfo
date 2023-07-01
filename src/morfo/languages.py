@@ -3,7 +3,7 @@ This file is part of morfo, which is part of the PLoGS project.
 
     <http://homes.soic.indiana.edu/gasser/plogs.html>
 
-    Copyleft 2018, 2019.
+    Copyleft 2018, 2019, 2023.
     PLoGS and Michael Gasser <gasser@indiana.edu>.
 
     morfo is free software: you can redistribute it and/or modify
@@ -21,8 +21,11 @@ This file is part of morfo, which is part of the PLoGS project.
 --------------------------------------------------------------------
 Author: Michael Gasser <gasser@indiana.edu>
 
-"""
+2023.07.01
+Created Languages class.
 
+"""
+import time
 from .language import *
 from .session import *
 # import anal_gui
@@ -30,6 +33,15 @@ from .session import *
 ###
 ### Loading languages
 ###
+
+#class MorfoSession(dict):
+#
+#    def __init__(self):
+#        dict.__init__(self)
+#        self['languages'] = {}
+#
+#    def __repr__(self):
+#        return "@@MS@@: {} languages".format(len(self['languages']))
 
 LANGUAGES = {}
 
@@ -54,9 +66,11 @@ def get_lang_dir(abbrev):
     return os.path.join(LANGUAGE_DIR, abbrev)
 
 def load_lang(lang, phon=False, segment=False, load_morph=True,
+              session=None, interaction=None,
               # False, '', or the name of a cache file
               cache=True, guess=True, poss=None, verbose=True):
     """Load Morphology objects and FSTs for language with lang_id."""
+#    print("** load lang; session {} interaction {}".format(session, interaction))
     lang_id = get_lang_id(lang)
 ##    try:
     language = None
@@ -102,30 +116,46 @@ def load_lang(lang, phon=False, segment=False, load_morph=True,
             return False
 #    if cache != False:
 #        language.read_cache(segment=segment)
-    LANGUAGES[lang_id] = language
+    print("** Created language {}".format(language))
+    interaction['languages'][lang_id] = language
+    interaction['language'] = language
+    if session:
+        print("** session languages: {}".format(session['languages']))
+        session['languages'].add(lang_id)
+#    print("** Stored {}".format(language))
+#    LANGUAGES[lang_id] = language
     if language.backup:
         # If there's a backup language, load its data file so the translations
         # can be used.
-        load_lang(language.backup, load_morph=False, guess=guess, verbose=verbose)
+        load_lang(language.backup, load_morph=False, guess=guess, session=session,
+                  interaction=interaction,
+                  verbose=verbose)
     return True
 
 def get_language(language, load=True, phon=False, segment=False, guess=True,
-                 load_morph=True, cache='', verbose=False):
-    """Get the language with lang_id, attempting to load it if it's not found
-    and load is True."""
+                 load_morph=True, cache='', verbose=False, session=None, interaction=None):
+    """
+    Get the language with lang_id, attempting to load it if it's not found
+    and load is True.
+    """
+#    print("** get language; session {} interaction {}".format(session, interaction))
     if isinstance(language, Language):
         return language
     lang_id = get_lang_id(language)
 #    lang = LANGUAGES.get(lang_id, None)
-    print("** Found language in LANGUAGES")
-#    if not lang:
-    if load:
-        print("** Loading language {}".format(lang_id))
-        if not load_lang(lang_id, phon=phon, segment=segment, guess=guess,
+    lang = interaction['languages'].get(lang_id, None)
+    if lang:
+        print("** Found language in session languages")
+    if not lang:
+        if load:
+            print("** Loading language {}".format(lang_id))
+            if not load_lang(lang_id, phon=phon, segment=segment, guess=guess,
+                             session=session, interaction=interaction,
                              load_morph=load_morph, cache=cache,
                              verbose=verbose):
-            return False
-        return LANGUAGES.get(lang_id, None)
+                return False
+        return interaction['languages'].get(lang_id, None)
+#    LANGUAGES.get(lang_id, None)
     if load_morph and not lang.morpho_loaded:
         print("** Loading morphology")
         lang.load_morpho(phon=phon, segment=segment, guess=guess)
@@ -133,53 +163,29 @@ def get_language(language, load=True, phon=False, segment=False, guess=True,
     if not load_morph:
         return lang
     fst = lang.get_fsts(phon=phon, segment=segment)
-    print("** Couldn't find FSTs")
     if not fst and load:
-        print("You cannot do both morphological analysis and segmentation in the same session!")
-        if segment:
-            print("Please exit() and start a new session to do segmentation!")
-        else:
-            print("Please exit() and start a new session to do morphological analysis!")
+        print("Couldn't find FSTs")
+#        print("You cannot do both morphological analysis and segmentation in the same session!")
+#        if segment:
+#            print("Please exit() and start a new session to do segmentation!")
+#        else:
+#            print("Please exit() and start a new session to do morphological analysis!")
         return
     return lang
     
-#def get_language(language, load=True, phon=False, segment=False, guess=True,
-#                 load_morph=True, cache='', verbose=False):
-#    """Get the language with lang_id, attempting to load it if it's not found
-#    and load is True."""
-#    lang_id = get_lang_id(language)
-#    lang = LANGUAGES.get(lang_id, None)
-#    if not lang:
-#        if load:
-#            if not load_lang(lang_id, phon=phon, segment=segment, guess=guess,
-#                             load_morph=load_morph, cache=cache,
-#                             verbose=verbose)
-#                return False
-#        return LANGUAGES.get(lang_id, None)
-#    if load_morph and not lang.morpho_loaded:
-#        lang.load_morpho(phon=phon, segment=segment, guess=guess)
-#        return lang
-##            load_morpho or not lang.get_fsts(phon=phon, segment=segment)):
-##    if not lang_id in LANGUAGES:
-##        if not load_lang(lang_id, phon=phon, segment=segment, guess=guess,
-##                         load_morph=load, cache=cache,
-##                         verbose=verbose):
-##            return False
-##    return LANGUAGES.get(lang_id, None)
-
 def load_pos(language, pos, scratch=False):
     """Load FSTs for a single POS, overriding compiled FST if scratch is True."""
     language.morphology[pos].load_fst(scratch, recreate=True, verbose=True)
 
 def load_langs(abbrev, l1, poss1, l2, poss2,
-               load_lexicons=True, verbose=True):
+               load_lexicons=True, session=None, interaction=None, verbose=True):
     """Load two languages for translation between them."""
-    load_lang(l1, phon=False, segment=False, load_morph=True,
+    load_lang(l1, phon=False, segment=False, load_morph=True, session=session, interaction=interaction,
               guess=False, poss=poss1, verbose=verbose)
-    load_lang(l2, phon=False, segment=False, load_morph=True,
+    load_lang(l2, phon=False, segment=False, load_morph=True, session=session, interaction=interaction,
               guess=False, poss=poss2, verbose=verbose)
-    lang1 = get_language(l1, verbose=verbose)
-    lang2 = get_language(l2, verbose=verbose)
+    lang1 = get_language(l1, verbose=verbose, session=session)
+    lang2 = get_language(l2, verbose=verbose, session=session)
     return Multiling(abbrev, (lang1, poss1), (lang2, poss2),
                      load_lexicons=load_lexicons)
     
