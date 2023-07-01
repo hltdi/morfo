@@ -153,8 +153,8 @@ def vb_anal2string(anal, webdict=None):
         s += ' grammar:'
         tm = fs.get('tm')
         if tm == 'prf':
-            s += ' perfective'
-            webfv(webdict, 'TAM', 'perfective')
+            s += ' perfective 2'
+            webfv(webdict, 'TAM', 'perfective 2')
         elif tm == 'imf':
             s += ' imperfective'
             webfv(webdict, 'TAM', 'imperfective')
@@ -162,8 +162,8 @@ def vb_anal2string(anal, webdict=None):
             s += ' jussive/imperative'
             webfv(webdict, 'TAM', 'juss/imper')
         elif tm == 'ger':
-            s += ' gerundive'
-            webfv(webdict, 'TAM', 'gerundive')
+            s += ' perfective 1'
+            webfv(webdict, 'TAM', 'perfective 1')
         else:
             s += ' present'
             webfv(webdict, 'TAM', 'present')
@@ -309,9 +309,9 @@ def vb_anal_to_dict(root, fs):
     if tm == 'imf':
         strings['tense/mood'] = 'imperfective'
     elif tm == 'prf':
-        strings['tense/mood'] = 'perfective'
+        strings['tense/mood'] = 'perfective 2'
     elif tm == 'ger':
-        strings['tense/mood'] = 'gerundive'
+        strings['tense/mood'] = 'perfective 1'
     else:
         strings['tense/mood'] = 'jussive/imperative'
 
