@@ -61,6 +61,7 @@ def index():
     print("index form: {}".format(form))
     if 'labrev' in form:
         lg_abbrev = form.get('labrev')
+        print("** Got lg_abbrev {}".format(lg_abbrev))
         SESSION = init_session(lg_abbrev, user=USER)
         LANGUAGE = SESSION.language
         IF = LANGUAGE.get_if_dict()

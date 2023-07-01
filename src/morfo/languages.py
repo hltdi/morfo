@@ -119,6 +119,7 @@ def get_language(language, load=True, phon=False, segment=False, guess=True,
     lang = LANGUAGES.get(lang_id, None)
     if not lang:
         if load:
+            print("** Loading language {}".format(lang_id))
             if not load_lang(lang_id, phon=phon, segment=segment, guess=guess,
                              load_morph=load_morph, cache=cache,
                              verbose=verbose):
