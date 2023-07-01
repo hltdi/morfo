@@ -991,14 +991,17 @@ class Language:
 
     def get_fsts(self, generate=False, phon=False, segment=False):
         '''Return all analysis FSTs (for different POSs) satisfying phon and segment contraints.'''
+        print("** Getting FSTs for {}, generate={}, phon={}, segment={}".format(self, generate, phon, segment))
         fsts = []
         for pos in self.morphology.pos:
+            print(" ** Looking for {} FSTs".format(pos))
             if phon:
                 fst = self.morphology[pos].get_fst(generate=True, phon=True)
             else:
                 fst = self.morphology[pos].get_fst(generate=generate, segment=segment)
             if fst:
                 fsts.append(fst)
+        print("** Found {} FSTs".format(len(fsts)))
         return fsts
 
     def has_cas(self, generate=False, guess=False, phon=False, segment=False):
