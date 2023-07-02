@@ -59,6 +59,7 @@ def index():
     global IF
     form = request.form
     print("index form: {}".format(form))
+    session['languages'] = {''}
     print("*** session {}".format(session))
     if 'labrev' in form:
         lg_abbrev = form.get('labrev')

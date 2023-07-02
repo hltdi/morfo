@@ -49,6 +49,8 @@ def get():
 
 def init_session(lg_abbrev, user=None, segment=False, web=True, session=None, interaction=None):
     """Create a session with the given language and user."""
+#    if session:
+#        session.clear()
     print("*** Creating interaction with session {}".format(session))
     if web:
         if 'languages' not in session:
@@ -80,7 +82,7 @@ def exit(session, save=True, cache=''):
         print("** Should be writing language {} here ***".format(abbrev))
 #        languages.LANGUAGES.items():
 #        language.write_cache(name=cache)
-    session['languages'] = set()
+    session['languages'] = {''}
 #    languages.LANGUAGES.clear()
 
 def load(language, phon=False, segment=False, load_morph=True, cache='',
