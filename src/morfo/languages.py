@@ -138,7 +138,7 @@ def get_language(language, load=True, phon=False, segment=False, guess=True,
     Get the language with lang_id, attempting to load it if it's not found
     and load is True.
     """
-#    print("** get language; session {} interaction {}".format(session, interaction))
+    print("** get language; session {} interaction {}".format(session, interaction))
     if isinstance(language, Language):
         return language
     lang_id = get_lang_id(language)
