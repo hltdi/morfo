@@ -70,7 +70,7 @@ def load_lang(lang, phon=False, segment=False, load_morph=True,
               # False, '', or the name of a cache file
               cache=True, guess=True, poss=None, verbose=True):
     """Load Morphology objects and FSTs for language with lang_id."""
-#    print("** load lang; session {} interaction {}".format(session, interaction))
+    print("** load lang; session {} interaction {}".format(session, interaction))
     lang_id = get_lang_id(lang)
 ##    try:
     language = None
