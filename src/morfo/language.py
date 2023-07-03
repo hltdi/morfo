@@ -314,7 +314,7 @@ class Language:
 
     def load_data(self, load_morph=False, segment=False, phon=False, guess=True,
                   poss=None, verbose=False):
-        print("** Loading data for {}, load attempted {}".format(self, self.load_attempted))
+#        print("** Loading data for {}, load attempted {}".format(self, self.load_attempted))
         if self.load_attempted:
             return
         self.load_attempted = True
@@ -330,6 +330,7 @@ class Language:
                 data = stream.read()
                 self.parse(data, poss=poss, verbose=verbose)
         if load_morph:
+            print("** {} loading morphology".format(self))
             if not self.load_morpho(segment=segment, ortho=True, phon=phon, guess=guess, verbose=verbose):
                 # There is no FST of the desired type
                 return False
@@ -924,15 +925,16 @@ class Language:
 
     def load_morpho(self, fsts=None, ortho=True, phon=False,
                     segment=False, recreate=False, guess=True, verbose=False):
-        """Load words and FSTs for morphological analysis and generation."""
+        """
+        Load words and FSTs for morphological analysis and generation.
+        """
         fsts = fsts or self.morphology.pos
         opt_string = ''
         if segment:
             opt_string = 'segmentation'
         elif phon:
             opt_string = 'phonetic'
-        if not self.has_cas(generate=phon, guess=False,
-                            phon=phon, segment=segment):
+        if not self.has_cas(generate=phon, guess=False, phon=phon, segment=segment):
             print('No {} FST available for {}!'.format(opt_string, self))
 #            return False
         msg_string = Language.T.tformat('Loading morphological data for {0}{1} ...',
@@ -1008,9 +1010,11 @@ class Language:
     def has_cas(self, generate=False, guess=False, phon=False, segment=False):
         """Is there at least one cascade file for the given FST features?"""
         for pos in self.morphology.pos:
+            print("** Checking for cas for {}".format(pos))
             if self.morphology[pos].has_cas(generate=generate, 
                                             guess=guess, phon=phon, segment=segment):
                 return True
+        print("** None found")
         return False
 
     ### Analyze words or sentences
