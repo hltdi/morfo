@@ -64,7 +64,7 @@ def init_session(lg_abbrev, user=None, segment=False, web=True, session=None, in
     if not language:
         print("WARNING: language {} not found!".format(lg_abbrev))
     if web:
-        print("** setting language {} in session".format(lg_abbrev))
+#        print("** setting language {} in session".format(lg_abbrev))
         session['language'] = lg_abbrev
         # Set web data for language
         language.set_web()

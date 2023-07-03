@@ -66,15 +66,13 @@ def index():
     form = request.form
     print("index form: {}".format(form))
     session['languages'] = {''}
-    print("*** session {}".format(session))
+#    print("*** session {}".format(session))
     if 'labrev' in form:
         lg_abbrev = form.get('labrev')
-        print("** Got lg_abbrev {}".format(lg_abbrev))
+#        print("** Got lg_abbrev {}".format(lg_abbrev))
         INTERACTION = init_session(lg_abbrev, user=USER, session=session)
-        print("*** INTERACTION: {}".format(INTERACTION))
+#        print("*** INTERACTION: {}".format(INTERACTION))
         LANGUAGE = get_language(INTERACTION, session)
-#        INTERACTION.get('language') # language
-#        LANGUAGE = session.get('language')
         IF = LANGUAGE.get_if_dict()
         print("new session with {}, dict {}".format(LANGUAGE, IF))
         return render_template('anal.html',
@@ -165,18 +163,18 @@ def anal():
     form = request.form
     ultanal = False
     print("Form for anal: {}".format(form))
-    print("*** session {}".format(session))
+#    print("*** session {}".format(session))
     webdata = []
     lg_abbrev = form.get('labrev')
     current_lg_abbrev = None
     LANGUAGE = get_language(INTERACTION, session)
     if LANGUAGE:
         current_lg_abbrev = LANGUAGE.abbrev
-        print("** language {}, abbrev {}, current abbrev {}".format(LANGUAGE, lg_abbrev, current_lg_abbrev))
+#        print("** language {}, abbrev {}, current abbrev {}".format(LANGUAGE, lg_abbrev, current_lg_abbrev))
         if lg_abbrev and current_lg_abbrev != lg_abbrev:
             print("Changing language...")
             INTERACTION = init_session(lg_abbrev, user=USER, session=session, interaction=INTERACTION)
-            print("** session {}".format(session))
+#            print("** session {}".format(session))
             LANGUAGE = get_language(INTERACTION, session)
 #            LANGUAGE = INTERACTION.get('language')#.language
             ANALYSES = WORD = None

@@ -71,13 +71,15 @@ def load_lang(lang, phon=False, segment=False, load_morph=True,
               session=None, interaction=None,
               # False, '', or the name of a cache file
               cache=True, guess=True, poss=None, verbose=True):
-    """Load Morphology objects and FSTs for language with lang_id."""
-    print("** load lang; session {} interaction {}".format(session, interaction))
+    """
+    Load Morphology objects and FSTs for language with lang_id.
+    """
+#    print("** load lang; session {} interaction {}".format(session, interaction))
     lang_id = get_lang_id(lang)
     reload_file = False
     if session and lang_id not in session.get('languages', []):
         reload_file = True
-    print("** reload {}".format(reload_file))
+#    print("** reload {}".format(reload_file))
     language = None
     if lang_id == 'am':
         if reload_file:
@@ -146,17 +148,17 @@ def get_language(language, load=True, phon=False, segment=False, guess=True,
     Get the language with lang_id, attempting to load it if it's not found
     and load is True.
     """
-    print("** get language; session {} interaction {}".format(session, interaction))
+#    print("** get language; session {} interaction {}".format(session, interaction))
     if isinstance(language, Language):
         return language
     lang_id = get_lang_id(language)
 #    lang = LANGUAGES.get(lang_id, None)
     lang = interaction['languages'].get(lang_id, None)
-    if lang:
-        print("** Found language in session languages")
+#    if lang:
+#        print("** Found language in session languages")
     if not lang:
         if load:
-            print("** Loading language {}".format(lang_id))
+#            print("** Loading language {}".format(lang_id))
             if not load_lang(lang_id, phon=phon, segment=segment, guess=guess,
                              session=session, interaction=interaction,
                              load_morph=load_morph, cache=cache,
@@ -165,7 +167,7 @@ def get_language(language, load=True, phon=False, segment=False, guess=True,
         return interaction['languages'].get(lang_id, None)
 #    LANGUAGES.get(lang_id, None)
     if load_morph and not lang.morpho_loaded:
-        print("** Loading morphology")
+#        print("** Loading morphology")
         lang.load_morpho(phon=phon, segment=segment, guess=guess)
         return lang
     if not load_morph:
@@ -173,11 +175,6 @@ def get_language(language, load=True, phon=False, segment=False, guess=True,
     fst = lang.get_fsts(phon=phon, segment=segment)
     if not fst and load:
         print("Couldn't find FSTs")
-#        print("You cannot do both morphological analysis and segmentation in the same session!")
-#        if segment:
-#            print("Please exit() and start a new session to do segmentation!")
-#        else:
-#            print("Please exit() and start a new session to do morphological analysis!")
         return
     return lang
     

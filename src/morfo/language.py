@@ -330,7 +330,7 @@ class Language:
                 data = stream.read()
                 self.parse(data, poss=poss, verbose=verbose)
         if load_morph:
-            print("** {} loading morphology".format(self))
+#            print("** {} loading morphology".format(self))
             if not self.load_morpho(segment=segment, ortho=True, phon=phon, guess=guess, verbose=verbose):
                 # There is no FST of the desired type
                 return False
@@ -1010,11 +1010,11 @@ class Language:
     def has_cas(self, generate=False, guess=False, phon=False, segment=False):
         """Is there at least one cascade file for the given FST features?"""
         for pos in self.morphology.pos:
-            print("** Checking for cas for {}".format(pos))
+#            print("** Checking for cas for {}".format(pos))
             if self.morphology[pos].has_cas(generate=generate, 
                                             guess=guess, phon=phon, segment=segment):
                 return True
-        print("** None found")
+#        print("** None found")
         return False
 
     ### Analyze words or sentences
