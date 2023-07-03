@@ -542,7 +542,7 @@ def dict_to_anal_old(root, dct, freeze=True):
 
 ## Create Language object for Tigrinya, including preprocessing, postprocessing,
 ## and segmentation units (phones).
-TI = language.Language("ትግርኛ", 'Ti',
+TI = language.Language("ትግርኛ", 'ti',
                        postproc=lambda form: sera2geez(GEEZ_SERA['ti'][1], form, lang='ti'),
                        preproc=lambda form: geez2sera(GEEZ_SERA['ti'][0], form, lang='ti'),
                        seg_units=[["a", "e", "E", "i", "I", "o", "u", "@", "A", "w", "y", "'", "`", "|", "_"],
