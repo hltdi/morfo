@@ -28,6 +28,8 @@ Created Languages class.
 import time
 from .language import *
 from .session import *
+from importlib import reload
+import sys
 # import anal_gui
 
 ###
@@ -71,33 +73,40 @@ def load_lang(lang, phon=False, segment=False, load_morph=True,
               cache=True, guess=True, poss=None, verbose=True):
     """Load Morphology objects and FSTs for language with lang_id."""
     print("** load lang; session {} interaction {}".format(session, interaction))
+    print("** morfo modules: {}".format([m for m in list(sys.modules) if 'morfo' in m]))
     lang_id = get_lang_id(lang)
-##    try:
+    reload_file = False
+    if session and lang_id not in session.get('languages', []):
+        reload_file = True
+    print("** reload {}".format(reload_file))
     language = None
     if lang_id == 'am':
-        from . import am_lang
+        if reload_file:
+            try:
+                reload(am_lang)
+            except:
+                from . import am_lang
+        else:
+            from . import am_lang
         language = am_lang.AM
     elif lang_id == 'ti':
-        from . import ti_lang
+        if reload_file:
+            try:
+                reload(ti_lang)
+            except:
+                from . import ti_lang
+        else:
+            from . import ti_lang
         language = ti_lang.TI
-#    elif lang_id == 'om':
-#        from . import om_lang
-#        language = om_lang.OM
-#    elif lang_id == 'stv':
-#        from . import stv_lang
-#        language = stv_lang.STV
-#    elif lang_id == 'quc':
-#        from . import quc_lang
-#        language = quc_lang.KI
     elif lang_id == 'es':
-        from . import es_lang
+        if reload_file:
+            try:
+                reload(es_lang)
+            except:
+                from . import es_lang
+        else:
+            from . import es_lang
         language = es_lang.ES
-#    elif lang_id == 'ms':
-#        from . import ms_lang
-#        language = ms_lang.MS
-#    elif lang_id == 'qu':
-#        from . import qu_lang
-#        language = qu_lang.QU
     if language:
         # Attempt to load additional data from language data file;
         # and FSTs if load_morph is True.
