@@ -154,7 +154,7 @@ def vb_anal2string(anal, webdict=None):
         tm = fs.get('tm')
         if tm == 'prf':
             s += ' perfective 2'
-            webfv(webdict, 'TAM', 'perfective 2')
+            webfv(webdict, 'TAM', 'hist perfective')
         elif tm == 'imf':
             s += ' imperfective'
             webfv(webdict, 'TAM', 'imperfective')
@@ -163,7 +163,7 @@ def vb_anal2string(anal, webdict=None):
             webfv(webdict, 'TAM', 'juss/imper')
         elif tm == 'ger':
             s += ' perfective 1'
-            webfv(webdict, 'TAM', 'perfective 1')
+            webfv(webdict, 'TAM', 'simp perfective')
         else:
             s += ' present'
             webfv(webdict, 'TAM', 'present')

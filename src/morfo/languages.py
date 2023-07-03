@@ -118,7 +118,7 @@ def load_lang(lang, phon=False, segment=False, load_morph=True,
 #        language.read_cache(segment=segment)
     print("** Created language {}".format(language))
     interaction['languages'][lang_id] = language
-    interaction['language'] = language
+#    interaction['language'] = language
     if session:
         print("** session languages: {}".format(session['languages']))
         session['languages'].add(lang_id)

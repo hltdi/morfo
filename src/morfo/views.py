@@ -27,7 +27,7 @@ from flask import request, session, g, redirect, url_for, abort, render_template
 from morfo import app, exit, load, anal_word, seg_word, gen, init_session, INTERACTION
 
 # Global variables for views; probably a better way to do this...
-LANGUAGE = ANALYSES = USER = WORD = IF = None
+ANALYSES = USER = WORD = IF = None
 USERS_INITIALIZED = False
 ANAL_INDEX = 0
 # Abbreviations of languages already loaded
@@ -42,10 +42,16 @@ ANAL_INDEX = 0
 #    LOADED.append(abbrev)
 #    load(abbrev)
 
-def analyze():
+def analyze(LANGUAGE):
     """Returns a list of dicts of features and values."""
     global ANALYSES
     ANALYSES = anal_word(LANGUAGE, WORD, web=True, interaction=INTERACTION)
+
+def get_language(interaction, session):
+    abbrev = session.get('language', '')
+    print("Getting language {} from interaction {}".format(abbrev, interaction))
+    if abbrev in session.get('languages'):
+        return interaction['languages'].get(abbrev)
 
 #@app.route('/')
 #def index():
@@ -55,7 +61,7 @@ def analyze():
 @app.route('/', methods=['GET', 'POST'])
 def index():
     global INTERACTION
-    global LANGUAGE
+#    global LANGUAGE
     global IF
     form = request.form
     print("index form: {}".format(form))
@@ -66,7 +72,8 @@ def index():
         print("** Got lg_abbrev {}".format(lg_abbrev))
         INTERACTION = init_session(lg_abbrev, user=USER, session=session)
         print("*** INTERACTION: {}".format(INTERACTION))
-        LANGUAGE = INTERACTION.get('language') # language
+        LANGUAGE = get_language(INTERACTION, session)
+#        INTERACTION.get('language') # language
 #        LANGUAGE = session.get('language')
         IF = LANGUAGE.get_if_dict()
         print("new session with {}, dict {}".format(LANGUAGE, IF))
@@ -78,10 +85,12 @@ def index():
 @app.route('/acerca', methods=['GET', 'POST'])
 def acerca():
     print("In acerca...")
+    LANGUAGE = get_language(INTERACTION, session)
     return render_template('acerca.html', language=LANGUAGE)
 
 @app.route('/contacto', methods=['GET', 'POST'])
 def contacto():
+    LANGUAGE = get_language(INTERACTION, session)
     return render_template('contacto.html', language=LANGUAGE)
 
 # Work on this later.
@@ -89,6 +98,7 @@ def contacto():
 def login():
     global USER
     form = request.form
+    LANGUAGE = get_language(INTERACTION, session)
 #    print("Form for login: {}".format(form))
     if not USERS_INITIALIZED:
         initialize()
@@ -114,6 +124,7 @@ def login():
 def logged():
     form = request.form
 #    print("Form for logged: {}".format(form))
+    LANGUAGE = get_language(INTERACTION, session)
     return render_template('logged.html', language=LANGUAGE)
 
 @app.route('/reg', methods=['GET', 'POST'])
@@ -121,6 +132,7 @@ def reg():
     global USER
     form = request.form
 #    print("Form for reg: {}".format(form))
+    LANGUAGE = get_language(INTERACTION, session)
     if request.method == 'POST' and 'username' in form:
         if form.get('cancel') == 'Cancelar':
             return render_template('login.html')
@@ -140,27 +152,33 @@ def reg():
 @app.route('/acct', methods=['POST'])
 def acct():
 #    print("In acct...")
+    LANGUAGE = get_language(INTERACTION, session)
     return render_template('acct.html', language=LANGUAGE)
 
 @app.route('/anal', methods=['GET', 'POST'])
 def anal():
     global WORD
     global INTERACTION
-    global LANGUAGE
+#    global LANGUAGE
     global ANAL_INDEX
     global ANALYSES
     form = request.form
     ultanal = False
     print("Form for anal: {}".format(form))
+    print("*** session {}".format(session))
     webdata = []
     lg_abbrev = form.get('labrev')
     current_lg_abbrev = None
+    LANGUAGE = get_language(INTERACTION, session)
     if LANGUAGE:
         current_lg_abbrev = LANGUAGE.abbrev
+        print("** language {}, abbrev {}, current abbrev {}".format(LANGUAGE, lg_abbrev, current_lg_abbrev))
         if lg_abbrev and current_lg_abbrev != lg_abbrev:
             print("Changing language...")
-            INTERACTION = init_session(lg_abbrev, user=USER, session=session)
-            LANGUAGE = INTERACTION.get('language')#.language
+            INTERACTION = init_session(lg_abbrev, user=USER, session=session, interaction=INTERACTION)
+            print("** session {}".format(session))
+            LANGUAGE = get_language(INTERACTION, session)
+#            LANGUAGE = INTERACTION.get('language')#.language
             ANALYSES = WORD = None
             ANAL_INDEX = 0
         webdata = LANGUAGE.webdata
@@ -168,7 +186,8 @@ def anal():
     if not INTERACTION:
 #        print("Creating session for {}".format(lg_abbrev))
         INTERACTION = init_session(lg_abbrev, user=USER, session=session)
-        LANGUAGE = INTERACTION.get('language') #.language
+        LANGUAGE = get_language(INTERACTION, session)
+#        INTERACTION.get('language') #.language
     username = USER.username if USER else ''
 #   AYUDA
 #    if 'ayuda' in form and form['ayuda'] == 'true':
@@ -193,7 +212,7 @@ def anal():
         # Get the word
         WORD = form['palabra']
         print("WORD: {}".format(WORD))
-        analyze()
+        analyze(LANGUAGE)
         if not ANALYSES:
             # This should behave like 'borrar'
             ultanal = True
@@ -228,18 +247,19 @@ def fin():
     form = request.form
 #    print("Form for fin: {}".format(form))
     modo = form.get('modo')
-    global LANGUAGE
+#    global LANGUAGE
     global INTERACTION
     global WORD
     global USER
     global ANAL_INDEX
     exit(session)
-    LANGUAGE = INTERACTION = USER = None
+    INTERACTION = USER = None
     ANAL_INDEX = 0
     return render_template('fin.html', modo=modo, language=LANGUAGE)
 
 @app.route('/proyecto')
 def proyecto():
+    LANGUAGE = get_language(INTERACTION, session)
     return render_template('proyecto.html', language=LANGUAGE)
 
 # Not needed because this is in runserver.py.
