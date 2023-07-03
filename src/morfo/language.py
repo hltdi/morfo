@@ -314,6 +314,7 @@ class Language:
 
     def load_data(self, load_morph=False, segment=False, phon=False, guess=True,
                   poss=None, verbose=False):
+        print("** Loading data for {}, load attempted {}".format(self, self.load_attempted))
         if self.load_attempted:
             return
         self.load_attempted = True
