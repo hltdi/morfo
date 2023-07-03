@@ -73,7 +73,6 @@ def load_lang(lang, phon=False, segment=False, load_morph=True,
               cache=True, guess=True, poss=None, verbose=True):
     """Load Morphology objects and FSTs for language with lang_id."""
     print("** load lang; session {} interaction {}".format(session, interaction))
-    print("** morfo modules: {}".format([m for m in list(sys.modules) if 'morfo' in m]))
     lang_id = get_lang_id(lang)
     reload_file = False
     if session and lang_id not in session.get('languages', []):

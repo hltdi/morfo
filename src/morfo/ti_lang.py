@@ -29,6 +29,8 @@ ROM2GEEZ = {'InkI': "እንክ", "kI": "ክ", "Inte": "እንተ", "mIs": "ም�
             "sIle": "ስለ", "kem": "ከም", "nI": "ን", "ab": "ኣብ", "nab": "ናብ", "kab": "ካብ", "bI": "ብ",
             "n": "ን", "s": "ስ", "ke": "ከ", "do": "ዶ", "Immo": "እሞ"}
 
+print("** Loading ti_lang")
+
 ### Various functions that will be values of attributes of Tigrinya Morphology
 ### and POSMorphology objects.
 
